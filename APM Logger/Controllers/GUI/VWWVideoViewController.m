@@ -47,12 +47,13 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "VWWVideoViewController.h"
-#import "VWWSettingsTableViewController.h"
+//#import "VWWSettingsTableViewController.h"
 
 //static NSString *VWWSegueVideoToSettings = @"VWWSegueVideoToSettings";
 
-@interface VWWVideoViewController ()<VWWVideoProcessorDelegate, VWWSettingsTableViewControllerDelegate>
-@property (nonatomic, strong) VWWSettingsTableViewController *settingsViewController;
+//@interface VWWVideoViewController ()<VWWVideoProcessorDelegate, VWWSettingsTableViewControllerDelegate>
+@interface VWWVideoViewController ()<VWWVideoProcessorDelegate>
+//@property (nonatomic, strong) VWWSettingsTableViewController *settingsViewController;
 @property (nonatomic, weak) IBOutlet UIView *previewView;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *recordButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
@@ -222,18 +223,18 @@
 
 #pragma mark IBActions
 - (IBAction)settingsButtonTouchUpInside:(id)sender {
-    
-    if(self.settingsViewController == nil){
-        self.settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWSettingsTableViewController"];
-        self.settingsViewController.delegate = self;
-        self.settingsViewController.view.hidden = YES;
-    }
-    
-    if(self.settingsViewController.view.hidden == YES){
-        [self showChildViewController:self.settingsViewController];
-    } else {
-        [self hideChildViewController:self.settingsViewController];
-    }
+//    
+//    if(self.settingsViewController == nil){
+//        self.settingsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWSettingsTableViewController"];
+//        self.settingsViewController.delegate = self;
+//        self.settingsViewController.view.hidden = YES;
+//    }
+//    
+//    if(self.settingsViewController.view.hidden == YES){
+//        [self showChildViewController:self.settingsViewController];
+//    } else {
+//        [self hideChildViewController:self.settingsViewController];
+//    }
 }
 
 

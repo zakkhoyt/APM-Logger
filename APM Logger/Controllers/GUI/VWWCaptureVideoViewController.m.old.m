@@ -15,13 +15,14 @@
 #import "NSTimer+Blocks.h"
 #import "VWWEditVideoTableViewController.h"
 #import "VWWFileController.h"
-#import "RosyWriterVideoProcessor.h"
-#import "RosyWriterPreviewView.h"
-
+//#import "RosyWriterVideoProcessor.h"
+#import "VWWVideoProcessor.h"
+//#import "RosyWriterPreviewView.h"
+#import "VWWVideoPreviewView.h"
 static NSString *VWWSegueRecordToEdit = @"VWWSegueRecordToEdit";
 
-@interface VWWCaptureVideoViewController () <VWWDataLogControllerDelegate, RosyWriterVideoProcessorDelegate>
-@property (strong, nonatomic)  RosyWriterPreviewView *oglView;
+@interface VWWCaptureVideoViewController () <VWWDataLogControllerDelegate, VWWVideoProcessorDelegate>
+@property (strong, nonatomic)  VWWVideoPreviewView *oglView;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UISwitch *overlaySwitch;
 @property (weak, nonatomic) IBOutlet UILabel *overlayLabel;
@@ -30,7 +31,7 @@ static NSString *VWWSegueRecordToEdit = @"VWWSegueRecordToEdit";
 @property dispatch_queue_t avqueue;
 @property (nonatomic) BOOL isRecording;
 @property (nonatomic, strong) VWWDataLogController *dataLogController;
-@property (nonatomic, strong) RosyWriterVideoProcessor *videoProcessor;
+@property (nonatomic, strong) VWWVideoProcessor *videoProcessor;
 @property (nonatomic) UIBackgroundTaskIdentifier backgroundRecordingID;
 @end
 
@@ -52,7 +53,7 @@ static NSString *VWWSegueRecordToEdit = @"VWWSegueRecordToEdit";
 //    [self setupCaptureSession];
 
     // Initialize the class responsible for managing AV capture session and asset writer
-    self.videoProcessor = [[RosyWriterVideoProcessor alloc] init];
+    self.videoProcessor = [[VWWVideoProcessor alloc] init];
 	self.videoProcessor.delegate = self;
     
     
@@ -64,7 +65,7 @@ static NSString *VWWSegueRecordToEdit = @"VWWSegueRecordToEdit";
     // Setup and start the capture session
     [self.videoProcessor setupAndStartCaptureSession];
     
-    self.oglView = [[RosyWriterPreviewView alloc] initWithFrame:CGRectZero];
+    self.oglView = [[VWWVideoPreviewView alloc] initWithFrame:CGRectZero];
 	// Our interface is always in portrait.
 	self.oglView.transform = [self.videoProcessor transformFromCurrentVideoOrientationToOrientation:(AVCaptureVideoOrientation)UIInterfaceOrientationPortrait];
 //    [previewView addSubview:oglView];

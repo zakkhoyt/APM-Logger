@@ -23,6 +23,37 @@
 		CFDAC66618E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
 		CFDAC66E18E1493D00EB609B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC66C18E1493D00EB609B /* InfoPlist.strings */; };
 		CFDAC67018E1493D00EB609B /* APM_LoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */; };
+		CFDAC6B218E14A2A00EB609B /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC67B18E14A2A00EB609B /* NSTimer+Blocks.m */; };
+		CFDAC6B418E14A2A00EB609B /* VWWAddAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68118E14A2A00EB609B /* VWWAddAnimationViewController.m */; };
+		CFDAC6B518E14A2A00EB609B /* VWWAddBorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68318E14A2A00EB609B /* VWWAddBorderViewController.m */; };
+		CFDAC6B618E14A2A00EB609B /* VWWAddOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68518E14A2A00EB609B /* VWWAddOverlayViewController.m */; };
+		CFDAC6B718E14A2A00EB609B /* VWWAddSubtitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68718E14A2A00EB609B /* VWWAddSubtitleViewController.m */; };
+		CFDAC6B818E14A2A00EB609B /* VWWAddTiltViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68918E14A2A00EB609B /* VWWAddTiltViewController.m */; };
+		CFDAC6B918E14A2A00EB609B /* VWWCaptureVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68C18E14A2A00EB609B /* VWWCaptureVideoViewController.m */; };
+		CFDAC6BB18E14A2A00EB609B /* VWWCommonVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC68F18E14A2A00EB609B /* VWWCommonVideoViewController.m */; };
+		CFDAC6BC18E14A2A00EB609B /* VWWDefaultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69118E14A2A00EB609B /* VWWDefaultTableViewController.m */; };
+		CFDAC6BD18E14A2A00EB609B /* VWWEditVideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69318E14A2A00EB609B /* VWWEditVideoTableViewController.m */; };
+		CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69818E14A2A00EB609B /* VWWDataLogController.m */; };
+		CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69A18E14A2A00EB609B /* VWWFileController.m */; };
+		CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */; };
+		CFDAC6C218E14A2A00EB609B /* VWWMotionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */; };
+		CFDAC6C318E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A018E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz */; };
+		CFDAC6C418E14A2A00EB609B /* 2014-03-07 19-23-15_13.log in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A118E14A2A00EB609B /* 2014-03-07 19-23-15_13.log */; };
+		CFDAC6C518E14A2A00EB609B /* 2014-03-07 19-23-15_14.kmz in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A218E14A2A00EB609B /* 2014-03-07 19-23-15_14.kmz */; };
+		CFDAC6C618E14A2A00EB609B /* 2014-03-07 19-23-15_14.log in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A318E14A2A00EB609B /* 2014-03-07 19-23-15_14.log */; };
+		CFDAC6C718E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A418E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz */; };
+		CFDAC6C818E14A2A00EB609B /* 2014-03-07 19-23-15_15.log in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A518E14A2A00EB609B /* 2014-03-07 19-23-15_15.log */; };
+		CFDAC6C918E14A2A00EB609B /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6A618E14A2A00EB609B /* readme.txt */; };
+		CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */; };
+		CFDAC6CB18E14A2A00EB609B /* passThrough.fsh in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6B018E14A2A00EB609B /* passThrough.fsh */; };
+		CFDAC6CC18E14A2A00EB609B /* passThrough.vsh in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC6B118E14A2A00EB609B /* passThrough.vsh */; };
+		CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D018E14A3300EB609B /* MBProgressHUD.m */; };
+		CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D218E14A3300EB609B /* ShaderUtilities.c */; };
+		CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D518E14A3300EB609B /* VWWUserDefaults.m */; };
+		CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D718E14A3300EB609B /* VWWUtilities.m */; };
+		CFDAC6E218E14D3300EB609B /* VWWVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E118E14D3300EB609B /* VWWVideoViewController.m */; };
+		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
+		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +89,65 @@
 		CFDAC66B18E1493D00EB609B /* APM LoggerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APM LoggerTests-Info.plist"; sourceTree = "<group>"; };
 		CFDAC66D18E1493D00EB609B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APM_LoggerTests.m; sourceTree = "<group>"; };
+		CFDAC67A18E14A2A00EB609B /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		CFDAC67B18E14A2A00EB609B /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		CFDAC68018E14A2A00EB609B /* VWWAddAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddAnimationViewController.h; sourceTree = "<group>"; };
+		CFDAC68118E14A2A00EB609B /* VWWAddAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddAnimationViewController.m; sourceTree = "<group>"; };
+		CFDAC68218E14A2A00EB609B /* VWWAddBorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddBorderViewController.h; sourceTree = "<group>"; };
+		CFDAC68318E14A2A00EB609B /* VWWAddBorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddBorderViewController.m; sourceTree = "<group>"; };
+		CFDAC68418E14A2A00EB609B /* VWWAddOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddOverlayViewController.h; sourceTree = "<group>"; };
+		CFDAC68518E14A2A00EB609B /* VWWAddOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddOverlayViewController.m; sourceTree = "<group>"; };
+		CFDAC68618E14A2A00EB609B /* VWWAddSubtitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddSubtitleViewController.h; sourceTree = "<group>"; };
+		CFDAC68718E14A2A00EB609B /* VWWAddSubtitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddSubtitleViewController.m; sourceTree = "<group>"; };
+		CFDAC68818E14A2A00EB609B /* VWWAddTiltViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddTiltViewController.h; sourceTree = "<group>"; };
+		CFDAC68918E14A2A00EB609B /* VWWAddTiltViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddTiltViewController.m; sourceTree = "<group>"; };
+		CFDAC68A18E14A2A00EB609B /* VWWCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCaptureVideoViewController.h; sourceTree = "<group>"; };
+		CFDAC68B18E14A2A00EB609B /* VWWCaptureVideoViewController.h.old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCaptureVideoViewController.h.old.h; sourceTree = "<group>"; };
+		CFDAC68C18E14A2A00EB609B /* VWWCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCaptureVideoViewController.m; sourceTree = "<group>"; };
+		CFDAC68D18E14A2A00EB609B /* VWWCaptureVideoViewController.m.old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCaptureVideoViewController.m.old.m; sourceTree = "<group>"; };
+		CFDAC68E18E14A2A00EB609B /* VWWCommonVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCommonVideoViewController.h; sourceTree = "<group>"; };
+		CFDAC68F18E14A2A00EB609B /* VWWCommonVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCommonVideoViewController.m; sourceTree = "<group>"; };
+		CFDAC69018E14A2A00EB609B /* VWWDefaultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDefaultTableViewController.h; sourceTree = "<group>"; };
+		CFDAC69118E14A2A00EB609B /* VWWDefaultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDefaultTableViewController.m; sourceTree = "<group>"; };
+		CFDAC69218E14A2A00EB609B /* VWWEditVideoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWEditVideoTableViewController.h; sourceTree = "<group>"; };
+		CFDAC69318E14A2A00EB609B /* VWWEditVideoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWEditVideoTableViewController.m; sourceTree = "<group>"; };
+		CFDAC69718E14A2A00EB609B /* VWWDataLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDataLogController.h; sourceTree = "<group>"; };
+		CFDAC69818E14A2A00EB609B /* VWWDataLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDataLogController.m; sourceTree = "<group>"; };
+		CFDAC69918E14A2A00EB609B /* VWWFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWFileController.h; sourceTree = "<group>"; };
+		CFDAC69A18E14A2A00EB609B /* VWWFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWFileController.m; sourceTree = "<group>"; };
+		CFDAC69B18E14A2A00EB609B /* VWWLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLocationController.h; sourceTree = "<group>"; };
+		CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLocationController.m; sourceTree = "<group>"; };
+		CFDAC69D18E14A2A00EB609B /* VWWMotionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionController.h; sourceTree = "<group>"; };
+		CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionController.m; sourceTree = "<group>"; };
+		CFDAC6A018E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2014-03-07 19-23-15_13.kmz"; sourceTree = "<group>"; };
+		CFDAC6A118E14A2A00EB609B /* 2014-03-07 19-23-15_13.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-07 19-23-15_13.log"; sourceTree = "<group>"; };
+		CFDAC6A218E14A2A00EB609B /* 2014-03-07 19-23-15_14.kmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2014-03-07 19-23-15_14.kmz"; sourceTree = "<group>"; };
+		CFDAC6A318E14A2A00EB609B /* 2014-03-07 19-23-15_14.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-07 19-23-15_14.log"; sourceTree = "<group>"; };
+		CFDAC6A418E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2014-03-07 19-23-15_15.kmz"; sourceTree = "<group>"; };
+		CFDAC6A518E14A2A00EB609B /* 2014-03-07 19-23-15_15.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-07 19-23-15_15.log"; sourceTree = "<group>"; };
+		CFDAC6A618E14A2A00EB609B /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		CFDAC6A818E14A2A00EB609B /* VWWBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBlocks.h; sourceTree = "<group>"; };
+		CFDAC6A918E14A2A00EB609B /* VWWDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDefines.h; sourceTree = "<group>"; };
+		CFDAC6AA18E14A2A00EB609B /* VWWTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTypes.h; sourceTree = "<group>"; };
+		CFDAC6AC18E14A2A00EB609B /* VWWModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWModelProtocol.h; sourceTree = "<group>"; };
+		CFDAC6AD18E14A2A00EB609B /* VWWMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotion.h; sourceTree = "<group>"; };
+		CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotion.m; sourceTree = "<group>"; };
+		CFDAC6B018E14A2A00EB609B /* passThrough.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = passThrough.fsh; sourceTree = "<group>"; };
+		CFDAC6B118E14A2A00EB609B /* passThrough.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = passThrough.vsh; sourceTree = "<group>"; };
+		CFDAC6CF18E14A3300EB609B /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CFDAC6D018E14A3300EB609B /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CFDAC6D218E14A3300EB609B /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		CFDAC6D318E14A3300EB609B /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		CFDAC6D418E14A3300EB609B /* VWWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUserDefaults.h; sourceTree = "<group>"; };
+		CFDAC6D518E14A3300EB609B /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
+		CFDAC6D618E14A3300EB609B /* VWWUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
+		CFDAC6D718E14A3300EB609B /* VWWUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUtilities.m; sourceTree = "<group>"; };
+		CFDAC6E018E14D3300EB609B /* VWWVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoViewController.h; sourceTree = "<group>"; };
+		CFDAC6E118E14D3300EB609B /* VWWVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoViewController.m; sourceTree = "<group>"; };
+		CFDAC6E318E14D3C00EB609B /* VWWVideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoProcessor.h; sourceTree = "<group>"; };
+		CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoProcessor.m; sourceTree = "<group>"; };
+		CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoPreviewView.h; sourceTree = "<group>"; };
+		CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoPreviewView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,16 +207,25 @@
 		CFDAC64418E1493D00EB609B /* APM Logger */ = {
 			isa = PBXGroup;
 			children = (
+				CFDAC67918E14A2A00EB609B /* Categories */,
+				CFDAC67C18E14A2A00EB609B /* Controllers */,
+				CFDAC69F18E14A2A00EB609B /* Documents */,
+				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
+				CFDAC6A718E14A2A00EB609B /* Include */,
+				CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */,
+				CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */,
+				CFDAC6AB18E14A2A00EB609B /* Model */,
+				CFDAC6AF18E14A2A00EB609B /* Shaders */,
+				CFDAC64518E1493D00EB609B /* Supporting Files */,
+				CFDAC6CD18E14A3300EB609B /* ThirdParty */,
+				CFDAC6D118E14A3300EB609B /* Utilities */,
+				CFDAC6D818E14A3300EB609B /* View */,
 				CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */,
 				CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */,
-				CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */,
-				CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */,
 				CFDAC65618E1493D00EB609B /* VWWFirstViewController.h */,
 				CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */,
 				CFDAC65918E1493D00EB609B /* VWWSecondViewController.h */,
 				CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */,
-				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
-				CFDAC64518E1493D00EB609B /* Supporting Files */,
 			);
 			path = "APM Logger";
 			sourceTree = "<group>";
@@ -158,6 +257,152 @@
 				CFDAC66C18E1493D00EB609B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFDAC67918E14A2A00EB609B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC67A18E14A2A00EB609B /* NSTimer+Blocks.h */,
+				CFDAC67B18E14A2A00EB609B /* NSTimer+Blocks.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		CFDAC67C18E14A2A00EB609B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC67D18E14A2A00EB609B /* GUI */,
+				CFDAC69418E14A2A00EB609B /* NonGUI */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CFDAC67D18E14A2A00EB609B /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6E018E14D3300EB609B /* VWWVideoViewController.h */,
+				CFDAC6E118E14D3300EB609B /* VWWVideoViewController.m */,
+				CFDAC68018E14A2A00EB609B /* VWWAddAnimationViewController.h */,
+				CFDAC68118E14A2A00EB609B /* VWWAddAnimationViewController.m */,
+				CFDAC68218E14A2A00EB609B /* VWWAddBorderViewController.h */,
+				CFDAC68318E14A2A00EB609B /* VWWAddBorderViewController.m */,
+				CFDAC68418E14A2A00EB609B /* VWWAddOverlayViewController.h */,
+				CFDAC68518E14A2A00EB609B /* VWWAddOverlayViewController.m */,
+				CFDAC68618E14A2A00EB609B /* VWWAddSubtitleViewController.h */,
+				CFDAC68718E14A2A00EB609B /* VWWAddSubtitleViewController.m */,
+				CFDAC68818E14A2A00EB609B /* VWWAddTiltViewController.h */,
+				CFDAC68918E14A2A00EB609B /* VWWAddTiltViewController.m */,
+				CFDAC68A18E14A2A00EB609B /* VWWCaptureVideoViewController.h */,
+				CFDAC68B18E14A2A00EB609B /* VWWCaptureVideoViewController.h.old.h */,
+				CFDAC68C18E14A2A00EB609B /* VWWCaptureVideoViewController.m */,
+				CFDAC68D18E14A2A00EB609B /* VWWCaptureVideoViewController.m.old.m */,
+				CFDAC68E18E14A2A00EB609B /* VWWCommonVideoViewController.h */,
+				CFDAC68F18E14A2A00EB609B /* VWWCommonVideoViewController.m */,
+				CFDAC69018E14A2A00EB609B /* VWWDefaultTableViewController.h */,
+				CFDAC69118E14A2A00EB609B /* VWWDefaultTableViewController.m */,
+				CFDAC69218E14A2A00EB609B /* VWWEditVideoTableViewController.h */,
+				CFDAC69318E14A2A00EB609B /* VWWEditVideoTableViewController.m */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		CFDAC69418E14A2A00EB609B /* NonGUI */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6E318E14D3C00EB609B /* VWWVideoProcessor.h */,
+				CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */,
+				CFDAC69718E14A2A00EB609B /* VWWDataLogController.h */,
+				CFDAC69818E14A2A00EB609B /* VWWDataLogController.m */,
+				CFDAC69918E14A2A00EB609B /* VWWFileController.h */,
+				CFDAC69A18E14A2A00EB609B /* VWWFileController.m */,
+				CFDAC69B18E14A2A00EB609B /* VWWLocationController.h */,
+				CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */,
+				CFDAC69D18E14A2A00EB609B /* VWWMotionController.h */,
+				CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */,
+			);
+			path = NonGUI;
+			sourceTree = "<group>";
+		};
+		CFDAC69F18E14A2A00EB609B /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6A018E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz */,
+				CFDAC6A118E14A2A00EB609B /* 2014-03-07 19-23-15_13.log */,
+				CFDAC6A218E14A2A00EB609B /* 2014-03-07 19-23-15_14.kmz */,
+				CFDAC6A318E14A2A00EB609B /* 2014-03-07 19-23-15_14.log */,
+				CFDAC6A418E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz */,
+				CFDAC6A518E14A2A00EB609B /* 2014-03-07 19-23-15_15.log */,
+				CFDAC6A618E14A2A00EB609B /* readme.txt */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		CFDAC6A718E14A2A00EB609B /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6A818E14A2A00EB609B /* VWWBlocks.h */,
+				CFDAC6A918E14A2A00EB609B /* VWWDefines.h */,
+				CFDAC6AA18E14A2A00EB609B /* VWWTypes.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		CFDAC6AB18E14A2A00EB609B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6AC18E14A2A00EB609B /* VWWModelProtocol.h */,
+				CFDAC6AD18E14A2A00EB609B /* VWWMotion.h */,
+				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFDAC6AF18E14A2A00EB609B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6B018E14A2A00EB609B /* passThrough.fsh */,
+				CFDAC6B118E14A2A00EB609B /* passThrough.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CFDAC6CD18E14A3300EB609B /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6CE18E14A3300EB609B /* MBProgressHUD */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		CFDAC6CE18E14A3300EB609B /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6CF18E14A3300EB609B /* MBProgressHUD.h */,
+				CFDAC6D018E14A3300EB609B /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		CFDAC6D118E14A3300EB609B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6D218E14A3300EB609B /* ShaderUtilities.c */,
+				CFDAC6D318E14A3300EB609B /* ShaderUtilities.h */,
+				CFDAC6D418E14A3300EB609B /* VWWUserDefaults.h */,
+				CFDAC6D518E14A3300EB609B /* VWWUserDefaults.m */,
+				CFDAC6D618E14A3300EB609B /* VWWUtilities.h */,
+				CFDAC6D718E14A3300EB609B /* VWWUtilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CFDAC6D818E14A3300EB609B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */,
+				CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,10 +482,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDAC6C618E14A2A00EB609B /* 2014-03-07 19-23-15_14.log in Resources */,
+				CFDAC6C718E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz in Resources */,
 				CFDAC65518E1493D00EB609B /* Main_iPad.storyboard in Resources */,
 				CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */,
+				CFDAC6CC18E14A2A00EB609B /* passThrough.vsh in Resources */,
+				CFDAC6C918E14A2A00EB609B /* readme.txt in Resources */,
 				CFDAC65218E1493D00EB609B /* Main_iPhone.storyboard in Resources */,
+				CFDAC6CB18E14A2A00EB609B /* passThrough.fsh in Resources */,
+				CFDAC6C518E14A2A00EB609B /* 2014-03-07 19-23-15_14.kmz in Resources */,
 				CFDAC64918E1493D00EB609B /* InfoPlist.strings in Resources */,
+				CFDAC6C318E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz in Resources */,
+				CFDAC6C418E14A2A00EB609B /* 2014-03-07 19-23-15_13.log in Resources */,
+				CFDAC6C818E14A2A00EB609B /* 2014-03-07 19-23-15_15.log in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,10 +513,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDAC6BB18E14A2A00EB609B /* VWWCommonVideoViewController.m in Sources */,
+				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
+				CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */,
+				CFDAC6B618E14A2A00EB609B /* VWWAddOverlayViewController.m in Sources */,
+				CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */,
+				CFDAC6B818E14A2A00EB609B /* VWWAddTiltViewController.m in Sources */,
+				CFDAC6E218E14D3300EB609B /* VWWVideoViewController.m in Sources */,
+				CFDAC6B518E14A2A00EB609B /* VWWAddBorderViewController.m in Sources */,
+				CFDAC6B918E14A2A00EB609B /* VWWCaptureVideoViewController.m in Sources */,
+				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
+				CFDAC6BC18E14A2A00EB609B /* VWWDefaultTableViewController.m in Sources */,
 				CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */,
+				CFDAC6B418E14A2A00EB609B /* VWWAddAnimationViewController.m in Sources */,
 				CFDAC65818E1493D00EB609B /* VWWFirstViewController.m in Sources */,
+				CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */,
+				CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */,
+				CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */,
+				CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */,
+				CFDAC6C218E14A2A00EB609B /* VWWMotionController.m in Sources */,
+				CFDAC6BD18E14A2A00EB609B /* VWWEditVideoTableViewController.m in Sources */,
+				CFDAC6B218E14A2A00EB609B /* NSTimer+Blocks.m in Sources */,
+				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CFDAC65B18E1493D00EB609B /* VWWSecondViewController.m in Sources */,
+				CFDAC6B718E14A2A00EB609B /* VWWAddSubtitleViewController.m in Sources */,
+				CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
