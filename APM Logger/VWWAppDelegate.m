@@ -7,7 +7,7 @@
 //
 
 #import "VWWAppDelegate.h"
-
+#import "AP2DataPlot.h"
 @implementation VWWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -47,6 +47,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     VWW_LOG_INFO(@"App was launched from %@ with file at URL%@", sourceApplication, url);
+    AP2DataPlot *plot = [[AP2DataPlot alloc]initWithURL:url];
     return YES;
 }
 
