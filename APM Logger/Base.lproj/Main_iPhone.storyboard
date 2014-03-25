@@ -334,9 +334,6 @@
                                 <state key="normal" title="Record">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="startButtonTouchUpInside:" destination="OYu-UC-NR4" eventType="touchUpInside" id="bw8-tY-jb0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2z-OK-tvh">
                                 <rect key="frame" x="20" y="518" width="136" height="30"/>
@@ -348,9 +345,6 @@
                                 <state key="normal" title="Calibrate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="calibrateButtonTouchUpInside:" destination="OYu-UC-NR4" eventType="touchUpInside" id="eK7-pI-j75"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -374,17 +368,11 @@
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="okh-jd-Gwg">
                                 <rect key="frame" x="255" y="6" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="overlaySwitchValueChanged:" destination="OYu-UC-NR4" eventType="valueChanged" id="URL-fy-mim"/>
-                                </connections>
                             </switch>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="overlayLabel" destination="eBZ-fd-EwS" id="vYU-yQ-tWx"/>
-                        <outlet property="overlaySwitch" destination="okh-jd-Gwg" id="x22-pm-jRh"/>
                         <outlet property="previewView" destination="5nl-kC-zd4" id="daJ-1O-dRb"/>
-                        <outlet property="startButton" destination="SsC-3w-Pk8" id="dEn-f8-82M"/>
                         <segue destination="2X5-4O-xgT" kind="push" identifier="VWWSegueRecordToEdit" id="fRJ-Wv-uc1"/>
                     </connections>
                 </viewController>
