@@ -55,5 +55,46 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeIconFiles</key>
+            <array>
+                <string>apm_64.png</string>
+            </array>
+            <key>CFBundleTypeName</key>
+            <string>VWW APM Logger Structure File</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>public.log</string>
+                <string>com.vaporwarewolf.apmlogger.log</string>
+            </array>
+        </dict>
+    </array>
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.plain-text</string>
+                <string>public.text</string>
+            </array>
+            <key>UTTypeDescription</key>
+            <string>VWW APM Logger Structure File</string>
+            <key>UTTypeIdentifier</key>
+            <string>com.vaporwarewolf.apmlogger.log</string>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <string>log</string>
+                <key>public.mime-type</key>
+                <string>vww/log</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>

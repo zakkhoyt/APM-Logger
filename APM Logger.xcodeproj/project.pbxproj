@@ -15,8 +15,6 @@
 		CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */; };
 		CFDAC65218E1493D00EB609B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */; };
 		CFDAC65518E1493D00EB609B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */; };
-		CFDAC65818E1493D00EB609B /* VWWFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */; };
-		CFDAC65B18E1493D00EB609B /* VWWSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */; };
 		CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65C18E1493D00EB609B /* Images.xcassets */; };
 		CFDAC66418E1493D00EB609B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC66318E1493D00EB609B /* XCTest.framework */; };
 		CFDAC66518E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
@@ -79,10 +77,6 @@
 		CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
 		CFDAC65118E1493D00EB609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CFDAC65418E1493D00EB609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		CFDAC65618E1493D00EB609B /* VWWFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWFirstViewController.h; sourceTree = "<group>"; };
-		CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWFirstViewController.m; sourceTree = "<group>"; };
-		CFDAC65918E1493D00EB609B /* VWWSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWSecondViewController.h; sourceTree = "<group>"; };
-		CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWSecondViewController.m; sourceTree = "<group>"; };
 		CFDAC65C18E1493D00EB609B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APM LoggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC66318E1493D00EB609B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -222,10 +216,6 @@
 				CFDAC6D818E14A3300EB609B /* View */,
 				CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */,
 				CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */,
-				CFDAC65618E1493D00EB609B /* VWWFirstViewController.h */,
-				CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */,
-				CFDAC65918E1493D00EB609B /* VWWSecondViewController.h */,
-				CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */,
 			);
 			path = "APM Logger";
 			sourceTree = "<group>";
@@ -527,7 +517,6 @@
 				CFDAC6BC18E14A2A00EB609B /* VWWDefaultTableViewController.m in Sources */,
 				CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */,
 				CFDAC6B418E14A2A00EB609B /* VWWAddAnimationViewController.m in Sources */,
-				CFDAC65818E1493D00EB609B /* VWWFirstViewController.m in Sources */,
 				CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */,
 				CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */,
 				CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */,
@@ -536,7 +525,6 @@
 				CFDAC6BD18E14A2A00EB609B /* VWWEditVideoTableViewController.m in Sources */,
 				CFDAC6B218E14A2A00EB609B /* NSTimer+Blocks.m in Sources */,
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
-				CFDAC65B18E1493D00EB609B /* VWWSecondViewController.m in Sources */,
 				CFDAC6B718E14A2A00EB609B /* VWWAddSubtitleViewController.m in Sources */,
 				CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */,
 			);
