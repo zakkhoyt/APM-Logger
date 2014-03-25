@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFDAC63F18E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
+		CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64018E1493D00EB609B /* CoreGraphics.framework */; };
+		CFDAC64318E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
+		CFDAC64918E1493D00EB609B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC64718E1493D00EB609B /* InfoPlist.strings */; };
+		CFDAC64B18E1493D00EB609B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC64A18E1493D00EB609B /* main.m */; };
+		CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */; };
+		CFDAC65218E1493D00EB609B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */; };
+		CFDAC65518E1493D00EB609B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */; };
+		CFDAC65818E1493D00EB609B /* VWWFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */; };
+		CFDAC65B18E1493D00EB609B /* VWWSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */; };
+		CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC65C18E1493D00EB609B /* Images.xcassets */; };
+		CFDAC66418E1493D00EB609B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC66318E1493D00EB609B /* XCTest.framework */; };
+		CFDAC66518E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
+		CFDAC66618E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
+		CFDAC66E18E1493D00EB609B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFDAC66C18E1493D00EB609B /* InfoPlist.strings */; };
+		CFDAC67018E1493D00EB609B /* APM_LoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFDAC66718E1493D00EB609B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFDAC63318E1493D00EB609B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFDAC63A18E1493D00EB609B;
+			remoteInfo = "APM Logger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFDAC63B18E1493D00EB609B /* APM Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APM Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDAC63E18E1493D00EB609B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CFDAC64018E1493D00EB609B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CFDAC64218E1493D00EB609B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CFDAC64618E1493D00EB609B /* APM Logger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APM Logger-Info.plist"; sourceTree = "<group>"; };
+		CFDAC64818E1493D00EB609B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFDAC64A18E1493D00EB609B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFDAC64C18E1493D00EB609B /* APM Logger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APM Logger-Prefix.pch"; sourceTree = "<group>"; };
+		CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWAppDelegate.h; sourceTree = "<group>"; };
+		CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
+		CFDAC65118E1493D00EB609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CFDAC65418E1493D00EB609B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CFDAC65618E1493D00EB609B /* VWWFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWFirstViewController.h; sourceTree = "<group>"; };
+		CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWFirstViewController.m; sourceTree = "<group>"; };
+		CFDAC65918E1493D00EB609B /* VWWSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWSecondViewController.h; sourceTree = "<group>"; };
+		CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWSecondViewController.m; sourceTree = "<group>"; };
+		CFDAC65C18E1493D00EB609B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APM LoggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDAC66318E1493D00EB609B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CFDAC66B18E1493D00EB609B /* APM LoggerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APM LoggerTests-Info.plist"; sourceTree = "<group>"; };
+		CFDAC66D18E1493D00EB609B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APM_LoggerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFDAC63818E1493D00EB609B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */,
+				CFDAC64318E1493D00EB609B /* UIKit.framework in Frameworks */,
+				CFDAC63F18E1493D00EB609B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFDAC65F18E1493D00EB609B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC66418E1493D00EB609B /* XCTest.framework in Frameworks */,
+				CFDAC66618E1493D00EB609B /* UIKit.framework in Frameworks */,
+				CFDAC66518E1493D00EB609B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFDAC63218E1493D00EB609B = {
+			isa = PBXGroup;
+			children = (
+				CFDAC64418E1493D00EB609B /* APM Logger */,
+				CFDAC66918E1493D00EB609B /* APM LoggerTests */,
+				CFDAC63D18E1493D00EB609B /* Frameworks */,
+				CFDAC63C18E1493D00EB609B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFDAC63C18E1493D00EB609B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC63B18E1493D00EB609B /* APM Logger.app */,
+				CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFDAC63D18E1493D00EB609B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC63E18E1493D00EB609B /* Foundation.framework */,
+				CFDAC64018E1493D00EB609B /* CoreGraphics.framework */,
+				CFDAC64218E1493D00EB609B /* UIKit.framework */,
+				CFDAC66318E1493D00EB609B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFDAC64418E1493D00EB609B /* APM Logger */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */,
+				CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */,
+				CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */,
+				CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */,
+				CFDAC65618E1493D00EB609B /* VWWFirstViewController.h */,
+				CFDAC65718E1493D00EB609B /* VWWFirstViewController.m */,
+				CFDAC65918E1493D00EB609B /* VWWSecondViewController.h */,
+				CFDAC65A18E1493D00EB609B /* VWWSecondViewController.m */,
+				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
+				CFDAC64518E1493D00EB609B /* Supporting Files */,
+			);
+			path = "APM Logger";
+			sourceTree = "<group>";
+		};
+		CFDAC64518E1493D00EB609B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC64618E1493D00EB609B /* APM Logger-Info.plist */,
+				CFDAC64718E1493D00EB609B /* InfoPlist.strings */,
+				CFDAC64A18E1493D00EB609B /* main.m */,
+				CFDAC64C18E1493D00EB609B /* APM Logger-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFDAC66918E1493D00EB609B /* APM LoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */,
+				CFDAC66A18E1493D00EB609B /* Supporting Files */,
+			);
+			path = "APM LoggerTests";
+			sourceTree = "<group>";
+		};
+		CFDAC66A18E1493D00EB609B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC66B18E1493D00EB609B /* APM LoggerTests-Info.plist */,
+				CFDAC66C18E1493D00EB609B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFDAC63A18E1493D00EB609B /* APM Logger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM Logger" */;
+			buildPhases = (
+				CFDAC63718E1493D00EB609B /* Sources */,
+				CFDAC63818E1493D00EB609B /* Frameworks */,
+				CFDAC63918E1493D00EB609B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APM Logger";
+			productName = "APM Logger";
+			productReference = CFDAC63B18E1493D00EB609B /* APM Logger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFDAC66118E1493D00EB609B /* APM LoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM LoggerTests" */;
+			buildPhases = (
+				CFDAC65E18E1493D00EB609B /* Sources */,
+				CFDAC65F18E1493D00EB609B /* Frameworks */,
+				CFDAC66018E1493D00EB609B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFDAC66818E1493D00EB609B /* PBXTargetDependency */,
+			);
+			name = "APM LoggerTests";
+			productName = "APM LoggerTests";
+			productReference = CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFDAC63318E1493D00EB609B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VWW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Zakk Hoyt";
+				TargetAttributes = {
+					CFDAC66118E1493D00EB609B = {
+						TestTargetID = CFDAC63A18E1493D00EB609B;
+					};
+				};
+			};
+			buildConfigurationList = CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "APM Logger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFDAC63218E1493D00EB609B;
+			productRefGroup = CFDAC63C18E1493D00EB609B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFDAC63A18E1493D00EB609B /* APM Logger */,
+				CFDAC66118E1493D00EB609B /* APM LoggerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFDAC63918E1493D00EB609B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC65518E1493D00EB609B /* Main_iPad.storyboard in Resources */,
+				CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */,
+				CFDAC65218E1493D00EB609B /* Main_iPhone.storyboard in Resources */,
+				CFDAC64918E1493D00EB609B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFDAC66018E1493D00EB609B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC66E18E1493D00EB609B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFDAC63718E1493D00EB609B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
+				CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */,
+				CFDAC65818E1493D00EB609B /* VWWFirstViewController.m in Sources */,
+				CFDAC65B18E1493D00EB609B /* VWWSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFDAC65E18E1493D00EB609B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFDAC67018E1493D00EB609B /* APM_LoggerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFDAC66818E1493D00EB609B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFDAC63A18E1493D00EB609B /* APM Logger */;
+			targetProxy = CFDAC66718E1493D00EB609B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFDAC64718E1493D00EB609B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAC64818E1493D00EB609B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAC65118E1493D00EB609B /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAC65418E1493D00EB609B /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CFDAC66C18E1493D00EB609B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFDAC66D18E1493D00EB609B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFDAC67118E1493D00EB609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFDAC67218E1493D00EB609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFDAC67418E1493D00EB609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CFDAC67518E1493D00EB609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CFDAC67718E1493D00EB609B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/APM Logger.app/APM Logger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "APM LoggerTests/APM LoggerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CFDAC67818E1493D00EB609B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/APM Logger.app/APM Logger";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				INFOPLIST_FILE = "APM LoggerTests/APM LoggerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "APM Logger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFDAC67118E1493D00EB609B /* Debug */,
+				CFDAC67218E1493D00EB609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM Logger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFDAC67418E1493D00EB609B /* Debug */,
+				CFDAC67518E1493D00EB609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM LoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFDAC67718E1493D00EB609B /* Debug */,
+				CFDAC67818E1493D00EB609B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFDAC63318E1493D00EB609B /* Project object */;
+}
