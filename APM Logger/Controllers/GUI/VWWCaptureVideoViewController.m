@@ -1,10 +1,10 @@
 //
-//  VWWCaptureFromVideoViewController.m
-//  ColorBlind2
+//  APM Logger
 //
-//  Created by Zakk Hoyt on 12/2/13.
-//  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
+
 // Some good stuff about augmented reality here: http://cmgresearch.blogspot.com/2010/10/augmented-reality-on-iphone-with-ios40.html
 // A forum post about AVAssetWriter: http://stackoverflow.com/questions/4149963/this-code-to-write-videoaudio-through-avassetwriter-and-avassetwriterinputs-is
 // A forum post about orientation: http://stackoverflow.com/questions/3561738/why-avcapturesession-output-a-wrong-orientation

@@ -108,9 +108,7 @@
 		CFDAC68818E14A2A00EB609B /* VWWAddTiltViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAddTiltViewController.h; sourceTree = "<group>"; };
 		CFDAC68918E14A2A00EB609B /* VWWAddTiltViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAddTiltViewController.m; sourceTree = "<group>"; };
 		CFDAC68A18E14A2A00EB609B /* VWWCaptureVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCaptureVideoViewController.h; sourceTree = "<group>"; };
-		CFDAC68B18E14A2A00EB609B /* VWWCaptureVideoViewController.h.old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCaptureVideoViewController.h.old.h; sourceTree = "<group>"; };
 		CFDAC68C18E14A2A00EB609B /* VWWCaptureVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCaptureVideoViewController.m; sourceTree = "<group>"; };
-		CFDAC68D18E14A2A00EB609B /* VWWCaptureVideoViewController.m.old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCaptureVideoViewController.m.old.m; sourceTree = "<group>"; };
 		CFDAC68E18E14A2A00EB609B /* VWWCommonVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCommonVideoViewController.h; sourceTree = "<group>"; };
 		CFDAC68F18E14A2A00EB609B /* VWWCommonVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCommonVideoViewController.m; sourceTree = "<group>"; };
 		CFDAC69018E14A2A00EB609B /* VWWDefaultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDefaultTableViewController.h; sourceTree = "<group>"; };
@@ -299,9 +297,7 @@
 				CFDAC68818E14A2A00EB609B /* VWWAddTiltViewController.h */,
 				CFDAC68918E14A2A00EB609B /* VWWAddTiltViewController.m */,
 				CFDAC68A18E14A2A00EB609B /* VWWCaptureVideoViewController.h */,
-				CFDAC68B18E14A2A00EB609B /* VWWCaptureVideoViewController.h.old.h */,
 				CFDAC68C18E14A2A00EB609B /* VWWCaptureVideoViewController.m */,
-				CFDAC68D18E14A2A00EB609B /* VWWCaptureVideoViewController.m.old.m */,
 				CFDAC68E18E14A2A00EB609B /* VWWCommonVideoViewController.h */,
 				CFDAC68F18E14A2A00EB609B /* VWWCommonVideoViewController.m */,
 				CFDAC69018E14A2A00EB609B /* VWWDefaultTableViewController.h */,

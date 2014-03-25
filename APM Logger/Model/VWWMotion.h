@@ -1,9 +1,8 @@
 //
-//  SMMotion.h
-//  Smile_iOS
+//  APM Logger
 //
-//  Created by Zakk Hoyt on 1/14/14.
-//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
 
 

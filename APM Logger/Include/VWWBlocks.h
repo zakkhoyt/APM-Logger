@@ -1,10 +1,10 @@
 //
-//  SMBlocks.h
-//  Smile_iOS
+//  APM Logger
 //
-//  Created by Zakk Hoyt on 1/13/14.
-//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
+
 
 #ifndef Smile_iOS_SMBlocks_h
 #define Smile_iOS_SMBlocks_h

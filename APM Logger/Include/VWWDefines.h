@@ -1,10 +1,10 @@
 //
-//  VWWUtilities.h
-//  Synthesizer
+//  APM Logger
 //
-//  Created by Zakk Hoyt on 1/9/14.
-//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
+
 
 #ifndef Heartstream_HeartstreamUtilities_h
 #define Heartstream_HeartstreamUtilities_h

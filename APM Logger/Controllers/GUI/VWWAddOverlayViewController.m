@@ -1,10 +1,10 @@
 //
-//  AddOverlayViewController.m
-//  VideoEditingPart2
+//  APM Logger
 //
-//  Created by Abdul Azeem Khan on 1/24/13.
-//  Copyright (c) 2013 com.datainvent. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
+
 
 #import "VWWAddOverlayViewController.h"
 

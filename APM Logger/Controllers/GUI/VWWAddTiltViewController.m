@@ -1,9 +1,8 @@
 //
-//  AddTiltViewController.m
-//  VideoEditingPart2
+//  APM Logger
 //
-//  Created by Abdul Azeem Khan on 3/19/13.
-//  Copyright (c) 2013 com.datainvent. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
 
 #import "VWWAddTiltViewController.h"

@@ -1,10 +1,12 @@
 //
 //  VWWLogFilesTableViewController.m
+//
 //  APM Logger
 //
-//  Created by Zakk Hoyt on 3/25/14.
-//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
+
 
 #import "VWWLogFilesTableViewController.h"
 #import "VWWFileController.h"

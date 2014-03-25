@@ -1,9 +1,8 @@
 //
-//  AP2DataPlot.m
 //  APM Logger
 //
-//  Created by Zakk Hoyt on 3/24/14.
-//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt 2014
+//  Copyright (c) 2014 Zakk Hoyt.
 //
 //  This file will mimick the class from APM: https://github.com/diydrones/apm_planner/blob/master/src/ui/AP2DataPlotThread.cc
 
