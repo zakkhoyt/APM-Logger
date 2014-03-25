@@ -16,6 +16,18 @@ const float kFeetInAMeter = 3.28084;
 
 @end
 
+@implementation  VWWUtilities (DateFormatter)
+
++(NSString*)stringFromDate:(NSDate*)date{
+    NSString *dateFormatString = @"EEEE MMMM dd, YYYY @HH:mm";
+    NSDateFormatter* dateLocal = [[NSDateFormatter alloc] init];
+    [dateLocal setDateFormat:dateFormatString];
+    NSString* dateString = [dateLocal stringFromDate:date];
+    if(dateString == nil) dateString = @"";
+    return dateString;
+}
+
+@end
 
 @implementation VWWUtilities (Conversion)
 +(float)metersToFeet:(float)meters{

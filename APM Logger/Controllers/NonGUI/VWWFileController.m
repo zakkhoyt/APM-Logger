@@ -9,6 +9,41 @@
 #import "VWWFileController.h"
 
 @implementation VWWFileController
+#pragma mark Public methods
+
++(NSString*)nameOfFileAtURL:(NSURL*)url{
+    return [url lastPathComponent];
+}
++(NSString*)sizeOfFileAtURL:(NSURL*)url{
+    NSError *error;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:url.path error:&error];
+    if(error){
+        VWW_LOG_ERROR(@"Could not read size of file: %@", url.path);
+        return 0;
+    }
+    UInt32 size = (UInt32)[attrs fileSize];
+    return [NSString stringWithFormat:@"%ld", (long)size];
+}
++(NSString*)dateOfFileAtURL:(NSURL*)url{
+    NSError *error;
+    NSDictionary* attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:url.path error:&error];
+    
+    if(error){
+        VWW_LOG_ERROR(@"Could not read date of file: %@ with error: %@", url.path, error.description);
+        return @"";
+    }
+    
+    if (attrs == nil) {
+        VWW_LOG_ERROR(@"Could not read date attributes of file: %@", url.path);
+        return @"";
+    }
+    
+    NSDate *date = (NSDate*)[attrs objectForKey: NSFileCreationDate];
+    return [VWWUtilities stringFromDate:date];
+}
+
+
+#pragma mark Private methods
 +(void)ensureDirectoryExistsAtURL:(NSURL*)url{
     if ([[NSFileManager defaultManager] fileExistsAtPath:url.path] == NO){
         NSError* error;
@@ -157,7 +192,6 @@
     VWW_LOG_TODO;
     return YES;
 }
-
 
 
 @end

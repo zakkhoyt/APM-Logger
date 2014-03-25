@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWFileController : NSObject
++(NSString*)nameOfFileAtURL:(NSURL*)url;
++(NSString*)sizeOfFileAtURL:(NSURL*)url;
++(NSString*)dateOfFileAtURL:(NSURL*)url;
 @end
 
 @interface VWWFileController (Videos)
@@ -28,4 +31,6 @@
 +(NSArray*)urlsForLogs;
 +(BOOL)deleteLogAtURL:(NSURL*)url;
 +(BOOL)deleteAllLogs;
+
++(BOOL)extractFileAttributesFromLogFileAtURL:(NSURL*)url;
 @end

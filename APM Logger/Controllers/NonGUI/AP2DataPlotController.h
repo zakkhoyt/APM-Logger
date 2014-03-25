@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VWWLogFileSummary.h"
 
 @interface AP2DataPlotController : NSObject
 -(id)initWithURL:(NSURL*)url;
+
++(void)extractFileSummaryFromLogFileAtURL:(NSURL*)url completionBlock:(VWWLogFileSummaryBlock)completionBlock;
 @end

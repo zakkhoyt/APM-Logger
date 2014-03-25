@@ -11,6 +11,8 @@
 
 
 @class CLLocation;
+@class VWWLogFileSummary;
+
 typedef void (^VWWArrayBlock)(NSArray *array);
 typedef void (^VWWBoolBlock)(BOOL success);
 typedef void (^VWWCLLocationBlock)(CLLocation *location);
@@ -20,6 +22,7 @@ typedef void (^VWWErrorBlock)(NSError *error);
 typedef void (^VWWErrorStringBlock)(NSError *error, NSString *description);
 typedef void (^VWWJSONBlock)(id json);
 typedef void (^VWWIntegerBlock)(NSInteger index);
+typedef void (^VWWLogFileSummaryBlock)(VWWLogFileSummary *summary);
 typedef void (^VWWMutableArrayBlock)(NSMutableArray *array);
 typedef void (^VWWMutableDictionaryBlock)(NSMutableDictionary *dictionary);
 typedef void (^VWWOrderedSetBlock)(NSOrderedSet *set);

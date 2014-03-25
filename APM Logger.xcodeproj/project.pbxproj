@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C60970A818E1F90C005D8683 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C60970A718E1F90C005D8683 /* libsqlite3.dylib */; };
 		C60970AB18E2009B005D8683 /* VWWLogFilesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C60970AA18E2009B005D8683 /* VWWLogFilesTableViewController.m */; };
+		C61C21BD18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BC18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m */; };
+		C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */; };
 		CFDAC63F18E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
 		CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64018E1493D00EB609B /* CoreGraphics.framework */; };
 		CFDAC64318E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
@@ -71,6 +73,10 @@
 		C60970A718E1F90C005D8683 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C60970A918E2009B005D8683 /* VWWLogFilesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFilesTableViewController.h; sourceTree = "<group>"; };
 		C60970AA18E2009B005D8683 /* VWWLogFilesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFilesTableViewController.m; sourceTree = "<group>"; };
+		C61C21BB18E23CA600C63517 /* VWWLogFileSummaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFileSummaryTableViewController.h; sourceTree = "<group>"; };
+		C61C21BC18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFileSummaryTableViewController.m; sourceTree = "<group>"; };
+		C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFileSummary.h; sourceTree = "<group>"; };
+		C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFileSummary.m; sourceTree = "<group>"; };
 		CFDAC63B18E1493D00EB609B /* APM Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APM Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC63E18E1493D00EB609B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFDAC64018E1493D00EB609B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -304,6 +310,8 @@
 				CFDAC69318E14A2A00EB609B /* VWWEditVideoTableViewController.m */,
 				C60970A918E2009B005D8683 /* VWWLogFilesTableViewController.h */,
 				C60970AA18E2009B005D8683 /* VWWLogFilesTableViewController.m */,
+				C61C21BB18E23CA600C63517 /* VWWLogFileSummaryTableViewController.h */,
+				C61C21BC18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -357,6 +365,8 @@
 				CFDAC6AC18E14A2A00EB609B /* VWWModelProtocol.h */,
 				CFDAC6AD18E14A2A00EB609B /* VWWMotion.h */,
 				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
+				C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */,
+				C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -520,8 +530,10 @@
 				CFDAC6BB18E14A2A00EB609B /* VWWCommonVideoViewController.m in Sources */,
 				CFDAC6EB18E1567300EB609B /* AP2DataPlotController.m in Sources */,
 				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
+				C61C21BD18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m in Sources */,
 				CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */,
 				CFDAC6B618E14A2A00EB609B /* VWWAddOverlayViewController.m in Sources */,
+				C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */,
 				CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */,
 				CFDAC6B818E14A2A00EB609B /* VWWAddTiltViewController.m in Sources */,
 				CFDAC6E218E14D3300EB609B /* VWWVideoViewController.m in Sources */,

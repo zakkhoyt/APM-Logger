@@ -8,6 +8,7 @@
 //  This file will mimick the class from APM: https://github.com/diydrones/apm_planner/blob/master/src/ui/AP2DataPlotThread.cc
 
 #import "AP2DataPlotController.h"
+#import "VWWFileController.h"
 #import <sqlite3.h>
 
 static sqlite3 *database = nil;
@@ -57,6 +58,20 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
         [self createDB];
     }
     return self;
+}
+
+
+
++(void)extractFileSummaryFromLogFileAtURL:(NSURL*)url completionBlock:(VWWLogFileSummaryBlock)completionBlock{
+    VWWLogFileSummary *summary = [[VWWLogFileSummary alloc]init];
+
+    summary.filename = [VWWFileController nameOfFileAtURL:url];
+    summary.size = [VWWFileController sizeOfFileAtURL:url];
+    summary.date = [VWWFileController dateOfFileAtURL:url];
+    
+ 
+    VWW_LOG_TODO_TASK(@"Finish reading summary");
+    completionBlock(summary);
 }
 
 

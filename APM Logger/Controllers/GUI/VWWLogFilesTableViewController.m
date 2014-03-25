@@ -9,7 +9,9 @@
 #import "VWWLogFilesTableViewController.h"
 #import "VWWFileController.h"
 #import "MBProgressHUD.h"
+#import "VWWLogFileSummaryTableViewController.h"
 
+static NSString *VWWSegueLogFIlesToLogFileSummary = @"VWWSegueLogFIlesToLogFileSummary";
 
 @interface VWWLogFilesTableViewController ()
 
@@ -48,6 +50,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueLogFIlesToLogFileSummary]){
+        VWWLogFileSummaryTableViewController *vc = segue.destinationViewController;
+        vc.logFile = sender;
+    }
+}
 #pragma mark Private methods
 - (void)refreshTable:(UIRefreshControl *)refreshControl {
     VWW_LOG_INFO(@"Refreshing logs table");
@@ -79,7 +87,9 @@
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    NSArray *logFiles = [VWWFileController urlsForLogs];
+    NSURL *logFile = logFiles[indexPath.row];
+    [self performSegueWithIdentifier:VWWSegueLogFIlesToLogFileSummary sender:logFile];
 }
 
 // Override to support conditional editing of the table view.

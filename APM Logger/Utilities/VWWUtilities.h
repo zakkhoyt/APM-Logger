@@ -14,6 +14,9 @@
 
 @end
 
+@interface VWWUtilities (DateFormatter)
++(NSString*)stringFromDate:(NSDate*)date;
+@end
 
 @interface VWWUtilities (Conversion)
 +(float)metersToFeet:(float)meters;
