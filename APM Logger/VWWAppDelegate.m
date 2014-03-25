@@ -7,14 +7,16 @@
 //
 
 #import "VWWAppDelegate.h"
-#import "AP2DataPlot.h"
+#import "AP2DataPlotController.h"
+#import "VWWFileController.h"
+
 @implementation VWWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     VWW_LOG_INFO(@"App finished launching with dictionary: %@", launchOptions.description);
-
+    
     return YES;
 }
 							
@@ -47,7 +49,15 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     VWW_LOG_INFO(@"App was launched from %@ with file at URL%@", sourceApplication, url);
-    AP2DataPlot *plot = [[AP2DataPlot alloc]initWithURL:url];
+    
+    if([VWWFileController copyFileAtURLToLogsDir:url] == NO){
+        VWW_LOG_ERROR(@"Failed to copy file to logs dir");
+    } else {
+        VWW_LOG_DEBUG(@"Copied log file to logs dir");
+        AP2DataPlotController *plot = [[AP2DataPlotController alloc]initWithURL:url];
+    }
+    [VWWFileController printURLsForLogs];
+    
     return YES;
 }
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>81B50C17-F16E-4A42-AFA3-B5F9557BA101</string>
+	<key>IDESourceControlProjectName</key>
+	<string>APM Logger</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D1D661F9-03D7-46E3-97A6-650F8D81D2DD</key>
+		<string>ssh://github.com/zakkhoyt/APM-Logger.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>APM Logger.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D1D661F9-03D7-46E3-97A6-650F8D81D2DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zakkhoyt/APM-Logger.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D1D661F9-03D7-46E3-97A6-650F8D81D2DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D1D661F9-03D7-46E3-97A6-650F8D81D2DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>APM-Logger</string>
+		</dict>
+	</array>
+</dict>
+</plist>

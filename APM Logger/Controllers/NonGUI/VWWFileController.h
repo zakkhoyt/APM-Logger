@@ -9,10 +9,23 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWFileController : NSObject
+@end
+
+@interface VWWFileController (Videos)
 +(NSURL*)urlForDocumentsDirectory;
 +(NSString*)pathForDocumentsDirectory;
 +(void)printURLsForVideos;
 +(NSArray*)urlsForVideos;
 +(BOOL)deleteVideoAtURL:(NSURL*)url;
 +(BOOL)deleteAllVideos;
+@end
+
+@interface VWWFileController (Logs)
++(NSURL*)urlForLogsDirectory;
++(NSString*)pathForLogsDirectory;
++(BOOL)copyFileAtURLToLogsDir:(NSURL*)url;
++(void)printURLsForLogs;
++(NSArray*)urlsForLogs;
++(BOOL)deleteLogAtURL:(NSURL*)url;
++(BOOL)deleteAllLogs;
 @end

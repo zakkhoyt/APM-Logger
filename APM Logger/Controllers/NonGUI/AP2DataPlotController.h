@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AP2DataPlot : NSObject
+@interface AP2DataPlotController : NSObject
 -(id)initWithURL:(NSURL*)url;
 @end
