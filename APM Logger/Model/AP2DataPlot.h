@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AP2DataSet : NSObject
-//-(id)initWithURL:(NSURL*)url;
-
+@interface AP2DataPlot : NSObject
 -(void)configureWithURL:(NSURL*)url completionBlock:(VWWBoolBlock)completionBlock;
-
+@property (nonatomic, strong, readonly) NSString *databasePath;
 @end

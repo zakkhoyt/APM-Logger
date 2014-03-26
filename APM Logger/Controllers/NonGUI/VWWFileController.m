@@ -41,6 +41,28 @@
     return [VWWUtilities stringFromDate:date];
 }
 
++(NSURL*)urlForDocumentsDirectory{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSURL *url = [NSURL fileURLWithPath:documentsDirectory];
+    return url;
+}
+
++(NSString*)pathForDocumentsDirectory{
+    NSURL *url = [VWWFileController urlForDocumentsDirectory];
+    return url.path;
+}
+
+
++(BOOL)copyLogFileFromBundleToLogsDir{
+    NSArray *logFilePaths = [NSBundle pathsForResourcesOfType:@"log" inDirectory:[[NSBundle mainBundle] bundlePath]];
+    for(NSString *logFilePath in logFilePaths){
+        NSURL *logFileURL = [NSURL fileURLWithPath:logFilePath];
+        [VWWFileController copyFileAtURLToLogsDir:logFileURL];
+    }
+    return YES;
+}
+
 
 #pragma mark Private methods
 +(void)ensureDirectoryExistsAtURL:(NSURL*)url{
@@ -53,20 +75,19 @@
         }
     }
 }
+
+
 @end
 
 @implementation VWWFileController (Videos)
-+(NSURL*)urlForDocumentsDirectory{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSURL *url = [NSURL fileURLWithPath:documentsDirectory];
-    return url;
++(NSURL*)urlForVideosDirectory{
+    NSURL *documentsDir = [VWWFileController urlForDocumentsDirectory];
+    NSURL *videosDir = [documentsDir URLByAppendingPathComponent:@"videos"];
+    [VWWFileController ensureDirectoryExistsAtURL:videosDir];
+    return videosDir;
 }
 
-+(NSString*)pathForDocumentsDirectory{
-    NSURL *url = [VWWFileController urlForDocumentsDirectory];
-    return url.path;
-}
+
 
 +(void)printURLsForVideos{
     VWW_LOG_INFO(@"Video files:\n");
@@ -116,24 +137,31 @@
 
 
 +(NSURL*)urlForLogsDirectory{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *logsPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"logs"];
-    NSURL *url = [NSURL fileURLWithPath:logsPath];
-    [VWWFileController ensureDirectoryExistsAtURL:url];
-    return url;
+    NSURL *documentsDir = [VWWFileController urlForDocumentsDirectory];
+    NSURL *logsDir = [documentsDir URLByAppendingPathComponent:@"logs"];
+    [VWWFileController ensureDirectoryExistsAtURL:logsDir];
+    return logsDir;
 }
 
 +(NSString*)pathForLogsDirectory{
     NSURL *url = [VWWFileController urlForLogsDirectory];
     return url.path;
 }
-
 +(BOOL)copyFileAtURLToLogsDir:(NSURL*)url{
     NSError *error;
     if([[NSFileManager defaultManager] isReadableFileAtPath:url.path]){
         NSURL *logsDirURL = [VWWFileController urlForLogsDirectory];
-////        NSString *logPath = [logsDirURL.path stringByAppendingPathComponent:url.lastPathComponent];
         NSURL *logURL = [logsDirURL URLByAppendingPathComponent:url.lastPathComponent];
+
+//// I don't think this is necessary
+//        // If file already exists, remove it
+//        if([[NSFileManager defaultManager] fileExistsAtPath:logURL.pathExtension]){
+//            [[NSFileManager defaultManager] removeItemAtURL:logURL error:&error];
+//            if(error){
+//                VWW_LOG_ERROR(@"Failed to remove file at path: %@ with error: %@. Continuing...", url.path, error.description);
+//            }
+//        }
+        
         [[NSFileManager defaultManager] copyItemAtURL:url toURL:logURL error:&error];
         if(error){
             VWW_LOG_ERROR(@"Failed to copy file at path: %@ to %@ with error: %@", url.path, logsDirURL.path, error.description);

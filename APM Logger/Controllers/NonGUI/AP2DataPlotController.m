@@ -8,7 +8,7 @@
 
 #import "AP2DataPlotController.h"
 #import "VWWFileController.h"
-#import "AP2DataSet.h"
+#import "AP2DataPlot.h"
 
 
 
@@ -38,7 +38,7 @@
 }
 
 +(void)extractDataPlotFromLogFileAtURL:(NSURL*)url completionBlock:(VWWA2PDataSetBlock)extractBlock{
-    AP2DataSet *dataSet = [[AP2DataSet alloc]init];
+    AP2DataPlot *dataSet = [[AP2DataPlot alloc]init];
     [dataSet configureWithURL:url completionBlock:^(BOOL success){
         extractBlock(dataSet);
     }];

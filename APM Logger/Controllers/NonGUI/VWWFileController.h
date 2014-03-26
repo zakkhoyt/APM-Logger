@@ -12,11 +12,13 @@
 +(NSString*)nameOfFileAtURL:(NSURL*)url;
 +(NSString*)sizeOfFileAtURL:(NSURL*)url;
 +(NSString*)dateOfFileAtURL:(NSURL*)url;
++(NSURL*)urlForDocumentsDirectory;
++(NSString*)pathForDocumentsDirectory;
++(BOOL)copyLogFileFromBundleToLogsDir;
 @end
 
 @interface VWWFileController (Videos)
-+(NSURL*)urlForDocumentsDirectory;
-+(NSString*)pathForDocumentsDirectory;
++(NSURL*)urlForVideosDirectory;
 +(void)printURLsForVideos;
 +(NSArray*)urlsForVideos;
 +(BOOL)deleteVideoAtURL:(NSURL*)url;
@@ -31,6 +33,4 @@
 +(NSArray*)urlsForLogs;
 +(BOOL)deleteLogAtURL:(NSURL*)url;
 +(BOOL)deleteAllLogs;
-
-+(BOOL)extractFileAttributesFromLogFileAtURL:(NSURL*)url;
 @end

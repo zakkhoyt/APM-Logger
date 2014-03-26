@@ -88,9 +88,8 @@ static NSString *VWWSegueRecordToEdit = @"VWWSegueRecordToEdit";
     referenceOrientation = (AVCaptureVideoOrientation)UIDeviceOrientationPortrait;
     
     // The temporary path for the video before saving it to the photo album
-    NSString *myPathDocs =  [[VWWFileController pathForDocumentsDirectory] stringByAppendingPathComponent:
-                             [NSString stringWithFormat:@"RosyVideo-%d.mov",arc4random() % 1000]];
-    movieURL = [NSURL fileURLWithPath:myPathDocs];
+//    NSURL *videoURL =  [[VWWFileController urlForVideosDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"RosyVideo-%d.mov",arc4random() % 1000]];
+//    movieURL = [NSURL fileURLWithPath:myPathDocs];
 
     
     [self setupAndStartCaptureSession];

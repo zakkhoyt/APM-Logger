@@ -15,8 +15,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    VWW_LOG_INFO(@"App finished launching with dictionary: %@", launchOptions.description);
     
+#if defined(DEBUG)
+    VWW_LOG_INFO(@"App finished launching with dictionary: %@", launchOptions.description);
+    VWW_LOG_INFO(@"URL for logs dir: %@", [VWWFileController urlForLogsDirectory]);
+    VWW_LOG_INFO(@"URL for videos dir: %@", [VWWFileController urlForVideosDirectory]);
+
+    // Copy a few log files in the logs directory so we have a few to work with
+    [VWWFileController copyLogFileFromBundleToLogsDir];
+#endif
     return YES;
 }
 							
@@ -48,15 +55,17 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    VWW_LOG_INFO(@"App was launched from %@ with file at URL%@", sourceApplication, url);
+    VWW_LOG_DEBUG(@"App was launched from %@ with file at URL%@", sourceApplication, url);
     
     if([VWWFileController copyFileAtURLToLogsDir:url] == NO){
         VWW_LOG_ERROR(@"Failed to copy file to logs dir");
     } else {
         VWW_LOG_DEBUG(@"Copied log file to logs dir");
-        VWW_LOG_TODO;
+        VWW_LOG_TODO_TASK(@"Launch appropriate view controller. NSNotification");
     }
+#if defined(DEBUG)
     [VWWFileController printURLsForLogs];
+#endif
     
     return YES;
 }

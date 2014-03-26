@@ -64,7 +64,7 @@
 
 - (IBAction)graphButtonTouchUpInside:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataSet *dataSet) {
+    [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
