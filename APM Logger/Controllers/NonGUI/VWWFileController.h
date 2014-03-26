@@ -15,6 +15,8 @@
 +(NSURL*)urlForDocumentsDirectory;
 +(NSString*)pathForDocumentsDirectory;
 +(BOOL)copyLogFileFromBundleToLogsDir;
++(BOOL)deleteFileAtURL:(NSURL*)url;
++(BOOL)fileExistsAtURL:(NSURL*)url;
 @end
 
 @interface VWWFileController (Videos)

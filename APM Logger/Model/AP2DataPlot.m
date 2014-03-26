@@ -71,35 +71,81 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
 
     self.databasePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:databaseName]];
-    BOOL isSuccess = YES;
-    VWW_LOG_TODO_TASK(@"Check if database already exists and delete it");
+    
+
+
+    // Check if db already exists. if so delete it
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath:self.databasePath ] == NO)
-    {
-        const char *dbpath = [self.databasePath UTF8String];
-        if (sqlite3_open(dbpath, &database) == SQLITE_OK)
-        {
-//            char *errMsg;
-//            const char *sql_stmt = "create table if not exists testTable (regno integer primary key, name text, department text, year text)";
-//            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
-//                isSuccess = NO;
-//                VWW_LOG_INFO(@"Failed to create table");
-//            }
-//            sqlite3_close(database);
-            VWW_LOG_INFO(@"Created DB at path: %@", self.databasePath);
-            return  isSuccess;
-        }
-        else {
-            isSuccess = NO;
-            VWW_LOG_INFO(@"Failed to open/create database");
-        }
-    } else {
-        VWW_LOG_DEBUG(@"Database already exists");
-        isSuccess = NO;
+    if ([filemgr fileExistsAtPath:self.databasePath ] == YES){
+        [filemgr removeItemAtPath:self.databasePath error:nil];
     }
+    
+    BOOL isSuccess = YES;
+    const char *dbpath = [self.databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
+    {
+        //            char *errMsg;
+        //            const char *sql_stmt = "create table if not exists testTable (regno integer primary key, name text, department text, year text)";
+        //            if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
+        //                isSuccess = NO;
+        //                VWW_LOG_INFO(@"Failed to create table");
+        //            }
+        //            sqlite3_close(database);
+        VWW_LOG_INFO(@"Created DB at path: %@", self.databasePath);
+    }
+    else {
+        isSuccess = NO;
+        VWW_LOG_INFO(@"Failed to open/create database");
+    }
+    
     return isSuccess;
 }
 
+
+
+// This is a sql sample from another project:
+//- (void)done {
+//    dispatch_async(self.dbQueue, ^{
+//        sqlite3 *db = 0;
+//        sqlite3_open([self.dbPath UTF8String], &db);
+//        
+//        sqlite3_exec(db, "BEGIN TRANSACTION", NULL, NULL, NULL);
+//        
+//        sqlite3_stmt *stmt;
+//        
+//        if (self.albumName) {
+//            sqlite3_prepare_v2(db, "INSERT OR IGNORE INTO albums (url, name, priority, enable_uploading, private) VALUES (?, ?, ?, ?, ?)", -1, &stmt, NULL);
+//            bind_string(stmt, 1, self.albumURL);
+//            bind_string(stmt, 2, self.albumName);
+//            sqlite3_bind_int(stmt, 3, self.priority);
+//            sqlite3_bind_int(stmt, 4, self.enable);
+//            sqlite3_bind_int(stmt, 5, self.private);
+//            assert_run_query(stmt);
+//            
+//            sqlite3_prepare_v2(db, "DELETE FROM album_assets WHERE album_id = (SELECT id from albums WHERE url = ?)", -1, &stmt, NULL);
+//            bind_string(stmt, 1, self.albumURL);
+//            assert_run_query(stmt);
+//        }
+//        
+//        for (NSUInteger i = 0; i < [self.assetURLs count]; ++i) {
+//            sqlite3_prepare_v2(db, "INSERT OR IGNORE INTO assets (url, date) VALUES (?, ?)", -1, &stmt, NULL);
+//            bind_string(stmt, 1, self.assetURLs[i]);
+//            sqlite3_bind_double(stmt, 2, [self.assetDates[i] doubleValue]);
+//            assert_run_query(stmt);
+//            
+//            sqlite3_prepare_v2(db, "INSERT INTO album_assets (album_id, asset_id) VALUES ((SELECT id FROM albums WHERE url = ?), (SELECT id FROM assets WHERE url = ?))", -1, &stmt, NULL);
+//            bind_string(stmt, 1, self.albumURL);
+//            bind_string(stmt, 2, self.assetURLs[i]);
+//            assert_run_query(stmt);
+//        }
+//        
+//        sqlite3_exec(db, "COMMIT TRANSACTION", NULL, NULL, NULL);
+//        sqlite3_close(db);
+//        
+//        [self.assetURLs removeAllObjects];
+//        [self.assetDates removeAllObjects];
+//    });
+//}
 
 -(void)populateDatabaseFromLogFileAtURL:(NSURL*)url{
     
@@ -136,9 +182,12 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 
     errMsg = "";
     const char *createTableStatement = [createTableString cStringUsingEncoding:NSUTF8StringEncoding];
-    if (sqlite3_exec(database, createTableStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
-        VWW_LOG_INFO(@"Failed to create table");
-    }
+    sqlite3_stmt *stmt;
+    sqlite3_prepare_v2(database, createTableStatement, -1, &stmt, NULL);
+    assert_run_query(stmt);
+//    if (sqlite3_exec(database, createTableStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
+//        VWW_LOG_INFO(@"Failed to create table");
+//    }
     
 //    QSqlQuery fmtinsertquery;
     NSMutableString *insertString = [[NSMutableString alloc]initWithString:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (?,?,?,?,?);"];
@@ -149,9 +198,12 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //    }
     errMsg = "";
     const char *insertIntoFMTStatement = [insertString cStringUsingEncoding:NSUTF8StringEncoding];
-    if (sqlite3_exec(database, insertIntoFMTStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
-        VWW_LOG_INFO(@"Failed to insert into FMT");
-    }
+    sqlite3_prepare_v2(database, insertIntoFMTStatement, -1, &stmt, NULL);
+    assert_run_query(stmt);
+    
+//    if (sqlite3_exec(database, insertIntoFMTStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
+//        VWW_LOG_INFO(@"Failed to insert into FMT");
+//    }
     
     
 //    QMap<QString,QSqlQuery*> nameToInsertQuery;
@@ -311,19 +363,10 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                        QSqlQuery mktablequery(*m_db);
 //                        mktablequery.prepare(mktable);
                         
+                        const char *insertString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, insertString, -1, &stmt, NULL);
+                        assert_run_query(stmt);
                         
-                        VWW_LOG_TODO_TASK(@"execute table query");
-                        
-                        VWW_LOG_DEBUG(@"final: %@", final);
-                        
-                        char *errMsg;
-                        //const char *sql_stmt = "create table if not exists testTable (regno integer primary key, name text, department text, year text)";
-                        const char *sql_stmt = [final cStringUsingEncoding:NSUTF8StringEncoding];
-                        if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
-                            VWW_LOG_INFO(@"Failed to create table");
-                        }
-//                        sqlite3_close(database);
-
 //                        if (!mktablequery.exec())
 //                        {
 //                            emit error("Error creating table for: " + type + " : " + m_db->lastError().text());

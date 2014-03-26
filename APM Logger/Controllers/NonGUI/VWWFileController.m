@@ -62,7 +62,22 @@
     }
     return YES;
 }
++(BOOL)deleteFileAtURL:(NSURL*)url{
+    NSError *error;
+    if([[NSFileManager defaultManager] removeItemAtURL:url error:&error] == NO){
+        return NO;
+    }
+    if(error){
+        VWW_LOG_WARNING(@"Could not delete file: %@", url.path);
+        return NO;
+    }
+    return YES;
+}
 
+
++(BOOL)fileExistsAtURL:(NSURL*)url{
+    return [[NSFileManager defaultManager] fileExistsAtPath:url.path];
+}
 
 #pragma mark Private methods
 +(void)ensureDirectoryExistsAtURL:(NSURL*)url{
