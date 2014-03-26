@@ -10,7 +10,8 @@
 #import "VWWLogFileSummary.h"
 
 @interface AP2DataPlotController : NSObject
--(id)initWithURL:(NSURL*)url;
+
 
 +(void)extractFileSummaryFromLogFileAtURL:(NSURL*)url completionBlock:(VWWLogFileSummaryBlock)completionBlock;
++(void)extractDataPlotFromLogFileAtURL:(NSURL*)url completionBlock:(VWWA2PDataSetBlock)completionBlock;
 @end

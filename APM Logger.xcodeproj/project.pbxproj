@@ -57,6 +57,7 @@
 		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
 		CFDAC6EB18E1567300EB609B /* AP2DataPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */; };
+		CFE20DAA18E2613200D07DA4 /* AP2DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2DataSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoPreviewView.m; sourceTree = "<group>"; };
 		CFDAC6E918E1567300EB609B /* AP2DataPlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataPlotController.h; sourceTree = "<group>"; };
 		CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlotController.m; sourceTree = "<group>"; };
+		CFE20DA818E2613200D07DA4 /* AP2DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataSet.h; sourceTree = "<group>"; };
+		CFE20DA918E2613200D07DA4 /* AP2DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,12 +223,11 @@
 				CFDAC69F18E14A2A00EB609B /* Documents */,
 				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
 				CFDAC6A718E14A2A00EB609B /* Include */,
-				CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */,
-				CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */,
 				CFDAC6AB18E14A2A00EB609B /* Model */,
 				CFDAC6AF18E14A2A00EB609B /* Shaders */,
 				CFDAC64518E1493D00EB609B /* Supporting Files */,
 				CFDAC6CD18E14A3300EB609B /* ThirdParty */,
+				CFE20DAB18E2619900D07DA4 /* UserInterface */,
 				CFDAC6D118E14A3300EB609B /* Utilities */,
 				CFDAC6D818E14A3300EB609B /* View */,
 			);
@@ -363,6 +365,8 @@
 				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
 				C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */,
 				C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */,
+				CFE20DA818E2613200D07DA4 /* AP2DataSet.h */,
+				CFE20DA918E2613200D07DA4 /* AP2DataSet.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,6 +417,15 @@
 				CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CFE20DAB18E2619900D07DA4 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				CFDAC65318E1493D00EB609B /* Main_iPad.storyboard */,
+				CFDAC65018E1493D00EB609B /* Main_iPhone.storyboard */,
+			);
+			name = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +547,7 @@
 				CFDAC6B818E14A2A00EB609B /* VWWAddTiltViewController.m in Sources */,
 				CFDAC6E218E14D3300EB609B /* VWWVideoViewController.m in Sources */,
 				CFDAC6B518E14A2A00EB609B /* VWWAddBorderViewController.m in Sources */,
+				CFE20DAA18E2613200D07DA4 /* AP2DataSet.m in Sources */,
 				CFDAC6B918E14A2A00EB609B /* VWWCaptureVideoViewController.m in Sources */,
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,

@@ -54,7 +54,7 @@
         VWW_LOG_ERROR(@"Failed to copy file to logs dir");
     } else {
         VWW_LOG_DEBUG(@"Copied log file to logs dir");
-        AP2DataPlotController *plot = [[AP2DataPlotController alloc]initWithURL:url];
+        VWW_LOG_TODO;
     }
     [VWWFileController printURLsForLogs];
     

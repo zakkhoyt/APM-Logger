@@ -58,7 +58,6 @@
         <!--Log File Summary Table View Controller - Summary-->
         <scene sceneID="zat-Il-Kab">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cG2-gZ-eaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="t8q-wd-rmR" customClass="VWWLogFileSummaryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LHp-lU-S5H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -250,7 +249,6 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="graphButtonTouchUpInside:" destination="t8q-wd-rmR" eventType="touchUpInside" id="fVW-EK-s8J"/>
-                                                        <action selector="viewGraphButtonTouchUpInside:" destination="t8q-wd-rmR" eventType="touchUpInside" id="gEf-sW-TLY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -295,6 +293,7 @@
                         <outlet property="versionLabel" destination="Y34-i1-9GU" id="byu-w8-kMH"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cG2-gZ-eaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="991"/>
         </scene>

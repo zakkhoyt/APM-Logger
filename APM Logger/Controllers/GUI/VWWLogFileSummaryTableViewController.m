@@ -8,7 +8,7 @@
 
 #import "VWWLogFileSummaryTableViewController.h"
 #import "AP2DataPlotController.h"
-
+#import "MBProgressHUD.h"
 
 @interface VWWLogFileSummaryTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *filenameLabel;
@@ -63,6 +63,10 @@
 #pragma mark IBActions
 
 - (IBAction)graphButtonTouchUpInside:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataSet *dataSet) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }];
 }
 - (IBAction)googleEarthButtonTouchUpInside:(id)sender {
 }
