@@ -152,16 +152,6 @@
     if([[NSFileManager defaultManager] isReadableFileAtPath:url.path]){
         NSURL *logsDirURL = [VWWFileController urlForLogsDirectory];
         NSURL *logURL = [logsDirURL URLByAppendingPathComponent:url.lastPathComponent];
-
-//// I don't think this is necessary
-//        // If file already exists, remove it
-//        if([[NSFileManager defaultManager] fileExistsAtPath:logURL.pathExtension]){
-//            [[NSFileManager defaultManager] removeItemAtURL:logURL error:&error];
-//            if(error){
-//                VWW_LOG_ERROR(@"Failed to remove file at path: %@ with error: %@. Continuing...", url.path, error.description);
-//            }
-//        }
-        
         [[NSFileManager defaultManager] copyItemAtURL:url toURL:logURL error:&error];
         if(error){
             VWW_LOG_ERROR(@"Failed to copy file at path: %@ to %@ with error: %@", url.path, logsDirURL.path, error.description);
@@ -189,7 +179,6 @@
     }
 }
 
-// file:///var/mobile/Applications/FD5AEE23-DDB5-401E-A616-83DA8C9F2778/Documents/FinalVideo-431.mov
 +(NSArray*)urlsForLogs{
     NSURL *logsDirURL = [VWWFileController urlForLogsDirectory];
     NSError *error;

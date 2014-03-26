@@ -17,11 +17,64 @@
                     <connections>
                         <segue destination="Sen-gu-QPg" kind="relationship" relationship="viewControllers" id="hnc-ns-03N"/>
                         <segue destination="EAd-HH-yvb" kind="relationship" relationship="viewControllers" id="qo4-OR-njW"/>
+                        <segue destination="yFU-E8-o22" kind="relationship" relationship="viewControllers" id="KDi-HU-iNW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="418"/>
+            <point key="canvasLocation" x="-1377" y="1026"/>
+        </scene>
+        <!--About View Controller - About-->
+        <scene sceneID="XAS-Aa-aAw">
+            <objects>
+                <viewController id="yFU-E8-o22" customClass="VWWAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jVc-Xc-exI"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Co-3f-J3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8eC-E9-bDu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlQ-PT-LkC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">This app can display data graph log files which are generated with APM Planner or Mission Planner. Conversely, it can generate these files by mimmicking some feature of the APM or Pixhawk flight controllers. Data is acquired using the GPS, compass, accelerometers, gyroscopes, magnetometers, camera, and microphone. 
+
+Log files can be converted to a Google Earth file and viewed in Google Earth on iOS. 
+
+To import a log file to this app, email it to an account on your phone (or use Dropbox, Google Drive, etc...) then perform a long press on the attachment. Then select "Open with APM Logger". The file will be copied into this app and will be listed in the log files screen. Tap on the log file that you wish to view. 
+
+This app an also record flight video/audio while rendering statistics on the video. The logs can be exported and viewed in APM Planner. Videos can be shared or exported to the Camera Roll. 
+
+Source code is available. Please submit bug requests here.
+https://github.com/zakkhoyt/APM-Logger
+
+Written by Zakk Hoyt. Email me at:
+vaporwarewolf@gmail.com
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tlQ-PT-LkC" secondAttribute="trailing" id="K1f-zF-Ih9"/>
+                            <constraint firstItem="tlQ-PT-LkC" firstAttribute="top" secondItem="8eC-E9-bDu" secondAttribute="top" id="Zzs-x8-doJ"/>
+                            <constraint firstItem="tlQ-PT-LkC" firstAttribute="leading" secondItem="8eC-E9-bDu" secondAttribute="leading" id="aQ1-CH-nAJ"/>
+                            <constraint firstAttribute="bottom" secondItem="tlQ-PT-LkC" secondAttribute="bottom" id="axh-oL-uQ8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" id="IH1-gD-Wo4"/>
+                    <connections>
+                        <outlet property="aboutTextView" destination="tlQ-PT-LkC" id="gwo-Qb-pBN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaM-D2-vWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333" y="2058"/>
         </scene>
         <!--Log Files Table View Controller - Log files-->
         <scene sceneID="xqd-Ms-hnp">
@@ -646,7 +699,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkL-Am-vsW">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Record Video + Data">
+                                                    <state key="normal" title="Log Data + Record a Video">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -666,7 +719,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-Xz-bsx">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Record Data">
+                                                    <state key="normal" title="Log Data">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>

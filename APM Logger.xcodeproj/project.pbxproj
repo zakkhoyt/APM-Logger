@@ -58,6 +58,7 @@
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
 		CFDAC6EB18E1567300EB609B /* AP2DataPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */; };
 		CFE20DAA18E2613200D07DA4 /* AP2DataPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */; };
+		CFE20DAE18E282C400D07DA4 /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DAD18E282C400D07DA4 /* VWWAboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlotController.m; sourceTree = "<group>"; };
 		CFE20DA818E2613200D07DA4 /* AP2DataPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataPlot.h; sourceTree = "<group>"; };
 		CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlot.m; sourceTree = "<group>"; };
+		CFE20DAC18E282C400D07DA4 /* VWWAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAboutViewController.h; sourceTree = "<group>"; };
+		CFE20DAD18E282C400D07DA4 /* VWWAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				C60970AA18E2009B005D8683 /* VWWLogFilesTableViewController.m */,
 				C61C21BB18E23CA600C63517 /* VWWLogFileSummaryTableViewController.h */,
 				C61C21BC18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m */,
+				CFE20DAC18E282C400D07DA4 /* VWWAboutViewController.h */,
+				CFE20DAD18E282C400D07DA4 /* VWWAboutViewController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
 				CFDAC6BC18E14A2A00EB609B /* VWWDefaultTableViewController.m in Sources */,
 				CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */,
+				CFE20DAE18E282C400D07DA4 /* VWWAboutViewController.m in Sources */,
 				CFDAC6B418E14A2A00EB609B /* VWWAddAnimationViewController.m in Sources */,
 				CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */,
 				CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */,
