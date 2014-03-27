@@ -12,6 +12,11 @@
 
 static sqlite3 *database = nil;
 static void assert_run_query(sqlite3_stmt *stmt) {
+    if(stmt == NULL){
+        VWW_LOG_ERROR(@"stmt == NULL");
+        return;
+    }
+    
     int res = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
     (void)res;
@@ -97,6 +102,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 
 
 -(void)populateDatabaseFromLogFileAtURL:(NSURL*)url{
+    VWW_LOG_TODO_TASK(@"This needs to run on it's own queue");
     NSUInteger errorcount = 0;
 
     if([VWWFileController fileExistsAtURL:url] == NO){
