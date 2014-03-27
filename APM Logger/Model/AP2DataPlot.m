@@ -21,6 +21,13 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     sqlite3_bind_text(stmt, col, [string UTF8String], -1, SQLITE_TRANSIENT);
 }
 
+static void bind_strings(sqlite3_stmt *stmt, int col, NSString *strings) {
+    NSArray *stringsArray = [strings componentsSeparatedByString:@","];
+    for(NSString *string in stringsArray){
+        sqlite3_bind_text(stmt, col++, [string UTF8String], -1, SQLITE_TRANSIENT);
+    }
+}
+
 @interface AP2DataPlot ()
 @property (nonatomic, strong, readwrite) NSString *databasePath;
 @property (nonatomic, strong) NSURL *logFileURL;
@@ -151,6 +158,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
 
 //    int errorcount = 0;
+    NSUInteger errorcount = 0;
 //    m_stop = false;
 //    emit startLoad();
 //    qint64 msecs = QDateTime::currentMSecsSinceEpoch();
@@ -189,7 +197,8 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //    if (sqlite3_exec(database, createTableStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
 //        VWW_LOG_INFO(@"Failed to create table");
 //    }
-    
+
+
 //    QSqlQuery fmtinsertquery;
     NSMutableString *insertString = [[NSMutableString alloc]initWithString:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (?,?,?,?,?);"];
     VWW_LOG_INFO(@"SQL: %@", insertString);
@@ -198,6 +207,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //        emit error("Error preparing FMT insert statement: " + fmtinsertquery.lastError().text());
 //        return;
 //    }
+    /*
     errMsg = "";
     const char *insertIntoFMTStatement = [insertString cStringUsingEncoding:NSUTF8StringEncoding];
     sqlite3_prepare_v2(database, insertIntoFMTStatement, -1, &stmt, NULL);
@@ -206,7 +216,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //    if (sqlite3_exec(database, insertIntoFMTStatement, NULL, NULL, &errMsg) != SQLITE_OK) {
 //        VWW_LOG_INFO(@"Failed to insert into FMT");
 //    }
-    
+  */
     
 //    QMap<QString,QSqlQuery*> nameToInsertQuery;
     NSMutableDictionary *nameToInsertQuery = [@{}mutableCopy];
@@ -219,6 +229,8 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //        return;
 //    }
 //    bool firstactual = true;
+    BOOL firstactual = YES;
+    
     NSError *error;
     NSString *logFileContents = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     NSArray *lines = [logFileContents componentsSeparatedByString:@"\n"];
@@ -373,8 +385,8 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                            return;
 //                        }
                         
-                        const char *insertString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, insertString, -1, &stmt, NULL);
+                        const char *mkTableString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, mkTableString, -1, &stmt, NULL);
                         assert_run_query(stmt);
                         
 //                        QSqlQuery *query = new QSqlQuery(*m_db);
@@ -392,15 +404,16 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                        fmtinsertquery.exec();
 //                        nameToInsertQuery[type] = query;
                         
-                        const char *finalString = [final cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, finalString, -1, &stmt, NULL);
-                        sqlite3_bind_int(stmt, 0, index);
-                        sqlite3_bind_int(stmt, 1, 0);
-                        bind_string(stmt, 2, type);
-                        bind_string(stmt, 3, descstr);
-                        bind_string(stmt, 4, valuestr);
+                        const char *insertFMTString = [insertString cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, insertFMTString, -1, &stmt, NULL);
+                        sqlite3_bind_int(stmt, 1, index);
+                        sqlite3_bind_int(stmt, 2, 0);
+                        bind_string(stmt, 3, type);
+                        bind_string(stmt, 4, descstr);
+                        bind_string(stmt, 5, valuestr);
+                        //bind_strings(stmt, 4, valuestr);
                         assert_run_query(stmt);
-                        // nameToInsertQuery[type] = query;
+                        nameToInsertQuery[type] = final;
                         
                         
                         
@@ -419,13 +432,19 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
         }
 //            else
 //            {
+            else {
 //                if (linesplit.size() > 1)
 //                {
+                if(linesplit.count > 1)
+                {
 //                    QString name = linesplit[0].trimmed();
+                    NSString *name = [linesplit[0] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 //                    if (nameToInsertQuery.contains(name))
 //                    {
+                    if(nameToInsertQuery[name] != nil){
 //                        if (firstactual)
 //                        {
+                        if(firstactual == YES){
 //                            if (!m_db->commit())
 //                            {
 //                                emit error("Unable to commit database transaction 2");
@@ -437,66 +456,127 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                                return;
 //                            }
 //                            firstactual = false;
+                            firstactual = NO;
 //                        }
+                    }
 //                        QString typestr = nameToTypeString[name];
+                        NSString *typestr = nameToTypeString[name];
+                        
 //                        nameToInsertQuery[name]->bindValue(0,index);
+                        NSString *insert = nameToInsertQuery[name];
+                        const char *insertSting = [insert cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, insertSting, -1, &stmt, NULL);
+                        sqlite3_bind_int(stmt, 1, index);
+                        
+
+
 //                        if (typestr.size() != linesplit.size() - 1)
 //                        {
 //                            QLOG_DEBUG() << "Bound values for" << name << "count:" << nameToInsertQuery[name]->boundValues().values().size() << "actual" << linesplit.size() << typestr.size();
 //                            QLOG_DEBUG() << "Error in line:" << index << "param" << name << "parameter mismatch";
 //                            errorcount++;
 //                        }
+                        if(typestr.length != linesplit.count - 1){
+                            VWW_LOG_DEBUG(@"Bound values for %@ count is not correct", name);
+                            errorcount++;
+                        }
 //                        else
 //                        {
+                        else {
 //                            for (int i=1;i<linesplit.size();i++)
 //                            {
+                            for(int i = 1; i < linesplit.count; i++){
 //                                if (typestr.at(i-1).toAscii() == 'I')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt());
 //                                }
+                                if([typestr characterAtIndex:i-1] == 'I')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'f')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toFloat());
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'f')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).floatValue);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'h')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt());
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'h')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'c')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt() * 100);
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'c')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'C')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt() * 100);
 //                                }
+                                
+                                else if([typestr characterAtIndex:i-1] == 'C')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'e')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt() * 100);
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'e')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'E')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toInt() * 100);
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'E')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue + 100);
+                                }
 //                                else if (typestr.at(i-1).toAscii() == 'L')
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,(qlonglong)linesplit[i].toLong());
 //                                }
+                                else if([typestr characterAtIndex:i-1] == 'L')
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).longLongValue);
+                                }
 //                                else
 //                                {
 //                                    nameToInsertQuery[name]->bindValue(i,linesplit[i].toFloat());
 //                                }
+                                
+                                else
+                                {
+                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                }
 //                            }
+                            }
 //                            if (!nameToInsertQuery[name]->exec())
 //                            {
 //                                emit error("Error execing:" + nameToInsertQuery[name]->executedQuery() + " error was " + nameToInsertQuery[name]->lastError().text());
 //                                return;
 //                            }
+                            assert_run_query(stmt);
 //                        }
+                        }
 //                    }
+                    }
 //                }
-//                
+                }
+//
 //            }
+            }
 //        }
         }
     }

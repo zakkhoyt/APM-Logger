@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417638406.578344"
+            timestampString = "417645547.218244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,27 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643000.863711"
+            timestampString = "417644185.93525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
-            landmarkName = "-populateDatabaseFromLogFileAtURL:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417638630.94546"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-createDB"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417638630.94546"
+            timestampString = "417644185.93525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "-createDB"
             landmarkType = "5">
          </BreakpointContent>
@@ -132,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643000.863711"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -148,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417638664.322761"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -164,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643000.863711"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643000.863711"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643101.204989"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643106.059376"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,43 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643106.869784"
+            timestampString = "417648278.113213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
-            landmarkName = "-populateDatabaseFromLogFileAtURL:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643143.618513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
-            landmarkName = "-populateDatabaseFromLogFileAtURL:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "417643564.614168"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "377"
-            endingLineNumber = "377"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
             landmarkName = "-populateDatabaseFromLogFileAtURL:"
             landmarkType = "5">
          </BreakpointContent>
