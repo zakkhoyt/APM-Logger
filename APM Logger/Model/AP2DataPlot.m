@@ -67,7 +67,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
     // Build the path to the database file
     NSString *databaseName = [VWWFileController nameOfFileAtURL:self.logFileURL];
-    databaseName = [databaseName stringByReplacingOccurrencesOfString:@".log" withString:@".db"];
+    databaseName = [databaseName stringByReplacingOccurrencesOfString:@".log" withString:@".sqlite"];
     
 
     self.databasePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:databaseName]];
@@ -173,6 +173,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
 //    QSqlQuery fmttablecreate(*m_db);
     NSMutableString *createTableString = [[NSMutableString alloc]initWithString:@"CREATE TABLE 'FMT' (typeID integer PRIMARY KEY,length integer,name varchar(200),format varchar(6000),val varchar(6000));"];
+    VWW_LOG_INFO(@"SQL: %@", createTableString);
 //    fmttablecreate.prepare("CREATE TABLE 'FMT' (typeID integer PRIMARY KEY,length integer,name varchar(200),format varchar(6000),val varchar(6000));");
 //    if (!fmttablecreate.exec())
 //    {
@@ -191,6 +192,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
 //    QSqlQuery fmtinsertquery;
     NSMutableString *insertString = [[NSMutableString alloc]initWithString:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (?,?,?,?,?);"];
+    VWW_LOG_INFO(@"SQL: %@", insertString);
 //    if (!fmtinsertquery.prepare("INSERT INTO 'FMT' (typeID,length,name,format,val) values (?,?,?,?,?);"))
 //    {
 //        emit error("Error preparing FMT insert statement: " + fmtinsertquery.lastError().text());
@@ -261,7 +263,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
                     NSString *type = [linesplit[3] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 //                    if (type != "FMT")
 //                    {
-                    if([type isEqualToString:@"FMT"]){
+                    if([type isEqualToString:@"FMT"] == NO){
 //                        QString descstr = linesplit[4].trimmed();
                         NSString *descstr = [linesplit[4] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 //                        nameToTypeString[type] = descstr;
@@ -291,6 +293,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                            valuestr += name + ",";
                             [valuestr appendFormat:@"%@,", name];
 //                            qDebug() << name << type;
+                            
                             VWW_LOG_DEBUG(@"%@ %@", name, type);
 //                            if (type == 'I') //uint32_t
 //                            {
@@ -349,6 +352,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                            //fieldnames.append(linesplit[i].trimmed());
 //                        }
                         }
+                        
 //                        inserttable.append(")");
 //                        insertvalues.append(")");
 //                        valuestr = valuestr.mid(0,valuestr.length()-1);
@@ -358,20 +362,21 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
                         [insertvalues appendFormat:@")"];
                         valuestr = [[valuestr substringWithRange:NSMakeRange(0, valuestr.length - 1)]mutableCopy];
                         NSString *final = [NSString stringWithFormat:@"%@ values %@;", inserttable, insertvalues];
-                        [mktable appendFormat:@"};"];
+                        VWW_LOG_INFO(@"SQL: %@", final);
+                        [mktable appendFormat:@");"];
 
 //                        QSqlQuery mktablequery(*m_db);
 //                        mktablequery.prepare(mktable);
-                        
-                        const char *insertString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, insertString, -1, &stmt, NULL);
-                        assert_run_query(stmt);
-                        
 //                        if (!mktablequery.exec())
 //                        {
 //                            emit error("Error creating table for: " + type + " : " + m_db->lastError().text());
 //                            return;
 //                        }
+                        
+                        const char *insertString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, insertString, -1, &stmt, NULL);
+                        assert_run_query(stmt);
+                        
 //                        QSqlQuery *query = new QSqlQuery(*m_db);
 //                        if (!query->prepare(final))
 //                        {
@@ -386,6 +391,19 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                        fmtinsertquery.bindValue(4,valuestr);
 //                        fmtinsertquery.exec();
 //                        nameToInsertQuery[type] = query;
+                        
+                        const char *finalString = [final cStringUsingEncoding:NSUTF8StringEncoding];
+                        sqlite3_prepare_v2(database, finalString, -1, &stmt, NULL);
+                        sqlite3_bind_int(stmt, 0, index);
+                        sqlite3_bind_int(stmt, 1, 0);
+                        bind_string(stmt, 2, type);
+                        bind_string(stmt, 3, descstr);
+                        bind_string(stmt, 4, valuestr);
+                        assert_run_query(stmt);
+                        // nameToInsertQuery[type] = query;
+                        
+                        
+                        
 //                    }
                     }
 //                }
@@ -393,6 +411,9 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                {
 //                    QLOG_ERROR() << "Error with line in plot log file:" << line;
 //                }
+                    else {
+                        VWW_LOG_ERROR(@"Error with line in plot log file: %@", line);
+                    }
                 }
 //            }
         }
