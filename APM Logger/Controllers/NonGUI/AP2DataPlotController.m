@@ -14,7 +14,6 @@
 
 @interface AP2DataPlotController ()
 
-
 @end
 
 @implementation AP2DataPlotController
@@ -32,7 +31,16 @@
     summary.size = [VWWFileController sizeOfFileAtURL:url];
     summary.date = [VWWFileController dateOfFileAtURL:url];
     
- 
+    
+    NSError *error;
+    // Open file and split by lines
+    NSString *logFileContents = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    NSArray *lines = [logFileContents componentsSeparatedByString:@"\n"];
+    if(lines.count >= 1) summary.version = lines[0];
+    if(lines.count >= 3) summary.firmware = lines[2];
+    if(lines.count >= 4) summary.freeRAM = lines[3];
+    if(lines.count >= 5) summary.software = lines[4];
+        
     VWW_LOG_TODO_TASK(@"Finish reading summary");
     completionBlock(summary);
 }

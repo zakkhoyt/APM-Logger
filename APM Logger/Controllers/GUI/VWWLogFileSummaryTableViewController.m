@@ -10,6 +10,9 @@
 #import "AP2DataPlotController.h"
 #import "MBProgressHUD.h"
 
+static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
+
+
 @interface VWWLogFileSummaryTableViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *filenameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
@@ -57,6 +60,10 @@
         weakSelf.filenameLabel.text = summary.filename;
         weakSelf.sizeLabel.text = summary.size;
         weakSelf.dateLabel.text = summary.date;
+        weakSelf.versionLabel.text = summary.version;
+        weakSelf.firmwareLabel.text = summary.firmware;
+        weakSelf.freeRAMLabel.text = summary.freeRAM;
+        weakSelf.softwareLabel.text = summary.software;
     }];
 }
 

@@ -230,24 +230,33 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
                             errorcount++;
                         }  else {
                             for(int i = 1; i < linesplit.count; i++){
+//                                I int
+//                                f float
+//                                h float
+//                                L int
+//                                e float
+//                                c float
+//                                else float
+
                                 if([typestr characterAtIndex:i-1] == 'I') {
                                     sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
                                 } else if([typestr characterAtIndex:i-1] == 'f') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).floatValue);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
                                 } else if([typestr characterAtIndex:i-1] == 'h') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
                                 } else if([typestr characterAtIndex:i-1] == 'c') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                    float c = ((NSString*)linesplit[i]).floatValue * 100;
+                                    sqlite3_bind_double(stmt, i+1, c);
                                 } else if([typestr characterAtIndex:i-1] == 'C') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue * 100);
                                 } else if([typestr characterAtIndex:i-1] == 'e') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue * 100);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue * 100);
                                 } else if([typestr characterAtIndex:i-1] == 'E') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue + 100);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue + 100);
                                 } else if([typestr characterAtIndex:i-1] == 'L') {
                                     sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).longLongValue);
                                 } else {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
                                 }
                             }
                             assert_run_query(stmt);
