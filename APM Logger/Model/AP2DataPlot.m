@@ -46,7 +46,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     NSString *contents = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     if(error){
         VWW_LOG_ERROR(@"Could not read file from URL");
-        completionBlock(nil);
+        completionBlock(NO);
     }
     
     NSArray *array = [contents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];

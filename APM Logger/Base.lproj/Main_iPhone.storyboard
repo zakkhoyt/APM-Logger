@@ -359,7 +359,7 @@ vaporwarewolf@gmail.com
                         <viewControllerLayoutGuide type="top" id="ctN-8P-UDu"/>
                         <viewControllerLayoutGuide type="bottom" id="RKL-hb-JwT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wwU-XG-AEO">
+                    <view key="view" contentMode="scaleToFill" id="wwU-XG-AEO" customClass="CPTGraphHostingView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

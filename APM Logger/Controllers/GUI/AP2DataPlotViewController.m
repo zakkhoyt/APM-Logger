@@ -7,17 +7,13 @@
 //
 
 #import "AP2DataPlotViewController.h"
-
 #import "CorePlot-CocoaTouch.h"
+#import "AP2DataPlot.h"
 
 @interface AP2DataPlotViewController () <CPTPlotDataSource, CPTAxisDelegate>{
     CPTXYGraph *graph;
-    
     NSMutableArray *dataForPlot;
 }
-
-
-
 @end
 
 @implementation AP2DataPlotViewController

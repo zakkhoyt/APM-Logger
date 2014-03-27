@@ -9,6 +9,7 @@
 #import "VWWLogFileSummaryTableViewController.h"
 #import "AP2DataPlotController.h"
 #import "MBProgressHUD.h"
+#import "AP2DataPlotViewController.h"
 
 static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
 
@@ -52,6 +53,12 @@ static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueLogFileSummaryToPlot]){
+        AP2DataPlotViewController *vc = segue.destinationViewController;
+        vc.dataPlot = sender;
+    }
+}
 
 #pragma mark Private methods
 -(void)updateControls{
@@ -71,8 +78,10 @@ static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
 
 - (IBAction)graphButtonTouchUpInside:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak VWWLogFileSummaryTableViewController *weakSelf = self;
     [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [weakSelf performSegueWithIdentifier:VWWSegueLogFileSummaryToPlot sender:dataSet];
     }];
 }
 - (IBAction)googleEarthButtonTouchUpInside:(id)sender {
