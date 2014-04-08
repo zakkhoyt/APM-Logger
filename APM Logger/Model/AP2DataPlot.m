@@ -9,7 +9,7 @@
 #import "AP2DataPlot.h"
 #import <sqlite3.h>
 #import "VWWFileController.h"
-
+#import "FMDB.h"
 static sqlite3 *database = nil;
 static void assert_run_query(sqlite3_stmt *stmt) {
     if(stmt == NULL){
@@ -31,6 +31,7 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 @interface AP2DataPlot ()
 @property (nonatomic, strong, readwrite) NSString *databasePath;
 @property (nonatomic, strong) NSURL *logFileURL;
+@property FMDatabase *db;
 @end
 
 @implementation AP2DataPlot
@@ -65,6 +66,44 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     completionBlock(YES);
 }
 
+- (void)populateDatabase:(FMDatabase *)db
+{
+    [db executeUpdate:@"create table test (a text, b text, c integer, d double, e double)"];
+    
+    [db beginTransaction];
+    int i = 0;
+    while (i++ < 20) {
+        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+         @"hi'", // look!  I put in a ', and I'm not escaping it!
+         [NSString stringWithFormat:@"number %d", i],
+         [NSNumber numberWithInt:i],
+         [NSDate date],
+         [NSNumber numberWithFloat:2.2f]];
+    }
+    [db commit];
+    
+    // do it again, just because
+    [db beginTransaction];
+    i = 0;
+    while (i++ < 20) {
+        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+         @"hi again'", // look!  I put in a ', and I'm not escaping it!
+         [NSString stringWithFormat:@"number %d", i],
+         [NSNumber numberWithInt:i],
+         [NSDate date],
+         [NSNumber numberWithFloat:2.2f]];
+    }
+    [db commit];
+    
+    [db executeUpdate:@"create table t3 (a somevalue)"];
+    
+    [db beginTransaction];
+    for (int i=0; i < 20; i++) {
+        [db executeUpdate:@"insert into t3 (a) values (?)", [NSNumber numberWithInt:i]];
+    }
+    [db commit];
+}
+
 #pragma mark Private methods
 -(BOOL)createDB{
     
@@ -80,23 +119,47 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     self.databasePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:databaseName]];
     
 
+    
+    // Delete the old database
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:self.databasePath error:NULL];
+    
+//    if ([[self class] respondsToSelector:@selector(populateDatabase:)]) {
+//        [fileManager copyItemAtPath:populatedDatabasePath toPath:self.databasePath error:NULL];
+//    }
 
-    // Check if db already exists. if so delete it
-    NSFileManager *filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath:self.databasePath ] == YES){
-        [filemgr removeItemAtPath:self.databasePath error:nil];
+    
+    self.db = [FMDatabase databaseWithPath:self.databasePath];
+
+    
+//    XCTAssertTrue([self.db open], @"Wasn't able to open database");
+    if([self.db open] == NO){
+        VWW_LOG_ERROR(@"Wan't able to open database");
     }
     
-    BOOL isSuccess = YES;
-    const char *dbpath = [self.databasePath UTF8String];
-    if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-        VWW_LOG_INFO(@"Created DB at path: %@", self.databasePath);
-    } else {
-        isSuccess = NO;
-        VWW_LOG_INFO(@"Failed to open/create database");
-    }
+    [self populateDatabase:self.db];
+    [self.db setShouldCacheStatements:YES];
     
-    return isSuccess;
+    [self.db close];
+    
+    return YES;
+    
+//    // Check if db already exists. if so delete it
+//    NSFileManager *filemgr = [NSFileManager defaultManager];
+//    if ([filemgr fileExistsAtPath:self.databasePath ] == YES){
+//        [filemgr removeItemAtPath:self.databasePath error:nil];
+//    }
+//    
+//    BOOL isSuccess = YES;
+//    const char *dbpath = [self.databasePath UTF8String];
+//    if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
+//        VWW_LOG_INFO(@"Created DB at path: %@", self.databasePath);
+//    } else {
+//        isSuccess = NO;
+//        VWW_LOG_INFO(@"Failed to open/create database");
+//    }
+//    
+//    return isSuccess;
 }
 
 
