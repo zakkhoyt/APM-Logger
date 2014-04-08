@@ -7,25 +7,9 @@
 //
 
 #import "AP2DataPlot.h"
-#import <sqlite3.h>
+
 #import "VWWFileController.h"
 #import "FMDB.h"
-static sqlite3 *database = nil;
-static void assert_run_query(sqlite3_stmt *stmt) {
-    if(stmt == NULL){
-        VWW_LOG_ERROR(@"stmt == NULL");
-        return;
-    }
-    
-    int res = sqlite3_step(stmt);
-    sqlite3_finalize(stmt);
-    (void)res;
-    assert(res == SQLITE_DONE || res == SQLITE_BUSY);
-}
-
-static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
-    sqlite3_bind_text(stmt, col, [string UTF8String], -1, SQLITE_TRANSIENT);
-}
 
 
 @interface AP2DataPlot ()
@@ -65,44 +49,44 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     
     completionBlock(YES);
 }
-
-- (void)populateDatabase:(FMDatabase *)db
-{
-    [db executeUpdate:@"create table test (a text, b text, c integer, d double, e double)"];
-    
-    [db beginTransaction];
-    int i = 0;
-    while (i++ < 20) {
-        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
-         @"hi'", // look!  I put in a ', and I'm not escaping it!
-         [NSString stringWithFormat:@"number %d", i],
-         [NSNumber numberWithInt:i],
-         [NSDate date],
-         [NSNumber numberWithFloat:2.2f]];
-    }
-    [db commit];
-    
-    // do it again, just because
-    [db beginTransaction];
-    i = 0;
-    while (i++ < 20) {
-        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
-         @"hi again'", // look!  I put in a ', and I'm not escaping it!
-         [NSString stringWithFormat:@"number %d", i],
-         [NSNumber numberWithInt:i],
-         [NSDate date],
-         [NSNumber numberWithFloat:2.2f]];
-    }
-    [db commit];
-    
-    [db executeUpdate:@"create table t3 (a somevalue)"];
-    
-    [db beginTransaction];
-    for (int i=0; i < 20; i++) {
-        [db executeUpdate:@"insert into t3 (a) values (?)", [NSNumber numberWithInt:i]];
-    }
-    [db commit];
-}
+//
+//- (void)populateDatabase:(FMDatabase *)db
+//{
+//    [db executeUpdate:@"create table test (a text, b text, c integer, d double, e double)"];
+//    
+//    [db beginTransaction];
+//    int i = 0;
+//    while (i++ < 20) {
+//        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+//         @"hi'", // look!  I put in a ', and I'm not escaping it!
+//         [NSString stringWithFormat:@"number %d", i],
+//         [NSNumber numberWithInt:i],
+//         [NSDate date],
+//         [NSNumber numberWithFloat:2.2f]];
+//    }
+//    [db commit];
+//    
+//    // do it again, just because
+//    [db beginTransaction];
+//    i = 0;
+//    while (i++ < 20) {
+//        [db executeUpdate:@"insert into test (a, b, c, d, e) values (?, ?, ?, ?, ?)" ,
+//         @"hi again'", // look!  I put in a ', and I'm not escaping it!
+//         [NSString stringWithFormat:@"number %d", i],
+//         [NSNumber numberWithInt:i],
+//         [NSDate date],
+//         [NSNumber numberWithFloat:2.2f]];
+//    }
+//    [db commit];
+//    
+//    [db executeUpdate:@"create table t3 (a somevalue)"];
+//    
+//    [db beginTransaction];
+//    for (int i=0; i < 20; i++) {
+//        [db executeUpdate:@"insert into t3 (a) values (?)", [NSNumber numberWithInt:i]];
+//    }
+//    [db commit];
+//}
 
 #pragma mark Private methods
 -(BOOL)createDB{
@@ -123,43 +107,12 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     // Delete the old database
     NSFileManager *fileManager = [NSFileManager defaultManager];
     [fileManager removeItemAtPath:self.databasePath error:NULL];
-    
-//    if ([[self class] respondsToSelector:@selector(populateDatabase:)]) {
-//        [fileManager copyItemAtPath:populatedDatabasePath toPath:self.databasePath error:NULL];
-//    }
-
-    
     self.db = [FMDatabase databaseWithPath:self.databasePath];
-
-    
-//    XCTAssertTrue([self.db open], @"Wasn't able to open database");
     if([self.db open] == NO){
         VWW_LOG_ERROR(@"Wan't able to open database");
+        return YES;
     }
-    
-    [self populateDatabase:self.db];
-    [self.db setShouldCacheStatements:YES];
-    
-    [self.db close];
-    
     return YES;
-    
-//    // Check if db already exists. if so delete it
-//    NSFileManager *filemgr = [NSFileManager defaultManager];
-//    if ([filemgr fileExistsAtPath:self.databasePath ] == YES){
-//        [filemgr removeItemAtPath:self.databasePath error:nil];
-//    }
-//    
-//    BOOL isSuccess = YES;
-//    const char *dbpath = [self.databasePath UTF8String];
-//    if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-//        VWW_LOG_INFO(@"Created DB at path: %@", self.databasePath);
-//    } else {
-//        isSuccess = NO;
-//        VWW_LOG_INFO(@"Failed to open/create database");
-//    }
-//    
-//    return isSuccess;
 }
 
 
@@ -174,19 +127,11 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
     }
 
     int index = 0;
-    char *errMsg;
+
+    [self.db beginTransaction];
+    [self.db executeUpdate:@"CREATE TABLE 'FMT' (typeID integer PRIMARY KEY,length integer,name varchar(200),format varchar(6000),val varchar(6000));"];
+    [self.db commit];
     
-
-    // Create FMT table
-    NSMutableString *createTableString = [[NSMutableString alloc]initWithString:@"CREATE TABLE 'FMT' (typeID integer PRIMARY KEY,length integer,name varchar(200),format varchar(6000),val varchar(6000));"];
-    VWW_LOG_INFO(@"SQL: %@", createTableString);
-    errMsg = "";
-    const char *createTableStatement = [createTableString cStringUsingEncoding:NSUTF8StringEncoding];
-    sqlite3_stmt *stmt;
-    sqlite3_prepare_v2(database, createTableStatement, -1, &stmt, NULL);
-    assert_run_query(stmt);
-
-
     // Base sql for inserting into FMT table
     NSMutableString *insertString = [[NSMutableString alloc]initWithString:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (?,?,?,?,?);"];
     VWW_LOG_INFO(@"SQL: %@", insertString);
@@ -260,18 +205,22 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
                         VWW_LOG_INFO(@"SQL: %@", final);
                         [mktable appendFormat:@");"];
 
-                        const char *mkTableString = [mktable cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, mkTableString, -1, &stmt, NULL);
-                        assert_run_query(stmt);
+                        [self.db beginTransaction];
+                        if([self.db executeUpdate:mktable] == NO){
+                            NSError *error = [self.db lastError];
+                            VWW_LOG_ERROR(@"Could not exectue update: %@", error.description);
+                        }
+                        [self.db commit];
                         
-                        const char *insertFMTString = [insertString cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, insertFMTString, -1, &stmt, NULL);
-                        sqlite3_bind_int(stmt, 1, index);
-                        sqlite3_bind_int(stmt, 2, 0);
-                        bind_string(stmt, 3, type);
-                        bind_string(stmt, 4, descstr);
-                        bind_string(stmt, 5, valuestr);
-                        assert_run_query(stmt);
+                        [self.db beginTransaction];
+                        NSArray *args = @[@(index), @(0), type, descstr, valuestr];
+                        if([self.db executeUpdate:insertString withArgumentsInArray:args] == NO){
+                            NSError *error = [self.db lastError];
+                            VWW_LOG_ERROR(@"Could not exectue update: %@", error.description);
+                        }
+                        [self.db commit];
+                        
+                        
                         nameToInsertQuery[type] = final;
                     } else {
                         VWW_LOG_ERROR(@"Error with line in plot log file: %@", line);
@@ -290,9 +239,9 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
                         NSString *typestr = nameToTypeString[name];
 
                         NSString *insert = nameToInsertQuery[name];
-                        const char *insertSting = [insert cStringUsingEncoding:NSUTF8StringEncoding];
-                        sqlite3_prepare_v2(database, insertSting, -1, &stmt, NULL);
-                        sqlite3_bind_int(stmt, 1, index);
+                        NSMutableArray *args = [@[@(index)]mutableCopy];
+
+
                         
                         if(typestr.length != linesplit.count - 1){
                             VWW_LOG_DEBUG(@"Bound values for %@ count is not correct", name);
@@ -308,27 +257,33 @@ static void bind_string(sqlite3_stmt *stmt, int col, NSString *string) {
 //                                else float
 
                                 if([typestr characterAtIndex:i-1] == 'I') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).integerValue);
+                                    [args addObject:@((int)((NSString*)linesplit[i]).integerValue)];
                                 } else if([typestr characterAtIndex:i-1] == 'f') {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
                                 } else if([typestr characterAtIndex:i-1] == 'h') {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
                                 } else if([typestr characterAtIndex:i-1] == 'c') {
                                     float c = ((NSString*)linesplit[i]).floatValue * 100;
-                                    sqlite3_bind_double(stmt, i+1, c);
+                                    [args addObject:@(c)];
                                 } else if([typestr characterAtIndex:i-1] == 'C') {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue * 100);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue * 100)];
                                 } else if([typestr characterAtIndex:i-1] == 'e') {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue * 100);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue * 100)];
                                 } else if([typestr characterAtIndex:i-1] == 'E') {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue + 100);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue + 100)];
                                 } else if([typestr characterAtIndex:i-1] == 'L') {
-                                    sqlite3_bind_int(stmt, i+1, (int)((NSString*)linesplit[i]).longLongValue);
+                                    [args addObject:@((int)((NSString*)linesplit[i]).longLongValue)];
                                 } else {
-                                    sqlite3_bind_double(stmt, i+1, ((NSString*)linesplit[i]).doubleValue);
+                                    [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
                                 }
                             }
-                            assert_run_query(stmt);
+                            
+                            [self.db beginTransaction];
+                            if([self.db executeUpdate:insert withArgumentsInArray:args] == NO){
+                                NSError *error = [self.db lastError];
+                                VWW_LOG_ERROR(@"Could not exectue update: %@", error.description);
+                            }
+                            [self.db commit];
                         }
                     }
                 }
