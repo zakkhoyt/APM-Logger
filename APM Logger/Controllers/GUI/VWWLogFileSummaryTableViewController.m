@@ -80,8 +80,9 @@ static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak VWWLogFileSummaryTableViewController *weakSelf = self;
     [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
+        
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [weakSelf performSegueWithIdentifier:VWWSegueLogFileSummaryToPlot sender:dataSet];
+//        [weakSelf performSegueWithIdentifier:VWWSegueLogFileSummaryToPlot sender:dataSet];
     }];
 }
 - (IBAction)googleEarthButtonTouchUpInside:(id)sender {

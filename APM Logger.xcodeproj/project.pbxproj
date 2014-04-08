@@ -19,6 +19,7 @@
 		CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037918F3797F004F54EA /* FMDatabasePool.m */; };
 		CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037B18F3797F004F54EA /* FMDatabaseQueue.m */; };
 		CFAD038318F3797F004F54EA /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037E18F3797F004F54EA /* FMResultSet.m */; };
+		CFAD038518F387F6004F54EA /* create_schema.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFAD038418F387F6004F54EA /* create_schema.txt */; };
 		CFDAC63F18E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
 		CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64018E1493D00EB609B /* CoreGraphics.framework */; };
 		CFDAC64318E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
@@ -101,6 +102,7 @@
 		CFAD037C18F3797F004F54EA /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		CFAD037D18F3797F004F54EA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CFAD037E18F3797F004F54EA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		CFAD038418F387F6004F54EA /* create_schema.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = create_schema.txt; sourceTree = "<group>"; };
 		CFDAC63B18E1493D00EB609B /* APM Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APM Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC63E18E1493D00EB609B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFDAC64018E1493D00EB609B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -385,6 +387,7 @@
 		CFDAC69F18E14A2A00EB609B /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				CFAD038418F387F6004F54EA /* create_schema.txt */,
 				C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */,
 				CFDAC6A018E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz */,
 				CFDAC6A118E14A2A00EB609B /* 2014-03-07 19-23-15_13.log */,
@@ -554,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAD038518F387F6004F54EA /* create_schema.txt in Resources */,
 				CFDAC6C718E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz in Resources */,
 				CFDAC65518E1493D00EB609B /* Main_iPad.storyboard in Resources */,
 				CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */,

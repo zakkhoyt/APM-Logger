@@ -48,7 +48,10 @@
 +(void)extractDataPlotFromLogFileAtURL:(NSURL*)url completionBlock:(VWWA2PDataSetBlock)extractBlock{
     AP2DataPlot *dataSet = [[AP2DataPlot alloc]init];
     [dataSet configureWithURL:url completionBlock:^(BOOL success){
-        extractBlock(dataSet);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            extractBlock(dataSet);
+        });
+        
     }];
     
 }
