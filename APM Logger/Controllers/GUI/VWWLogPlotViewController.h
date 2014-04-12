@@ -1,5 +1,5 @@
 //
-//  VWWAboutViewController.h
+//  VWWLogPlotViewController.h
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
@@ -8,6 +8,6 @@
 
 #import "VWWViewController.h"
 
-@interface VWWAboutViewController : VWWViewController
+@interface VWWLogPlotViewController : VWWViewController
 
 @end

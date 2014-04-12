@@ -1,33 +1,13 @@
 //
+//  VWWVideoViewController.h
 //  APM Logger
 //
-//  Created by Zakk Hoyt 2014
-//  Copyright (c) 2014 Zakk Hoyt.
+//  Created by Zakk Hoyt on 4/12/14.
+//  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <AVFoundation/AVFoundation.h>
-#import "VWWVideoPreviewView.h"
-#import "VWWVideoProcessor.h"
+#import "VWWViewController.h"
 
-@interface VWWVideoViewController : UIViewController 
-{
-    VWWVideoProcessor *videoProcessor;
-    
-//	UIView *previewView;
-    VWWVideoPreviewView *oglView;
-//    UIBarButtonItem *recordButton;
-	UILabel *frameRateLabel;
-	UILabel *dimensionsLabel;
-	UILabel *typeLabel;
-    
-    NSTimer *timer;
-    
-	BOOL shouldShowStats;
-	
-	UIBackgroundTaskIdentifier backgroundRecordingID;
-}
-
-
-- (IBAction)toggleRecording:(id)sender;
+@interface VWWVideoViewController : VWWViewController
 
 @end

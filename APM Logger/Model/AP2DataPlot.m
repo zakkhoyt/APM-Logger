@@ -64,10 +64,6 @@
                 completionBlock(NO);
             }
         }];
-        
-
-        
-        
     });
 }
 //

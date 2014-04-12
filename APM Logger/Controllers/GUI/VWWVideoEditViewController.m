@@ -1,18 +1,18 @@
 //
-//  VWWAboutViewController.m
+//  VWWVideoEditViewController.m
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWAboutViewController.h"
+#import "VWWVideoEditViewController.h"
 
-@interface VWWAboutViewController ()
+@interface VWWVideoEditViewController ()
 
 @end
 
-@implementation VWWAboutViewController
+@implementation VWWVideoEditViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

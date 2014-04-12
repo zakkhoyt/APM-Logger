@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Model/AP2DataPlot.m"
-            timestampString = "418616550.795679"
+            timestampString = "419037737.98369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374">
+            startingLineNumber = "370"
+            endingLineNumber = "370">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,27 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APM Logger/Controllers/GUI/AP2DataPlotViewController.m"
-            timestampString = "418984349.576299"
+            timestampString = "418985988.590308"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APM Logger/Controllers/GUI/AP2DataPlotViewController.m"
-            timestampString = "418984351.533485"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

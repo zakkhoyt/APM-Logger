@@ -1,13 +1,13 @@
 //
-//  VWWAboutViewController.h
+//  VWWViewController.h
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface VWWAboutViewController : VWWViewController
+@interface VWWViewController : UIViewController
 
 @end

@@ -1,18 +1,18 @@
 //
-//  VWWAboutViewController.m
+//  VWWLogPlotViewController.m
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWAboutViewController.h"
+#import "VWWLogPlotViewController.h"
 
-@interface VWWAboutViewController ()
+@interface VWWLogPlotViewController ()
 
 @end
 
-@implementation VWWAboutViewController
+@implementation VWWLogPlotViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
