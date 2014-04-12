@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWViewController.h"
+#import "VWWMasterViewController.h"
 
-@interface VWWDashboardViewController : VWWViewController
+@interface VWWDashboardViewController : VWWMasterViewController
 
 @end

@@ -9,6 +9,18 @@
 #import "VWWDashboardViewController.h"
 #import "VWWDashboardCollectionViewCell.h"
 
+// View Controllers
+#import "VWWLogsViewController.h"
+#import "VWWTuningsViewController.h"
+#import "VWWVideosViewController.h"
+#import "VWWResourcesViewController.h"
+#import "VWWAboutViewController.h"
+
+
+
+typedef enum{
+  VWWDashboardSectionMain = 0,
+} VWWDashboardSection;
 
 typedef enum {
     VWWDashboardItemLogs = 0,
@@ -20,7 +32,11 @@ typedef enum {
 
 @interface VWWDashboardViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (nonatomic, strong) VWWLogsViewController *logsViewController;
+@property (nonatomic, strong) VWWTuningsViewController *tuningsViewController;
+@property (nonatomic, strong) VWWVideosViewController *videosViewController;
+@property (nonatomic, strong) VWWResourcesViewController *resourcesViewController;
+@property (nonatomic, strong) VWWAboutViewController *aboutViewController;
 @end
 
 @implementation VWWDashboardViewController
@@ -30,15 +46,22 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.collectionView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
+    self.collectionView.alwaysBounceVertical = YES;
+    
+    
+    self.logsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWLogsViewController"];
+    self.logsViewController.masterViewControllerDelegate = self;
+    [self changeDetailView:self.logsViewController animated:NO];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
-    self.collectionView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
-    self.collectionView.alwaysBounceVertical = YES;
+
 }
 - (void)didReceiveMemoryWarning
 {
@@ -58,10 +81,15 @@ typedef enum {
 */
 
 
+#pragma mark Private methods
+//-(void)changeDetailView:(VWWViewController*)vc{
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
+
 #pragma mark UICollectionViewDatasource
 
 - (NSInteger)collectionView:(UICollectionView *)cv numberOfItemsInSection:(NSInteger)section {
-    if(section == 0){
+    if(section == VWWDashboardSectionMain){
         return 5;
     }
     return 0;
@@ -71,22 +99,10 @@ typedef enum {
     return 1;
 }
 
-
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"View" forIndexPath:indexPath];
-//    
-//    if(indexPath.section == 0){
-//    } else if(indexPath.section == 1){
-//    }
-//    
-//    return view;
-//}
-
-
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VWWDashboardCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"VWWDashboardCollectionViewCell" forIndexPath:indexPath];
     
-    if(indexPath.section == 0){
+    if(indexPath.section == VWWDashboardSectionMain){
         if(indexPath.item == VWWDashboardItemLogs){
             cell.titleLabel.text = @"APM Logs";
         } else if(indexPath.item == VWWDashboardItemTunings){
@@ -116,7 +132,31 @@ typedef enum {
 #pragma mark UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)cv didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(indexPath.section == 0){
+        if(indexPath.item == VWWDashboardItemLogs){
+            self.logsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWLogsViewController"];
+            self.logsViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.logsViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemTunings){
+            self.tuningsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWTuningsViewController"];
+            self.tuningsViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.tuningsViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemVideos){
+            self.videosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWVideosViewController"];
+            self.videosViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.videosViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemResources){
+            self.resourcesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWResourcesViewController"];
+            self.resourcesViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.resourcesViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemAbout){
+            self.aboutViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWAboutViewController"];
+            self.aboutViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.aboutViewController animated:YES];
 
+        }
+    }
 }
 
 

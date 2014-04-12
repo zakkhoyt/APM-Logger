@@ -36,6 +36,9 @@
 		CFA8A4D318F9FD4B00AF9B80 /* VWWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4D218F9FD4B00AF9B80 /* VWWWebViewController.m */; };
 		CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4D618F9FD7A00AF9B80 /* VWWAboutViewController.m */; };
 		CFA8A4DB18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4DA18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m */; };
+		CFA8A4E418FA050B00AF9B80 /* VWWDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4DF18FA050B00AF9B80 /* VWWDetailTableViewController.m */; };
+		CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4E118FA050B00AF9B80 /* VWWDetailViewController.m */; };
+		CFA8A4E618FA050B00AF9B80 /* VWWMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */; };
 		CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037518F3797F004F54EA /* FMDatabase.m */; };
 		CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037718F3797F004F54EA /* FMDatabaseAdditions.m */; };
 		CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037918F3797F004F54EA /* FMDatabasePool.m */; };
@@ -167,6 +170,12 @@
 		CFA8A4D618F9FD7A00AF9B80 /* VWWAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAboutViewController.m; sourceTree = "<group>"; };
 		CFA8A4D918F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDashboardCollectionViewCell.h; sourceTree = "<group>"; };
 		CFA8A4DA18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDashboardCollectionViewCell.m; sourceTree = "<group>"; };
+		CFA8A4DE18FA050B00AF9B80 /* VWWDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDetailTableViewController.h; sourceTree = "<group>"; };
+		CFA8A4DF18FA050B00AF9B80 /* VWWDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDetailTableViewController.m; sourceTree = "<group>"; };
+		CFA8A4E018FA050B00AF9B80 /* VWWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDetailViewController.h; sourceTree = "<group>"; };
+		CFA8A4E118FA050B00AF9B80 /* VWWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDetailViewController.m; sourceTree = "<group>"; };
+		CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMasterViewController.m; sourceTree = "<group>"; };
+		CFA8A4E318FA050B00AF9B80 /* VWWMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMasterViewController.h; sourceTree = "<group>"; };
 		CFAD037418F3797F004F54EA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CFAD037518F3797F004F54EA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CFAD037618F3797F004F54EA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -396,6 +405,12 @@
 		CFA8A49B18F9FB5300AF9B80 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				CFA8A4DE18FA050B00AF9B80 /* VWWDetailTableViewController.h */,
+				CFA8A4DF18FA050B00AF9B80 /* VWWDetailTableViewController.m */,
+				CFA8A4E018FA050B00AF9B80 /* VWWDetailViewController.h */,
+				CFA8A4E118FA050B00AF9B80 /* VWWDetailViewController.m */,
+				CFA8A4E318FA050B00AF9B80 /* VWWMasterViewController.h */,
+				CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */,
 				CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */,
 				CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */,
 				CFA8A49F18F9FB9100AF9B80 /* VWWViewController.h */,
@@ -883,6 +898,7 @@
 				CFDAC6B918E14A2A00EB609B /* VWWCaptureVideoViewController.m in Sources */,
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */,
+				CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */,
 				CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */,
 				CFA8A4B218F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m in Sources */,
 				CFA8A4A918F9FBF800AF9B80 /* VWWLogsViewController.m in Sources */,
@@ -894,6 +910,7 @@
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
 				CFDAC6BC18E14A2A00EB609B /* VWWDefaultTableViewController.m in Sources */,
 				CFA8A4CC18F9FD2000AF9B80 /* VWWVideoRecordViewController.m in Sources */,
+				CFA8A4E618FA050B00AF9B80 /* VWWMasterViewController.m in Sources */,
 				CFA8A4D318F9FD4B00AF9B80 /* VWWWebViewController.m in Sources */,
 				CFDAC64F18E1493D00EB609B /* VWWAppDelegate.m in Sources */,
 				CFE20DAE18E282C400D07DA4 /* VWWAboutOldViewController.m in Sources */,
@@ -909,6 +926,7 @@
 				CFDAC6BD18E14A2A00EB609B /* VWWEditVideoTableViewController.m in Sources */,
 				CFDAC6B218E14A2A00EB609B /* NSTimer+Blocks.m in Sources */,
 				CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */,
+				CFA8A4E418FA050B00AF9B80 /* VWWDetailTableViewController.m in Sources */,
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CFDAC6B718E14A2A00EB609B /* VWWAddSubtitleViewController.m in Sources */,
 				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,
