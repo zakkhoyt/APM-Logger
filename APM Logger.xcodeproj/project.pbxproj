@@ -14,6 +14,7 @@
 		C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */ = {isa = PBXBuildFile; fileRef = C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */; };
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
 		C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780D118E4E29400016407 /* Accelerate.framework */; };
+		CF66EF2918F92928002F68C6 /* AP2DataPlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6877FD518E4DDD800016407 /* AP2DataPlotViewController.m */; };
 		CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037518F3797F004F54EA /* FMDatabase.m */; };
 		CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037718F3797F004F54EA /* FMDatabaseAdditions.m */; };
 		CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037918F3797F004F54EA /* FMDatabasePool.m */; };
@@ -69,6 +70,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF66EF2518F928E8002F68C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF66EF1F18F928E8002F68C6 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		CF66EF2718F928F2002F68C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF66EF1F18F928E8002F68C6 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
 		CFDAC66718E1493D00EB609B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFDAC63318E1493D00EB609B /* Project object */;
@@ -91,6 +106,7 @@
 		C6877FD518E4DDD800016407 /* AP2DataPlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlotViewController.m; sourceTree = "<group>"; };
 		C68780CF18E4E1A800016407 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C68780D118E4E29400016407 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		CF66EF1F18F928E8002F68C6 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "APM Logger/ThirdParty/CorePlot/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		CFAD037418F3797F004F54EA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CFAD037518F3797F004F54EA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CFAD037618F3797F004F54EA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -211,6 +227,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF66EF2018F928E8002F68C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF66EF2618F928E8002F68C6 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CFAD037318F3797F004F54EA /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +256,7 @@
 		CFDAC63218E1493D00EB609B = {
 			isa = PBXGroup;
 			children = (
+				CF66EF1F18F928E8002F68C6 /* CorePlot-CocoaTouch.xcodeproj */,
 				CFDAC64418E1493D00EB609B /* APM Logger */,
 				CFDAC66918E1493D00EB609B /* APM LoggerTests */,
 				CFDAC63D18E1493D00EB609B /* Frameworks */,
@@ -494,6 +519,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CF66EF2818F928F2002F68C6 /* PBXTargetDependency */,
 			);
 			name = "APM Logger";
 			productName = "APM Logger";
@@ -544,6 +570,12 @@
 			mainGroup = CFDAC63218E1493D00EB609B;
 			productRefGroup = CFDAC63C18E1493D00EB609B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CF66EF2018F928E8002F68C6 /* Products */;
+					ProjectRef = CF66EF1F18F928E8002F68C6 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CFDAC63A18E1493D00EB609B /* APM Logger */,
@@ -551,6 +583,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CF66EF2618F928E8002F68C6 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = CF66EF2518F928E8002F68C6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CFDAC63918E1493D00EB609B /* Resources */ = {
@@ -613,6 +655,7 @@
 				CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */,
 				CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */,
 				CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */,
+				CF66EF2918F92928002F68C6 /* AP2DataPlotViewController.m in Sources */,
 				C60970AB18E2009B005D8683 /* VWWLogFilesTableViewController.m in Sources */,
 				CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */,
 				CFDAC6C218E14A2A00EB609B /* VWWMotionController.m in Sources */,
@@ -637,6 +680,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF66EF2818F928F2002F68C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = CF66EF2718F928F2002F68C6 /* PBXContainerItemProxy */;
+		};
 		CFDAC66818E1493D00EB609B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CFDAC63A18E1493D00EB609B /* APM Logger */;
@@ -759,6 +807,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"APM\\ Logger/ThirdParty/CorePlot/**",
+				);
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -783,6 +836,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"APM\\ Logger/ThirdParty/CorePlot/**",
+				);
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
