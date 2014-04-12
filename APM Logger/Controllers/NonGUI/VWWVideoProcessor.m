@@ -343,9 +343,9 @@
 {
 	CVPixelBufferLockBaseAddress( pixelBuffer, 0 );
 	
-	int bufferWidth = (int)CVPixelBufferGetWidth(pixelBuffer);
-	int bufferHeight = (int)CVPixelBufferGetHeight(pixelBuffer);
-	unsigned char *pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
+//	int bufferWidth = (int)CVPixelBufferGetWidth(pixelBuffer);
+//	int bufferHeight = (int)CVPixelBufferGetHeight(pixelBuffer);
+//	unsigned char *pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
     
     // It is slow to read from user defaults, so let's copy values ahead of time.
 //    UInt8 color = [VWWUserDefaults color];

@@ -1207,12 +1207,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CorePlot_Prefix.pch;
 				INSTALL_PATH = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CPTLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "CorePlot-CocoaTouch";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SYMROOT = "$(PROJECT_DIR)/../build";
-				VALID_ARCHS = "arm64 armv7 armv7s armv6";
 			};
 			name = Debug;
 		};
@@ -1230,7 +1228,6 @@
 				PRODUCT_NAME = "CorePlot-CocoaTouch";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SYMROOT = "$(PROJECT_DIR)/../build";
-				VALID_ARCHS = "arm64 armv7 armv7s armv6";
 				ZERO_LINK = NO;
 			};
 			name = Release;

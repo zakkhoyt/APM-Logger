@@ -81,7 +81,7 @@ static NSString *VWWSegueLogFileSummaryToPlot = @"VWWSegueLogFileSummaryToPlot";
     __weak VWWLogFileSummaryTableViewController *weakSelf = self;
     [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
         
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
 //        [weakSelf performSegueWithIdentifier:VWWSegueLogFileSummaryToPlot sender:dataSet];
     }];
 }

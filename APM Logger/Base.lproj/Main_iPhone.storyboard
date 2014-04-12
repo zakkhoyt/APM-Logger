@@ -382,12 +382,12 @@ vaporwarewolf@gmail.com
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-kC-zd4" userLabel="View - Camera">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-kC-zd4" userLabel="View - Camera">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="eBZ-fd-EwS">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="eBZ-fd-EwS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -396,23 +396,23 @@ vaporwarewolf@gmail.com
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="-1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-3w-Pk8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-3w-Pk8">
                                 <rect key="frame" x="164" y="518" width="136" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="VyC-ox-5YU"/>
-                                    <constraint firstAttribute="height" constant="30" id="yFw-hD-3VY"/>
+                                    <constraint firstAttribute="width" constant="136" id="SZ2-4r-eKS"/>
+                                    <constraint firstAttribute="height" constant="30" id="oFU-Fa-PKy"/>
                                 </constraints>
                                 <state key="normal" title="Record">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2z-OK-tvh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2z-OK-tvh">
                                 <rect key="frame" x="20" y="518" width="136" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="9C1-he-E7l"/>
-                                    <constraint firstAttribute="height" constant="30" id="UL2-DV-PH6"/>
+                                    <constraint firstAttribute="height" constant="30" id="cab-OY-bHq"/>
+                                    <constraint firstAttribute="width" constant="136" id="vn8-i3-4oc"/>
                                 </constraints>
                                 <state key="normal" title="Calibrate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -421,18 +421,14 @@ vaporwarewolf@gmail.com
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="eBZ-fd-EwS" secondAttribute="trailing" id="127-s4-IEe"/>
-                            <constraint firstItem="W2z-OK-tvh" firstAttribute="leading" secondItem="zoX-h0-F42" secondAttribute="leading" constant="20" id="5I8-kW-tP5"/>
-                            <constraint firstItem="CHm-XG-6nU" firstAttribute="top" secondItem="W2z-OK-tvh" secondAttribute="bottom" constant="20" id="B1j-oS-yxN"/>
-                            <constraint firstItem="eBZ-fd-EwS" firstAttribute="top" secondItem="MsY-5Q-pGB" secondAttribute="bottom" constant="-64" id="Io9-Gz-foi"/>
-                            <constraint firstItem="5nl-kC-zd4" firstAttribute="leading" secondItem="eBZ-fd-EwS" secondAttribute="leading" id="Mmi-ot-yyb"/>
-                            <constraint firstItem="CHm-XG-6nU" firstAttribute="top" secondItem="eBZ-fd-EwS" secondAttribute="bottom" id="N9J-w6-JTC"/>
-                            <constraint firstItem="5nl-kC-zd4" firstAttribute="bottom" secondItem="eBZ-fd-EwS" secondAttribute="bottom" id="QDx-wC-pb2"/>
-                            <constraint firstItem="5nl-kC-zd4" firstAttribute="trailing" secondItem="eBZ-fd-EwS" secondAttribute="trailing" id="QzN-xx-Z2Z"/>
-                            <constraint firstAttribute="trailing" secondItem="SsC-3w-Pk8" secondAttribute="trailing" constant="20" id="TOI-UD-BCU"/>
-                            <constraint firstItem="eBZ-fd-EwS" firstAttribute="leading" secondItem="zoX-h0-F42" secondAttribute="leading" id="VgU-Xd-rUi"/>
-                            <constraint firstItem="CHm-XG-6nU" firstAttribute="top" secondItem="SsC-3w-Pk8" secondAttribute="bottom" constant="20" id="fAp-03-78k"/>
-                            <constraint firstItem="5nl-kC-zd4" firstAttribute="top" secondItem="eBZ-fd-EwS" secondAttribute="top" id="iof-W2-FRN"/>
+                            <constraint firstItem="eBZ-fd-EwS" firstAttribute="top" secondItem="zoX-h0-F42" secondAttribute="top" id="LTW-WT-cYy"/>
+                            <constraint firstAttribute="bottom" secondItem="W2z-OK-tvh" secondAttribute="bottom" constant="20" id="MgI-D5-aN8"/>
+                            <constraint firstAttribute="trailing" secondItem="SsC-3w-Pk8" secondAttribute="trailing" constant="20" id="OPO-4D-gpL"/>
+                            <constraint firstItem="eBZ-fd-EwS" firstAttribute="leading" secondItem="zoX-h0-F42" secondAttribute="leading" id="Uf5-7d-LCs"/>
+                            <constraint firstAttribute="bottom" secondItem="eBZ-fd-EwS" secondAttribute="bottom" id="WdT-xZ-Df7"/>
+                            <constraint firstAttribute="bottom" secondItem="SsC-3w-Pk8" secondAttribute="bottom" constant="20" id="X7V-fZ-9LN"/>
+                            <constraint firstAttribute="trailing" secondItem="eBZ-fd-EwS" secondAttribute="trailing" id="jBO-yQ-WSU"/>
+                            <constraint firstItem="W2z-OK-tvh" firstAttribute="leading" secondItem="zoX-h0-F42" secondAttribute="leading" constant="20" id="qY0-FE-bUo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="crk-T3-i8A">
@@ -455,7 +451,7 @@ vaporwarewolf@gmail.com
         <!--Rosy Writer View Controller-->
         <scene sceneID="ChV-6n-KFo">
             <objects>
-                <viewController id="fiA-ek-GIj" customClass="RosyWriterViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RosyWriterViewController" id="fiA-ek-GIj" customClass="RosyWriterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8nP-3x-D14"/>
                         <viewControllerLayoutGuide type="bottom" id="Asp-97-dcu"/>
