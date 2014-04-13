@@ -28,4 +28,9 @@
 }
 */
 
+-(void)setSelected:(BOOL)selected{
+    super.selected = selected;
+    
+    self.selectedView.alpha = self.selected ? 1.0 : 0.0;
+}
 @end

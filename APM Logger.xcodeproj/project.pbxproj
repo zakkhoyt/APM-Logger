@@ -41,6 +41,7 @@
 		CFA8A4E618FA050B00AF9B80 /* VWWMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */; };
 		CFA8A4E818FA0F3800AF9B80 /* About in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A4E718FA0F3800AF9B80 /* About */; };
 		CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4EA18FA10C900AF9B80 /* VWWHelpViewController.m */; };
+		CFA8A4FA18FA187E00AF9B80 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA8A4F518FA186B00AF9B80 /* libGPUImage.a */; };
 		CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037518F3797F004F54EA /* FMDatabase.m */; };
 		CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037718F3797F004F54EA /* FMDatabaseAdditions.m */; };
 		CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037918F3797F004F54EA /* FMDatabasePool.m */; };
@@ -109,6 +110,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
 			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		CFA8A4F418FA186B00AF9B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		CFA8A4F618FA186B00AF9B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
+		CFA8A4F818FA187600AF9B80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF1A33314DDB1EC00852800;
+			remoteInfo = GPUImage;
 		};
 		CFDAC66718E1493D00EB609B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -181,6 +203,7 @@
 		CFA8A4E718FA0F3800AF9B80 /* About */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About; sourceTree = "<group>"; };
 		CFA8A4E918FA10C900AF9B80 /* VWWHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWHelpViewController.h; sourceTree = "<group>"; };
 		CFA8A4EA18FA10C900AF9B80 /* VWWHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWHelpViewController.m; sourceTree = "<group>"; };
+		CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "APM Logger/ThirdParty/GPUImage/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		CFAD037418F3797F004F54EA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CFAD037518F3797F004F54EA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CFAD037618F3797F004F54EA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -281,6 +304,7 @@
 			files = (
 				C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */,
 				C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */,
+				CFA8A4FA18FA187E00AF9B80 /* libGPUImage.a in Frameworks */,
 				C60970A818E1F90C005D8683 /* libsqlite3.dylib in Frameworks */,
 				CF66EF4018F930A6002F68C6 /* libCorePlot-CocoaTouch.a in Frameworks */,
 				CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */,
@@ -518,6 +542,15 @@
 			name = Help;
 			sourceTree = "<group>";
 		};
+		CFA8A4EF18FA186A00AF9B80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFA8A4F518FA186B00AF9B80 /* libGPUImage.a */,
+				CFA8A4F718FA186B00AF9B80 /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CFAD037318F3797F004F54EA /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +572,7 @@
 		CFDAC63218E1493D00EB609B = {
 			isa = PBXGroup;
 			children = (
+				CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */,
 				CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */,
 				CFDAC64418E1493D00EB609B /* APM Logger */,
 				CFDAC66918E1493D00EB609B /* APM LoggerTests */,
@@ -778,6 +812,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CFA8A4F918FA187600AF9B80 /* PBXTargetDependency */,
 				CF66EF3F18F9309E002F68C6 /* PBXTargetDependency */,
 			);
 			name = "APM Logger";
@@ -834,6 +869,10 @@
 					ProductGroup = CF66EF3718F93094002F68C6 /* Products */;
 					ProjectRef = CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */;
 				},
+				{
+					ProductGroup = CFA8A4EF18FA186A00AF9B80 /* Products */;
+					ProjectRef = CFA8A4EE18FA186A00AF9B80 /* GPUImage.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -849,6 +888,20 @@
 			fileType = archive.ar;
 			path = "libCorePlot-CocoaTouch.a";
 			remoteRef = CF66EF3C18F93094002F68C6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA8A4F518FA186B00AF9B80 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = CFA8A4F418FA186B00AF9B80 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFA8A4F718FA186B00AF9B80 /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = CFA8A4F618FA186B00AF9B80 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -968,6 +1021,11 @@
 			isa = PBXTargetDependency;
 			name = "CorePlot-CocoaTouch";
 			targetProxy = CF66EF3E18F9309E002F68C6 /* PBXContainerItemProxy */;
+		};
+		CFA8A4F918FA187600AF9B80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImage;
+			targetProxy = CFA8A4F818FA187600AF9B80 /* PBXContainerItemProxy */;
 		};
 		CFDAC66818E1493D00EB609B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1097,6 +1155,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"APM\\ Logger/ThirdParty/CorePlot/**",
+					"APM\\ Logger/ThirdParty/GPUImage/**",
 				);
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1127,6 +1186,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"APM\\ Logger/ThirdParty/CorePlot/**",
+					"APM\\ Logger/ThirdParty/GPUImage/**",
 				);
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

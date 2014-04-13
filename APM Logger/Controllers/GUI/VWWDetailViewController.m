@@ -8,12 +8,12 @@
 
 #import "VWWDetailViewController.h"
 #import "VWWMasterViewController.h"
-//#import "GPUImage.h"
+#import "GPUImage.h"
 
 @interface VWWDetailViewController ()
 //@property (nonatomic, strong) GPUImageiOSBlurFilter *blurFilter;
 //@property (nonatomic, strong) GPUImageSketchFilter *sketchFilter;
-//@property (nonatomic, strong) GPUImageGrayscaleFilter *grayscaleFilter;
+@property (nonatomic, strong) GPUImageGrayscaleFilter *grayscaleFilter;
 @end
 
 
@@ -24,10 +24,9 @@
     [super viewDidLoad];
 //    self.blurFilter = [[GPUImageiOSBlurFilter alloc]init];
 //    self.sketchFilter = [[GPUImageSketchFilter alloc] init];
-//    self.grayscaleFilter = [[GPUImageGrayscaleFilter alloc]init];
+    self.grayscaleFilter = [[GPUImageGrayscaleFilter alloc]init];
 //    self.blurredImageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
-//    self.blurredImageView.backgroundColor = [UIColor radiusGreenColor];
-//    self.blurredImageView.alpha = 0.0;
+    self.blurredImageView.alpha = 0.0;
 
     [self.view addSubview:self.blurredImageView];
 }
@@ -50,7 +49,7 @@
 //    } else if([SMUserDefaults detailViewEffectType] == 1){
 //        self.blurredImageView.image = [self.sketchFilter imageByFilteringImage:image];
 //    } else if([SMUserDefaults detailViewEffectType] == 2){
-//        self.blurredImageView.image = [self.grayscaleFilter imageByFilteringImage:image];
+        self.blurredImageView.image = [self.grayscaleFilter imageByFilteringImage:image];
 //    }
     
 }

@@ -9,7 +9,7 @@
 #ifndef Heartstream_HeartstreamUtilities_h
 #define Heartstream_HeartstreamUtilities_h
 
-//#define VWW_DEBUG 1
+#define VWW_DEBUG 1
 
 //******************************************************************************
 // Trace defines ***********************************************************

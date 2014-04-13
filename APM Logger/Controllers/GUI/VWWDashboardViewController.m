@@ -17,8 +17,6 @@
 #import "VWWResourcesViewController.h"
 #import "VWWAboutViewController.h"
 
-
-
 typedef enum{
   VWWDashboardSectionMain = 0,
 } VWWDashboardSection;
@@ -40,6 +38,7 @@ typedef enum {
 @property (nonatomic, strong) VWWHelpViewController *helpViewController;
 @property (nonatomic, strong) VWWResourcesViewController *resourcesViewController;
 @property (nonatomic, strong) VWWAboutViewController *aboutViewController;
+@property (nonatomic) NSUInteger selectedCellIndex;
 @end
 
 @implementation VWWDashboardViewController
@@ -53,17 +52,18 @@ typedef enum {
     self.collectionView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
     self.collectionView.alwaysBounceVertical = YES;
     
-    
+    // Default view controller
     self.logsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWLogsViewController"];
     self.logsViewController.masterViewControllerDelegate = self;
     [self changeDetailView:self.logsViewController animated:NO];
-
+    self.selectedCellIndex = 0;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     
+    [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
 
 }
 - (void)didReceiveMemoryWarning
@@ -72,22 +72,13 @@ typedef enum {
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 #pragma mark Private methods
-//-(void)changeDetailView:(VWWViewController*)vc{
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+
 
 #pragma mark UICollectionViewDatasource
 
@@ -104,7 +95,6 @@ typedef enum {
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VWWDashboardCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"VWWDashboardCollectionViewCell" forIndexPath:indexPath];
-    
     if(indexPath.section == VWWDashboardSectionMain){
         if(indexPath.item == VWWDashboardItemLogs){
             cell.titleLabel.text = @"APM Logs";
@@ -119,6 +109,13 @@ typedef enum {
         } else if(indexPath.item == VWWDashboardItemAbout){
             cell.titleLabel.text = @"About this App";
         }
+    }
+    
+    // Selected
+    if(indexPath.item == self.selectedCellIndex){
+        cell.selected = YES;
+    } else {
+        cell.selected = NO;
     }
     return cell;
 }
