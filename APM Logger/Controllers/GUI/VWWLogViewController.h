@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWViewController.h"
+#import "VWWTableViewController.h"
 
-@interface VWWLogViewController : VWWViewController
-
+@interface VWWLogViewController : VWWTableViewController
+@property (nonatomic, strong) NSURL *logFile;
 @end

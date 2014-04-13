@@ -7,26 +7,36 @@
 //
 
 #import "VWWLogViewController.h"
+#import "AP2DataPlotController.h"
+#import "VWWLogPlotViewController.h"
+
+
+static NSString *VWWSegueLogToPlot = @"VWWSegueLogToPlot";
+
 
 @interface VWWLogViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *filenameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sizeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *firmwareLabel;
+@property (weak, nonatomic) IBOutlet UILabel *freeRAMLabel;
+@property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
 
 @end
 
 @implementation VWWLogViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+#pragma mark UIViewController
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self updateControls];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +45,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueLogToPlot]){
+        VWWLogPlotViewController *vc = segue.destinationViewController;
+        vc.dataPlot = sender;
+    }
 }
-*/
+
+#pragma mark Private methods
+-(void)updateControls{
+    __weak VWWLogViewController *weakSelf = self;
+    [AP2DataPlotController extractFileSummaryFromLogFileAtURL:self.logFile completionBlock:^(VWWLogFileSummary *summary) {
+        weakSelf.filenameLabel.text = summary.filename;
+        weakSelf.sizeLabel.text = summary.size;
+        weakSelf.dateLabel.text = summary.date;
+        weakSelf.versionLabel.text = summary.version;
+        weakSelf.firmwareLabel.text = summary.firmware;
+        weakSelf.freeRAMLabel.text = summary.freeRAM;
+        weakSelf.softwareLabel.text = summary.software;
+    }];
+}
+
+#pragma mark IBActions
+
+- (IBAction)graphButtonTouchUpInside:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak VWWLogViewController *weakSelf = self;
+    [AP2DataPlotController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [weakSelf performSegueWithIdentifier:VWWSegueLogToPlot sender:dataSet];
+    }];
+}
+- (IBAction)googleEarthButtonTouchUpInside:(id)sender {
+}
 
 @end
