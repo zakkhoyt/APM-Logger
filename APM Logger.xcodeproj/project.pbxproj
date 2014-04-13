@@ -288,21 +288,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CFA8A49A18F9FB3900AF9B80 /* Prod */ = {
-			isa = PBXGroup;
-			children = (
-				CFA8A4D418F9FD5200AF9B80 /* About */,
-				CFA8A49B18F9FB5300AF9B80 /* Base */,
-				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
-				CFA8A4EC18FA10CC00AF9B80 /* Help */,
-				CFA8A4A618F9FBDC00AF9B80 /* Logs */,
-				CFA8A4CD18F9FD2A00AF9B80 /* Resources */,
-				CFA8A4B318F9FC5700AF9B80 /* Tuning */,
-				CFA8A4C018F9FCA500AF9B80 /* Video */,
-			);
-			name = Prod;
-			sourceTree = "<group>";
-		};
 		CFA8A49B18F9FB5300AF9B80 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,7 +531,14 @@
 		CFDAC67D18E14A2A00EB609B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				CFA8A49A18F9FB3900AF9B80 /* Prod */,
+				CFA8A4D418F9FD5200AF9B80 /* About */,
+				CFA8A49B18F9FB5300AF9B80 /* Base */,
+				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
+				CFA8A4EC18FA10CC00AF9B80 /* Help */,
+				CFA8A4A618F9FBDC00AF9B80 /* Logs */,
+				CFA8A4CD18F9FD2A00AF9B80 /* Resources */,
+				CFA8A4B318F9FC5700AF9B80 /* Tuning */,
+				CFA8A4C018F9FCA500AF9B80 /* Video */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -996,10 +988,8 @@
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/APM",
-					Logger/ThirdParty/CorePlot,
-					"$(PROJECT_DIR)/APM",
-					Logger/ThirdParty,
+					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty/CorePlot",
+					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -1028,10 +1018,8 @@
 				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/APM",
-					Logger/ThirdParty/CorePlot,
-					"$(PROJECT_DIR)/APM",
-					Logger/ThirdParty,
+					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty/CorePlot",
+					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
