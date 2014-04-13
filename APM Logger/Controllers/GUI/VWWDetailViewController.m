@@ -32,6 +32,13 @@
     [self.view addSubview:self.blurredImageView];
 }
 
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    //    [self.view setSmileFonts];
+    [self.view layoutSubviews];
+}
+
+
 -(void)updateBlurredImageView{
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];

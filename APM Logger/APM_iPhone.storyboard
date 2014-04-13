@@ -409,12 +409,53 @@
                     <view key="view" contentMode="scaleToFill" id="6oM-JZ-ubc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight videos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3u-P1-afD">
+                                <rect key="frame" x="48" y="112" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="860-du-gcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="369"/>
+            <point key="canvasLocation" x="578" y="457"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="k9H-3T-gDD">
+            <objects>
+                <viewController storyboardIdentifier="VWWHelpViewController" id="DGc-uf-lQh" customClass="VWWHelpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0i5-Ua-nxs"/>
+                        <viewControllerLayoutGuide type="bottom" id="E3F-dg-9dn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2v-ET-fjv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here is some help for each section of this app" translatesAutoresizingMaskIntoConstraints="NO" id="9jJ-FV-WsD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9jJ-FV-WsD" secondAttribute="trailing" id="dRM-k6-Y57"/>
+                            <constraint firstItem="E3F-dg-9dn" firstAttribute="top" secondItem="9jJ-FV-WsD" secondAttribute="bottom" id="jtj-wr-1KV"/>
+                            <constraint firstItem="9jJ-FV-WsD" firstAttribute="leading" secondItem="y2v-ET-fjv" secondAttribute="leading" id="rum-Wc-e4m"/>
+                            <constraint firstItem="9jJ-FV-WsD" firstAttribute="top" secondItem="y2v-ET-fjv" secondAttribute="top" id="uSs-bR-ZdJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vIf-Rf-45o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="1334"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="rtr-SW-dzo">
@@ -427,12 +468,33 @@
                     <view key="view" contentMode="scaleToFill" id="594-zZ-810">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfm-ku-FM3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Here is what this app does section by section
+* APM Log
+* Motor/Propeller Balancing
+* Videos
+* Resources
+* About</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xfm-ku-FM3" secondAttribute="trailing" id="2mN-Pz-qsP"/>
+                            <constraint firstItem="ShC-Sh-cLj" firstAttribute="top" secondItem="Xfm-ku-FM3" secondAttribute="bottom" id="MnC-GD-xMS"/>
+                            <constraint firstItem="Xfm-ku-FM3" firstAttribute="top" secondItem="594-zZ-810" secondAttribute="top" id="bwn-Co-JjV"/>
+                            <constraint firstItem="Xfm-ku-FM3" firstAttribute="leading" secondItem="594-zZ-810" secondAttribute="leading" id="jxG-6P-aer"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOI-iZ-bD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="2143"/>
+            <point key="canvasLocation" x="589" y="3183"/>
         </scene>
         <!--Resources View Controller-->
         <scene sceneID="YFQ-yP-DXk">
@@ -445,12 +507,34 @@
                     <view key="view" contentMode="scaleToFill" id="hNP-BX-04N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-cC-C0x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Here are some RC resources
+// Community
+* Ardu
+* DIY Drones
+* RC Universe
+
+// Retailers
+* Hobbyking
+
+// Videos
+* Bruce
+* Flite test
+* Other APM stuff</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCN-iX-8tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="1273"/>
+            <point key="canvasLocation" x="589" y="2313"/>
         </scene>
         <!--Tunings View Controller-->
         <scene sceneID="ep4-zk-Uzs">
@@ -463,12 +547,20 @@
                     <view key="view" contentMode="scaleToFill" id="rkV-jb-NdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Motor/Propeller balancing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="my5-I8-SOq">
+                                <rect key="frame" x="20" y="93" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPG-2o-eTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115" y="-485"/>
+            <point key="canvasLocation" x="601" y="-396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uEg-Wh-MrR">

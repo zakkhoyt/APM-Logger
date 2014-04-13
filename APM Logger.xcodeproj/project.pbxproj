@@ -39,6 +39,8 @@
 		CFA8A4E418FA050B00AF9B80 /* VWWDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4DF18FA050B00AF9B80 /* VWWDetailTableViewController.m */; };
 		CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4E118FA050B00AF9B80 /* VWWDetailViewController.m */; };
 		CFA8A4E618FA050B00AF9B80 /* VWWMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */; };
+		CFA8A4E818FA0F3800AF9B80 /* About in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A4E718FA0F3800AF9B80 /* About */; };
+		CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4EA18FA10C900AF9B80 /* VWWHelpViewController.m */; };
 		CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037518F3797F004F54EA /* FMDatabase.m */; };
 		CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037718F3797F004F54EA /* FMDatabaseAdditions.m */; };
 		CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037918F3797F004F54EA /* FMDatabasePool.m */; };
@@ -176,6 +178,9 @@
 		CFA8A4E118FA050B00AF9B80 /* VWWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDetailViewController.m; sourceTree = "<group>"; };
 		CFA8A4E218FA050B00AF9B80 /* VWWMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMasterViewController.m; sourceTree = "<group>"; };
 		CFA8A4E318FA050B00AF9B80 /* VWWMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMasterViewController.h; sourceTree = "<group>"; };
+		CFA8A4E718FA0F3800AF9B80 /* About */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = About; sourceTree = "<group>"; };
+		CFA8A4E918FA10C900AF9B80 /* VWWHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWHelpViewController.h; sourceTree = "<group>"; };
+		CFA8A4EA18FA10C900AF9B80 /* VWWHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWHelpViewController.m; sourceTree = "<group>"; };
 		CFAD037418F3797F004F54EA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		CFAD037518F3797F004F54EA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CFAD037618F3797F004F54EA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -394,6 +399,7 @@
 				CFA8A4D418F9FD5200AF9B80 /* About */,
 				CFA8A49B18F9FB5300AF9B80 /* Base */,
 				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
+				CFA8A4EC18FA10CC00AF9B80 /* Help */,
 				CFA8A4A618F9FBDC00AF9B80 /* Logs */,
 				CFA8A4CD18F9FD2A00AF9B80 /* Resources */,
 				CFA8A4B318F9FC5700AF9B80 /* Tuning */,
@@ -501,6 +507,15 @@
 				CFA8A4DA18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		CFA8A4EC18FA10CC00AF9B80 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				CFA8A4E918FA10C900AF9B80 /* VWWHelpViewController.h */,
+				CFA8A4EA18FA10C900AF9B80 /* VWWHelpViewController.m */,
+			);
+			name = Help;
 			sourceTree = "<group>";
 		};
 		CFAD037318F3797F004F54EA /* FMDB */ = {
@@ -661,6 +676,7 @@
 				CFDAC6A418E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz */,
 				CFDAC6A518E14A2A00EB609B /* 2014-03-07 19-23-15_15.log */,
 				CFDAC6A618E14A2A00EB609B /* readme.txt */,
+				CFA8A4E718FA0F3800AF9B80 /* About */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -851,6 +867,7 @@
 				CFDAC6C918E14A2A00EB609B /* readme.txt in Resources */,
 				C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */,
 				CFDAC65218E1493D00EB609B /* Main_iPhone.storyboard in Resources */,
+				CFA8A4E818FA0F3800AF9B80 /* About in Resources */,
 				CFDAC6CB18E14A2A00EB609B /* passThrough.fsh in Resources */,
 				CFDAC64918E1493D00EB609B /* InfoPlist.strings in Resources */,
 				CFDAC6C318E14A2A00EB609B /* 2014-03-07 19-23-15_13.kmz in Resources */,
@@ -881,6 +898,7 @@
 				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
 				CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */,
 				C61C21BD18E23CA600C63517 /* VWWLogFileSummaryTableViewController.m in Sources */,
+				CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */,
 				CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */,
 				CFDAC6B618E14A2A00EB609B /* VWWAddOverlayViewController.m in Sources */,
 				CFAD038318F3797F004F54EA /* FMResultSet.m in Sources */,

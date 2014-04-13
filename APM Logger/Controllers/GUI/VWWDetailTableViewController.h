@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "VWWTableViewController.h"
 
 @class VWWDetailTableViewController;
 
@@ -14,7 +14,7 @@
 -(void)detailTableViewControllerMasterButtonTouchUpInside:(VWWDetailTableViewController*)sender;
 @end
 
-@interface VWWDetailTableViewController : UITableViewController
+@interface VWWDetailTableViewController : VWWTableViewController
 @property (nonatomic, strong) UINavigationController *navigationController;
 @property (nonatomic, strong) UIImageView *blurredImageView;
 -(void)updateBlurredImageView;
