@@ -65,18 +65,10 @@
         
         // The temporary path for the video before saving it to the photo album
         movieURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), @"Movie.MOV"]];
-//        [movieURL retain];
     }
     return self;
 }
 
-//- (void)dealloc
-//{
-//    [previousSecondTimestamps release];
-//    [movieURL release];
-//    
-//	[super dealloc];
-//}
 
 #pragma mark Utilities
 
@@ -164,7 +156,6 @@
 										[self.delegate recordingDidStop];
 									});
 								}];
-//	[library release];
 }
 
 - (void) writeSampleBuffer:(CMSampleBufferRef)sampleBuffer ofType:(NSString *)mediaType
@@ -327,9 +318,6 @@
                 [self saveMovieToCameraRoll];
             }
             
-//			[assetWriterAudioIn release];
-//			[assetWriterVideoIn release];
-//			[assetWriter release];
             assetWriter = nil;
 			readyToRecordVideo = NO;
 			readyToRecordAudio = NO;
@@ -512,11 +500,11 @@
 - (BOOL) setupCaptureSession
 {
 	/*
-     Overview: RosyWriter uses separate GCD queues for audio and video capture.  If a single GCD queue
+     Overview: VWWVideoProcessor uses separate GCD queues for audio and video capture.  If a single GCD queue
      is used to deliver both audio and video buffers, and our video processing consistently takes
      too long, the delivery queue can back up, resulting in audio being dropped.
      
-     When recording, RosyWriter creates a third GCD queue for calls to AVAssetWriter.  This ensures
+     When recording, VWWVideoProcessor creates a third GCD queue for calls to AVAssetWriter.  This ensures
      that AVAssetWriter is not called to start or finish writing from multiple threads simultaneously.
      
      RosyWriter uses AVCaptureSession's default preset, AVCaptureSessionPresetHigh.
@@ -526,7 +514,6 @@
 	 * Create capture session
 	 */
     captureSession = [[AVCaptureSession alloc] init];
-//    captureSession.sessionPreset = AVCaptureSessionPresetMedium;
     
     /*
 	 * Create audio connection
@@ -534,16 +521,13 @@
     AVCaptureDeviceInput *audioIn = [[AVCaptureDeviceInput alloc] initWithDevice:[self audioDevice] error:nil];
     if ([captureSession canAddInput:audioIn])
         [captureSession addInput:audioIn];
-//	[audioIn release];
 	
 	AVCaptureAudioDataOutput *audioOut = [[AVCaptureAudioDataOutput alloc] init];
 	dispatch_queue_t audioCaptureQueue = dispatch_queue_create("Audio Capture Queue", DISPATCH_QUEUE_SERIAL);
 	[audioOut setSampleBufferDelegate:self queue:audioCaptureQueue];
-//	dispatch_release(audioCaptureQueue);
 	if ([captureSession canAddOutput:audioOut])
 		[captureSession addOutput:audioOut];
 	audioConnection = [audioOut connectionWithMediaType:AVMediaTypeAudio];
-//	[audioOut release];
     
 	/*
 	 * Create video connection
@@ -551,11 +535,10 @@
     AVCaptureDeviceInput *videoIn = [[AVCaptureDeviceInput alloc] initWithDevice:[self videoDeviceWithPosition:AVCaptureDevicePositionBack] error:nil];
     if ([captureSession canAddInput:videoIn])
         [captureSession addInput:videoIn];
-//	[videoIn release];
     
 	AVCaptureVideoDataOutput *videoOut = [[AVCaptureVideoDataOutput alloc] init];
 	/*
-     RosyWriter prefers to discard late video frames early in the capture pipeline, since its
+     VWWVideoProcessor prefers to discard late video frames early in the capture pipeline, since its
      processing can take longer than real-time on some platforms (such as iPhone 3GS).
      Clients whose image processing is faster than real-time should consider setting AVCaptureVideoDataOutput's
      alwaysDiscardsLateVideoFrames property to NO.
@@ -564,12 +547,10 @@
 	[videoOut setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA] forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
 	dispatch_queue_t videoCaptureQueue = dispatch_queue_create("Video Capture Queue", DISPATCH_QUEUE_SERIAL);
 	[videoOut setSampleBufferDelegate:self queue:videoCaptureQueue];
-//	dispatch_release(videoCaptureQueue);
 	if ([captureSession canAddOutput:videoOut])
 		[captureSession addOutput:videoOut];
 	videoConnection = [videoOut connectionWithMediaType:AVMediaTypeVideo];
 	self.videoOrientation = [videoConnection videoOrientation];
-//	[videoOut release];
     
 	return YES;
 }
@@ -620,14 +601,12 @@
     [captureSession stopRunning];
 	if (captureSession)
 		[[NSNotificationCenter defaultCenter] removeObserver:self name:AVCaptureSessionDidStopRunningNotification object:captureSession];
-//	[captureSession release];
 	captureSession = nil;
 	if (previewBufferQueue) {
 		CFRelease(previewBufferQueue);
 		previewBufferQueue = NULL;
 	}
 	if (movieWritingQueue) {
-//		dispatch_release(movieWritingQueue);
 		movieWritingQueue = NULL;
 	}
 }
@@ -643,7 +622,6 @@
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
         [alertView show];
-//        [alertView release];
     });
 }
 
