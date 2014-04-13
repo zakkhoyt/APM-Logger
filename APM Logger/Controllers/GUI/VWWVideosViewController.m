@@ -7,6 +7,10 @@
 //
 
 #import "VWWVideosViewController.h"
+#import "VWWVideoRecordOptionsViewController.h"
+
+static NSString *VWWSegueVideosToRecordOptions = @"VWWSegueVideosToRecordOptions";
+
 
 @interface VWWVideosViewController ()
 
@@ -20,12 +24,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"VIDEO";
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTouchUpInside:)];
+    [self.navigationItem setRightBarButtonItem:addButton animated:NO];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationItem.title = @"VIDEO";
+
 }
 
 
@@ -35,15 +44,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//}
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+#pragma mark IBActions
+
+-(void)addButtonTouchUpInside:(id)sender{
+    [self performSegueWithIdentifier:VWWSegueVideosToRecordOptions sender:self];
 }
-*/
-
 @end

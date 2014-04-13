@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWDetailViewController.h"
+#import "VWWDetailTableViewController.h"
 
-@interface VWWVideosViewController : VWWDetailViewController
+@interface VWWVideosViewController : VWWDetailTableViewController
 
 @end
