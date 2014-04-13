@@ -8,6 +8,9 @@
 
 #import "VWWVideoRecordOptionsViewController.h"
 
+
+static NSString *VWWSegueVideoRecordOptionsToRecord = @"VWWSegueVideoRecordOptionsToRecord";
+
 @interface VWWVideoRecordOptionsViewController ()
 
 @end
@@ -45,5 +48,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark IBActions
+- (IBAction)readyButtonTouchUpInside:(id)sender {
+    [self performSegueWithIdentifier:VWWSegueVideoRecordOptionsToRecord sender:self];
+}
+
+
 
 @end
