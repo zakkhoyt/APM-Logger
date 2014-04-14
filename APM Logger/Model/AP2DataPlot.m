@@ -9,14 +9,14 @@
 #import "AP2DataPlot.h"
 
 #import "VWWFileController.h"
-#import "FMDB.h"
+
 
 
 @interface AP2DataPlot ()
 @property (nonatomic, strong, readwrite) NSString *databasePath;
-@property (nonatomic, strong) NSURL *logFileURL;
-@property FMDatabase *db;
+@property (nonatomic, strong, readwrite) NSURL *logFileURL;
 @property (nonatomic, strong) dispatch_queue_t dbQueue;
+@property (readwrite) FMDatabase *db;
 @end
 
 @implementation AP2DataPlot
@@ -318,6 +318,26 @@
     });
     
 
+}
+
+
+-(void)getTablesWithCompletionBlock:(VWWArrayBlock)completionBlock{
+    dispatch_async(self.dbQueue, ^{
+        FMResultSet *resultSet = [self.db executeQuery:@"SELECT name FROM sqlite_master WHERE type = \"table\""];
+        if(resultSet == nil){
+            return completionBlock(@[]);
+        } else {
+            NSMutableArray *tables = [@[]mutableCopy];
+            while ([resultSet next]) {
+                NSString *table = [resultSet stringForColumnIndex:0];
+                [tables addObject:table];
+            }
+            [resultSet close];
+            return completionBlock(tables);
+        }
+        
+    });
+    
 }
 
 @end

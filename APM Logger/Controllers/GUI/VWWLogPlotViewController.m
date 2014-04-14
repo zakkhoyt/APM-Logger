@@ -9,13 +9,16 @@
 #import "VWWLogPlotViewController.h"
 #import "AP2DataPlot.h"
 #import "CorePlot-CocoaTouch.h"
+#import "VWWLogFilterViewController.h"
 
+
+static NSString *VWWSeguePlotToFilter = @"VWWSeguePlotToFilter";
 
 @interface VWWLogPlotViewController () <CPTPlotDataSource, CPTAxisDelegate>{
     CPTXYGraph *graph;
     NSMutableArray *dataForPlot;
 }
-
+@property (nonatomic, strong) NSMutableArray *filters;
 @end
 
 @implementation VWWLogPlotViewController
@@ -27,8 +30,14 @@
     [super viewDidLoad];
     
     //    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.title = @"HISTORY";
     
     
+    UIBarButtonItem *filterButton = [[UIBarButtonItem alloc]initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(filterButtonTouchUpInside:)];
+    [self.navigationItem setRightBarButtonItem:filterButton animated:NO];
+
+    
+    [self buildFilters];
     
     // Add some initial data
     NSMutableArray *contentArray = [NSMutableArray arrayWithCapacity:100];
@@ -223,13 +232,40 @@
     return YES;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSeguePlotToFilter]){
+        VWWLogFilterViewController *vc = segue.destinationViewController;
+        vc.filters = self.filters;
+    }
+}
+
+#pragma mark IBActions
+-(void)filterButtonTouchUpInside:(UIBarButtonItem*)sender{
+    [self performSegueWithIdentifier:VWWSeguePlotToFilter sender:self];
+
+}
+
+
 
 #pragma mark Private methods
 
+-(void)buildFilters{
+    if(self.filters == nil){
+        self.filters = [@[]mutableCopy];
+    } else {
+        [self.filters removeAllObjects];
+    }
+    
+    [self.dataPlot getTablesWithCompletionBlock:^(NSArray *tables) {
+        for(NSString *table in tables){
+            // 0 is off, non-zero is on
+            NSDictionary *filter = @{VWWLogFilterViewControllerFilterNameKey : table,
+                                     VWWLogFilterViewControllerFilterActivatedKey : @(0)};
+            [self.filters addObject:filter];
+        }
+    }];
 
-
-
-
+}
 
 -(void)changePlotRange
 {

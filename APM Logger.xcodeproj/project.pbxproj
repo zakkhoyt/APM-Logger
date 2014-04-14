@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C60970A818E1F90C005D8683 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C60970A718E1F90C005D8683 /* libsqlite3.dylib */; };
 		C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */; };
+		C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */; };
 		C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */ = {isa = PBXBuildFile; fileRef = C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */; };
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
 		C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780D118E4E29400016407 /* Accelerate.framework */; };
@@ -129,6 +130,8 @@
 		C60970A718E1F90C005D8683 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFileSummary.h; sourceTree = "<group>"; };
 		C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFileSummary.m; sourceTree = "<group>"; };
+		C6712CBB18FC866500A3665F /* VWWLogFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFilterViewController.h; sourceTree = "<group>"; };
+		C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFilterViewController.m; sourceTree = "<group>"; };
 		C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-25 16-45-00_11.log"; sourceTree = "<group>"; };
 		C68780CF18E4E1A800016407 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C68780D118E4E29400016407 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -326,6 +329,8 @@
 				CFA8A4AE18F9FC3800AF9B80 /* VWWLogPlotViewController.m */,
 				CFA8A4B018F9FC4A00AF9B80 /* VWWKMLOptionsViewController.h */,
 				CFA8A4B118F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m */,
+				C6712CBB18FC866500A3665F /* VWWLogFilterViewController.h */,
+				C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */,
 			);
 			name = Logs;
 			sourceTree = "<group>";
@@ -820,6 +825,7 @@
 				CFE20DAA18E2613200D07DA4 /* AP2DataPlot.m in Sources */,
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */,
+				C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */,
 				CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */,
 				CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */,
 				CFA8A4B218F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m in Sources */,

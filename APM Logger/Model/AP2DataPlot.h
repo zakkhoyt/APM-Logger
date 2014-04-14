@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FMDB.h"
 
 @interface AP2DataPlot : NSObject
 -(void)configureWithURL:(NSURL*)url completionBlock:(VWWBoolBlock)completionBlock;
 @property (nonatomic, strong, readonly) NSString *databasePath;
+@property (readonly) FMDatabase *db;
+-(void)getTablesWithCompletionBlock:(VWWArrayBlock)completionBlock;
 @end
