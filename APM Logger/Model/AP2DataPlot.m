@@ -192,24 +192,42 @@
                             
                             for(int i = 5; i < linesplit.count; i++){
                                 NSString *name = [linesplit[i] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-                                NSString *type = [descstr substringFromIndex:i - 5];
+                                NSString *type = [descstr substringWithRange:NSMakeRange(i-5, 1)];
                                 [valuestr appendFormat:@"%@,", name];
-                                
-                                //                            VWW_LOG_DEBUG(@"%@ %@", name, type);
-                                if([type isEqualToString:@"I"]){
+              
+//                            VWW_LOG_DEBUG(@"%@ %@", name, type);
+                                if([type isEqualToString:@"b"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else if([type isEqualToString:@"B"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else if([type isEqualToString:@"h"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else if([type isEqualToString:@"H"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else if([type isEqualToString:@"i"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else if([type isEqualToString:@"I"]){
                                     [mktable appendFormat:@",%@ integer", name];
                                 } else if([type isEqualToString:@"f"]){
                                     [mktable appendFormat:@",%@ real", name];
-                                } else if([type isEqualToString:@"h"]){
+                                } else if([type isEqualToString:@"N"]){
+                                    [mktable appendFormat:@",%@ text", name];
+                                } else if([type isEqualToString:@"Z"]){
+                                    [mktable appendFormat:@",%@ text", name];
+                                } else if([type isEqualToString:@"c"]){
+                                    [mktable appendFormat:@",%@ real", name];
+                                } else if([type isEqualToString:@"C"]){
+                                    [mktable appendFormat:@",%@ real", name];
+                                } else if([type isEqualToString:@"e"]){
+                                    [mktable appendFormat:@",%@ real", name];
+                                } else if([type isEqualToString:@"E"]){
                                     [mktable appendFormat:@",%@ real", name];
                                 } else if([type isEqualToString:@"L"]){
                                     [mktable appendFormat:@",%@ integer", name];
-                                } else if([type isEqualToString:@"e"]){
-                                    [mktable appendFormat:@",%@ real", name];
-                                } else if([type isEqualToString:@"c"]){
-                                    [mktable appendFormat:@",%@ real", name];
-                                } else{
-                                    [mktable appendFormat:@",%@ real", name];
+                                } else if([type isEqualToString:@"M"]){
+                                    [mktable appendFormat:@",%@ integer", name];
+                                } else {
+                                    VWW_LOG_WARNING(@"Unknown data type: %@", type);
                                 }
                                 
                                 [inserttable appendFormat:@",%@", name];
@@ -240,6 +258,7 @@
                             
                             nameToInsertQuery[type] = final;
                         } else {
+                            // FMT, 128, 89, FMT, BBnNZ, Type,Length,Name,Format
                             VWW_LOG_ERROR(@"Error with line in plot log file: %@", line);
                         }
                     }
@@ -265,35 +284,97 @@
                                 errorcount++;
                             }  else {
                                 for(int i = 1; i < linesplit.count; i++){
-                                    //                                I int
-                                    //                                f float
-                                    //                                h float
-                                    //                                L int
-                                    //                                e float
-                                    //                                c float
-                                    //                                else float
                                     
-                                    //                                VWW_LOG_TODO_TASK(@"APM's github recieved reports of these letter formats being incorrect for one or tow of them. Pull the updates source and compare");
-                                    if([typestr characterAtIndex:i-1] == 'I') {
-                                        [args addObject:@((int)((NSString*)linesplit[i]).integerValue)];
-                                    } else if([typestr characterAtIndex:i-1] == 'f') {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
+                                    if([typestr characterAtIndex:i-1] == 'b') {
+                                        // Uint 8
+                                        NSString *line = linesplit[i];
+                                        uint8_t val = line.integerValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'B') {
+                                        // Uint 8
+                                        NSString *line = linesplit[i];
+                                        uint8_t val = line.integerValue;
+                                        [args addObject:@(val)];
                                     } else if([typestr characterAtIndex:i-1] == 'h') {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
+                                        // Uint 16
+                                        NSString *line = linesplit[i];
+                                        uint16_t val = line.integerValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'H') {
+                                        // Uint 16
+                                        NSString *line = linesplit[i];
+                                        uint16_t val = line.integerValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'i') {
+                                        // Uint 32
+                                        NSString *line = linesplit[i];
+                                        uint32_t val = (uint32_t)line.longLongValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'I') {
+                                        // Uint 32
+                                        NSString *line = linesplit[i];
+                                        uint32_t val = (uint32_t)line.longLongValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'f') {
+                                        // float
+                                        NSString *line = linesplit[i];
+                                        float val = line.floatValue;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'n') {
+                                        // char(4)
+                                        NSString *line = linesplit[i];
+                                        //uint8_t val = line.floatValue;
+                                        [args addObject:line];
+                                    } else if([typestr characterAtIndex:i-1] == 'N') {
+                                        // char(16
+                                        NSString *line = linesplit[i];
+                                        //uint8_t val = line.floatValue;
+                                        [args addObject:line];
+                                    } else if([typestr characterAtIndex:i-1] == 'Z') {
+                                        // char 64
+                                        NSString *line = linesplit[i];
+                                        //uint8_t val = line.floatValue;
+                                        [args addObject:line];
                                     } else if([typestr characterAtIndex:i-1] == 'c') {
-                                        float c = ((NSString*)linesplit[i]).floatValue * 100;
-                                        [args addObject:@(c)];
+                                        // uint16 * 100
+                                        NSString *line = linesplit[i];
+                                        uint16_t val = line.integerValue;
+                                        val /= 100;
+                                        [args addObject:@(val)];
                                     } else if([typestr characterAtIndex:i-1] == 'C') {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue * 100)];
+                                        // uint16 * 100
+                                        NSString *line = linesplit[i];
+                                        uint16_t val = line.integerValue;
+                                        val /= 100;
+                                        [args addObject:@(val)];
                                     } else if([typestr characterAtIndex:i-1] == 'e') {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue * 100)];
+                                        // uint32 * 100
+                                        NSString *line = linesplit[i];
+                                        uint32_t val = (uint32_t)line.longLongValue;
+                                        val /= 100.0;
+                                        [args addObject:@(val)];
                                     } else if([typestr characterAtIndex:i-1] == 'E') {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue + 100)];
+                                        // uint32 * 100
+                                        NSString *line = linesplit[i];
+                                        uint32_t val = (uint32_t)line.longLongValue;
+                                        val /= 100.0;
+                                        [args addObject:@(val)];
                                     } else if([typestr characterAtIndex:i-1] == 'L') {
-                                        [args addObject:@((int)((NSString*)linesplit[i]).longLongValue)];
+                                        //uint32_t GPS Lon/Lat * 10000000
+                                        NSString *line = linesplit[i];
+                                        double val = line.doubleValue;
+                                        val *= 10000000;
+                                        [args addObject:@(val)];
+                                    } else if([typestr characterAtIndex:i-1] == 'M') {
+                                        // Uint 8
+                                        NSString *line = linesplit[i];
+                                        uint8_t val = line.integerValue;
+                                        [args addObject:@(val)];
                                     } else {
-                                        [args addObject:@(((NSString*)linesplit[i]).doubleValue)];
+                                        char type = [typestr characterAtIndex:i-1];
+                                        VWW_LOG_WARNING(@"Unknown data type: %c", type);
                                     }
+
                                 }
                                 
                                 [self.db beginTransaction];
