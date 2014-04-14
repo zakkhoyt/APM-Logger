@@ -14,4 +14,5 @@
 @property (nonatomic, strong, readonly) NSString *databasePath;
 @property (readonly) FMDatabase *db;
 -(void)getTablesWithCompletionBlock:(VWWArrayBlock)completionBlock;
+-(void)getDataForTable:(NSString*)table completionBlock:(VWWArrayBlock)completionBlock;
 @end

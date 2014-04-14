@@ -340,4 +340,22 @@
     
 }
 
+-(void)getDataForTable:(NSString*)table completionBlock:(VWWArrayBlock)completionBlock{
+    dispatch_async(self.dbQueue, ^{
+        FMResultSet *resultSet = [self.db executeQuery:@"SELECT * from %@", table];
+        if(resultSet == nil){
+            return completionBlock(@[]);
+        } else {
+            NSMutableArray *tables = [@[]mutableCopy];
+            while ([resultSet next]) {
+                NSString *table = [resultSet stringForColumnIndex:0];
+                [tables addObject:table];
+            }
+            [resultSet close];
+            return completionBlock(tables);
+        }
+        
+    });
+    
+}
 @end

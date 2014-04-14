@@ -31,6 +31,7 @@ static NSString *VWWSegueLogToPlot = @"VWWSegueLogToPlot";
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    self.navigationItem.title = @"Summary";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
