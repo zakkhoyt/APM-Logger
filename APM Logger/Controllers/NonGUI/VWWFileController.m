@@ -163,6 +163,11 @@
     return url.path;
 }
 +(BOOL)copyFileAtURLToLogsDir:(NSURL*)url{
+    // If file already has been copied then we are okay.
+    if([VWWFileController fileExistsAtURL:url]){
+        return YES;
+    }
+    
     NSError *error;
     if([[NSFileManager defaultManager] isReadableFileAtPath:url.path]){
         NSURL *logsDirURL = [VWWFileController urlForLogsDirectory];
@@ -220,6 +225,94 @@
     return YES;
 }
 +(BOOL)deleteAllLogs{
+    VWW_LOG_TODO;
+    return YES;
+}
+
+
+@end
+
+
+
+
+@implementation VWWFileController (Databases)
+
+
+
++(NSURL*)urlForDatabasesDirectory{
+    NSURL *documentsDir = [VWWFileController urlForDocumentsDirectory];
+    NSURL *databasesDir = [documentsDir URLByAppendingPathComponent:@"databases"];
+    [VWWFileController ensureDirectoryExistsAtURL:databasesDir];
+    return databasesDir;
+}
+
++(NSString*)pathForDatabasesDirectory{
+    NSURL *url = [VWWFileController urlForDatabasesDirectory];
+    return url.path;
+}
++(BOOL)copyFileAtURLToDatabasesDir:(NSURL*)url{
+    // If file already has been copied then we are okay.
+    if([VWWFileController fileExistsAtURL:url]){
+        return YES;
+    }
+    
+    NSError *error;
+    if([[NSFileManager defaultManager] isReadableFileAtPath:url.path]){
+        NSURL *databasesDirURL = [VWWFileController urlForDatabasesDirectory];
+        NSURL *databaseURL = [databasesDirURL URLByAppendingPathComponent:url.lastPathComponent];
+        [[NSFileManager defaultManager] copyItemAtURL:url toURL:databaseURL error:&error];
+        if(error){
+            VWW_LOG_ERROR(@"Failed to copy file at path: %@ to %@ with error: %@", url.path, databaseURL.path, error.description);
+            return NO;
+        }
+        return YES;
+    }
+    return NO;
+}
+
++(void)printURLsForDatabases{
+    VWW_LOG_INFO(@"Listing database files:\n");
+    NSURL *databasesDirURL = [VWWFileController urlForDatabasesDirectory];
+    NSError *error;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:databasesDirURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&error];
+    
+    for(int index = 0; index < files.count; index++){
+        NSURL *fileURL = [files objectAtIndex:index];
+        NSString *file = fileURL.path;
+        if([[file pathExtension] compare:@"sqlite"] == NSOrderedSame){
+            NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:file error:&error];
+            UInt32 size = (UInt32)[attrs fileSize];
+            NSLog(@"size: %ld: path: %@", (long)size, file);
+        }
+    }
+}
+
++(NSArray*)urlsForDatabases{
+    NSURL *databasesDirURL = [VWWFileController urlForDatabasesDirectory];
+    NSError *error;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:databasesDirURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:&error];
+    NSMutableArray *databases = [@[] mutableCopy];
+    for(int index = 0; index < files.count; index++){
+        NSString * file = [files objectAtIndex:index];
+        if([[file pathExtension] compare:@"sqlite"] == NSOrderedSame){
+            [databases addObject:file];
+        }
+    }
+    return databases;
+}
+
++(BOOL)deleteDatabasesAtURL:(NSURL*)url{
+    NSError *error;
+    if([[NSFileManager defaultManager] removeItemAtURL:url error:&error] == NO){
+        return NO;
+    }
+    if(error){
+        VWW_LOG_WARNING(@"Could not delete file: %@", url.path);
+        return NO;
+    }
+    return YES;
+}
++(BOOL)deleteAllDatabases{
     VWW_LOG_TODO;
     return YES;
 }

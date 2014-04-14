@@ -36,3 +36,14 @@
 +(BOOL)deleteLogAtURL:(NSURL*)url;
 +(BOOL)deleteAllLogs;
 @end
+
+
+@interface VWWFileController (Databases)
++(NSURL*)urlForDatabasesDirectory;
++(NSString*)pathForDatabasesDirectory;
++(BOOL)copyFileAtURLToDatabasesDir:(NSURL*)url;
++(void)printURLsForDatabases;
++(NSArray*)urlsForDatabases;
++(BOOL)deleteDatabasesAtURL:(NSURL*)url;
++(BOOL)deleteAllDatabases;
+@end

@@ -6,17 +6,17 @@
 //
 //  This file will mimick the class from APM: https://github.com/diydrones/apm_planner/blob/master/src/ui/AP2DataPlotThread.cc
 
-#import "AP2DataPlotController.h"
+#import "VWWAP2LogController.h"
 #import "VWWFileController.h"
 #import "AP2DataPlot.h"
 
 
 
-@interface AP2DataPlotController ()
+@interface VWWAP2LogController ()
 
 @end
 
-@implementation AP2DataPlotController
+@implementation VWWAP2LogController
 
 
 

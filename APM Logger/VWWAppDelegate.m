@@ -7,7 +7,7 @@
 //
 
 #import "VWWAppDelegate.h"
-#import "AP2DataPlotController.h"
+#import "VWWAP2LogController.h"
 #import "VWWFileController.h"
 
 @implementation VWWAppDelegate

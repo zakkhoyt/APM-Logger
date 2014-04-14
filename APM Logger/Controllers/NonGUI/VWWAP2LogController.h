@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VWWLogFileSummary.h"
 
-@interface AP2DataPlotController : NSObject
+@interface VWWAP2LogController : NSObject
 
 
 +(void)extractFileSummaryFromLogFileAtURL:(NSURL*)url completionBlock:(VWWLogFileSummaryBlock)completionBlock;

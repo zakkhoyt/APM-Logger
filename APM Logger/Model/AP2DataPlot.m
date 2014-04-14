@@ -109,18 +109,13 @@
 -(void)createDBWithCompletionBlock:(VWWBoolBlock)completionBlock{
     
     dispatch_async(self.dbQueue, ^{
-        // Get the documents directory
-        NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *docsDir = dirPaths[0];
         
         // Build the path to the database file
         NSString *databaseName = [VWWFileController nameOfFileAtURL:self.logFileURL];
         databaseName = [databaseName stringByReplacingOccurrencesOfString:@".log" withString:@".sqlite"];
+        self.databasePath = [[NSString alloc] initWithString:[[VWWFileController urlForDatabasesDirectory].path stringByAppendingPathComponent:databaseName]];
         
-        
-        self.databasePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:databaseName]];
-        
-        
+        VWW_LOG_DEBUG(@"Database path: %@", self.databasePath);
         
         // Delete the old database
         NSFileManager *fileManager = [NSFileManager defaultManager];

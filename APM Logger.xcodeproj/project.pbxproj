@@ -76,7 +76,7 @@
 		CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D718E14A3300EB609B /* VWWUtilities.m */; };
 		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
-		CFDAC6EB18E1567300EB609B /* AP2DataPlotController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */; };
+		CFDAC6EB18E1567300EB609B /* VWWAP2LogController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */; };
 		CFE20DAA18E2613200D07DA4 /* AP2DataPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */; };
 /* End PBXBuildFile section */
 
@@ -245,8 +245,8 @@
 		CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoProcessor.m; sourceTree = "<group>"; };
 		CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoPreviewView.h; sourceTree = "<group>"; };
 		CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoPreviewView.m; sourceTree = "<group>"; };
-		CFDAC6E918E1567300EB609B /* AP2DataPlotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataPlotController.h; sourceTree = "<group>"; };
-		CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlotController.m; sourceTree = "<group>"; };
+		CFDAC6E918E1567300EB609B /* VWWAP2LogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAP2LogController.h; sourceTree = "<group>"; };
+		CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAP2LogController.m; sourceTree = "<group>"; };
 		CFE20DA818E2613200D07DA4 /* AP2DataPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataPlot.h; sourceTree = "<group>"; };
 		CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -556,8 +556,8 @@
 				CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */,
 				CFDAC69D18E14A2A00EB609B /* VWWMotionController.h */,
 				CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */,
-				CFDAC6E918E1567300EB609B /* AP2DataPlotController.h */,
-				CFDAC6EA18E1567300EB609B /* AP2DataPlotController.m */,
+				CFDAC6E918E1567300EB609B /* VWWAP2LogController.h */,
+				CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";
@@ -804,7 +804,7 @@
 			files = (
 				CFA8A4AC18F9FC0300AF9B80 /* VWWLogViewController.m in Sources */,
 				CFA8A4C918F9FD0F00AF9B80 /* VWWVideoEditViewController.m in Sources */,
-				CFDAC6EB18E1567300EB609B /* AP2DataPlotController.m in Sources */,
+				CFDAC6EB18E1567300EB609B /* VWWAP2LogController.m in Sources */,
 				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
 				CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */,
 				CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */,
