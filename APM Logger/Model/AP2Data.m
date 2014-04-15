@@ -608,7 +608,8 @@
                 while([columnsSet next]){
                     NSString *columnsString = [columnsSet stringForColumn:@"val"];
                     NSArray *columns = [columnsString componentsSeparatedByString:@","];
-                    for(NSString *column in columns){
+                    NSArray *sortedColumns = [self sortColumns:columns];
+                    for(NSString *column in sortedColumns){
                         NSDictionary *filter = @{AP2DataPlotTableKey : table,
                                                  AP2DataPlotColumnKey : column,
                                                  AP2DataPlotActiveKey : @(0)};
@@ -619,12 +620,34 @@
                 [columnsSet close];
             }
             [tablesSet close];
-            return completionBlock(filters);
+            
+            
+            NSArray *sortedFilters = [self sortTables:filters];
+            
+            return completionBlock(sortedFilters);
         }
 
     });
     
 }
+
+-(NSArray*)sortColumns:(NSArray*)unsortedArray{
+    NSArray* sortedStacks = [unsortedArray sortedArrayUsingComparator:^NSComparisonResult(NSString *column1, NSString *column2) {
+        return [column1 compare:column2];
+    }];
+    return sortedStacks;
+}
+
+
+-(NSArray*)sortTables:(NSArray*)unsortedArray{
+    NSArray* sortedStacks = [unsortedArray sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *item1, NSDictionary *item2) {
+        NSDate *table1 = item1[AP2DataPlotTableKey];
+        NSDate *table2 = item2[AP2DataPlotTableKey];
+        return [table1 compare:table2];
+    }];
+    return sortedStacks;
+}
+
 
 -(void)getDataForTable:(NSString*)table completionBlock:(VWWArrayBlock)completionBlock{
     dispatch_async(self.dbQueue, ^{
