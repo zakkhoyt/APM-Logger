@@ -77,8 +77,7 @@
 		CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D718E14A3300EB609B /* VWWUtilities.m */; };
 		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
-		CFDAC6EB18E1567300EB609B /* VWWAP2LogController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */; };
-		CFE20DAA18E2613200D07DA4 /* AP2DataPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */; };
+		CFE20DAA18E2613200D07DA4 /* AP2Data.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2Data.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,10 +247,8 @@
 		CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoProcessor.m; sourceTree = "<group>"; };
 		CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoPreviewView.h; sourceTree = "<group>"; };
 		CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoPreviewView.m; sourceTree = "<group>"; };
-		CFDAC6E918E1567300EB609B /* VWWAP2LogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAP2LogController.h; sourceTree = "<group>"; };
-		CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAP2LogController.m; sourceTree = "<group>"; };
-		CFE20DA818E2613200D07DA4 /* AP2DataPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2DataPlot.h; sourceTree = "<group>"; };
-		CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2DataPlot.m; sourceTree = "<group>"; };
+		CFE20DA818E2613200D07DA4 /* AP2Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2Data.h; sourceTree = "<group>"; };
+		CFE20DA918E2613200D07DA4 /* AP2Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2Data.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,8 +558,6 @@
 				CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */,
 				CFDAC69D18E14A2A00EB609B /* VWWMotionController.h */,
 				CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */,
-				CFDAC6E918E1567300EB609B /* VWWAP2LogController.h */,
-				CFDAC6EA18E1567300EB609B /* VWWAP2LogController.m */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";
@@ -600,8 +595,8 @@
 				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
 				C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */,
 				C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */,
-				CFE20DA818E2613200D07DA4 /* AP2DataPlot.h */,
-				CFE20DA918E2613200D07DA4 /* AP2DataPlot.m */,
+				CFE20DA818E2613200D07DA4 /* AP2Data.h */,
+				CFE20DA918E2613200D07DA4 /* AP2Data.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -809,7 +804,6 @@
 			files = (
 				CFA8A4AC18F9FC0300AF9B80 /* VWWLogViewController.m in Sources */,
 				CFA8A4C918F9FD0F00AF9B80 /* VWWVideoEditViewController.m in Sources */,
-				CFDAC6EB18E1567300EB609B /* VWWAP2LogController.m in Sources */,
 				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
 				CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */,
 				CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */,
@@ -822,7 +816,7 @@
 				CFA8A4AF18F9FC3800AF9B80 /* VWWLogPlotViewController.m in Sources */,
 				CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */,
 				CFA8A4DB18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m in Sources */,
-				CFE20DAA18E2613200D07DA4 /* AP2DataPlot.m in Sources */,
+				CFE20DAA18E2613200D07DA4 /* AP2Data.m in Sources */,
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */,
 				C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */,

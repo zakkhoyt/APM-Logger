@@ -7,7 +7,7 @@
 //
 
 #import "VWWLogViewController.h"
-#import "VWWAP2LogController.h"
+#import "AP2Data.h"
 #import "VWWLogPlotViewController.h"
 
 
@@ -56,7 +56,7 @@ static NSString *VWWSegueLogToPlot = @"VWWSegueLogToPlot";
 #pragma mark Private methods
 -(void)updateControls{
     __weak VWWLogViewController *weakSelf = self;
-    [VWWAP2LogController extractFileSummaryFromLogFileAtURL:self.logFile completionBlock:^(VWWLogFileSummary *summary) {
+    [AP2Data summaryFromLogFileAtURL:self.logFile completionBlock:^(VWWLogFileSummary *summary) {
         weakSelf.filenameLabel.text = summary.filename;
         weakSelf.sizeLabel.text = summary.size;
         weakSelf.dateLabel.text = summary.date;
@@ -72,7 +72,7 @@ static NSString *VWWSegueLogToPlot = @"VWWSegueLogToPlot";
 - (IBAction)graphButtonTouchUpInside:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     __weak VWWLogViewController *weakSelf = self;
-    [VWWAP2LogController extractDataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2DataPlot *dataSet) {
+    [AP2Data dataPlotFromLogFileAtURL:self.logFile completionBlock:^(AP2Data *dataSet) {
         
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         [weakSelf performSegueWithIdentifier:VWWSegueLogToPlot sender:dataSet];

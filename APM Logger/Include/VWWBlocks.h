@@ -9,11 +9,11 @@
 #ifndef Smile_iOS_SMBlocks_h
 #define Smile_iOS_SMBlocks_h
 
-@class AP2DataPlot;
+@class AP2Data;
 @class CLLocation;
 @class VWWLogFileSummary;
 
-typedef void (^VWWA2PDataSetBlock)(AP2DataPlot* dataSet);
+typedef void (^VWWA2PDataSetBlock)(AP2Data* dataSet);
 typedef void (^VWWArrayBlock)(NSArray *array);
 typedef void (^VWWBoolBlock)(BOOL success);
 typedef void (^VWWCLLocationBlock)(CLLocation *location);
