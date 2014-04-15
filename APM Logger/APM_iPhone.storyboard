@@ -82,7 +82,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOp-2P-2Kf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="-39"/>
+            <point key="canvasLocation" x="-22" y="-48"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="3rC-Lx-eh7">
+            <objects>
+                <viewController storyboardIdentifier="VWWWelcomeViewController" id="YGX-7K-oJt" customClass="VWWWelcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5x7-tm-1dy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Icp-fL-rFQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VMn-3x-Clk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-z5-Z8z">
+                                <rect key="frame" x="20" y="518" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonTouchUpInside:" destination="YGX-7K-oJt" eventType="touchUpInside" id="PSd-od-jiG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Icp-fL-rFQ" firstAttribute="top" secondItem="CBO-z5-Z8z" secondAttribute="bottom" constant="20" id="CdV-CW-dz6"/>
+                            <constraint firstItem="CBO-z5-Z8z" firstAttribute="leading" secondItem="VMn-3x-Clk" secondAttribute="leading" constant="20" id="MtU-tW-k3N"/>
+                            <constraint firstAttribute="trailing" secondItem="CBO-z5-Z8z" secondAttribute="trailing" constant="20" id="azu-rc-thY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l49-gm-6Cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583" y="-48"/>
         </scene>
         <!--Logs View Controller-->
         <scene sceneID="3iZ-wO-jhT">
@@ -418,7 +453,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5Gx-ec-rej" style="IBUITableViewCellStyleDefault" id="5tr-Ln-FyI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="5Gx-ec-rej" style="IBUITableViewCellStyleDefault" id="5tr-Ln-FyI">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5tr-Ln-FyI" id="ueD-0T-Hwv">

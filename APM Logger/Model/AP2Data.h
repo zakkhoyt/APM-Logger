@@ -12,7 +12,7 @@
 
 
 static NSString *AP2DataPlotTableKey = @"table";
-static NSString *AP2DataPlotColumnsKey = @"columns";
+static NSString *AP2DataPlotColumnKey = @"column";
 static NSString *AP2DataPlotActiveKey = @"active";
 
 @interface AP2Data : NSObject

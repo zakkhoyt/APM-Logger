@@ -9,8 +9,8 @@
 #import "VWWViewController.h"
 
 
-static NSString *VWWLogFilterViewControllerFilterNameKey = @"filter";
-static NSString *VWWLogFilterViewControllerFilterActivatedKey = @"activated";
+//static NSString *VWWLogFilterViewControllerFilterNameKey = @"filter";
+//static NSString *VWWLogFilterViewControllerFilterActivatedKey = @"activated";
 
 @interface VWWLogFilterViewController : VWWViewController
 @property (nonatomic, strong) NSMutableArray *filters;

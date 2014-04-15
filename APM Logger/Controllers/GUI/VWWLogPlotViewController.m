@@ -138,21 +138,21 @@ static NSString *VWWSeguePlotToFilter = @"VWWSeguePlotToFilter";
         [self.filters removeAllObjects];
     }
     
-    [self.dataPlot getParamsWithCompletionBlock:^(NSArray *tables) {
+    [self.dataPlot getParamsWithCompletionBlock:^(NSArray *filters) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            for(NSString *table in tables){
-                // Set default filters
-                // 0 is off, non-zero is on
-                NSNumber *activated = @(0);
-                if([table isEqualToString:@"GPS"]){
-                    activated = @(1);
-                }
-                
-                NSDictionary *filter = @{VWWLogFilterViewControllerFilterNameKey : table,
-                                         VWWLogFilterViewControllerFilterActivatedKey : activated};
-                [self.filters addObject:filter];
-            }
-            
+//            for(NSString *table in tables){
+//                // Set default filters
+//                // 0 is off, non-zero is on
+//                NSNumber *activated = @(0);
+//                if([table isEqualToString:@"GPS"]){
+//                    activated = @(1);
+//                }
+//                
+//                NSDictionary *filter = @{VWWLogFilterViewControllerFilterNameKey : table,
+//                                         VWWLogFilterViewControllerFilterActivatedKey : activated};
+//                [self.filters addObject:filter];
+//            }
+            self.filters = [filters mutableCopy];
         });
     }];
 

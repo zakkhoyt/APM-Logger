@@ -8,6 +8,7 @@
 
 #import "VWWLogFilterViewController.h"
 #import "FMDB.h"
+#import "AP2Data.h"
 
 @interface VWWLogFilterViewController ()
 
@@ -65,10 +66,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     NSDictionary *filter = self.filters[indexPath.row];
-    NSString *title = filter[VWWLogFilterViewControllerFilterNameKey];
-    cell.textLabel.text = title;
+    NSString *table = filter[AP2DataPlotTableKey];
+    NSString *column = filter[AP2DataPlotColumnKey];
     
-    NSNumber *activated = filter[VWWLogFilterViewControllerFilterActivatedKey];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", table, column];
+    
+    NSNumber *activated = filter[AP2DataPlotActiveKey];
     if(activated.integerValue){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
@@ -83,21 +86,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setSelected:!cell.selected animated:NO];
     
     NSDictionary *filter = self.filters[indexPath.row];
-    NSString *title = filter[VWWLogFilterViewControllerFilterNameKey];
+    NSString *table = filter[AP2DataPlotTableKey];
+    NSString *column = filter[AP2DataPlotColumnKey];
+
     NSNumber *activated;
     
-    if(cell.selected){
+//    if(cell.selected){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         activated = @(1);
-    } else {
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//        activated = @(0);
+//    }
+    NSDictionary *alteredFilter = @{AP2DataPlotTableKey : table,
+                                    AP2DataPlotColumnKey : column,
+                                    AP2DataPlotActiveKey : activated};
+    self.filters[indexPath.row] = alteredFilter;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    NSDictionary *filter = self.filters[indexPath.row];
+    NSString *table = filter[AP2DataPlotTableKey];
+    NSString *column = filter[AP2DataPlotColumnKey];
+    
+    NSNumber *activated;
+    
+//    if(cell.selected){
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        activated = @(1);
+//    } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
         activated = @(0);
-    }
-    NSDictionary *alteredFilter = @{VWWLogFilterViewControllerFilterNameKey : title,
-                                    VWWLogFilterViewControllerFilterActivatedKey : activated};
+//    }
+    NSDictionary *alteredFilter = @{AP2DataPlotTableKey : table,
+                                    AP2DataPlotColumnKey : column,
+                                    AP2DataPlotActiveKey : activated};
     self.filters[indexPath.row] = alteredFilter;
 }
 

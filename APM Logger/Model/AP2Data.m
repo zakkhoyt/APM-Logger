@@ -554,18 +554,18 @@
     dispatch_async(self.dbQueue, ^{
 
         
-        FMResultSet *resultSet = [self.db executeQuery:@"SELECT name FROM sqlite_master WHERE type = \"table\""];
-        if(resultSet == nil){
-            return completionBlock(@[]);
-        } else {
-            NSMutableArray *tables = [@[]mutableCopy];
-            while ([resultSet next]) {
-                NSString *table = [resultSet stringForColumnIndex:0];
-                [tables addObject:table];
-            }
-            [resultSet close];
-            return completionBlock(tables);
-        }
+//        FMResultSet *resultSet = [self.db executeQuery:@"SELECT name FROM sqlite_master WHERE type = \"table\""];
+//        if(resultSet == nil){
+//            return completionBlock(@[]);
+//        } else {
+//            NSMutableArray *tables = [@[]mutableCopy];
+//            while ([resultSet next]) {
+//                NSString *table = [resultSet stringForColumnIndex:0];
+//                [tables addObject:table];
+//            }
+//            [resultSet close];
+//            return completionBlock(tables);
+//        }
         
         
 //        FMResultSet *tablesSet = [self.db executeQuery:@"SELECT name FROM sqlite_master WHERE type = \"table\""];
@@ -593,7 +593,35 @@
 //            [tablesSet close];
 //            return completionBlock(filters);
 //        }
+
         
+        FMResultSet *tablesSet = [self.db executeQuery:@"SELECT name FROM sqlite_master WHERE type = \"table\""];
+        if(tablesSet == nil){
+            VWW_LOG_WARNING(@"Could not get a list of tables");
+            return completionBlock(@[]);
+        } else {
+            NSMutableArray *filters = [@[]mutableCopy];
+            while ([tablesSet next]) {
+                NSString *table = [tablesSet stringForColumnIndex:0];
+                NSString *columnString = [NSString stringWithFormat:@"SELECT val FROM FMT where name = \"%@\"", table];
+                FMResultSet *columnsSet = [self.db executeQuery:columnString];
+                while([columnsSet next]){
+                    NSString *columnsString = [columnsSet stringForColumn:@"val"];
+                    NSArray *columns = [columnsString componentsSeparatedByString:@","];
+                    for(NSString *column in columns){
+                        NSDictionary *filter = @{AP2DataPlotTableKey : table,
+                                                 AP2DataPlotColumnKey : column,
+                                                 AP2DataPlotActiveKey : @(0)};
+                        [filters addObject:filter];
+                    }
+                    
+                }
+                [columnsSet close];
+            }
+            [tablesSet close];
+            return completionBlock(filters);
+        }
+
     });
     
 }

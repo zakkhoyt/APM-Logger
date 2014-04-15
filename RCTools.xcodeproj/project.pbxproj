@@ -134,6 +134,8 @@
 		C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-25 16-45-00_11.log"; sourceTree = "<group>"; };
 		C68780CF18E4E1A800016407 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C68780D118E4E29400016407 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		C6D5296E18FCBFBD0010299B /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
+		C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
 		CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "APM Logger/ThirdParty/CorePlot/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		CFA8A49718F9E76300AF9B80 /* APM_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = APM_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
@@ -280,6 +282,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6D5296D18FCBFAE0010299B /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5296E18FCBFBD0010299B /* VWWWelcomeViewController.h */,
+				C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		CF66EF3718F93094002F68C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +544,7 @@
 		CFDAC67D18E14A2A00EB609B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				C6D5296D18FCBFAE0010299B /* Welcome */,
 				CFA8A4D418F9FD5200AF9B80 /* About */,
 				CFA8A49B18F9FB5300AF9B80 /* Base */,
 				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,

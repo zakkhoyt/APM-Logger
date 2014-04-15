@@ -163,11 +163,6 @@
     return url.path;
 }
 +(BOOL)copyFileAtURLToLogsDir:(NSURL*)url{
-    // If file already has been copied then we are okay.
-    if([VWWFileController fileExistsAtURL:url]){
-        return YES;
-    }
-    
     NSError *error;
     if([[NSFileManager defaultManager] isReadableFileAtPath:url.path]){
         NSURL *logsDirURL = [VWWFileController urlForLogsDirectory];
