@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CFDAC63A18E1493D00EB609B"
-               BuildableName = "APM Logger.app"
-               BlueprintName = "APM Logger"
-               ReferencedContainer = "container:APM Logger.xcodeproj">
+               BuildableName = "RCTools.app"
+               BlueprintName = "RCTools"
+               ReferencedContainer = "container:RCTools.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CFDAC66118E1493D00EB609B"
-               BuildableName = "APM LoggerTests.xctest"
-               BlueprintName = "APM LoggerTests"
-               ReferencedContainer = "container:APM Logger.xcodeproj">
+               BuildableName = "RCToolsTests.xctest"
+               BlueprintName = "RCToolsTests"
+               ReferencedContainer = "container:RCTools.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CFDAC63A18E1493D00EB609B"
-            BuildableName = "APM Logger.app"
-            BlueprintName = "APM Logger"
-            ReferencedContainer = "container:APM Logger.xcodeproj">
+            BuildableName = "RCTools.app"
+            BlueprintName = "RCTools"
+            ReferencedContainer = "container:RCTools.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CFDAC63A18E1493D00EB609B"
-            BuildableName = "APM Logger.app"
-            BlueprintName = "APM Logger"
-            ReferencedContainer = "container:APM Logger.xcodeproj">
+            BuildableName = "RCTools.app"
+            BlueprintName = "RCTools"
+            ReferencedContainer = "container:RCTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CFDAC63A18E1493D00EB609B"
-            BuildableName = "APM Logger.app"
-            BlueprintName = "APM Logger"
-            ReferencedContainer = "container:APM Logger.xcodeproj">
+            BuildableName = "RCTools.app"
+            BlueprintName = "RCTools"
+            ReferencedContainer = "container:RCTools.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

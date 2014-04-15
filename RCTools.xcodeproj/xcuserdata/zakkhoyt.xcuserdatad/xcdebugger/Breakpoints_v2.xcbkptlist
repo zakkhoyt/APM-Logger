@@ -644,9 +644,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
-            endingLineNumber = "426"
-            landmarkName = "-numberOfRecordsForPlot:"
-            landmarkType = "5">
+            endingLineNumber = "426">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -660,9 +658,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "435"
-            endingLineNumber = "435"
-            landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            endingLineNumber = "435">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -676,9 +672,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            endingLineNumber = "440">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -692,9 +686,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "441"
-            endingLineNumber = "441"
-            landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            endingLineNumber = "441">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

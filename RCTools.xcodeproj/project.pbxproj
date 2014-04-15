@@ -196,20 +196,20 @@
 		CFAD037D18F3797F004F54EA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CFAD037E18F3797F004F54EA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		CFAD038418F387F6004F54EA /* create_schema.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = create_schema.txt; sourceTree = "<group>"; };
-		CFDAC63B18E1493D00EB609B /* APM Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APM Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDAC63B18E1493D00EB609B /* RCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC63E18E1493D00EB609B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFDAC64018E1493D00EB609B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CFDAC64218E1493D00EB609B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CFDAC64618E1493D00EB609B /* APM Logger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APM Logger-Info.plist"; sourceTree = "<group>"; };
+		CFDAC64618E1493D00EB609B /* RCTools-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCTools-Info.plist"; sourceTree = "<group>"; };
 		CFDAC64818E1493D00EB609B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFDAC64A18E1493D00EB609B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CFDAC64C18E1493D00EB609B /* APM Logger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APM Logger-Prefix.pch"; sourceTree = "<group>"; };
+		CFDAC64C18E1493D00EB609B /* RCTools-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTools-Prefix.pch"; sourceTree = "<group>"; };
 		CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWAppDelegate.h; sourceTree = "<group>"; };
 		CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
 		CFDAC65C18E1493D00EB609B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APM LoggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFDAC66218E1493D00EB609B /* RCToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC66318E1493D00EB609B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CFDAC66B18E1493D00EB609B /* APM LoggerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APM LoggerTests-Info.plist"; sourceTree = "<group>"; };
+		CFDAC66B18E1493D00EB609B /* RCToolsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCToolsTests-Info.plist"; sourceTree = "<group>"; };
 		CFDAC66D18E1493D00EB609B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFDAC66F18E1493D00EB609B /* APM_LoggerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APM_LoggerTests.m; sourceTree = "<group>"; };
 		CFDAC67A18E14A2A00EB609B /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
@@ -442,8 +442,8 @@
 		CFDAC63C18E1493D00EB609B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CFDAC63B18E1493D00EB609B /* APM Logger.app */,
-				CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */,
+				CFDAC63B18E1493D00EB609B /* RCTools.app */,
+				CFDAC66218E1493D00EB609B /* RCToolsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -484,10 +484,10 @@
 		CFDAC64518E1493D00EB609B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CFDAC64618E1493D00EB609B /* APM Logger-Info.plist */,
+				CFDAC64618E1493D00EB609B /* RCTools-Info.plist */,
 				CFDAC64718E1493D00EB609B /* InfoPlist.strings */,
 				CFDAC64A18E1493D00EB609B /* main.m */,
-				CFDAC64C18E1493D00EB609B /* APM Logger-Prefix.pch */,
+				CFDAC64C18E1493D00EB609B /* RCTools-Prefix.pch */,
 				CFDAC64D18E1493D00EB609B /* VWWAppDelegate.h */,
 				CFDAC64E18E1493D00EB609B /* VWWAppDelegate.m */,
 			);
@@ -506,7 +506,7 @@
 		CFDAC66A18E1493D00EB609B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CFDAC66B18E1493D00EB609B /* APM LoggerTests-Info.plist */,
+				CFDAC66B18E1493D00EB609B /* RCToolsTests-Info.plist */,
 				CFDAC66C18E1493D00EB609B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -661,9 +661,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CFDAC63A18E1493D00EB609B /* APM Logger */ = {
+		CFDAC63A18E1493D00EB609B /* RCTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM Logger" */;
+			buildConfigurationList = CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "RCTools" */;
 			buildPhases = (
 				CFDAC63718E1493D00EB609B /* Sources */,
 				CFDAC63818E1493D00EB609B /* Frameworks */,
@@ -675,14 +675,14 @@
 				CFA8A4F918FA187600AF9B80 /* PBXTargetDependency */,
 				CF66EF3F18F9309E002F68C6 /* PBXTargetDependency */,
 			);
-			name = "APM Logger";
+			name = RCTools;
 			productName = "APM Logger";
-			productReference = CFDAC63B18E1493D00EB609B /* APM Logger.app */;
+			productReference = CFDAC63B18E1493D00EB609B /* RCTools.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CFDAC66118E1493D00EB609B /* APM LoggerTests */ = {
+		CFDAC66118E1493D00EB609B /* RCToolsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM LoggerTests" */;
+			buildConfigurationList = CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "RCToolsTests" */;
 			buildPhases = (
 				CFDAC65E18E1493D00EB609B /* Sources */,
 				CFDAC65F18E1493D00EB609B /* Frameworks */,
@@ -693,9 +693,9 @@
 			dependencies = (
 				CFDAC66818E1493D00EB609B /* PBXTargetDependency */,
 			);
-			name = "APM LoggerTests";
+			name = RCToolsTests;
 			productName = "APM LoggerTests";
-			productReference = CFDAC66218E1493D00EB609B /* APM LoggerTests.xctest */;
+			productReference = CFDAC66218E1493D00EB609B /* RCToolsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -713,7 +713,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "APM Logger" */;
+			buildConfigurationList = CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "RCTools" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -736,8 +736,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				CFDAC63A18E1493D00EB609B /* APM Logger */,
-				CFDAC66118E1493D00EB609B /* APM LoggerTests */,
+				CFDAC63A18E1493D00EB609B /* RCTools */,
+				CFDAC66118E1493D00EB609B /* RCToolsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -873,7 +873,7 @@
 		};
 		CFDAC66818E1493D00EB609B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CFDAC63A18E1493D00EB609B /* APM Logger */;
+			target = CFDAC63A18E1493D00EB609B /* RCTools */;
 			targetProxy = CFDAC66718E1493D00EB609B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -978,14 +978,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"APM\\ Logger/ThirdParty/CorePlot/**",
 					"APM\\ Logger/ThirdParty/GPUImage/**",
 				);
-				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
+				INFOPLIST_FILE = "APM Logger/RCTools-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty/CorePlot",
@@ -996,7 +996,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RCTools;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1008,14 +1008,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
+				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"APM\\ Logger/ThirdParty/CorePlot/**",
 					"APM\\ Logger/ThirdParty/GPUImage/**",
 				);
-				INFOPLIST_FILE = "APM Logger/APM Logger-Info.plist";
+				INFOPLIST_FILE = "APM Logger/RCTools-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/APM\\ Logger/ThirdParty/CorePlot",
@@ -1025,7 +1025,7 @@
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RCTools;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1046,8 +1046,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "APM LoggerTests/APM LoggerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "APM LoggerTests/RCToolsTests-Info.plist";
+				PRODUCT_NAME = RCToolsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1064,8 +1064,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/APM Logger-Prefix.pch";
-				INFOPLIST_FILE = "APM LoggerTests/APM LoggerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "APM LoggerTests/RCToolsTests-Info.plist";
+				PRODUCT_NAME = RCToolsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1074,7 +1074,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "APM Logger" */ = {
+		CFDAC63618E1493D00EB609B /* Build configuration list for PBXProject "RCTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFDAC67118E1493D00EB609B /* Debug */,
@@ -1083,7 +1083,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM Logger" */ = {
+		CFDAC67318E1493D00EB609B /* Build configuration list for PBXNativeTarget "RCTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFDAC67418E1493D00EB609B /* Debug */,
@@ -1092,7 +1092,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "APM LoggerTests" */ = {
+		CFDAC67618E1493D00EB609B /* Build configuration list for PBXNativeTarget "RCToolsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CFDAC67718E1493D00EB609B /* Debug */,
