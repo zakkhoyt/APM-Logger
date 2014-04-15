@@ -1,0 +1,79 @@
+[self.db executeUpdate:@"CREATE TABLE 'FMT' (typeID integer PRIMARY KEY,length integer,name varchar(200),format varchar(6000),val varchar(6000));"];
+
+[self.db executeUpdate:@"CREATE TABLE 'PARM' (idx integer PRIMARY KEY,Name text,Value real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (7,0,\"PARM\",\"Nf\",\"Name,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'GPS' (idx integer PRIMARY KEY,Status integer,TimeMS integer,Week integer,NSats integer,HDop real,Lat integer,Lng integer,RelAlt real,Alt real,Spd real,GCrs real,VZ real,T integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (8,0,\"GPS\",\"BIHBcLLeeEefI\",\"Status,TimeMS,Week,NSats,HDop,Lat,Lng,RelAlt,Alt,Spd,GCrs,VZ,T\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'IMU' (idx integer PRIMARY KEY,TimeMS integer,GyrX real,GyrY real,GyrZ real,AccX real,AccY real,AccZ real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (9,0,\"IMU\",\"Iffffff\",\"TimeMS,GyrX,GyrY,GyrZ,AccX,AccY,AccZ\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'MSG' (idx integer PRIMARY KEY,Message text);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (10,0,\"MSG\",\"Z\",\"Message\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'ATUN' (idx integer PRIMARY KEY,Axis integer,TuneStep integer,RateMin real,RateMax real,RPGain real,RDGain real,SPGain real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (11,0,\"ATUN\",\"BBfffff\",\"Axis,TuneStep,RateMin,RateMax,RPGain,RDGain,SPGain\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'ATDE' (idx integer PRIMARY KEY,Angle real,Rate real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (12,0,\"ATDE\",\"cf\",\"Angle,Rate\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'CURR' (idx integer PRIMARY KEY,ThrOut integer,ThrInt integer,Volt integer,Curr integer,Vcc integer,CurrTot real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (13,0,\"CURR\",\"hIhhhf\",\"ThrOut,ThrInt,Volt,Curr,Vcc,CurrTot\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'MOT' (idx integer PRIMARY KEY,Mot1 integer,Mot2 integer,Mot3 integer,Mot4 integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (14,0,\"MOT\",\"hhhh\",\"Mot1,Mot2,Mot3,Mot4\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'OF' (idx integer PRIMARY KEY,Dx integer,Dy integer,SQual integer,X real,Y real,Lat real,Lng real,Roll real,Pitch real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (15,0,\"OF\",\"hhBccffee\",\"Dx,Dy,SQual,X,Y,Lat,Lng,Roll,Pitch\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'NTUN' (idx integer PRIMARY KEY,WPDst real,WPBrg real,PErX real,PErY real,DVelX real,DVelY real,VelX real,VelY real,DAcX real,DAcY real,DRol real,DPit real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (16,0,\"NTUN\",\"Ecffffffffee\",\"WPDst,WPBrg,PErX,PErY,DVelX,DVelY,VelX,VelY,DAcX,DAcY,DRol,DPit\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'CTUN' (idx integer PRIMARY KEY,ThrIn integer,SonAlt real,BarAlt real,WPAlt real,DesSonAlt real,AngBst integer,CRate integer,ThrOut integer,DCRate integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (17,0,\"CTUN\",\"hcefchhhh\",\"ThrIn,SonAlt,BarAlt,WPAlt,DesSonAlt,AngBst,CRate,ThrOut,DCRate\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'MAG' (idx integer PRIMARY KEY,MagX integer,MagY integer,MagZ integer,OfsX integer,OfsY integer,OfsZ integer,MOfsX integer,MOfsY integer,MOfsZ integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (18,0,\"MAG\",\"hhhhhhhhh\",\"MagX,MagY,MagZ,OfsX,OfsY,OfsZ,MOfsX,MOfsY,MOfsZ\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'PM' (idx integer PRIMARY KEY,RenCnt integer,RenBlw integer,NLon integer,NLoop integer,MaxT integer,PMT integer,I2CErr integer,INSErr integer,INAVErr integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (19,0,\"PM\",\"BBHHIhBHB\",\"RenCnt,RenBlw,NLon,NLoop,MaxT,PMT,I2CErr,INSErr,INAVErr\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'CMD' (idx integer PRIMARY KEY,CTot integer,CNum integer,CId integer,COpt integer,Prm1 integer,Alt real,Lat integer,Lng integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (20,0,\"CMD\",\"BBBBBeLL\",\"CTot,CNum,CId,COpt,Prm1,Alt,Lat,Lng\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'ATT' (idx integer PRIMARY KEY,RollIn real,Roll real,PitchIn real,Pitch real,YawIn real,Yaw real,NavYaw real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (21,0,\"ATT\",\"cccccCC\",\"RollIn,Roll,PitchIn,Pitch,YawIn,Yaw,NavYaw\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'INAV' (idx integer PRIMARY KEY,BAlt real,IAlt real,IClb real,ACorrX real,ACorrY real,ACorrZ real,GLat integer,GLng integer,ILat real,ILng real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (22,0,\"INAV\",\"cccfffiiff\",\"BAlt,IAlt,IClb,ACorrX,ACorrY,ACorrZ,GLat,GLng,ILat,ILng\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'MODE' (idx integer PRIMARY KEY,Mode integer,ThrCrs integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (23,0,\"MODE\",\"Mh\",\"Mode,ThrCrs\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'EV' (idx integer PRIMARY KEY,Id integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (25,0,\"EV\",\"B\",\"Id\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'D16' (idx integer PRIMARY KEY,Id integer,Value integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (26,0,\"D16\",\"Bh\",\"Id,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'DU16' (idx integer PRIMARY KEY,Id integer,Value integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (27,0,\"DU16\",\"BH\",\"Id,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'D32' (idx integer PRIMARY KEY,Id integer,Value integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (28,0,\"D32\",\"Bi\",\"Id,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'DU32' (idx integer PRIMARY KEY,Id integer,Value integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (29,0,\"DU32\",\"BI\",\"Id,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'DFLT' (idx integer PRIMARY KEY,Id integer,Value real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (30,0,\"DFLT\",\"Bf\",\"Id,Value\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'PID' (idx integer PRIMARY KEY,Id integer,Error integer,P integer,I integer,D integer,Out integer,Gain real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (31,0,\"PID\",\"Biiiiif\",\"Id,Error,P,I,D,Out,Gain\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'CAM' (idx integer PRIMARY KEY,GPSTime integer,GPSWeek integer,Lat integer,Lng integer,Alt real,Roll real,Pitch real,Yaw real);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (32,0,\"CAM\",\"IHLLeccC\",\"GPSTime,GPSWeek,Lat,Lng,Alt,Roll,Pitch,Yaw\");"];
+
+[self.db executeUpdate:@"CREATE TABLE 'ERR' (idx integer PRIMARY KEY,Subsys integer,ECode integer);"];
+[self.db executeUpdate:@"INSERT INTO 'FMT' (typeID,length,name,format,val) values (33,0,\"ERR\",\"BB\",\"Subsys,ECode\");"];

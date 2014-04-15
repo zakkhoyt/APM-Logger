@@ -25,6 +25,8 @@ static NSString *VWWSegueLogsToLog = @"VWWSegueLogsToLog";
     [super viewDidLoad];
     
     self.navigationItem.title = @"APM LOGS";
+
+    
     
     // Add pull to refresh controller
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -71,6 +73,9 @@ static NSString *VWWSegueLogsToLog = @"VWWSegueLogsToLog";
     [self.tableView reloadData];
     [refreshControl endRefreshing];
 }
+
+#pragma mark IBActions
+
 
 
 #pragma mark UITableViewDataSource
