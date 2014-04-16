@@ -35,7 +35,7 @@
     [super viewDidLoad];
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
-    self.motionController.updateInterval = 1/2.0;
+    self.motionController.updateInterval = 1/30.0;
     [self.motionController startAccelerometer];
     [self setupData];
     [self setupgraph];
@@ -43,19 +43,19 @@
 
 
 -(void)setupData{
-    
+    self.dataForPlot = [@[]mutableCopy];
     //    // Add some initial data
-    NSMutableArray *contentArray = [NSMutableArray arrayWithCapacity:NUM_POINTS];
-    for ( NSUInteger i = 0; i < NUM_POINTS; i++ ) {
-        NSNumber *x = @(i);
-        float randomNum = ((float)rand() / RAND_MAX) * 10;
-        randomNum -= 5.0;
-        NSNumber *y = @(randomNum);
-        [contentArray addObject:@{ @"x": x,
-                                   @"y": y }
-         ];
-    }
-    self.dataForPlot = contentArray;
+//    NSMutableArray *contentArray = [NSMutableArray arrayWithCapacity:NUM_POINTS];
+//    for ( NSUInteger i = 0; i < NUM_POINTS; i++ ) {
+//        NSNumber *x = @(i);
+//        float randomNum = ((float)rand() / RAND_MAX) * 10;
+//        randomNum -= 5.0;
+//        NSNumber *y = @(randomNum);
+//        [contentArray addObject:@{ @"x": x,
+//                                   @"y": y }
+//         ];
+//    }
+//    self.dataForPlot = contentArray;
 }
 -(void)setupgraph{
     
@@ -289,6 +289,7 @@
 
 
 -(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
+
     static NSInteger counter = 0;
     
     
@@ -296,10 +297,10 @@
     CPTPlot *thePlot   = [theGraph plotWithIdentifier:@"Blue Plot"];
     
     if ( thePlot ) {
-        if ( self.dataForPlot.count >= NUM_POINTS ) {
-            [self.dataForPlot removeObjectAtIndex:0];
-            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
-        }
+//        if ( self.dataForPlot.count >= NUM_POINTS ) {
+//            [self.dataForPlot removeObjectAtIndex:0];
+//            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
+//        }
         
         CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)theGraph.defaultPlotSpace;
         NSUInteger location       = (counter >= NUM_POINTS ? counter - NUM_POINTS + 2 : 0);
@@ -313,15 +314,19 @@
                      property:@"xRange"
                 fromPlotRange:oldRange
                   toPlotRange:newRange
-                     duration:CPTFloat(1.0 / 5.0)];
+                     duration:CPTFloat(0)];
         
         NSNumber *x = @(counter);
         NSNumber *y = @(accelerometers.acceleration.x);
         [self.dataForPlot addObject:@{ @"x": x,
                                        @"y": y }];
-        [thePlot insertDataAtIndex:self.dataForPlot.count - 1 numberOfRecords:1];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [thePlot insertDataAtIndex:self.dataForPlot.count - 1 numberOfRecords:1];
+        });
+        
 
         counter++;
-        
-    }}
+    }
+}
 @end
