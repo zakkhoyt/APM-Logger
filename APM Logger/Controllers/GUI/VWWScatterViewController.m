@@ -9,13 +9,15 @@
 #import "VWWScatterViewController.h"
 #import "CorePlot-CocoaTouch.h"
 #import "TestXYTheme.h"
-#import "_CPTPlainWhiteTheme.h"
-#define NUM_POINTS 50
+#import "VWWMotionController.h"
 
-@interface VWWScatterViewController ()<CPTPlotDataSource>
+#define NUM_POINTS 50
+#define kAlpha 0.5;
+@interface VWWScatterViewController ()<CPTPlotDataSource, VWWMotionControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
 @property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
 @property (nonatomic, strong) CPTXYGraph *graph;
+@property (nonatomic, strong) VWWMotionController *motionController;
 @end
 
 @implementation VWWScatterViewController
@@ -31,6 +33,10 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    self.motionController = [VWWMotionController sharedInstance];
+    self.motionController.delegate = self;
+    self.motionController.updateInterval = 1/2.0;
+    [self.motionController startAccelerometer];
     [self setupData];
     [self setupgraph];
 }
@@ -53,7 +59,7 @@
 }
 -(void)setupgraph{
     
-//#define VWW_SCATTER
+    //#define VWW_SCATTER
     
 #if defined(VWW_SCATTER)
     // Create self.graph from a custom theme
@@ -73,7 +79,7 @@
     plotSpace.allowsUserInteraction = NO;
     plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0) length:CPTDecimalFromFloat(NUM_POINTS)];
     plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-5.0) length:CPTDecimalFromFloat(10)];
-
+    
     
     // Create a blue plot area
     CPTScatterPlot *boundLinePlot = [[CPTScatterPlot alloc] init];
@@ -104,12 +110,12 @@
     
     // Create self.graph from a custom theme
     self.graph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
-//    CPTTheme *theme = [[TestXYTheme alloc] init];
-//    CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
+    //    CPTTheme *theme = [[TestXYTheme alloc] init];
+    //    CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
     CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainBlackTheme];
-//    CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
-//    CPTTheme *theme = [CPTTheme themeNamed:kCPTSlateTheme];
-//    CPTTheme *theme = [CPTTheme themeNamed:kCPTStocksTheme];
+    //    CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
+    //    CPTTheme *theme = [CPTTheme themeNamed:kCPTSlateTheme];
+    //    CPTTheme *theme = [CPTTheme themeNamed:kCPTStocksTheme];
     [self.graph applyTheme:theme];
     
     CPTGraphHostingView *hostingView = (CPTGraphHostingView *)self.graphView;
@@ -118,7 +124,7 @@
     hostingView.hostedGraph = self.graph;
     
     self.graph.plotAreaFrame.masksToBorder = NO;
-//    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
+    //    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
     
     self.graph.plotAreaFrame.paddingTop    = 15.0;
     self.graph.plotAreaFrame.paddingRight  = 15.0;
@@ -186,18 +192,18 @@
     
     
 #endif
-
-
-//#define PERFORMANCE_TEST1
-#ifdef PERFORMANCE_TEST1
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(changePlotRange) userInfo:nil repeats:YES];
-#endif
     
-#define PERFORMANCE_TEST2
-#ifdef PERFORMANCE_TEST2
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cycleData) userInfo:nil repeats:YES];
-#endif
-
+    
+    ////#define PERFORMANCE_TEST1
+    //#ifdef PERFORMANCE_TEST1
+    //    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(changePlotRange) userInfo:nil repeats:YES];
+    //#endif
+    //
+    //#define PERFORMANCE_TEST2
+    //#ifdef PERFORMANCE_TEST2
+    //    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(cycleData) userInfo:nil repeats:YES];
+    //#endif
+    
 }
 
 -(void)changePlotRange{
@@ -210,7 +216,7 @@
 -(void)cycleData{
     [self setupData];
     [self.graph reloadData];
-
+    
 }
 
 #pragma mark CPTPlotDataSource
@@ -280,4 +286,42 @@
     
     return NO;
 }
+
+
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
+    static NSInteger counter = 0;
+    
+    
+    CPTGraph *theGraph = self.graph;
+    CPTPlot *thePlot   = [theGraph plotWithIdentifier:@"Blue Plot"];
+    
+    if ( thePlot ) {
+        if ( self.dataForPlot.count >= NUM_POINTS ) {
+            [self.dataForPlot removeObjectAtIndex:0];
+            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
+        }
+        
+        CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)theGraph.defaultPlotSpace;
+        NSUInteger location       = (counter >= NUM_POINTS ? counter - NUM_POINTS + 2 : 0);
+        
+        CPTPlotRange *oldRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger( (location > 0) ? (location - 1) : 0 )
+                                                              length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
+        CPTPlotRange *newRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(location)
+                                                              length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
+        
+        [CPTAnimation animate:plotSpace
+                     property:@"xRange"
+                fromPlotRange:oldRange
+                  toPlotRange:newRange
+                     duration:CPTFloat(1.0 / 5.0)];
+        
+        NSNumber *x = @(counter);
+        NSNumber *y = @(accelerometers.acceleration.x);
+        [self.dataForPlot addObject:@{ @"x": x,
+                                       @"y": y }];
+        [thePlot insertDataAtIndex:self.dataForPlot.count - 1 numberOfRecords:1];
+
+        counter++;
+        
+    }}
 @end

@@ -1023,8 +1023,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1045,7 +1045,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = RCTools;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7EDC31DA-1DC7-4307-A7F7-402F4FE88DE6";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1056,8 +1056,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1077,7 +1077,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = RCTools;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7EDC31DA-1DC7-4307-A7F7-402F4FE88DE6";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

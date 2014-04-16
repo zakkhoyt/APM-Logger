@@ -24,6 +24,10 @@
 +(VWWMotionController*)sharedInstance;
 @property (nonatomic, weak) id <VWWMotionControllerDelegate> delegate;
 @property (nonatomic) NSTimeInterval updateInterval;
+
+-(void)startAccelerometer;
+-(void)stopAccelerometer;
+
 -(void)startAll;
 -(void)stopAll;
 -(void)resetAll;
