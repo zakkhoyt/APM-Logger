@@ -6,13 +6,11 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 //  http://www.raywenderlich.com/9743/how-to-create-a-simple-2d-iphone-game-with-opengl-es-2-0-and-glkit-part-1
-
+// http://games.ianterrell.com/how-to-draw-2d-shapes-with-glkit/
 
 
 #import "VWWGLKViewController.h"
-
-
-
+#import "VWWScene.h"
 
 @interface VWWGLKViewController ()
 @property (strong, nonatomic) EAGLContext *context;

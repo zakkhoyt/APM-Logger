@@ -10,6 +10,7 @@
 		C60970A818E1F90C005D8683 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C60970A718E1F90C005D8683 /* libsqlite3.dylib */; };
 		C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */; };
 		C66BE7F518FEFC2D0036E098 /* VWWGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */; };
+		C66BE7F818FEFDC90036E098 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F718FEFDC90036E098 /* VWWScene.m */; };
 		C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */; };
 		C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */ = {isa = PBXBuildFile; fileRef = C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */; };
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
@@ -136,6 +137,8 @@
 		C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFileSummary.m; sourceTree = "<group>"; };
 		C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGLKViewController.m; sourceTree = "<group>"; };
 		C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGLKViewController.h; sourceTree = "<group>"; };
+		C66BE7F618FEFDC90036E098 /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
+		C66BE7F718FEFDC90036E098 /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
 		C6712CBB18FC866500A3665F /* VWWLogFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFilterViewController.h; sourceTree = "<group>"; };
 		C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFilterViewController.m; sourceTree = "<group>"; };
 		C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-25 16-45-00_11.log"; sourceTree = "<group>"; };
@@ -568,8 +571,10 @@
 		CFDAC67D18E14A2A00EB609B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */,
 				C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */,
+				C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */,
+				C66BE7F618FEFDC90036E098 /* VWWScene.h */,
+				C66BE7F718FEFDC90036E098 /* VWWScene.m */,
 				CFA8A4D418F9FD5200AF9B80 /* About */,
 				CFA8A49B18F9FB5300AF9B80 /* Base */,
 				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
@@ -883,6 +888,7 @@
 				CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */,
 				CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */,
 				CFA8A4BF18F9FC9F00AF9B80 /* VWWVideosViewController.m in Sources */,
+				C66BE7F818FEFDC90036E098 /* VWWScene.m in Sources */,
 				CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */,
 				CFA8A4A518F9FBD500AF9B80 /* VWWDashboardViewController.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
