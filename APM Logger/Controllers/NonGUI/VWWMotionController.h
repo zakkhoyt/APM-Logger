@@ -12,6 +12,7 @@
 @class VWWMotionController;
 
 @protocol VWWMotionControllerDelegate <NSObject>
+@optional
 -(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers;
 -(void)motionController:(VWWMotionController*)sender didUpdateGyroscopes:(CMGyroData*)gyroscopes;
 -(void)motionController:(VWWMotionController*)sender didUpdateMagnetometers:(CMMagnetometerData*)magnetometers;

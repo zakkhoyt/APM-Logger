@@ -8,6 +8,8 @@
 
 #import "VWWTuningsViewController.h"
 
+static NSString *VWWSegueTuningsToTuning = @"VWWSegueTuningsToTuning";
+
 @interface VWWTuningsViewController ()
 
 @end
@@ -26,6 +28,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationItem.title = @"MOTOR/PROP";
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTouchUpInside:)];
+    [self.navigationItem setRightBarButtonItem:addButton animated:NO];
+
 }
 
 
@@ -46,5 +52,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark IBActions
+
+-(void)addButtonTouchUpInside:(id)sender{
+    [self performSegueWithIdentifier:VWWSegueTuningsToTuning sender:self];
+}
 
 @end

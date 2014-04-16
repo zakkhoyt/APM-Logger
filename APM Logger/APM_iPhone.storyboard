@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vwH-BR-Jab">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sdk-yo-bGv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -488,6 +488,34 @@
             </objects>
             <point key="canvasLocation" x="2068" y="-1310"/>
         </scene>
+        <!--Plot View Controller-->
+        <scene sceneID="Q4K-Lh-Xva">
+            <objects>
+                <viewController storyboardIdentifier="VWWPlotViewController" id="KOU-yi-gap" customClass="VWWPlotViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fso-5c-YEm"/>
+                        <viewControllerLayoutGuide type="bottom" id="S7l-Pm-mSY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WHO-YL-5C8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-9i-YeZ" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="graphView" destination="ZHn-9i-YeZ" id="WDl-wW-lMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDp-pc-I1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="703"/>
+        </scene>
         <!--Videos View Controller-->
         <scene sceneID="SJ8-j0-vnh">
             <objects>
@@ -958,10 +986,66 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="z04-j2-imi" kind="push" identifier="VWWSegueTuningsToTuning" id="25C-kc-GaU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPG-2o-eTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="601" y="-396"/>
+        </scene>
+        <!--Tuning View Controller-->
+        <scene sceneID="ZsH-DK-NkA">
+            <objects>
+                <viewController id="z04-j2-imi" customClass="VWWTuningViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZKp-rR-K70"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZhK-Ka-WGH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="teG-E6-WPc" customClass="CPTGraphHostingView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EvE-v4-pjY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4M-5q-Qo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="-396"/>
+        </scene>
+        <!--Scatter View Controller-->
+        <scene sceneID="Fmq-Fo-snL">
+            <objects>
+                <viewController storyboardIdentifier="VWWScatterViewController" id="sdk-yo-bGv" customClass="VWWScatterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2jU-6P-Quz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pb8-BC-Lmw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sj0-Iy-lP5" customClass="CPTGraphHostingView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwV-OE-bty" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RwV-OE-bty" secondAttribute="trailing" id="2zQ-fa-Pwn"/>
+                            <constraint firstItem="RwV-OE-bty" firstAttribute="leading" secondItem="sj0-Iy-lP5" secondAttribute="leading" id="Rb5-7w-ahE"/>
+                            <constraint firstItem="Pb8-BC-Lmw" firstAttribute="top" secondItem="RwV-OE-bty" secondAttribute="bottom" id="ebk-AL-Xpc"/>
+                            <constraint firstItem="RwV-OE-bty" firstAttribute="top" secondItem="sj0-Iy-lP5" secondAttribute="top" id="rLU-ZY-9w8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="graphView" destination="RwV-OE-bty" id="0JI-Ue-WiF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="902-hK-eKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-437" y="703"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -1,12 +1,12 @@
 //
-//  VWWTuningViewController.m
-//  APM Logger
+//  VWWPlotViewController.m
+//  RCTools
 //
-//  Created by Zakk Hoyt on 4/12/14.
+//  Created by Zakk Hoyt on 4/15/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWTuningViewController.h"
+#import "VWWPlotViewController.h"
 #import "CorePlot-CocoaTouch.h"
 
 static NSString *const kPlotIdentifier = @"Data Source Plot";
@@ -15,14 +15,17 @@ static const double kFrameRate = 5.0;  // frames per second
 static const double kAlpha     = 0.25; // smoothing constant
 
 
-@interface VWWTuningViewController () <CPTPlotDataSource, CPTAxisDelegate>
+@interface VWWPlotViewController () <CPTPlotDataSource>
 @property (nonatomic, strong) CPTXYGraph *graph;
 @property (nonatomic, strong) NSTimer *dataTimer;
 @property (nonatomic, strong) NSMutableArray *plotData;
 @property (nonatomic) NSUInteger currentIndex;
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
+
 @end
 
-@implementation VWWTuningViewController
+@implementation VWWPlotViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,9 +41,9 @@ static const double kAlpha     = 0.25; // smoothing constant
     [super viewDidLoad];
     [self newData:nil];
     self.plotData = [@[]mutableCopy];
-//    [self.plotData removeAllObjects];
+    //    [self.plotData removeAllObjects];
     self.currentIndex = 0;
-
+    
     [self setupGraph];
 }
 
@@ -51,24 +54,24 @@ static const double kAlpha     = 0.25; // smoothing constant
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 -(void)setupGraph{
-
-    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
-//    [self addGraph:graph toHostingView:layerHostingView];
-//    [self applyTheme:theme toGraph:graph withDefault:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
     
-//    [self setTitleDefaultsForGraph:graph withBounds:bounds];
-//    [self setPaddingDefaultsForGraph:graph withBounds:bounds];
+    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
+    //    [self addGraph:graph toHostingView:layerHostingView];
+    //    [self applyTheme:theme toGraph:graph withDefault:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
+    
+    //    [self setTitleDefaultsForGraph:graph withBounds:bounds];
+    //    [self setPaddingDefaultsForGraph:graph withBounds:bounds];
     
     self.graph.plotAreaFrame.paddingTop    = 15.0;
     self.graph.plotAreaFrame.paddingRight  = 15.0;
@@ -99,7 +102,7 @@ static const double kAlpha     = 0.25; // smoothing constant
     NSNumberFormatter *labelFormatter = [[NSNumberFormatter alloc] init];
     labelFormatter.numberStyle = NSNumberFormatterNoStyle;
     x.labelFormatter           = labelFormatter;
-
+    
     
     // Y axis
     CPTXYAxis *y = axisSet.yAxis;
@@ -135,15 +138,15 @@ static const double kAlpha     = 0.25; // smoothing constant
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(0) length:CPTDecimalFromUnsignedInteger(1)];
     
     [self.dataTimer invalidate];
-
     
-//    if ( animated ) {
+    
+    //    if ( animated ) {
     if(YES){
         self.dataTimer = [NSTimer timerWithTimeInterval:1.0 / kFrameRate
-                                             target:self
-                                           selector:@selector(newData:)
-                                           userInfo:nil
-                                            repeats:YES];
+                                                 target:self
+                                               selector:@selector(newData:)
+                                               userInfo:nil
+                                                repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.dataTimer forMode:NSRunLoopCommonModes];
     }
     else {
@@ -215,6 +218,5 @@ static const double kAlpha     = 0.25; // smoothing constant
     
     return num;
 }
-
 
 @end
