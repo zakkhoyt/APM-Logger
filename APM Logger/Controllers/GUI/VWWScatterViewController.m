@@ -116,7 +116,7 @@
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTSlateTheme];
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTStocksTheme];
-//    [self.graph applyTheme:theme];
+    [self.graph applyTheme:theme];
     
     CPTGraphHostingView *hostingView = (CPTGraphHostingView *)self.graphView;
     // Flip about x axis

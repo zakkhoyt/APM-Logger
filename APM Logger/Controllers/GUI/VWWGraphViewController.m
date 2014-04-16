@@ -15,10 +15,6 @@
 
 @interface VWWGraphViewController () <VWWMotionControllerDelegate>
 @property (weak, nonatomic) IBOutlet VWWGraphView *xGraphView;
-@property (weak, nonatomic) IBOutlet VWWGraphView *yGraphView;
-@property (weak, nonatomic) IBOutlet VWWGraphView *zGraphView;
-
-
 @property (nonatomic, strong) VWWMotionController *motionController;
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
 @end
@@ -50,17 +46,8 @@
                             @"z" : @(0)};
         [self.dataForPlot addObject:d];
     }
-    self.xGraphView.lineColor = [UIColor yellowColor];
-    self.xGraphView.dataSource = self.dataForPlot;
-    self.xGraphView.key = @"x";
 
-    self.yGraphView.lineColor = [UIColor yellowColor];
-    self.yGraphView.dataSource = self.dataForPlot;
-    self.yGraphView.key = @"y";
-    
-    self.zGraphView.lineColor = [UIColor yellowColor];
-    self.zGraphView.dataSource = self.dataForPlot;
-    self.zGraphView.key = @"z";
+    self.xGraphView.dataSource = self.dataForPlot;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -73,8 +60,6 @@
 -(void)drawGraphs{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.xGraphView setNeedsDisplay];
-        [self.yGraphView setNeedsDisplay];
-        [self.zGraphView setNeedsDisplay];
     });
 }
 

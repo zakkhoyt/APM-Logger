@@ -10,6 +10,4 @@
 
 @interface VWWGraphView : UIView
 @property (nonatomic, strong) NSArray *dataSource;
-@property (nonatomic, strong) UIColor *lineColor;
-@property (nonatomic, strong) NSString *key;
 @end
