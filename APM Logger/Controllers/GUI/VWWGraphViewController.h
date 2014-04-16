@@ -1,5 +1,5 @@
 //
-//  VWWPlotViewController.h
+//  VWWGraphViewController.h
 //  RCTools
 //
 //  Created by Zakk Hoyt on 4/15/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWPlotViewController : UIViewController
+@interface VWWGraphViewController : UIViewController
 
 @end

@@ -116,21 +116,21 @@
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTPlainWhiteTheme];
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTSlateTheme];
     //    CPTTheme *theme = [CPTTheme themeNamed:kCPTStocksTheme];
-    [self.graph applyTheme:theme];
+//    [self.graph applyTheme:theme];
     
     CPTGraphHostingView *hostingView = (CPTGraphHostingView *)self.graphView;
     // Flip about x axis
     self.graphView.transform = CGAffineTransformMakeScale(1.0, -1.0);
     hostingView.hostedGraph = self.graph;
     
-    self.graph.plotAreaFrame.masksToBorder = NO;
+
     //    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
     
-    self.graph.plotAreaFrame.paddingTop    = 15.0;
-    self.graph.plotAreaFrame.paddingRight  = 15.0;
-    self.graph.plotAreaFrame.paddingBottom = 55.0;
-    self.graph.plotAreaFrame.paddingLeft   = 55.0;
-    self.graph.plotAreaFrame.masksToBorder = NO;
+//    self.graph.plotAreaFrame.paddingTop    = 15.0;
+//    self.graph.plotAreaFrame.paddingRight  = 15.0;
+//    self.graph.plotAreaFrame.paddingBottom = 55.0;
+//    self.graph.plotAreaFrame.paddingLeft   = 55.0;
+//    self.graph.plotAreaFrame.masksToBorder = NO;
     
     // Grid line styles
     CPTMutableLineStyle *majorGridLineStyle = [CPTMutableLineStyle lineStyle];
@@ -289,18 +289,17 @@
 
 
 -(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
-
     static NSInteger counter = 0;
-    
     
     CPTGraph *theGraph = self.graph;
     CPTPlot *thePlot   = [theGraph plotWithIdentifier:@"Blue Plot"];
     
     if ( thePlot ) {
-//        if ( self.dataForPlot.count >= NUM_POINTS ) {
-//            [self.dataForPlot removeObjectAtIndex:0];
-//            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
-//        }
+        
+        if ( self.dataForPlot.count >= NUM_POINTS ) {
+            [self.dataForPlot removeObjectAtIndex:0];
+            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
+        }
         
         CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)theGraph.defaultPlotSpace;
         NSUInteger location       = (counter >= NUM_POINTS ? counter - NUM_POINTS + 2 : 0);
@@ -314,7 +313,8 @@
                      property:@"xRange"
                 fromPlotRange:oldRange
                   toPlotRange:newRange
-                     duration:CPTFloat(0)];
+                     duration:CPTFloat(1/30.0)];
+    
         
         NSNumber *x = @(counter);
         NSNumber *y = @(accelerometers.acceleration.x);
