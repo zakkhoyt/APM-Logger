@@ -70,6 +70,7 @@
 - (void)locationManager:(CLLocationManager *)manager
 	 didUpdateLocations:(NSArray *)locations{
     if(locations.count){
+        self.location = [locations[0] copy];
         [self.delegate locationController:self didUpdateLocations:locations];
     }
 }

@@ -9,6 +9,11 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "VWWVideoProcessor.h"
+#import "VWWLocationController.h"
+
+// Temp
+#import "VWWLocationController.h"
+
 
 #define BYTES_PER_PIXEL 4
 
@@ -336,76 +341,6 @@
 
 #pragma mark Processing
 
-- (void)processPixelBuffer_old: (CVImageBufferRef)pixelBuffer
-{
-	CVPixelBufferLockBaseAddress( pixelBuffer, 0 );
-	
-//	int bufferWidth = (int)CVPixelBufferGetWidth(pixelBuffer);
-//	int bufferHeight = (int)CVPixelBufferGetHeight(pixelBuffer);
-//	unsigned char *pixel = (unsigned char *)CVPixelBufferGetBaseAddress(pixelBuffer);
-    
-    // It is slow to read from user defaults, so let's copy values ahead of time.
-//    UInt8 color = [VWWUserDefaults color];
-//    UInt8 compare = [VWWUserDefaults compare];
-//    UInt8 theshold = [VWWUserDefaults threshold];
-//	for( int row = 0; row < bufferHeight; row++ ) {
-//		for( int column = 0; column < bufferWidth; column++ ) {
-//            if(color == 0){ // Blue
-//                if(compare == 0){
-//                    if(pixel[0] < theshold){
-//                        pixel[0] = 0xFF;
-//                        pixel[1] = 0x00;
-//                        pixel[2] = 0x00;
-//                    }
-//                } else {
-//                    if(pixel[0] > theshold){
-//                        pixel[0] = 0xFF;
-//                        pixel[1] = 0x00;
-//                        pixel[2] = 0x00;
-//                    }
-//                }
-//            } else if(color == 1){ // Green
-//                if(compare == 0){
-//                    if(pixel[1] < theshold){
-//                        pixel[0] = 0x00;
-//                        pixel[1] = 0xFF;
-//                        pixel[2] = 0x00;
-//                    }
-//                } else {
-//                    if(pixel[1] > theshold){
-//                        pixel[0] = 0x00;
-//                        pixel[1] = 0xFF;
-//                        pixel[2] = 0x00;
-//                    }
-//                }
-//
-//            } else if(color == 2){ // Red
-//                if(compare == 0){
-//                    if(pixel[2] < theshold){
-//                        pixel[0] = 0x00;
-//                        pixel[1] = 0x00;
-//                        pixel[2] = 0xFF;
-//                    }
-//                } else {
-//                    if(pixel[2] > theshold){
-//                        pixel[0] = 0x00;
-//                        pixel[1] = 0x00;
-//                        pixel[2] = 0xFF;
-//                    }
-//                }
-//
-//            }
-//            
-//            
-//            
-//            
-//			pixel += BYTES_PER_PIXEL;
-//		}
-//	}
-	
-	CVPixelBufferUnlockBaseAddress( pixelBuffer, 0 );
-}
-
 #pragma mark Capture
 
 
@@ -427,21 +362,7 @@
                                                     colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
 
     
-    
-    { // Render text
-        
-        UIFont *font = [UIFont systemFontOfSize:18];
-        
-        // coordinates
-        NSString* text = [NSString stringWithFormat:@"-127.3452532, 37.9234592"];
-        CGRect rect = CGRectMake(200, 200, 200, 200);
-        [text drawInRect:rect withAttributes:@{NSFontAttributeName : font,
-                                               NSForegroundColorAttributeName : [UIColor blueColor],
-                                               NSStrokeColorAttributeName : [UIColor redColor]}];
-        CGContextDrawPath(context, kCGPathStroke);
-    }
-    
-    
+
     // Setup scene
     CGContextSetLineWidth(context, 20.0f);
     CGContextSetStrokeColorWithColor(context, [[UIColor greenColor] CGColor]);
@@ -471,14 +392,16 @@
     
     
 
-    
+    // Text
     CGContextSelectFont(context, "Helvetica", 36.0, kCGEncodingMacRoman);
     CGContextSetTextDrawingMode(context, kCGTextFill);
     CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
 //    CGContextSetTextMatrix (context, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
-      CGContextSetTextMatrix (context, CGAffineTransformMakeRotation(M_PI_2));
-    NSString *tet = @"adfasdfasd";
-    CGContextShowTextAtPoint(context, 200, 200, [tet cStringUsingEncoding:NSUTF8StringEncoding], [tet length]);
+//      CGContextSetTextMatrix (context, CGAffineTransformMakeRotation(M_PI_2));
+    
+    CLLocation *location = [VWWLocationController sharedInstance].location;
+    NSString *tet = [NSString stringWithFormat:@"%.5f,%.5f", location.coordinate.latitude, location.coordinate.longitude];
+    CGContextShowTextAtPoint(context, 100, 100, [tet cStringUsingEncoding:NSUTF8StringEncoding], [tet length]);
 
 
     

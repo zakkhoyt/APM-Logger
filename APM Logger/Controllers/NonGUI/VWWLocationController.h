@@ -22,8 +22,11 @@ static NSString *SMLocationControllerHeadingKey = @"heading";
 
 @interface VWWLocationController : NSObject
 +(VWWLocationController*)sharedInstance;
+
 -(void)start;
 -(void)stop;
+@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic, strong) CLHeading *heading;
 
 @property (nonatomic, weak) id <VWWLocationControllerDelegate>delegate;
 

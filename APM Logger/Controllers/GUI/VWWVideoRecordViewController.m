@@ -11,6 +11,7 @@
 #import "VWWVideoProcessor.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "VWWLocationController.h"
 
 @interface VWWVideoRecordViewController () <VWWVideoProcessorDelegate>{
     VWWVideoProcessor *videoProcessor;
@@ -91,6 +92,8 @@
 	
 	typeLabel = [self labelWithText:@"" yPosition: (CGFloat) 98.0];
 	[self.previewView addSubview:typeLabel];
+    
+    [[VWWLocationController sharedInstance] start];
 }
 
 
