@@ -38,7 +38,7 @@
     self.dataForPlot = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
-    self.motionController.updateInterval = 1/200.0;
+    self.motionController.updateInterval = 1/100.0;
     [self.motionController startAccelerometer];
     
     
