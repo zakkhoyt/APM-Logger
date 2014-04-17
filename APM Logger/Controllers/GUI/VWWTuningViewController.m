@@ -20,6 +20,8 @@ static const double kAlpha     = 0.25; // smoothing constant
 @property (nonatomic, strong) NSTimer *dataTimer;
 @property (nonatomic, strong) NSMutableArray *plotData;
 @property (nonatomic) NSUInteger currentIndex;
+@property (weak, nonatomic) IBOutlet CPTGraphHostingView *graphView;
+
 @end
 
 @implementation VWWTuningViewController
@@ -63,92 +65,92 @@ static const double kAlpha     = 0.25; // smoothing constant
 
 -(void)setupGraph{
 
-    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
-//    [self addGraph:graph toHostingView:layerHostingView];
-//    [self applyTheme:theme toGraph:graph withDefault:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
-    
-//    [self setTitleDefaultsForGraph:graph withBounds:bounds];
-//    [self setPaddingDefaultsForGraph:graph withBounds:bounds];
-    
-    self.graph.plotAreaFrame.paddingTop    = 15.0;
-    self.graph.plotAreaFrame.paddingRight  = 15.0;
-    self.graph.plotAreaFrame.paddingBottom = 55.0;
-    self.graph.plotAreaFrame.paddingLeft   = 55.0;
-    self.graph.plotAreaFrame.masksToBorder = NO;
-    
-    // Grid line styles
-    CPTMutableLineStyle *majorGridLineStyle = [CPTMutableLineStyle lineStyle];
-    majorGridLineStyle.lineWidth = 0.75;
-    majorGridLineStyle.lineColor = [[CPTColor colorWithGenericGray:0.2] colorWithAlphaComponent:0.75];
-    
-    CPTMutableLineStyle *minorGridLineStyle = [CPTMutableLineStyle lineStyle];
-    minorGridLineStyle.lineWidth = 0.25;
-    minorGridLineStyle.lineColor = [[CPTColor whiteColor] colorWithAlphaComponent:0.1];
-    
-    // Axes
-    // X axis
-    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
-    CPTXYAxis *x          = axisSet.xAxis;
-    x.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-    x.orthogonalCoordinateDecimal = CPTDecimalFromUnsignedInteger(0);
-    x.majorGridLineStyle          = majorGridLineStyle;
-    x.minorGridLineStyle          = minorGridLineStyle;
-    x.minorTicksPerInterval       = 9;
-    x.title                       = @"X Axis";
-    x.titleOffset                 = 35.0;
-    NSNumberFormatter *labelFormatter = [[NSNumberFormatter alloc] init];
-    labelFormatter.numberStyle = NSNumberFormatterNoStyle;
-    x.labelFormatter           = labelFormatter;
-
-    
-    // Y axis
-    CPTXYAxis *y = axisSet.yAxis;
-    y.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromUnsignedInteger(0);
-    y.majorGridLineStyle          = majorGridLineStyle;
-    y.minorGridLineStyle          = minorGridLineStyle;
-    y.minorTicksPerInterval       = 3;
-    y.labelOffset                 = 5.0;
-    y.title                       = @"Y Axis";
-    y.titleOffset                 = 30.0;
-    y.axisConstraints             = [CPTConstraints constraintWithLowerOffset:0.0];
-    
-    // Rotate the labels by 45 degrees, just to show it can be done.
-    x.labelRotation = M_PI_4;
-    
-    // Create the plot
-    CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
-    dataSourceLinePlot.identifier     = kPlotIdentifier;
-    dataSourceLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
-    
-    CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy];
-    lineStyle.lineWidth              = 3.0;
-    lineStyle.lineColor              = [CPTColor greenColor];
-    dataSourceLinePlot.dataLineStyle = lineStyle;
-    
-    dataSourceLinePlot.dataSource = self;
-    [self.graph addPlot:dataSourceLinePlot];
-    
-    // Plot space
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(0) length:CPTDecimalFromUnsignedInteger(kMaxDataPoints - 2)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(0) length:CPTDecimalFromUnsignedInteger(1)];
-    
-    [self.dataTimer invalidate];
-
-    
-//    if ( animated ) {
-    if(YES){
-        self.dataTimer = [NSTimer timerWithTimeInterval:1.0 / kFrameRate
-                                             target:self
-                                           selector:@selector(newData:)
-                                           userInfo:nil
-                                            repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:self.dataTimer forMode:NSRunLoopCommonModes];
-    }
-    else {
-        self.dataTimer = nil;
-    }
+//    self.graph = [[CPTXYGraph alloc] initWithFrame:self.view.bounds] ;
+////    [self addGraph:graph toHostingView:layerHostingView];
+////    [self applyTheme:theme toGraph:graph withDefault:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
+//    
+////    [self setTitleDefaultsForGraph:graph withBounds:bounds];
+////    [self setPaddingDefaultsForGraph:graph withBounds:bounds];
+//    
+//    self.graph.plotAreaFrame.paddingTop    = 15.0;
+//    self.graph.plotAreaFrame.paddingRight  = 15.0;
+//    self.graph.plotAreaFrame.paddingBottom = 55.0;
+//    self.graph.plotAreaFrame.paddingLeft   = 55.0;
+//    self.graph.plotAreaFrame.masksToBorder = NO;
+//    
+//    // Grid line styles
+//    CPTMutableLineStyle *majorGridLineStyle = [CPTMutableLineStyle lineStyle];
+//    majorGridLineStyle.lineWidth = 0.75;
+//    majorGridLineStyle.lineColor = [[CPTColor colorWithGenericGray:0.2] colorWithAlphaComponent:0.75];
+//    
+//    CPTMutableLineStyle *minorGridLineStyle = [CPTMutableLineStyle lineStyle];
+//    minorGridLineStyle.lineWidth = 0.25;
+//    minorGridLineStyle.lineColor = [[CPTColor whiteColor] colorWithAlphaComponent:0.1];
+//    
+//    // Axes
+//    // X axis
+//    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.graph.axisSet;
+//    CPTXYAxis *x          = axisSet.xAxis;
+//    x.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
+//    x.orthogonalCoordinateDecimal = CPTDecimalFromUnsignedInteger(0);
+//    x.majorGridLineStyle          = majorGridLineStyle;
+//    x.minorGridLineStyle          = minorGridLineStyle;
+//    x.minorTicksPerInterval       = 9;
+//    x.title                       = @"X Axis";
+//    x.titleOffset                 = 35.0;
+//    NSNumberFormatter *labelFormatter = [[NSNumberFormatter alloc] init];
+//    labelFormatter.numberStyle = NSNumberFormatterNoStyle;
+//    x.labelFormatter           = labelFormatter;
+//
+//    
+//    // Y axis
+//    CPTXYAxis *y = axisSet.yAxis;
+//    y.labelingPolicy              = CPTAxisLabelingPolicyAutomatic;
+//    y.orthogonalCoordinateDecimal = CPTDecimalFromUnsignedInteger(0);
+//    y.majorGridLineStyle          = majorGridLineStyle;
+//    y.minorGridLineStyle          = minorGridLineStyle;
+//    y.minorTicksPerInterval       = 3;
+//    y.labelOffset                 = 5.0;
+//    y.title                       = @"Y Axis";
+//    y.titleOffset                 = 30.0;
+//    y.axisConstraints             = [CPTConstraints constraintWithLowerOffset:0.0];
+//    
+//    // Rotate the labels by 45 degrees, just to show it can be done.
+//    x.labelRotation = M_PI_4;
+//    
+//    // Create the plot
+//    CPTScatterPlot *dataSourceLinePlot = [[CPTScatterPlot alloc] init];
+//    dataSourceLinePlot.identifier     = kPlotIdentifier;
+//    dataSourceLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
+//    
+//    CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy];
+//    lineStyle.lineWidth              = 3.0;
+//    lineStyle.lineColor              = [CPTColor greenColor];
+//    dataSourceLinePlot.dataLineStyle = lineStyle;
+//    
+//    dataSourceLinePlot.dataSource = self;
+//    [self.graph addPlot:dataSourceLinePlot];
+//    
+//    // Plot space
+//    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.graph.defaultPlotSpace;
+//    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(0) length:CPTDecimalFromUnsignedInteger(kMaxDataPoints - 2)];
+//    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(0) length:CPTDecimalFromUnsignedInteger(1)];
+//    
+//    [self.dataTimer invalidate];
+//
+//    
+////    if ( animated ) {
+//    if(YES){
+//        self.dataTimer = [NSTimer timerWithTimeInterval:1.0 / kFrameRate
+//                                             target:self
+//                                           selector:@selector(newData:)
+//                                           userInfo:nil
+//                                            repeats:YES];
+//        [[NSRunLoop mainRunLoop] addTimer:self.dataTimer forMode:NSRunLoopCommonModes];
+//    }
+//    else {
+//        self.dataTimer = nil;
+//    }
 }
 
 

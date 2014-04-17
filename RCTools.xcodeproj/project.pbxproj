@@ -84,6 +84,7 @@
 		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
 		CFE20DAA18E2613200D07DA4 /* AP2Data.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2Data.m */; };
+		CFEA5F2F18FFA88000C6F885 /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -900,6 +901,7 @@
 				CFDAC6DD18E14A3300EB609B /* VWWUserDefaults.m in Sources */,
 				CFA8A4D018F9FD3E00AF9B80 /* VWWResourcesViewController.m in Sources */,
 				CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */,
+				CFEA5F2F18FFA88000C6F885 /* VWWWelcomeViewController.m in Sources */,
 				CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */,
 				CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */,
 				CFDAC6C218E14A2A00EB609B /* VWWMotionController.m in Sources */,
