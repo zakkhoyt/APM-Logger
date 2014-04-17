@@ -14,6 +14,7 @@
 
 @interface VWWGLKViewController ()
 @property (strong, nonatomic) EAGLContext *context;
+@property (nonatomic, strong) VWWScene *scene;
 @end
 
 @implementation VWWGLKViewController
@@ -32,6 +33,15 @@
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     [EAGLContext setCurrentContext:self.context];
+    
+    self.scene = [[VWWScene alloc]init];
+    self.scene.clearColor = GLKVector4Make(0.1, 0.9, 0.9, 0.0);
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self updateSceneBounds:[self interfaceOrientation]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -39,16 +49,52 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    [self updateSceneBounds:toInterfaceOrientation];
+    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
+}
+
+
+-(void)updateSceneBounds:(UIInterfaceOrientation)toInterfaceOrientation{
+    
+    if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown){
+        // Moving to portrait
+        float x = 1.0;
+        float y = self.view.bounds.size.width / (float)self.view.bounds.size.height;
+        self.scene.left   = -x;
+        self.scene.right  =  x;
+        self.scene.bottom = -y;
+        self.scene.top    =  y;
+        NSLog(@"x: %f y: %f", x, y);
+        
+    } else {
+        float x = self.view.bounds.size.height / (float)self.view.bounds.size.width;
+        float y = 1.0;
+        self.scene.left   = -x;
+        self.scene.right  =  x;
+        self.scene.bottom = -y;
+        self.scene.top    =  y;
+        NSLog(@"x: %f y: %f", x, y);
+    }
+    
+}
+
 #pragma mark - GLKViewDelegate
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClearColor(0, 104.0/255.0, 55.0/255.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
+    
+    [self.scene render];
 }
 
 - (void)update {
     
-    
+    [self.scene update];
 }
 
 @end

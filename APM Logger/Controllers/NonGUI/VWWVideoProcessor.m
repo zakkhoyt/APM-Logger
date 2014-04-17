@@ -325,9 +325,18 @@
 	});
 }
 
+
+
+
+
+
+
+
+
+
 #pragma mark Processing
 
-- (void)processPixelBuffer: (CVImageBufferRef)pixelBuffer
+- (void)processPixelBuffer_old: (CVImageBufferRef)pixelBuffer
 {
 	CVPixelBufferLockBaseAddress( pixelBuffer, 0 );
 	
@@ -399,6 +408,91 @@
 
 #pragma mark Capture
 
+
+
+
+-(void)processPixelBuffer:(CVImageBufferRef)videoFrame{
+    
+        // Create CGContextRef from CVImageBufferRef
+    CVPixelBufferLockBaseAddress(videoFrame,0);
+    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(videoFrame);
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(videoFrame);
+    size_t width = CVPixelBufferGetWidth(videoFrame);
+    size_t height = CVPixelBufferGetHeight(videoFrame);
+    CVPixelBufferUnlockBaseAddress(videoFrame,0);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(baseAddress,
+                                                    width, height, 8,
+                                                    bytesPerRow,
+                                                    colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+
+    
+    
+    { // Render text
+        
+        UIFont *font = [UIFont systemFontOfSize:18];
+        
+        // coordinates
+        NSString* text = [NSString stringWithFormat:@"-127.3452532, 37.9234592"];
+        CGRect rect = CGRectMake(200, 200, 200, 200);
+        [text drawInRect:rect withAttributes:@{NSFontAttributeName : font,
+                                               NSForegroundColorAttributeName : [UIColor blueColor],
+                                               NSStrokeColorAttributeName : [UIColor redColor]}];
+        CGContextDrawPath(context, kCGPathStroke);
+    }
+    
+    
+    // Setup scene
+    CGContextSetLineWidth(context, 20.0f);
+    CGContextSetStrokeColorWithColor(context, [[UIColor greenColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [[UIColor redColor]CGColor]);
+    
+    // Draw a few lines
+    CGContextMoveToPoint(context,
+                         arc4random() % 400,
+                         arc4random() % 400);
+    CGContextAddLineToPoint(context,
+                            arc4random() % 400,
+                            arc4random() % 400);
+    CGContextMoveToPoint(context,
+                         200,
+                         200);
+    CGContextAddLineToPoint(context,
+                            500,
+                            500);
+    CGContextMoveToPoint(context,
+                         700,
+                         300);
+    CGContextAddLineToPoint(context,
+                            500,
+                            200);
+    
+    CGContextStrokePath(context);
+    
+    
+
+    
+    CGContextSelectFont(context, "Helvetica", 36.0, kCGEncodingMacRoman);
+    CGContextSetTextDrawingMode(context, kCGTextFill);
+    CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
+//    CGContextSetTextMatrix (context, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
+      CGContextSetTextMatrix (context, CGAffineTransformMakeRotation(M_PI_2));
+    NSString *tet = @"adfasdfasd";
+    CGContextShowTextAtPoint(context, 200, 200, [tet cStringUsingEncoding:NSUTF8StringEncoding], [tet length]);
+
+
+    
+    
+
+    
+    
+    // Clean up
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    CVPixelBufferUnlockBaseAddress(videoFrame, 0);
+
+}
+    
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
 	CMFormatDescriptionRef formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer);

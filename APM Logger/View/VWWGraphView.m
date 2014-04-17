@@ -31,22 +31,25 @@
     CGFloat red = 0, green = 0, blue = 0, alpha = 0;;
     [[UIColor greenColor] getRed:&red green:&green blue:&blue alpha:&alpha];
     CGFloat greenColor[4] = {red, green, blue, alpha};
-    [[UIColor redColor] getRed:&red green:&green blue:&blue alpha:&alpha];
-    CGFloat redColor[4] = {red, green, blue, alpha};
-    [[UIColor yellowColor] getRed:&red green:&green blue:&blue alpha:&alpha];
-    CGFloat yellowColor[4] = {red, green, blue, alpha};
+//    [[UIColor redColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//    CGFloat redColor[4] = {red, green, blue, alpha};
+//    [[UIColor yellowColor] getRed:&red green:&green blue:&blue alpha:&alpha];
+//    CGFloat yellowColor[4] = {red, green, blue, alpha};
     
     
     
     
     float lastXX = 0;
     float lastXY = 0;
-    float lastYX = 0;
-    float lastYY = 0;
-    float lastZX = 0;
-    float lastZY = 0;
+//    float lastYX = 0;
+//    float lastYY = 0;
+//    float lastZX = 0;
+//    float lastZY = 0;
 
 
+
+    
+    
     
     CGContextBeginPath(cgContext);
     
@@ -127,6 +130,43 @@
 //        }
     }
     CGContextStrokePath(cgContext);
+    
+    
+//    { // Render text
+//
+//        UIFont *font = [UIFont systemFontOfSize:18];
+//        
+//        // coordinates
+//        NSString* text = [NSString stringWithFormat:@"asdfasdfasdf"];
+//        CGRect rect = CGRectMake(200, 200, 200, 200);
+//        [text drawInRect:rect withAttributes:@{NSFontAttributeName : font,
+//                                               NSForegroundColorAttributeName : [UIColor blueColor],
+//                                               NSStrokeColorAttributeName : [UIColor redColor]}];
+//        CGContextDrawPath(cgContext, kCGPathStroke);
+//    }
+
+    
+//    UIFont *font = [UIFont systemFontOfSize:18];
+    
+//    CG_EXTERN void CGContextSelectFont(CGContextRef c, const char *name,
+//                                       CGFloat size, CGTextEncoding textEncoding)
+//    CGContextSelectFont(cgContext, font.fontName, 18.0, kCGEncodingFontSpecific);
+    
+//    CGContextSetRGBFillColor
+//    CGContextShowTextAtPoint
+    
+    
+    CGContextSelectFont(cgContext, "Helvetica", 18.0, kCGEncodingMacRoman);
+    CGContextSetTextDrawingMode(cgContext, kCGTextFill);
+    CGContextSetFillColorWithColor(cgContext, [UIColor redColor].CGColor);
+    CGContextSetTextMatrix (cgContext, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
+    
+    NSString *tet = @"adfasdfasd";
+    CGContextShowTextAtPoint(cgContext, 200, 200, [tet cStringUsingEncoding:NSUTF8StringEncoding], [tet length]);
+    
+    
+    
+
 }
 
 

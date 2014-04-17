@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GP8-oL-D1y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LBM-wO-UpY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -793,12 +793,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oyZ-qT-PJg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyZ-qT-PJg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-fG-FtF">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bh-fG-FtF">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -813,6 +813,15 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oyZ-qT-PJg" secondAttribute="trailing" id="IT8-Z0-xpP"/>
+                            <constraint firstItem="rgC-ty-RTn" firstAttribute="top" secondItem="5bh-fG-FtF" secondAttribute="bottom" id="Qwq-r6-NjI"/>
+                            <constraint firstItem="5bh-fG-FtF" firstAttribute="leading" secondItem="Tw7-hz-tkU" secondAttribute="leading" id="YEK-yk-Yzq"/>
+                            <constraint firstItem="oyZ-qT-PJg" firstAttribute="leading" secondItem="Tw7-hz-tkU" secondAttribute="leading" id="bbX-mb-9Sf"/>
+                            <constraint firstItem="oyZ-qT-PJg" firstAttribute="top" secondItem="Tw7-hz-tkU" secondAttribute="top" id="hIw-qc-ZV4"/>
+                            <constraint firstAttribute="trailing" secondItem="5bh-fG-FtF" secondAttribute="trailing" id="hUO-EY-9O6"/>
+                            <constraint firstItem="rgC-ty-RTn" firstAttribute="top" secondItem="oyZ-qT-PJg" secondAttribute="bottom" id="qwq-rg-oMn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2X0-6h-AD1"/>
                     <connections>
@@ -988,7 +997,7 @@
         <!--GLKit View Controller-->
         <scene sceneID="lf9-vG-FRq">
             <objects>
-                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="GP8-oL-D1y" customClass="VWWGLKViewController" sceneMemberID="viewController">
+                <glkViewController storyboardIdentifier="VWWGLKViewController" autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="GP8-oL-D1y" customClass="VWWGLKViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dd4-Rw-H4o"/>
                         <viewControllerLayoutGuide type="bottom" id="oZd-2t-LMO"/>
@@ -1042,7 +1051,7 @@
         <!--Graph View Controller-->
         <scene sceneID="cJ9-8K-BEX">
             <objects>
-                <viewController id="Hl4-PM-5Yc" customClass="VWWGraphViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VWWGraphViewController" id="Hl4-PM-5Yc" customClass="VWWGraphViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jGg-rL-N3s"/>
                         <viewControllerLayoutGuide type="bottom" id="87a-bW-HCk"/>

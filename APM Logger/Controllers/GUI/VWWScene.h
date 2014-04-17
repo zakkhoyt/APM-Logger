@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 @import GLKit;
 
-@interface VWWScene : NSObject{
-    NSMutableData *vertexData;
-}
-
-@property(readonly) int numVertices;
-@property(readonly) GLKVector2 *vertices;
+@interface VWWScene : NSObject
+@property GLKVector4 clearColor;
+@property float left, right, bottom, top;
+-(void)update;
 -(void)render;
 @end
