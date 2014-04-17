@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jqG-9L-xHJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jqG-9L-xHJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -1004,94 +1004,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4M-5q-Qo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1125" y="-500"/>
-        </scene>
-        <!--GLKit View Controller-->
-        <scene sceneID="lf9-vG-FRq">
-            <objects>
-                <glkViewController storyboardIdentifier="VWWGLKViewController" autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="GP8-oL-D1y" customClass="VWWGLKViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dd4-Rw-H4o"/>
-                        <viewControllerLayoutGuide type="bottom" id="oZd-2t-LMO"/>
-                    </layoutGuides>
-                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ekc-rd-LNJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <connections>
-                            <outlet property="delegate" destination="GP8-oL-D1y" id="V2D-ko-FXm"/>
-                        </connections>
-                    </glkView>
-                </glkViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0z9-IG-GGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1159" y="2335"/>
-        </scene>
-        <!--Scatter View Controller-->
-        <scene sceneID="Fmq-Fo-snL">
-            <objects>
-                <viewController storyboardIdentifier="VWWScatterViewController" id="sdk-yo-bGv" customClass="VWWScatterViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2jU-6P-Quz"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pb8-BC-Lmw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sj0-Iy-lP5" customClass="CPTGraphHostingView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwV-OE-bty" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="RwV-OE-bty" secondAttribute="trailing" id="2zQ-fa-Pwn"/>
-                            <constraint firstItem="RwV-OE-bty" firstAttribute="leading" secondItem="sj0-Iy-lP5" secondAttribute="leading" id="Rb5-7w-ahE"/>
-                            <constraint firstItem="Pb8-BC-Lmw" firstAttribute="top" secondItem="RwV-OE-bty" secondAttribute="bottom" id="ebk-AL-Xpc"/>
-                            <constraint firstItem="RwV-OE-bty" firstAttribute="top" secondItem="sj0-Iy-lP5" secondAttribute="top" id="rLU-ZY-9w8"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="graphView" destination="RwV-OE-bty" id="0JI-Ue-WiF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="902-hK-eKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1159" y="1511"/>
-        </scene>
-        <!--Graph View Controller-->
-        <scene sceneID="cJ9-8K-BEX">
-            <objects>
-                <viewController storyboardIdentifier="VWWGraphViewController" id="Hl4-PM-5Yc" customClass="VWWGraphViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jGg-rL-N3s"/>
-                        <viewControllerLayoutGuide type="bottom" id="87a-bW-HCk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t3Y-40-gyh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-6B-Gcv" customClass="VWWGraphView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Y0S-6B-Gcv" firstAttribute="leading" secondItem="t3Y-40-gyh" secondAttribute="leading" id="67X-cC-FYP"/>
-                            <constraint firstAttribute="bottom" secondItem="Y0S-6B-Gcv" secondAttribute="bottom" id="Omf-fu-708"/>
-                            <constraint firstItem="Y0S-6B-Gcv" firstAttribute="top" secondItem="t3Y-40-gyh" secondAttribute="top" id="byc-gk-rhn"/>
-                            <constraint firstAttribute="trailing" secondItem="Y0S-6B-Gcv" secondAttribute="trailing" id="qDS-gJ-rjE"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="xGraphView" destination="Y0S-6B-Gcv" id="IfZ-mq-JKN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RgR-gH-ibB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1159" y="708"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

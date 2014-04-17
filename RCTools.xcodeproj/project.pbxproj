@@ -11,6 +11,8 @@
 		C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */; };
 		C66BE7F518FEFC2D0036E098 /* VWWGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */; };
 		C66BE7F818FEFDC90036E098 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F718FEFDC90036E098 /* VWWScene.m */; };
+		C66BE89D190067600036E098 /* VWWTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE89C190067600036E098 /* VWWTestTableViewController.m */; };
+		C66BE89F1900677E0036E098 /* Test_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66BE89E1900677E0036E098 /* Test_iPhone.storyboard */; };
 		C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */; };
 		C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */ = {isa = PBXBuildFile; fileRef = C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */; };
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
@@ -20,7 +22,7 @@
 		CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54118FE4A6F007EB262 /* VWWGraphView.m */; };
 		CF23B54518FE4A8A007EB262 /* VWWGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */; };
 		CF66EF4018F930A6002F68C6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF66EF3D18F93094002F68C6 /* libCorePlot-CocoaTouch.a */; };
-		CFA8A49818F9E76300AF9B80 /* APM_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* APM_iPhone.storyboard */; };
+		CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */; };
 		CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */; };
 		CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A018F9FB9100AF9B80 /* VWWViewController.m */; };
 		CFA8A4A518F9FBD500AF9B80 /* VWWDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A418F9FBD500AF9B80 /* VWWDashboardViewController.m */; };
@@ -140,6 +142,9 @@
 		C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGLKViewController.h; sourceTree = "<group>"; };
 		C66BE7F618FEFDC90036E098 /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
 		C66BE7F718FEFDC90036E098 /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
+		C66BE89B190067600036E098 /* VWWTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTestTableViewController.h; sourceTree = "<group>"; };
+		C66BE89C190067600036E098 /* VWWTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTestTableViewController.m; sourceTree = "<group>"; };
+		C66BE89E1900677E0036E098 /* Test_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test_iPhone.storyboard; sourceTree = "<group>"; };
 		C6712CBB18FC866500A3665F /* VWWLogFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLogFilterViewController.h; sourceTree = "<group>"; };
 		C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFilterViewController.m; sourceTree = "<group>"; };
 		C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-25 16-45-00_11.log"; sourceTree = "<group>"; };
@@ -151,12 +156,12 @@
 		CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScatterViewController.m; sourceTree = "<group>"; };
 		CF23B53D18FE2F51007EB262 /* TestXYTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestXYTheme.h; sourceTree = "<group>"; };
 		CF23B53E18FE2F51007EB262 /* TestXYTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestXYTheme.m; sourceTree = "<group>"; };
-		CF23B54018FE4A6F007EB262 /* VWWGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphView.h; sourceTree = "<group>"; };
-		CF23B54118FE4A6F007EB262 /* VWWGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphView.m; sourceTree = "<group>"; };
+		CF23B54018FE4A6F007EB262 /* VWWGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWGraphView.h; path = ../../View/VWWGraphView.h; sourceTree = "<group>"; };
+		CF23B54118FE4A6F007EB262 /* VWWGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWGraphView.m; path = ../../View/VWWGraphView.m; sourceTree = "<group>"; };
 		CF23B54318FE4A8A007EB262 /* VWWGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphViewController.h; sourceTree = "<group>"; };
 		CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphViewController.m; sourceTree = "<group>"; };
 		CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "APM Logger/ThirdParty/CorePlot/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
-		CFA8A49718F9E76300AF9B80 /* APM_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = APM_iPhone.storyboard; sourceTree = "<group>"; };
+		CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RCTools_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
 		CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTableViewController.m; sourceTree = "<group>"; };
 		CFA8A49F18F9FB9100AF9B80 /* VWWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
@@ -301,6 +306,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C66BE891190066C30036E098 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C66BE89A1900673A0036E098 /* GLK (OpenGL) */,
+				C66BE899190067270036E098 /* Graph (CoreGraphics) */,
+				C66BE8981900670A0036E098 /* Scatter (CorePlot) */,
+				C66BE89B190067600036E098 /* VWWTestTableViewController.h */,
+				C66BE89C190067600036E098 /* VWWTestTableViewController.m */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
+		C66BE896190066D00036E098 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C66BE7F618FEFDC90036E098 /* VWWScene.h */,
+				C66BE7F718FEFDC90036E098 /* VWWScene.m */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		C66BE897190066FF0036E098 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF23B54018FE4A6F007EB262 /* VWWGraphView.h */,
+				CF23B54118FE4A6F007EB262 /* VWWGraphView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C66BE8981900670A0036E098 /* Scatter (CorePlot) */ = {
+			isa = PBXGroup;
+			children = (
+				CF23B53918FE29EE007EB262 /* VWWScatterViewController.h */,
+				CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */,
+			);
+			name = "Scatter (CorePlot)";
+			sourceTree = "<group>";
+		};
+		C66BE899190067270036E098 /* Graph (CoreGraphics) */ = {
+			isa = PBXGroup;
+			children = (
+				C66BE897190066FF0036E098 /* View */,
+				CF23B54318FE4A8A007EB262 /* VWWGraphViewController.h */,
+				CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */,
+			);
+			name = "Graph (CoreGraphics)";
+			sourceTree = "<group>";
+		};
+		C66BE89A1900673A0036E098 /* GLK (OpenGL) */ = {
+			isa = PBXGroup;
+			children = (
+				C66BE896190066D00036E098 /* Scene */,
+				C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */,
+				C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */,
+			);
+			name = "GLK (OpenGL)";
+			sourceTree = "<group>";
+		};
 		C6D5296D18FCBFAE0010299B /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,10 +636,7 @@
 		CFDAC67D18E14A2A00EB609B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */,
-				C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */,
-				C66BE7F618FEFDC90036E098 /* VWWScene.h */,
-				C66BE7F718FEFDC90036E098 /* VWWScene.m */,
+				C66BE891190066C30036E098 /* Test */,
 				CFA8A4D418F9FD5200AF9B80 /* About */,
 				CFA8A49B18F9FB5300AF9B80 /* Base */,
 				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
@@ -585,10 +646,6 @@
 				CFA8A4B318F9FC5700AF9B80 /* Tuning */,
 				CFA8A4C018F9FCA500AF9B80 /* Video */,
 				C6D5296D18FCBFAE0010299B /* Welcome */,
-				CF23B53918FE29EE007EB262 /* VWWScatterViewController.h */,
-				CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */,
-				CF23B54318FE4A8A007EB262 /* VWWGraphViewController.h */,
-				CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -695,8 +752,6 @@
 			children = (
 				CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */,
 				CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */,
-				CF23B54018FE4A6F007EB262 /* VWWGraphView.h */,
-				CF23B54118FE4A6F007EB262 /* VWWGraphView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -704,7 +759,8 @@
 		CFE20DAB18E2619900D07DA4 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				CFA8A49718F9E76300AF9B80 /* APM_iPhone.storyboard */,
+				CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */,
+				C66BE89E1900677E0036E098 /* Test_iPhone.storyboard */,
 			);
 			name = UserInterface;
 			sourceTree = "<group>";
@@ -760,7 +816,7 @@
 				ORGANIZATIONNAME = "Zakk Hoyt";
 				TargetAttributes = {
 					CFDAC63A18E1493D00EB609B = {
-						DevelopmentTeam = F2M6E998ZE;
+						DevelopmentTeam = J7U74N85YF;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -833,7 +889,8 @@
 				CFAD038518F387F6004F54EA /* create_schema.txt in Resources */,
 				CFDAC6C718E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz in Resources */,
 				CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */,
-				CFA8A49818F9E76300AF9B80 /* APM_iPhone.storyboard in Resources */,
+				C66BE89F1900677E0036E098 /* Test_iPhone.storyboard in Resources */,
+				CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */,
 				CFDAC6CC18E14A2A00EB609B /* passThrough.vsh in Resources */,
 				CFDAC6C918E14A2A00EB609B /* readme.txt in Resources */,
 				C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */,
@@ -868,6 +925,7 @@
 				CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */,
 				CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */,
 				CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */,
+				C66BE89D190067600036E098 /* VWWTestTableViewController.m in Sources */,
 				CFAD038318F3797F004F54EA /* FMResultSet.m in Sources */,
 				C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */,
 				CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */,
@@ -1043,8 +1101,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1065,7 +1123,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = RCTools;
-				PROVISIONING_PROFILE = "7EDC31DA-1DC7-4307-A7F7-402F4FE88DE6";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1076,8 +1134,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APM Logger/RCTools-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1097,7 +1155,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = RCTools;
-				PROVISIONING_PROFILE = "7EDC31DA-1DC7-4307-A7F7-402F4FE88DE6";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

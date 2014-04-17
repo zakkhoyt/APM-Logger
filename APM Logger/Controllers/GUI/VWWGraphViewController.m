@@ -33,6 +33,8 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController setNavigationBarHidden:YES];
     self.dataForPlot = [[NSMutableArray alloc]initWithCapacity:NUM_POINTS];
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
@@ -48,16 +50,20 @@
     }
 
     self.xGraphView.dataSource = self.dataForPlot;
+    
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(renderGraph)];
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    [NSTimer scheduledTimerWithTimeInterval:1/30.0 target:self selector:@selector(drawGraphs) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:1/30.0 target:self selector:@selector(drawGraphs) userInfo:nil repeats:YES];
 
 }
 
--(void)drawGraphs{
+-(void)renderGraph{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.xGraphView setNeedsDisplay];
     });
@@ -82,19 +88,21 @@
 
 
 -(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
-    static NSInteger counter = 0;
-    
-    if ( self.dataForPlot.count >= NUM_POINTS ) {
+    @synchronized(self.dataForPlot){
+        static NSInteger counter = 0;
         
+        if ( self.dataForPlot.count >= NUM_POINTS ) {
+            
+        }
+        
+        
+        NSDictionary *d = @{@"x" : @(accelerometers.acceleration.x),
+                            @"y" : @(accelerometers.acceleration.y),
+                            @"z" : @(accelerometers.acceleration.z)};
+        [self.dataForPlot addObject:d];
+        [self.dataForPlot removeObjectAtIndex:0];
+        counter++;
     }
-    
-    
-    NSDictionary *d = @{@"x" : @(accelerometers.acceleration.x),
-                        @"y" : @(accelerometers.acceleration.y),
-                        @"z" : @(accelerometers.acceleration.z)};
-    [self.dataForPlot addObject:d];
-    [self.dataForPlot removeObjectAtIndex:0];
-    counter++;
 
 }
 

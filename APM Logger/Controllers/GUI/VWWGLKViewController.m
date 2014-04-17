@@ -41,28 +41,38 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self updateSceneBounds:[self interfaceOrientation]];
+
+    // Moving to portrait
+    float x = 1.0;
+    float y = self.view.bounds.size.height / (float)self.view.bounds.size.width;
+    self.scene.left   = -x;
+    self.scene.right  =  x;
+    self.scene.bottom = -y;
+    self.scene.top    =  y;
+    NSLog(@"x: %f y: %f", x, y);
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    return YES;
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
+//    [self updateSceneBounds:fromInterfaceOrientation];
+//    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
 }
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self updateSceneBounds:toInterfaceOrientation];
-    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
+//    NSLog(@"%s: bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(self.view.bounds));
 }
 
 
 -(void)updateSceneBounds:(UIInterfaceOrientation)toInterfaceOrientation{
-    
+    VWW_LOG_DEBUG(@"self.view.bounds: %@", NSStringFromCGRect(self.view.bounds));
     if(toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown){
         // Moving to portrait
         float x = 1.0;
