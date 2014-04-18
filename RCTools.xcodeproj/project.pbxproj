@@ -10,7 +10,6 @@
 		C60970A818E1F90C005D8683 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C60970A718E1F90C005D8683 /* libsqlite3.dylib */; };
 		C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */; };
 		C66BE7F518FEFC2D0036E098 /* VWWGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */; };
-		C66BE7F818FEFDC90036E098 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE7F718FEFDC90036E098 /* VWWScene.m */; };
 		C66BE89D190067600036E098 /* VWWTestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66BE89C190067600036E098 /* VWWTestTableViewController.m */; };
 		C66BE89F1900677E0036E098 /* Test_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66BE89E1900677E0036E098 /* Test_iPhone.storyboard */; };
 		C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6712CBC18FC866500A3665F /* VWWLogFilterViewController.m */; };
@@ -18,12 +17,13 @@
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
 		C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780D118E4E29400016407 /* Accelerate.framework */; };
 		C6B580B21900840800069322 /* VWWAP2DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B580B11900840800069322 /* VWWAP2DataController.m */; };
-		C6B580B5190084DB00069322 /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B580B4190084DB00069322 /* VWWGraphScene.m */; };
 		CF23B53B18FE29EE007EB262 /* VWWScatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */; };
 		CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53E18FE2F51007EB262 /* TestXYTheme.m */; };
 		CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54118FE4A6F007EB262 /* VWWGraphView.m */; };
 		CF23B54518FE4A8A007EB262 /* VWWGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */; };
 		CF66EF4018F930A6002F68C6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF66EF3D18F93094002F68C6 /* libCorePlot-CocoaTouch.a */; };
+		CF7F18921900D4F9003FB14F /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */; };
+		CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18911900D4F9003FB14F /* VWWScene.m */; };
 		CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */; };
 		CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */; };
 		CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A018F9FB9100AF9B80 /* VWWViewController.m */; };
@@ -141,8 +141,6 @@
 		C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLogFileSummary.m; sourceTree = "<group>"; };
 		C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGLKViewController.m; sourceTree = "<group>"; };
 		C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGLKViewController.h; sourceTree = "<group>"; };
-		C66BE7F618FEFDC90036E098 /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
-		C66BE7F718FEFDC90036E098 /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
 		C66BE89B190067600036E098 /* VWWTestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTestTableViewController.h; sourceTree = "<group>"; };
 		C66BE89C190067600036E098 /* VWWTestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTestTableViewController.m; sourceTree = "<group>"; };
 		C66BE89E1900677E0036E098 /* Test_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test_iPhone.storyboard; sourceTree = "<group>"; };
@@ -153,8 +151,6 @@
 		C68780D118E4E29400016407 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		C6B580B01900840800069322 /* VWWAP2DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAP2DataController.h; sourceTree = "<group>"; };
 		C6B580B11900840800069322 /* VWWAP2DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAP2DataController.m; sourceTree = "<group>"; };
-		C6B580B3190084DB00069322 /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
-		C6B580B4190084DB00069322 /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
 		C6D5296E18FCBFBD0010299B /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
 		C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
 		CF23B53918FE29EE007EB262 /* VWWScatterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScatterViewController.h; sourceTree = "<group>"; };
@@ -166,6 +162,10 @@
 		CF23B54318FE4A8A007EB262 /* VWWGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphViewController.h; sourceTree = "<group>"; };
 		CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphViewController.m; sourceTree = "<group>"; };
 		CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "APM Logger/ThirdParty/CorePlot/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+		CF7F188E1900D4F9003FB14F /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
+		CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
+		CF7F18901900D4F9003FB14F /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
+		CF7F18911900D4F9003FB14F /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
 		CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RCTools_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
 		CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTableViewController.m; sourceTree = "<group>"; };
@@ -321,17 +321,6 @@
 			name = Test;
 			sourceTree = "<group>";
 		};
-		C66BE896190066D00036E098 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				C66BE7F618FEFDC90036E098 /* VWWScene.h */,
-				C66BE7F718FEFDC90036E098 /* VWWScene.m */,
-				C6B580B3190084DB00069322 /* VWWGraphScene.h */,
-				C6B580B4190084DB00069322 /* VWWGraphScene.m */,
-			);
-			name = Scene;
-			sourceTree = "<group>";
-		};
 		C66BE897190066FF0036E098 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,7 +352,6 @@
 		C66BE89A1900673A0036E098 /* GLK (OpenGL) */ = {
 			isa = PBXGroup;
 			children = (
-				C66BE896190066D00036E098 /* Scene */,
 				C66BE7F418FEFC2D0036E098 /* VWWGLKViewController.h */,
 				C66BE7F318FEFC2D0036E098 /* VWWGLKViewController.m */,
 			);
@@ -394,6 +382,17 @@
 				CF66EF3D18F93094002F68C6 /* libCorePlot-CocoaTouch.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CF7F188D1900D4F9003FB14F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CF7F188E1900D4F9003FB14F /* VWWGraphScene.h */,
+				CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */,
+				CF7F18901900D4F9003FB14F /* VWWScene.h */,
+				CF7F18911900D4F9003FB14F /* VWWScene.m */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		CFA8A49B18F9FB5300AF9B80 /* Base */ = {
@@ -579,6 +578,7 @@
 				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
 				CFDAC6A718E14A2A00EB609B /* Include */,
 				CFDAC6AB18E14A2A00EB609B /* Model */,
+				CF7F188D1900D4F9003FB14F /* Scene */,
 				CFDAC6AF18E14A2A00EB609B /* Shaders */,
 				CFDAC64518E1493D00EB609B /* Supporting Files */,
 				CFDAC6CD18E14A3300EB609B /* ThirdParty */,
@@ -936,6 +936,7 @@
 				CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */,
 				CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */,
 				CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */,
+				CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */,
 				CFA8A4C618F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m in Sources */,
 				CFA8A4AF18F9FC3800AF9B80 /* VWWLogPlotViewController.m in Sources */,
 				CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */,
@@ -947,12 +948,10 @@
 				CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */,
 				CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */,
 				CFA8A4B218F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m in Sources */,
-				C6B580B5190084DB00069322 /* VWWGraphScene.m in Sources */,
 				CFA8A4A918F9FBF800AF9B80 /* VWWLogsViewController.m in Sources */,
 				CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */,
 				CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */,
 				CFA8A4BF18F9FC9F00AF9B80 /* VWWVideosViewController.m in Sources */,
-				C66BE7F818FEFDC90036E098 /* VWWScene.m in Sources */,
 				CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */,
 				CFA8A4A518F9FBD500AF9B80 /* VWWDashboardViewController.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
@@ -972,6 +971,7 @@
 				CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */,
 				CFA8A4E418FA050B00AF9B80 /* VWWDetailTableViewController.m in Sources */,
 				C6B580B21900840800069322 /* VWWAP2DataController.m in Sources */,
+				CF7F18921900D4F9003FB14F /* VWWGraphScene.m in Sources */,
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */,
 				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,

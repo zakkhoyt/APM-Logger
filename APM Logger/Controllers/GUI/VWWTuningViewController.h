@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWViewController.h"
 
-@interface VWWTuningViewController : VWWViewController
+@import GLKit;
+
+@interface VWWTuningViewController : GLKViewController
 
 @end

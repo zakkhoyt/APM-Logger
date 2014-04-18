@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uFf-Cp-wKt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uFf-Cp-wKt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -15,6 +15,22 @@
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fmb-DJ-ApB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDP-sO-JDi">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Reset" id="LT3-ze-hNp"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0VL-Qa-FtP"/>
+                                    <barButtonItem title="Start" id="ZMl-5R-zW6"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pDP-sO-JDi" firstAttribute="leading" secondItem="fmb-DJ-ApB" secondAttribute="leading" id="9iz-fF-Muo"/>
+                            <constraint firstAttribute="trailing" secondItem="pDP-sO-JDi" secondAttribute="trailing" id="LbH-lx-3B0"/>
+                            <constraint firstItem="VxU-dv-Cfw" firstAttribute="top" secondItem="pDP-sO-JDi" secondAttribute="bottom" id="mNJ-mn-NyO"/>
+                        </constraints>
                         <connections>
                             <outlet property="delegate" destination="fw7-PI-G7V" id="clH-Hs-eLf"/>
                         </connections>
