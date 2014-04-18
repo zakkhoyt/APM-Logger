@@ -7,8 +7,8 @@
 //
 
 #import "VWWViewController.h"
-@class AP2Data;
+@class VWWAP2DataController;
 
 @interface VWWLogPlotViewController : VWWViewController
-@property (nonatomic, strong) AP2Data *dataPlot;
+@property (nonatomic, strong) VWWAP2DataController *dataPlot;
 @end

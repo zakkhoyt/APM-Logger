@@ -7,7 +7,7 @@
 //
 
 #import "VWWLogPlotViewController.h"
-#import "AP2Data.h"
+#import "VWWAP2DataController.h"
 #import "CorePlot-CocoaTouch.h"
 #import "VWWLogFilterViewController.h"
 

@@ -17,6 +17,8 @@
 		C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */ = {isa = PBXBuildFile; fileRef = C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */; };
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
 		C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780D118E4E29400016407 /* Accelerate.framework */; };
+		C6B580B21900840800069322 /* VWWAP2DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B580B11900840800069322 /* VWWAP2DataController.m */; };
+		C6B580B5190084DB00069322 /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B580B4190084DB00069322 /* VWWGraphScene.m */; };
 		CF23B53B18FE29EE007EB262 /* VWWScatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */; };
 		CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53E18FE2F51007EB262 /* TestXYTheme.m */; };
 		CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54118FE4A6F007EB262 /* VWWGraphView.m */; };
@@ -85,7 +87,6 @@
 		CFDAC6DE18E14A3300EB609B /* VWWUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6D718E14A3300EB609B /* VWWUtilities.m */; };
 		CFDAC6E518E14D3C00EB609B /* VWWVideoProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */; };
 		CFDAC6E818E14D4500EB609B /* VWWVideoPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */; };
-		CFE20DAA18E2613200D07DA4 /* AP2Data.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE20DA918E2613200D07DA4 /* AP2Data.m */; };
 		CFEA5F2F18FFA88000C6F885 /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +151,10 @@
 		C6877EE318E4AC1300016407 /* 2014-03-25 16-45-00_11.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2014-03-25 16-45-00_11.log"; sourceTree = "<group>"; };
 		C68780CF18E4E1A800016407 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C68780D118E4E29400016407 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		C6B580B01900840800069322 /* VWWAP2DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAP2DataController.h; sourceTree = "<group>"; };
+		C6B580B11900840800069322 /* VWWAP2DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAP2DataController.m; sourceTree = "<group>"; };
+		C6B580B3190084DB00069322 /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
+		C6B580B4190084DB00069322 /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
 		C6D5296E18FCBFBD0010299B /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
 		C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
 		CF23B53918FE29EE007EB262 /* VWWScatterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScatterViewController.h; sourceTree = "<group>"; };
@@ -273,8 +278,6 @@
 		CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoProcessor.m; sourceTree = "<group>"; };
 		CFDAC6E618E14D4500EB609B /* VWWVideoPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoPreviewView.h; sourceTree = "<group>"; };
 		CFDAC6E718E14D4500EB609B /* VWWVideoPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoPreviewView.m; sourceTree = "<group>"; };
-		CFE20DA818E2613200D07DA4 /* AP2Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AP2Data.h; sourceTree = "<group>"; };
-		CFE20DA918E2613200D07DA4 /* AP2Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AP2Data.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +326,8 @@
 			children = (
 				C66BE7F618FEFDC90036E098 /* VWWScene.h */,
 				C66BE7F718FEFDC90036E098 /* VWWScene.m */,
+				C6B580B3190084DB00069322 /* VWWGraphScene.h */,
+				C6B580B4190084DB00069322 /* VWWGraphScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -653,6 +658,8 @@
 		CFDAC69418E14A2A00EB609B /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
+				C6B580B01900840800069322 /* VWWAP2DataController.h */,
+				C6B580B11900840800069322 /* VWWAP2DataController.m */,
 				CFDAC6E318E14D3C00EB609B /* VWWVideoProcessor.h */,
 				CFDAC6E418E14D3C00EB609B /* VWWVideoProcessor.m */,
 				CFDAC69718E14A2A00EB609B /* VWWDataLogController.h */,
@@ -701,8 +708,6 @@
 				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
 				C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */,
 				C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */,
-				CFE20DA818E2613200D07DA4 /* AP2Data.h */,
-				CFE20DA918E2613200D07DA4 /* AP2Data.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -936,13 +941,13 @@
 				CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */,
 				CF23B54518FE4A8A007EB262 /* VWWGraphViewController.m in Sources */,
 				CFA8A4DB18F9FF0A00AF9B80 /* VWWDashboardCollectionViewCell.m in Sources */,
-				CFE20DAA18E2613200D07DA4 /* AP2Data.m in Sources */,
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */,
 				C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */,
 				CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */,
 				CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */,
 				CFA8A4B218F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m in Sources */,
+				C6B580B5190084DB00069322 /* VWWGraphScene.m in Sources */,
 				CFA8A4A918F9FBF800AF9B80 /* VWWLogsViewController.m in Sources */,
 				CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */,
 				CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */,
@@ -966,6 +971,7 @@
 				CFDAC6B218E14A2A00EB609B /* NSTimer+Blocks.m in Sources */,
 				CFAD038018F3797F004F54EA /* FMDatabaseAdditions.m in Sources */,
 				CFA8A4E418FA050B00AF9B80 /* VWWDetailTableViewController.m in Sources */,
+				C6B580B21900840800069322 /* VWWAP2DataController.m in Sources */,
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */,
 				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,

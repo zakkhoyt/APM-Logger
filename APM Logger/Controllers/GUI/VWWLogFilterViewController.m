@@ -8,7 +8,7 @@
 
 #import "VWWLogFilterViewController.h"
 #import "FMDB.h"
-#import "AP2Data.h"
+#import "VWWAP2DataController.h"
 
 @interface VWWLogFilterViewController ()
 

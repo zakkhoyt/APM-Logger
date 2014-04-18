@@ -392,16 +392,6 @@
     
     
 
-    // Text
-    CGContextSelectFont(context, "Helvetica", 36.0, kCGEncodingMacRoman);
-    CGContextSetTextDrawingMode(context, kCGTextFill);
-    CGContextSetFillColorWithColor(context, [UIColor redColor].CGColor);
-//    CGContextSetTextMatrix (context, CGAffineTransformMake(1.0, 0.0, 0.0, -1.0, 0.0, 0.0));
-//      CGContextSetTextMatrix (context, CGAffineTransformMakeRotation(M_PI_2));
-    
-    CLLocation *location = [VWWLocationController sharedInstance].location;
-    NSString *tet = [NSString stringWithFormat:@"%.5f,%.5f", location.coordinate.latitude, location.coordinate.longitude];
-    CGContextShowTextAtPoint(context, 100, 100, [tet cStringUsingEncoding:NSUTF8StringEncoding], [tet length]);
 
 
     
