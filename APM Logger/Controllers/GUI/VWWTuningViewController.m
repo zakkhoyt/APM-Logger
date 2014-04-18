@@ -80,7 +80,8 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     self.motionController.delegate = self;
 
     // Update labels at a low framerate
-    [NSTimer scheduledTimerWithTimeInterval:1/5.0 target:self selector:@selector(renderLabels:) userInfo:nil repeats:YES];
+    VWW_LOG_TODO_TASK(@"This should be changed via callback, not a timer loop. Implement callbacks for it");
+    [NSTimer scheduledTimerWithTimeInterval:1/1.0 target:self selector:@selector(renderLabels:) userInfo:nil repeats:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
