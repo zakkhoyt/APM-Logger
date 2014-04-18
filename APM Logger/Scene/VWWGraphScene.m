@@ -14,6 +14,24 @@ const NSUInteger kSamples = 320;
 GLfloat  xVertices[kSamples * 2];
 GLfloat  yVertices[kSamples * 2];
 GLfloat  zVertices[kSamples * 2];
+
+GLfloat xxAxis[4] = {
+    -1.0, 0.5,
+    1.0, 0.5,
+};
+
+
+GLfloat yxAxis[4] = {
+    -1.0, 0.0,
+    1.0, 0.0,
+};
+
+
+GLfloat zxAxis[4] = {
+    -1.0, -0.5,
+    1.0, -0.5,
+};
+
 @interface VWWGraphScene () {
     GLKVector4 clearColor;
     GLKBaseEffect *effect;
@@ -83,6 +101,7 @@ GLfloat  zVertices[kSamples * 2];
         
         
     }
+    
 }
 
 
@@ -97,6 +116,12 @@ GLfloat  zVertices[kSamples * 2];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     
+    // x x axis
+    effect.constantColor = GLKVector4Make(1.0, 1.0, 1.0, 1.0);
+    [effect prepareToDraw];
+    glLineWidth(1.0);
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xxAxis);
+    glDrawArrays(GL_LINES, 0, 4);
     
     effect.constantColor = GLKVector4Make(1,0,0,0.1);
     [effect prepareToDraw];
@@ -104,20 +129,28 @@ GLfloat  zVertices[kSamples * 2];
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
 
-//    effect.constantColor = GLKVector4Make(1,0,0,1);
-//    [effect prepareToDraw];
-//    glLineWidth(1.0);
-//    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
-//    glDrawArrays(GL_LINE_STRIP, 0, kSamples);
 
-    
+    // y z axis
+    effect.constantColor = GLKVector4Make(1.0, 1.0, 1.0, 1.0);
+    [effect prepareToDraw];
+    glLineWidth(1.0);
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, yxAxis);
+    glDrawArrays(GL_LINES, 0, 4);
+
     effect.constantColor = GLKVector4Make(0,1,0,1);
     [effect prepareToDraw];
     glLineWidth(2.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, yVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
     
-    
+
+    // z x axis
+    effect.constantColor = GLKVector4Make(1.0, 1.0, 1.0, 1.0);
+    [effect prepareToDraw];
+    glLineWidth(1.0);
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, zxAxis);
+    glDrawArrays(GL_LINES, 0, 4);
+
     effect.constantColor = GLKVector4Make(1,1,0,1);
     [effect prepareToDraw];
     glLineWidth(1.0);

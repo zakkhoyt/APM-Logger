@@ -6,8 +6,16 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWViewController.h"
+#import "VWWTableViewController.h"
 
-@interface VWWTuningOptionsViewController : VWWViewController
+@class VWWTuningOptionsViewController;
 
+@protocol VWWTuningOptionsViewControllerDelegate <NSObject>
+
+
+
+@end
+
+@interface VWWTuningOptionsViewController : VWWTableViewController
+@property (nonatomic, weak) id <VWWTuningOptionsViewControllerDelegate> delegate;
 @end

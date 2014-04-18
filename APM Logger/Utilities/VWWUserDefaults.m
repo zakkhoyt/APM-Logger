@@ -8,6 +8,10 @@
 
 #import "VWWUserDefaults.h"
 
+static NSString *VWWUserDefaultsTuningSensorKey = @"tuningSensor";
+static NSString *VWWUserDefaultsTuningColorSchemeKey = @"tuningColorScheme";
+static NSString *VWWUserDefaultsTuningUpdateFrequencyKey = @"tuningUpdateFrequency";
+
 static NSString *VWWUserDefaultsLogGPSKey = @"logGPS";
 static NSString *VWWUserDefaultsLogHeadingKey = @"logHeading";
 static NSString *VWWUserDefaultsLogAccelerometersKey = @"logAccelerometers";
@@ -21,6 +25,49 @@ static NSString *VWWUserDefaultsUpdateFrequencyKey = @"updateFrequency";
 
 
 @implementation VWWUserDefaults
+
+
++(NSUInteger)tuningSensor{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsTuningSensorKey];
+    if(number == nil){
+        return 0; // Accelerometer
+    }
+    return number.unsignedIntegerValue;
+}
++(void)setTuningSensor:(NSUInteger)tuningSensor{
+    [[NSUserDefaults standardUserDefaults] setObject:@(tuningSensor) forKey:VWWUserDefaultsTuningSensorKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(NSUInteger)tuningColorScheme{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsTuningColorSchemeKey];
+    if(number == nil){
+        return 0; // Dark
+    }
+    return number.unsignedIntegerValue;
+}
++(void)setTuningColorScheme:(NSUInteger)tuningColorScheme{
+    [[NSUserDefaults standardUserDefaults] setObject:@(tuningColorScheme) forKey:VWWUserDefaultsTuningColorSchemeKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(NSUInteger)tuningUpdateFrequency{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsTuningUpdateFrequencyKey];
+    if(number == nil){
+        return 200;
+    }
+    return number.unsignedIntegerValue;
+}
++(void)setTuningUpdateFrequency:(NSUInteger)tuningUpdateFrequency{
+    [[NSUserDefaults standardUserDefaults] setObject:@(tuningUpdateFrequency) forKey:VWWUserDefaultsTuningUpdateFrequencyKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+
+
+
+
 
 +(BOOL)logGPS{
     return [[NSUserDefaults standardUserDefaults] boolForKey:VWWUserDefaultsLogGPSKey];

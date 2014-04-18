@@ -10,20 +10,28 @@
 @import GLKit;
 #import "VWWGraphScene.h"
 #import "VWWMotionController.h"
-
+#import "VWWTuningOptionsViewController.h"
 
 
 #define NUM_POINTS 320
 
-@interface VWWTuningViewController () <VWWMotionControllerDelegate>
+static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
+
+@interface VWWTuningViewController () <VWWMotionControllerDelegate, VWWTuningOptionsViewControllerDelegate>
 @property (strong, nonatomic) EAGLContext *context;
 @property (nonatomic, strong) VWWGraphScene *graphScene;
 @property (nonatomic, strong) VWWMotionController *motionController;
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIToolbar *startButton;
+
 @end
 
 @implementation VWWTuningViewController
 @synthesize context = _context;
+
+
+#pragma mark UIViewController
 
 - (void)viewDidLoad
 {
@@ -77,6 +85,14 @@
     self.graphScene.top    =  1.0;
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:VWWSegueTuningToOptions]){
+        VWWTuningOptionsViewController *vc = segue.destinationViewController;
+        vc.delegate = self;
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return YES;
 }
@@ -90,6 +106,20 @@
 //}
 //-(void)updateSceneBounds:(UIInterfaceOrientation)toInterfaceOrientation{
 //}
+
+#pragma mark IBAction
+- (IBAction)settingsButtonTouchUpInside:(id)sender {
+    [self performSegueWithIdentifier:VWWSegueTuningToOptions sender:self];
+}
+
+- (IBAction)startButtonTouchUpInside:(id)sender {
+    
+}
+
+- (IBAction)resetButtonTouchUpInside:(id)sender {
+    
+}
+
 
 #pragma mark VWWMotionControllerDelegate;
 
@@ -117,5 +147,9 @@
 - (void)update {
     [self.graphScene update];
 }
+#pragma mark VWWTuningOptionsViewControllerDelegate
+
+
+
 
 @end

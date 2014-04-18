@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <CoreMotion/CoreMotion.h>
 
+
+@interface VWWMotionAxis
+@property (nonatomic) float min;
+@property (nonatomic) float max;
+@property (nonatomic) float rms;
+@end
+
+
+
 @class VWWMotionController;
 
 @protocol VWWMotionControllerDelegate <NSObject>

@@ -10,6 +10,17 @@
 
 @interface VWWUserDefaults : NSObject
 
+
++(NSUInteger)tuningSensor;
++(void)setTuningSensor:(NSUInteger)tuningSensor;
+
++(NSUInteger)tuningColorScheme;
++(void)setTuningColorScheme:(NSUInteger)tuningColorScheme;
+
++(NSUInteger)tuningUpdateFrequency;
++(void)setTuningUpdateFrequency:(NSUInteger)tuningUpdateFrequency;
+
+
 +(BOOL)logGPS;
 +(void)setLogGPS:(BOOL)log;
 
