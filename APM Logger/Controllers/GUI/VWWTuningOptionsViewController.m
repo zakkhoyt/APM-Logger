@@ -43,7 +43,7 @@ typedef enum {
     
     
     self.frequencySlider.minimumValue = 30;
-    self.frequencySlider.maximumValue = 200;
+    self.frequencySlider.maximumValue = 500;
     self.frequencySlider.value = [VWWUserDefaults tuningUpdateFrequency];
     self.frequencyLabel.text = [NSString stringWithFormat:@"%ld Hz", [VWWUserDefaults tuningUpdateFrequency]];
     

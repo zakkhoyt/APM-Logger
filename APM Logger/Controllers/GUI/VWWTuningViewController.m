@@ -78,11 +78,9 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
-    
-    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(renderGraph)];
-    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 
-    
+    // Update labels at a low framerate
+    [NSTimer scheduledTimerWithTimeInterval:1/5.0 target:self selector:@selector(renderLabels:) userInfo:nil repeats:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -131,17 +129,17 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
 
 #pragma mark Private
 
--(void)renderGraph{
+-(void)renderLabels:(id)sender{
     self.xMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.max];
     self.xMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.min];
-
+    
     self.yMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.max];
     self.yMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.min];
-
+    
     self.zMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.max];
     self.zMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.min];
-}
 
+}
 
 
 #pragma mark IBAction
