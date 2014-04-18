@@ -11,9 +11,9 @@
 
 
 const NSUInteger kSamples = 320;
-GLfloat  xVertices[kSamples * 2] = {};
-//GLfloat  yVertices[kSamples] = {};
-//GLfloat  zVertices[kSamples] = {};
+GLfloat  xVertices[kSamples * 2];
+GLfloat  yVertices[kSamples * 2];
+GLfloat  zVertices[kSamples * 2];
 @interface VWWGraphScene () {
     GLKVector4 clearColor;
     GLKBaseEffect *effect;
@@ -45,12 +45,12 @@ GLfloat  xVertices[kSamples * 2] = {};
         glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
         glClear(GL_COLOR_BUFFER_BIT);
         
-        for(NSInteger index = 0; index < 320 * 2; index+=2){
+        for(NSInteger index = 0; index < kSamples * 2; index+=2){
             int i = index / 2;
             NSDictionary *d = self.dataForPlot[i];
             NSNumber *yNumber = d[@"x"];
             
-            GLfloat x = i * (2.0 / (float)320);
+            GLfloat x = i * (2.0 / (float)kSamples);
             x -= 1.0;
             xVertices[index] = x;
             
@@ -58,53 +58,35 @@ GLfloat  xVertices[kSamples * 2] = {};
             xVertices[index + 1] = y;
         }
         
-        //        for(NSInteger index = 0; index < kSamples * 2; index+=2){
-        //            int i = index / 2;
-        //            NSDictionary *d = self.dataForPlot[i];
-        //            NSNumber *yNumber = d[@"y"];
-        //
-        //            GLfloat x = i * (2.0 / (float)320);
-        //            x -= 1.0;
-        //            yVertices[index] = x;
-        //
-        //            GLfloat y = yNumber.floatValue / 10.0f;
-        //            yVertices[index + 1] = y;
-        //        }
+        for(NSInteger index = 0; index < kSamples * 2; index+=2){
+            int i = index / 2;
+            NSDictionary *d = self.dataForPlot[i];
+            NSNumber *yNumber = d[@"y"];
+
+            GLfloat x = i * (2.0 / (float)kSamples);
+            x -= 1.0;
+            yVertices[index] = x;
+
+            GLfloat y = yNumber.floatValue / 10.0f;
+            yVertices[index + 1] = y + 0.5;
+        }
+        
+        for(NSInteger index = 0; index < kSamples * 2; index+=2){
+            int i = index / 2;
+            NSDictionary *d = self.dataForPlot[i];
+            NSNumber *yNumber = d[@"z"];
+            
+            GLfloat x = i * (2.0 / (float)kSamples);
+            x -= 1.0;
+            zVertices[index] = x;
+            
+            GLfloat y = yNumber.floatValue / 10.0f;
+            zVertices[index + 1] = y - 0.5;
+        }
+
         
     }
 }
-
-
-
-
-//    float vertices[] = {-1, -1,
-//        1, -1,
-//        0,  1};
-
-//    float vertices[] = {-0.5, -0.5,
-//        0.5, -0.5,
-//        0,  0.5};
-
-//    GLfloat vertices[24] = {
-//        0.0, 0.0,
-//        0.5, 0.0,
-//        0.5, 0.5,
-//
-//        0.0, 0.0,
-//        0.0, 0.5,
-//        -0.5, 0.5,
-//
-//        0.0, 0.0,
-//        -0.5, 0.0,
-//        -0.5, -0.5,
-//
-//        0.0, 0.0,
-//        0.0, -0.5,
-//        0.5, -0.5,
-//    };
-
-
-
 
 
 
@@ -115,8 +97,15 @@ GLfloat  xVertices[kSamples * 2] = {};
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
-    glDrawArrays(GL_LINE_STRIP, 0, 320);
-    
+    glDrawArrays(GL_LINE_STRIP, 0, kSamples);
+
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, yVertices);
+    glDrawArrays(GL_LINE_STRIP, 0, kSamples);
+
+//    GLKVector4 redColor = GLKVector4Make(1,0,0,1);
+//    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, redColor);
+    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, zVertices);
+    glDrawArrays(GL_LINE_STRIP, 0, kSamples);
     
     
     
