@@ -24,6 +24,13 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIToolbar *startButton;
+@property (weak, nonatomic) IBOutlet UILabel *xMaxLabel;
+@property (nonatomic, strong) VWWDeviceLimits *limits;
+@property (weak, nonatomic) IBOutlet UILabel *xMinLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yMaxLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yMinLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zMaxLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zMinLabel;
 
 @end
 
@@ -71,8 +78,10 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
-    self.motionController.updateInterval = 1/200.0;
-    [self.motionController startAccelerometer];
+    
+    CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(renderGraph)];
+    [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+
     
 }
 
@@ -83,6 +92,18 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     self.graphScene.right  =  1.0;
     self.graphScene.bottom = -1.0;
     self.graphScene.top    =  1.0;
+    
+    
+    if([VWWUserDefaults tuningSensor] == 0){
+        [self.motionController startAccelerometer];
+    } else if([VWWUserDefaults tuningSensor] == 1){
+        [self.motionController startGyroscope];
+    } else if([VWWUserDefaults tuningSensor] == 2){
+        [self.motionController startMagnetometer];
+    }
+    
+    
+    self.motionController.updateInterval = 1/(float)[VWWUserDefaults tuningUpdateFrequency];
 }
 
 
@@ -107,8 +128,25 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
 //-(void)updateSceneBounds:(UIInterfaceOrientation)toInterfaceOrientation{
 //}
 
+
+#pragma mark Private
+
+-(void)renderGraph{
+    self.xMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.max];
+    self.xMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.x.min];
+
+    self.yMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.max];
+    self.yMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.y.min];
+
+    self.zMaxLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.max];
+    self.zMinLabel.text = [NSString stringWithFormat:@"%.3f", self.limits.z.min];
+}
+
+
+
 #pragma mark IBAction
 - (IBAction)settingsButtonTouchUpInside:(id)sender {
+    [self.motionController stopAll];
     [self performSegueWithIdentifier:VWWSegueTuningToOptions sender:self];
 }
 
@@ -117,25 +155,46 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
 }
 
 - (IBAction)resetButtonTouchUpInside:(id)sender {
-    
+    [self.motionController resetAllLimits];
 }
 
 
 #pragma mark VWWMotionControllerDelegate;
 
--(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits*)limits{
     @synchronized(self.graphScene.dataForPlot){
-        static NSInteger counter = 0;
         [self.dataForPlot removeObjectAtIndex:0];
         NSDictionary *d = @{@"x" : @(accelerometers.acceleration.x),
                             @"y" : @(accelerometers.acceleration.y),
                             @"z" : @(accelerometers.acceleration.z)};
         [self.dataForPlot addObject:d];
-        
-        counter++;
+        self.limits = limits;
     }
     
+    
 }
+
+-(void)motionController:(VWWMotionController*)sender didUpdateGyroscopes:(CMGyroData*)gyroscopes limits:(VWWDeviceLimits*)limits{
+    @synchronized(self.graphScene.dataForPlot){
+        [self.dataForPlot removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(gyroscopes.rotationRate.x),
+                            @"y" : @(gyroscopes.rotationRate.y),
+                            @"z" : @(gyroscopes.rotationRate.z)};
+        [self.dataForPlot addObject:d];
+        self.limits = limits;
+    }
+}
+-(void)motionController:(VWWMotionController*)sender didUpdateMagnetometers:(CMMagnetometerData*)magnetometers limits:(VWWDeviceLimits*)limits{
+    @synchronized(self.graphScene.dataForPlot){
+        [self.dataForPlot removeObjectAtIndex:0];
+        NSDictionary *d = @{@"x" : @(magnetometers.magneticField.x),
+                            @"y" : @(magnetometers.magneticField.y),
+                            @"z" : @(magnetometers.magneticField.z)};
+        [self.dataForPlot addObject:d];
+        self.limits = limits;
+    }
+}
+
 
 
 #pragma mark - GLKViewDelegate

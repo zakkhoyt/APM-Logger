@@ -32,6 +32,8 @@ GLfloat zxAxis[4] = {
     1.0, -0.5,
 };
 
+//GLfloat xLimits[4];
+
 @interface VWWGraphScene () {
     GLKVector4 clearColor;
     GLKBaseEffect *effect;
@@ -99,7 +101,11 @@ GLfloat zxAxis[4] = {
             zVertices[index + 1] = y - 0.5;
         }
         
-        
+//        // Max
+//        xLimits[0] = -1.0;
+//        xLimits[1] = 0.2f;
+//        xLimits[2] = -0.75;
+//        xLimits[3] = 0.2f;
     }
     
 }
@@ -122,7 +128,11 @@ GLfloat zxAxis[4] = {
     glLineWidth(1.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xxAxis);
     glDrawArrays(GL_LINES, 0, 4);
+
     
+//    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xLimits);
+//    glDrawArrays(GL_LINES, 0, 4);
+
     effect.constantColor = GLKVector4Make(1,0,0,0.1);
     [effect prepareToDraw];
     glLineWidth(5.0);

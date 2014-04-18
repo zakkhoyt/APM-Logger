@@ -24,6 +24,8 @@
 		CF66EF4018F930A6002F68C6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF66EF3D18F93094002F68C6 /* libCorePlot-CocoaTouch.a */; };
 		CF7F18921900D4F9003FB14F /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */; };
 		CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18911900D4F9003FB14F /* VWWScene.m */; };
+		CF7F18961900F094003FB14F /* VWWDeviceAxisLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18951900F094003FB14F /* VWWDeviceAxisLimits.m */; };
+		CF7F18991900F0A1003FB14F /* VWWDeviceLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18981900F0A1003FB14F /* VWWDeviceLimits.m */; };
 		CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */; };
 		CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */; };
 		CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A018F9FB9100AF9B80 /* VWWViewController.m */; };
@@ -166,6 +168,10 @@
 		CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
 		CF7F18901900D4F9003FB14F /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
 		CF7F18911900D4F9003FB14F /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
+		CF7F18941900F094003FB14F /* VWWDeviceAxisLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDeviceAxisLimits.h; sourceTree = "<group>"; };
+		CF7F18951900F094003FB14F /* VWWDeviceAxisLimits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDeviceAxisLimits.m; sourceTree = "<group>"; };
+		CF7F18971900F0A1003FB14F /* VWWDeviceLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDeviceLimits.h; sourceTree = "<group>"; };
+		CF7F18981900F0A1003FB14F /* VWWDeviceLimits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDeviceLimits.m; sourceTree = "<group>"; };
 		CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RCTools_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
 		CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTableViewController.m; sourceTree = "<group>"; };
@@ -708,6 +714,10 @@
 				CFDAC6AE18E14A2A00EB609B /* VWWMotion.m */,
 				C61C21BE18E23E5E00C63517 /* VWWLogFileSummary.h */,
 				C61C21BF18E23E5E00C63517 /* VWWLogFileSummary.m */,
+				CF7F18941900F094003FB14F /* VWWDeviceAxisLimits.h */,
+				CF7F18951900F094003FB14F /* VWWDeviceAxisLimits.m */,
+				CF7F18971900F0A1003FB14F /* VWWDeviceLimits.h */,
+				CF7F18981900F0A1003FB14F /* VWWDeviceLimits.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -931,7 +941,9 @@
 				CFA8A4EB18FA10C900AF9B80 /* VWWHelpViewController.m in Sources */,
 				CFDAC6DB18E14A3300EB609B /* MBProgressHUD.m in Sources */,
 				C66BE89D190067600036E098 /* VWWTestTableViewController.m in Sources */,
+				CF7F18961900F094003FB14F /* VWWDeviceAxisLimits.m in Sources */,
 				CFAD038318F3797F004F54EA /* FMResultSet.m in Sources */,
+				CF7F18991900F0A1003FB14F /* VWWDeviceLimits.m in Sources */,
 				C61C21C018E23E5E00C63517 /* VWWLogFileSummary.m in Sources */,
 				CFDAC6DC18E14A3300EB609B /* ShaderUtilities.c in Sources */,
 				CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */,

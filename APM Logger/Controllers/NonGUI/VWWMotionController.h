@@ -8,24 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreMotion/CoreMotion.h>
-
-
-@interface VWWMotionAxis
-@property (nonatomic) float min;
-@property (nonatomic) float max;
-@property (nonatomic) float rms;
-@end
-
+#import "VWWDeviceLimits.h"
 
 
 @class VWWMotionController;
 
 @protocol VWWMotionControllerDelegate <NSObject>
+@required
+
 @optional
--(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers;
--(void)motionController:(VWWMotionController*)sender didUpdateGyroscopes:(CMGyroData*)gyroscopes;
--(void)motionController:(VWWMotionController*)sender didUpdateMagnetometers:(CMMagnetometerData*)magnetometers;
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits*)limits;
+-(void)motionController:(VWWMotionController*)sender didUpdateGyroscopes:(CMGyroData*)gyroscopes limits:(VWWDeviceLimits*)limits;
+-(void)motionController:(VWWMotionController*)sender didUpdateMagnetometers:(CMMagnetometerData*)magnetometers limits:(VWWDeviceLimits*)limits;
 -(void)motionController:(VWWMotionController*)sender didUpdateAttitude:(CMDeviceMotion*)attitude;
+
 @end
 
 
@@ -37,7 +33,16 @@
 -(void)startAccelerometer;
 -(void)stopAccelerometer;
 
+
+-(void)startGyroscope;
+-(void)stopGyroscope;
+
+
+-(void)startMagnetometer;
+-(void)stopMagnetometer;
+
+
 -(void)startAll;
 -(void)stopAll;
--(void)resetAll;
+-(void)resetAllLimits;
 @end
