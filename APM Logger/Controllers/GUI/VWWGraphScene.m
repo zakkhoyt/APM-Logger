@@ -42,11 +42,8 @@ GLfloat  zVertices[kSamples * 2];
     //  NSLog(@"in EEScene's update");
     
     @synchronized(self.dataForPlot){
-        glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
-        glClear(GL_COLOR_BUFFER_BIT);
-        
         for(NSInteger index = 0; index < kSamples * 2; index+=2){
-            int i = index / 2;
+            int i = (int)index / 2;
             NSDictionary *d = self.dataForPlot[i];
             NSNumber *yNumber = d[@"x"];
             
@@ -54,25 +51,25 @@ GLfloat  zVertices[kSamples * 2];
             x -= 1.0;
             xVertices[index] = x;
             
-            GLfloat y = yNumber.floatValue / 10.0f;
-            xVertices[index + 1] = y;
+            GLfloat y = yNumber.floatValue / 5.0f;
+            xVertices[index + 1] = y + 0.5;
         }
         
         for(NSInteger index = 0; index < kSamples * 2; index+=2){
-            int i = index / 2;
+            int i = (int)index / 2;
             NSDictionary *d = self.dataForPlot[i];
             NSNumber *yNumber = d[@"y"];
-
+            
             GLfloat x = i * (2.0 / (float)kSamples);
             x -= 1.0;
             yVertices[index] = x;
-
-            GLfloat y = yNumber.floatValue / 10.0f;
-            yVertices[index + 1] = y + 0.5;
+            
+            GLfloat y = yNumber.floatValue / 5.0f;
+            yVertices[index + 1] = y;
         }
         
         for(NSInteger index = 0; index < kSamples * 2; index+=2){
-            int i = index / 2;
+            int i = (int)index / 2;
             NSDictionary *d = self.dataForPlot[i];
             NSNumber *yNumber = d[@"z"];
             
@@ -80,10 +77,10 @@ GLfloat  zVertices[kSamples * 2];
             x -= 1.0;
             zVertices[index] = x;
             
-            GLfloat y = yNumber.floatValue / 10.0f;
+            GLfloat y = yNumber.floatValue / 5.0f;
             zVertices[index + 1] = y - 0.5;
         }
-
+        
         
     }
 }
@@ -91,19 +88,39 @@ GLfloat  zVertices[kSamples * 2];
 
 
 -(void)render {
-    //    effect.useConstantColor = YES;
+    glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    
+    
     effect.transform.projectionMatrix = GLKMatrix4MakeOrtho(left, right, bottom, top, 1, -1);
-    [effect prepareToDraw];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
+    
+    
+    effect.constantColor = GLKVector4Make(1,0,0,0.1);
+    [effect prepareToDraw];
+    glLineWidth(5.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
 
+//    effect.constantColor = GLKVector4Make(1,0,0,1);
+//    [effect prepareToDraw];
+//    glLineWidth(1.0);
+//    glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
+//    glDrawArrays(GL_LINE_STRIP, 0, kSamples);
+
+    
+    effect.constantColor = GLKVector4Make(0,1,0,1);
+    [effect prepareToDraw];
+    glLineWidth(2.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, yVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
-
-//    GLKVector4 redColor = GLKVector4Make(1,0,0,1);
-//    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, redColor);
+    
+    
+    effect.constantColor = GLKVector4Make(1,1,0,1);
+    [effect prepareToDraw];
+    glLineWidth(1.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, zVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
     

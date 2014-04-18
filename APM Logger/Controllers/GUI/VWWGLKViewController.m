@@ -54,18 +54,21 @@
     view.context = self.context;
     [EAGLContext setCurrentContext:self.context];
     
+    self.preferredFramesPerSecond = 30;
+    
     self.scene = [[VWWScene alloc]init];
-    self.scene.clearColor = GLKVector4Make(0.1, 0.9, 0.9, 0.0);
+//    self.scene.clearColor = GLKVector4Make(0.1, 0.9, 0.9, 0.0);
+//    self.scene.clearColor = GLKVector4Make(0.0, 0.0, 0.0, 0.0);
 
     self.graphScene = [[VWWGraphScene alloc]init];
-    self.graphScene.clearColor = GLKVector4Make(0.5, 0.5, 0.5, 1.0);
+    self.graphScene.clearColor = GLKVector4Make(0.0, 0.0, 0.0, 0.0);
     self.graphScene.dataForPlot = self.dataForPlot;
 
     
     
     self.motionController = [VWWMotionController sharedInstance];
     self.motionController.delegate = self;
-    self.motionController.updateInterval = 1/100.0;
+    self.motionController.updateInterval = 1/200.0;
     [self.motionController startAccelerometer];
 
 }

@@ -32,24 +32,25 @@
         
         
         
-        const NSUInteger kSamples = 80;
+        const NSUInteger kSamples = 320;
         
 
         
         NSUInteger startIndex = self.dataSource.count - kSamples;
         CGFloat yFactor = self.bounds.size.height / 5.0;
         CGFloat xFactor = self.bounds.size.width / (float)kSamples;
-//        CGFloat xBaseline = self.bounds.size.height / 4.0;
-//        CGFloat yBaseline = 2*xBaseline;
-//        CGFloat zBaseline = 3*xBaseline;
-        CGFloat xBaseline = self.bounds.size.height / 2.0;
-        CGFloat yBaseline = xBaseline;
-        CGFloat zBaseline = xBaseline;
+        CGFloat baseline = self.bounds.size.height / 4.0;
+        CGFloat xBaseline = 3 * baseline;
+        CGFloat yBaseline = 2 * baseline;
+        CGFloat zBaseline = baseline;
+//        CGFloat xBaseline = self.bounds.size.height / 2.0;
+//        CGFloat yBaseline = xBaseline;
+//        CGFloat zBaseline = xBaseline;
 
         
         CGContextSetLineWidth(cgContext, 2.0f);
 //        // +1/-1
-        CGContextSetStrokeColorWithColor(cgContext , [UIColor greenColor].CGColor);
+        CGContextSetStrokeColorWithColor(cgContext , [UIColor redColor].CGColor);
 //        CGContextSetLineWidth(cgContext, 0.5f);
 //        CGContextMoveToPoint(cgContext, 0, xBaseline + yFactor);
 //        CGContextAddLineToPoint(cgContext, self.bounds.size.width, xBaseline + yFactor);
@@ -60,7 +61,7 @@
         for(NSInteger index = 0; index < kSamples; index++){
             NSDictionary *d = self.dataSource[startIndex + index];
             NSNumber *yNumber = d[@"x"];
-            CGFloat y = yNumber.floatValue * yFactor + xBaseline;
+            CGFloat y = -yNumber.floatValue * yFactor + xBaseline;
             if(index == 0){
                 CGContextMoveToPoint(cgContext, 0, y);
             } else {
@@ -72,7 +73,7 @@
         
         
 //        // +1/-1
-        CGContextSetStrokeColorWithColor(cgContext , [UIColor redColor].CGColor);
+        CGContextSetStrokeColorWithColor(cgContext , [UIColor greenColor].CGColor);
 //        CGContextSetLineWidth(cgContext, 0.5f);
 //        CGContextMoveToPoint(cgContext, 0, yBaseline + yFactor);
 //        CGContextAddLineToPoint(cgContext, self.bounds.size.width, yBaseline + yFactor);
@@ -83,7 +84,7 @@
         for(NSInteger index = 0; index < kSamples; index++){
             NSDictionary *d = self.dataSource[startIndex + index];
             NSNumber *yNumber = d[@"y"];
-            CGFloat y = yNumber.floatValue * yFactor + yBaseline;
+            CGFloat y = -yNumber.floatValue * yFactor + yBaseline;
             if(index == 0){
                 CGContextMoveToPoint(cgContext, 0, y);
             } else {
@@ -105,7 +106,7 @@
         for(NSInteger index = 0; index < kSamples; index++){
             NSDictionary *d = self.dataSource[startIndex + index];
             NSNumber *yNumber = d[@"z"];
-            CGFloat y = yNumber.floatValue * yFactor + zBaseline;
+            CGFloat y = -yNumber.floatValue * yFactor + zBaseline;
             if(index == 0){
                 CGContextMoveToPoint(cgContext, 0, y);
             } else {
