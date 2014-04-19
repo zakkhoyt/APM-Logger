@@ -9,6 +9,7 @@
 #import "VWWUserDefaults.h"
 
 static NSString *VWWUserDefaultsTuningSensorKey = @"tuningSensor";
+static NSString *VWWUserDefaultsTuningFilterKey = @"tuningFilter";
 static NSString *VWWUserDefaultsTuningColorSchemeKey = @"tuningColorScheme";
 static NSString *VWWUserDefaultsTuningUpdateFrequencyKey = @"tuningUpdateFrequency";
 
@@ -25,6 +26,19 @@ static NSString *VWWUserDefaultsUpdateFrequencyKey = @"updateFrequency";
 
 
 @implementation VWWUserDefaults
+
++(NSUInteger)tuningFilter{
+    NSNumber *number = [[NSUserDefaults standardUserDefaults] objectForKey:VWWUserDefaultsTuningFilterKey];
+    if(number == nil){
+        return 0; // Butterworth
+    }
+    return number.unsignedIntegerValue;
+}
++(void)setTuningFilter:(NSUInteger)tuningFilter{
+    [[NSUserDefaults standardUserDefaults] setObject:@(tuningFilter) forKey:VWWUserDefaultsTuningFilterKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 
 +(NSUInteger)tuningSensor{

@@ -11,9 +11,10 @@
 
 typedef enum {
     VWWTuningOptionsSectionGeneral = 0,
-    VWWTuningOptionsSectionSensor = 1,
-    VWWTuningOptionsSectionColor = 2,
-    VWWTuningOptionsSectionDone = 3,
+    VWWTuningOptionsSectionSensor,
+    VWWTuningOptionsSectionFilter,
+    VWWTuningOptionsSectionColor,
+    VWWTuningOptionsSectionDone3,
 } VWWTuningOptionsSection;
 
 typedef enum {
@@ -21,6 +22,12 @@ typedef enum {
     VWWTuningOptionsSensorGyroscopes = 1,
     VWWTuningOptionsSensorMagnetometers = 2,
 } VWWTuningOptionsSensor;
+
+typedef enum {
+    VWWTuningOptionsFilterButterworth = 0,
+    VWWTuningOptionsFilterBessel,
+    VWWTuningOptionsFilterChebyshev,
+} VWWTuningOptionsFilter;
 
 typedef enum {
     VWWTuningOptionsColorDark = 0,
@@ -55,7 +62,11 @@ typedef enum {
     NSIndexPath *sensorIndexPath = [NSIndexPath indexPathForRow:[VWWUserDefaults tuningSensor] inSection:VWWTuningOptionsSectionSensor];
     UITableViewCell *sensorCell = [self.tableView cellForRowAtIndexPath:sensorIndexPath];
     sensorCell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
+
+    NSIndexPath *filterIndexPath = [NSIndexPath indexPathForRow:[VWWUserDefaults tuningFilter] inSection:VWWTuningOptionsSectionFilter];
+    UITableViewCell *filterCell = [self.tableView cellForRowAtIndexPath:filterIndexPath];
+    filterCell.accessoryType = UITableViewCellAccessoryCheckmark;
+
     
     NSIndexPath *colorIndexPath = [NSIndexPath indexPathForRow:[VWWUserDefaults tuningColorScheme] inSection:VWWTuningOptionsSectionColor];
     UITableViewCell *colorCell = [self.tableView cellForRowAtIndexPath:colorIndexPath];
@@ -111,6 +122,21 @@ typedef enum {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         [VWWUserDefaults setTuningSensor:indexPath.row];
+    } else if(indexPath.section == VWWTuningOptionsSectionFilter){
+        UITableViewCell *butterworthCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:VWWTuningOptionsFilterButterworth inSection:VWWTuningOptionsSectionFilter]];
+        butterworthCell.accessoryType = UITableViewCellAccessoryNone;
+        
+        UITableViewCell *besselCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:VWWTuningOptionsFilterBessel inSection:VWWTuningOptionsSectionFilter]];
+        besselCell.accessoryType = UITableViewCellAccessoryNone;
+        
+        UITableViewCell *chebyshevCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:VWWTuningOptionsFilterChebyshev inSection:VWWTuningOptionsSectionFilter]];
+        chebyshevCell.accessoryType = UITableViewCellAccessoryNone;
+
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        [VWWUserDefaults setTuningFilter:indexPath.row];
+        
     } else if(indexPath.section == VWWTuningOptionsSectionColor){
         UITableViewCell *darkCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:VWWTuningOptionsColorDark inSection:VWWTuningOptionsSectionColor]];
         darkCell.accessoryType = UITableViewCellAccessoryNone;

@@ -14,6 +14,9 @@
 +(NSUInteger)tuningSensor;
 +(void)setTuningSensor:(NSUInteger)tuningSensor;
 
++(NSUInteger)tuningFilter;
++(void)setTuningFilter:(NSUInteger)tuningFilter;
+
 +(NSUInteger)tuningColorScheme;
 +(void)setTuningColorScheme:(NSUInteger)tuningColorScheme;
 
