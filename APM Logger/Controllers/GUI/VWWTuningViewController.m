@@ -54,7 +54,8 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     }
     
     
-    
+//    GLKView *glkView = (GLKView*)self.view;
+//    glkView.drawableMultisample = GLKViewDrawableMultisample4X;
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
@@ -104,7 +105,24 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     
     self.motionController.updateInterval = 1/(float)[VWWUserDefaults tuningUpdateFrequency];
 }
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+       toInterfaceOrientation == UIInterfaceOrientationLandscapeRight){
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        self.toolbar.hidden = YES;
+        
+    } else {
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+        self.toolbar.hidden = NO;
+    }
+    
+}
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:VWWSegueTuningToOptions]){

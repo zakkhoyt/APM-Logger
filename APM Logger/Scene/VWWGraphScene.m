@@ -54,6 +54,8 @@ GLfloat zxAxis[4] = {
     if(self){
         effect = [[GLKBaseEffect alloc] init];
         effect.transform.projectionMatrix = GLKMatrix4MakeOrtho(left, right, bottom, top, 1, -1);
+//        glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);
+//        glEnable(GL_LINE_SMOOTH);
     }
     return self;
 }
@@ -116,7 +118,7 @@ GLfloat zxAxis[4] = {
     glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    
+//    glEnable(GL_POINT_SMOOTH);
     
     effect.transform.projectionMatrix = GLKMatrix4MakeOrtho(left, right, bottom, top, 1, -1);
     

@@ -26,6 +26,9 @@
 		CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18911900D4F9003FB14F /* VWWScene.m */; };
 		CF7F18961900F094003FB14F /* VWWDeviceAxisLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18951900F094003FB14F /* VWWDeviceAxisLimits.m */; };
 		CF7F18991900F0A1003FB14F /* VWWDeviceLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18981900F0A1003FB14F /* VWWDeviceLimits.m */; };
+		CF7F189E19022B09003FB14F /* VWWOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F189D19022B09003FB14F /* VWWOpenGLViewController.m */; };
+		CF7F18AD19023B44003FB14F /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7F18AB19023B44003FB14F /* item_powerup_fish.png */; };
+		CF7F18AE19023B44003FB14F /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7F18AC19023B44003FB14F /* tile_floor.png */; };
 		CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */; };
 		CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */; };
 		CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A018F9FB9100AF9B80 /* VWWViewController.m */; };
@@ -172,6 +175,10 @@
 		CF7F18951900F094003FB14F /* VWWDeviceAxisLimits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDeviceAxisLimits.m; sourceTree = "<group>"; };
 		CF7F18971900F0A1003FB14F /* VWWDeviceLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDeviceLimits.h; sourceTree = "<group>"; };
 		CF7F18981900F0A1003FB14F /* VWWDeviceLimits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDeviceLimits.m; sourceTree = "<group>"; };
+		CF7F189C19022B09003FB14F /* VWWOpenGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWOpenGLViewController.h; sourceTree = "<group>"; };
+		CF7F189D19022B09003FB14F /* VWWOpenGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWOpenGLViewController.m; sourceTree = "<group>"; };
+		CF7F18AB19023B44003FB14F /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_powerup_fish.png; sourceTree = "<group>"; };
+		CF7F18AC19023B44003FB14F /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_floor.png; sourceTree = "<group>"; };
 		CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RCTools_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
 		CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTableViewController.m; sourceTree = "<group>"; };
@@ -318,6 +325,7 @@
 		C66BE891190066C30036E098 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				CF7F18A519022C0D003FB14F /* OpenGL */,
 				C66BE89A1900673A0036E098 /* GLK (OpenGL) */,
 				C66BE899190067270036E098 /* Graph (CoreGraphics) */,
 				C66BE8981900670A0036E098 /* Scatter (CorePlot) */,
@@ -399,6 +407,24 @@
 				CF7F18911900D4F9003FB14F /* VWWScene.m */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		CF7F18A519022C0D003FB14F /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				CF7F189C19022B09003FB14F /* VWWOpenGLViewController.h */,
+				CF7F189D19022B09003FB14F /* VWWOpenGLViewController.m */,
+			);
+			name = OpenGL;
+			sourceTree = "<group>";
+		};
+		CF7F18AA19023B44003FB14F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF7F18AB19023B44003FB14F /* item_powerup_fish.png */,
+				CF7F18AC19023B44003FB14F /* tile_floor.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		CFA8A49B18F9FB5300AF9B80 /* Base */ = {
@@ -584,6 +610,7 @@
 				CFDAC65C18E1493D00EB609B /* Images.xcassets */,
 				CFDAC6A718E14A2A00EB609B /* Include */,
 				CFDAC6AB18E14A2A00EB609B /* Model */,
+				CF7F18AA19023B44003FB14F /* Resources */,
 				CF7F188D1900D4F9003FB14F /* Scene */,
 				CFDAC6AF18E14A2A00EB609B /* Shaders */,
 				CFDAC64518E1493D00EB609B /* Supporting Files */,
@@ -901,11 +928,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7F18AE19023B44003FB14F /* tile_floor.png in Resources */,
 				CFAD038518F387F6004F54EA /* create_schema.txt in Resources */,
 				CFDAC6C718E14A2A00EB609B /* 2014-03-07 19-23-15_15.kmz in Resources */,
 				CFDAC65D18E1493D00EB609B /* Images.xcassets in Resources */,
 				C66BE89F1900677E0036E098 /* Test_iPhone.storyboard in Resources */,
 				CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */,
+				CF7F18AD19023B44003FB14F /* item_powerup_fish.png in Resources */,
 				CFDAC6CC18E14A2A00EB609B /* passThrough.vsh in Resources */,
 				CFDAC6C918E14A2A00EB609B /* readme.txt in Resources */,
 				C6877EE418E4AC1300016407 /* 2014-03-25 16-45-00_11.log in Resources */,
@@ -957,6 +986,7 @@
 				CFDAC6CA18E14A2A00EB609B /* VWWMotion.m in Sources */,
 				CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */,
 				C6712CBD18FC866500A3665F /* VWWLogFilterViewController.m in Sources */,
+				CF7F189E19022B09003FB14F /* VWWOpenGLViewController.m in Sources */,
 				CFA8A4E518FA050B00AF9B80 /* VWWDetailViewController.m in Sources */,
 				CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */,
 				CFA8A4B218F9FC4A00AF9B80 /* VWWKMLOptionsViewController.m in Sources */,

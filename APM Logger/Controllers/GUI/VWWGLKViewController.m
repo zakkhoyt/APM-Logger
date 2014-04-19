@@ -54,7 +54,7 @@
     view.context = self.context;
     [EAGLContext setCurrentContext:self.context];
     
-    self.preferredFramesPerSecond = 30;
+    self.preferredFramesPerSecond = 60;
     
     self.scene = [[VWWScene alloc]init];
 //    self.scene.clearColor = GLKVector4Make(0.1, 0.9, 0.9, 0.0);
@@ -150,7 +150,7 @@
 
 #pragma mark VWWMotionControllerDelegate;
 
--(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits *)limits{
     @synchronized(self.graphScene.dataForPlot){
         static NSInteger counter = 0;
         [self.dataForPlot removeObjectAtIndex:0];
