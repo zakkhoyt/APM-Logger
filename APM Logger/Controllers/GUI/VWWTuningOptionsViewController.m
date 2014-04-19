@@ -46,7 +46,7 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
+//    self.tableView.contentInset = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height, 0, 0, 0);
     
     
     self.frequencySlider.minimumValue = 30;
@@ -72,6 +72,11 @@ typedef enum {
     UITableViewCell *colorCell = [self.tableView cellForRowAtIndexPath:colorIndexPath];
     colorCell.accessoryType = UITableViewCellAccessoryCheckmark;
 
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [VWWUserDefaults setTuningUpdateFrequency:(NSUInteger)self.frequencySlider.value];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1084,7 +1084,7 @@
                         <outlet property="yMinLabel" destination="UsC-19-OGc" id="nW9-RI-Co6"/>
                         <outlet property="zMaxLabel" destination="Z42-bp-UOm" id="zzs-sW-DuL"/>
                         <outlet property="zMinLabel" destination="Ws8-2m-xWw" id="oLA-lH-3px"/>
-                        <segue destination="9ML-Sg-3HV" kind="modal" identifier="VWWSegueTuningToOptions" id="tFC-KH-jLo"/>
+                        <segue destination="9ML-Sg-3HV" kind="push" identifier="VWWSegueTuningToOptions" id="tFC-KH-jLo"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzO-bY-uiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
