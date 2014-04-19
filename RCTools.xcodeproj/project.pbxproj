@@ -29,6 +29,7 @@
 		CF7F189E19022B09003FB14F /* VWWOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F189D19022B09003FB14F /* VWWOpenGLViewController.m */; };
 		CF7F18AD19023B44003FB14F /* item_powerup_fish.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7F18AB19023B44003FB14F /* item_powerup_fish.png */; };
 		CF7F18AE19023B44003FB14F /* tile_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7F18AC19023B44003FB14F /* tile_floor.png */; };
+		CF7F18B119025AD9003FB14F /* VWWMultiGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18B019025AD9003FB14F /* VWWMultiGraphScene.m */; };
 		CFA8A49818F9E76300AF9B80 /* RCTools_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */; };
 		CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */; };
 		CFA8A4A118F9FB9100AF9B80 /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4A018F9FB9100AF9B80 /* VWWViewController.m */; };
@@ -179,6 +180,9 @@
 		CF7F189D19022B09003FB14F /* VWWOpenGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWOpenGLViewController.m; sourceTree = "<group>"; };
 		CF7F18AB19023B44003FB14F /* item_powerup_fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_powerup_fish.png; sourceTree = "<group>"; };
 		CF7F18AC19023B44003FB14F /* tile_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile_floor.png; sourceTree = "<group>"; };
+		CF7F18AF19025AD9003FB14F /* VWWMultiGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMultiGraphScene.h; sourceTree = "<group>"; };
+		CF7F18B019025AD9003FB14F /* VWWMultiGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMultiGraphScene.m; sourceTree = "<group>"; };
+		CF7F18B219025AF1003FB14F /* VWWSceneProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWSceneProtocol.h; sourceTree = "<group>"; };
 		CFA8A49718F9E76300AF9B80 /* RCTools_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RCTools_iPhone.storyboard; sourceTree = "<group>"; };
 		CFA8A49C18F9FB7A00AF9B80 /* VWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTableViewController.h; sourceTree = "<group>"; };
 		CFA8A49D18F9FB7A00AF9B80 /* VWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTableViewController.m; sourceTree = "<group>"; };
@@ -405,6 +409,9 @@
 				CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */,
 				CF7F18901900D4F9003FB14F /* VWWScene.h */,
 				CF7F18911900D4F9003FB14F /* VWWScene.m */,
+				CF7F18AF19025AD9003FB14F /* VWWMultiGraphScene.h */,
+				CF7F18B019025AD9003FB14F /* VWWMultiGraphScene.m */,
+				CF7F18B219025AF1003FB14F /* VWWSceneProtocol.h */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1016,6 +1023,7 @@
 				CF7F18921900D4F9003FB14F /* VWWGraphScene.m in Sources */,
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */,
+				CF7F18B119025AD9003FB14F /* VWWMultiGraphScene.m in Sources */,
 				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,
 				CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */,
 				CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */,

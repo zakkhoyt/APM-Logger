@@ -65,9 +65,10 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
+    view.drawableMultisample = GLKViewDrawableMultisample4X;
     [EAGLContext setCurrentContext:self.context];
     
-    self.preferredFramesPerSecond = 30;
+    self.preferredFramesPerSecond = 60;
     
 
     
@@ -146,6 +147,10 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
 //}
 
 
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.paused = !self.paused;
+}
 #pragma mark Private
 
 -(void)renderLabels:(id)sender{

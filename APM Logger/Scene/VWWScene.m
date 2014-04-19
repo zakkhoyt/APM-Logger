@@ -7,7 +7,6 @@
 //
 
 #import "VWWScene.h"
-#import <GLKit/GLKit.h>
 
 @interface VWWScene () {
     GLKVector4 clearColor;

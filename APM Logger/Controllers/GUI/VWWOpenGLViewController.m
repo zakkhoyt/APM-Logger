@@ -18,48 +18,8 @@ typedef struct {
     float Normal[3];
 } Vertex;
 
-//const Vertex Vertices[] = {
-//    {{1, -1, 0}, {1, 0, 0, 1}, {1, 0}},
-//    {{1, 1, 0}, {0, 1, 0, 1}, {1, 1}},
-//    {{-1, 1, 0}, {0, 0, 1, 1}, {0, 1}},
-//    {{-1, -1, 0}, {0, 0, 0, 1}, {0, 0}}
-//};
 
 
-
-//const Vertex Vertices[] = {
-//    // Front
-//    {{1, -1, 1}, {1, 0, 0, 1}, {1, 0}},
-//    {{1, 1, 1}, {0, 1, 0, 1}, {1, 1}},
-//    {{-1, 1, 1}, {0, 0, 1, 1}, {0, 1}},
-//    {{-1, -1, 1}, {0, 0, 0, 1}, {0, 0}},
-//    // Back
-//    {{1, 1, -1}, {1, 0, 0, 1}, {0, 1}},
-//    {{-1, -1, -1}, {0, 1, 0, 1}, {1, 0}},
-//    {{1, -1, -1}, {0, 0, 1, 1}, {0, 0}},
-//    {{-1, 1, -1}, {0, 0, 0, 1}, {1, 1}},
-//    // Left
-//    {{-1, -1, 1}, {1, 0, 0, 1}, {1, 0}},
-//    {{-1, 1, 1}, {0, 1, 0, 1}, {1, 1}},
-//    {{-1, 1, -1}, {0, 0, 1, 1}, {0, 1}},
-//    {{-1, -1, -1}, {0, 0, 0, 1}, {0, 0}},
-//    // Right
-//    {{1, -1, -1}, {1, 0, 0, 1}, {1, 0}},
-//    {{1, 1, -1}, {0, 1, 0, 1}, {1, 1}},
-//    {{1, 1, 1}, {0, 0, 1, 1}, {0, 1}},
-//    {{1, -1, 1}, {0, 0, 0, 1}, {0, 0}},
-//    // Top
-//    {{1, 1, 1}, {1, 0, 0, 1}, {1, 0}},
-//    {{1, 1, -1}, {0, 1, 0, 1}, {1, 1}},
-//    {{-1, 1, -1}, {0, 0, 1, 1}, {0, 1}},
-//    {{-1, 1, 1}, {0, 0, 0, 1}, {0, 0}},
-//    
-//    // Bottom
-//    {{1, -1, -1}, {1, 0, 0, 1}, {1, 0}},
-//    {{1, -1, 1}, {0, 1, 0, 1}, {1, 1}},
-//    {{-1, -1, 1}, {0, 0, 1, 1}, {0, 1}},
-//    {{-1, -1, -1}, {0, 0, 0, 1}, {0, 0}}
-//};
 
 
 const Vertex Vertices[] = {
@@ -96,9 +56,6 @@ const Vertex Vertices[] = {
 };
 
 
-//const GLubyte Indices[] = {
-//    0, 1, 2,
-//    2, 3, 0 };
 
 const GLubyte Indices[] = {
     // Front
@@ -127,6 +84,23 @@ const GLubyte Indices[] = {
 };
 
 
+typedef struct {
+    float Position[3];
+    float Color[4];
+} LineVertex;
+
+const LineVertex LineVertices[] = {
+    {{-1, 0.5, 0}, {1, 0, 0, 1}},
+    {{1, -0.5, 0}, {0, 1, 0, 1}},
+    {{-0.4, 0.5, 0}, {1, 0, 0, 1}},
+    {{0.7, -0.5, 0}, {0, 1, 0, 1}},
+
+};
+
+const GLubyte LineIndices[] = {
+    0, 1
+};
+
 
 @interface VWWOpenGLViewController (){
     float _curRed;
@@ -134,14 +108,17 @@ const GLubyte Indices[] = {
     
     GLuint _vertexBuffer;
     GLuint _indexBuffer;
-    
+
+    GLuint _lineVertexBuffer;
+    GLuint _lineIndexBuffer;
+
     GLKBaseEffect * _effect;
     
     float _rotation;
     
     
     GLuint _vertexArray;
-    
+    GLuint _lineVertexArray;
     float _lightRotation;
 }
 @property (strong, nonatomic) EAGLContext *context;
@@ -281,7 +258,7 @@ const GLubyte Indices[] = {
     glGenVertexArraysOES(1, &_vertexArray);
     glBindVertexArrayOES(_vertexArray);
     
-    // Old stuff
+    //Cube stuff
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
@@ -289,13 +266,19 @@ const GLubyte Indices[] = {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
     
-    // New lines (were previously in glkView:drawInRect:
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE,
                           sizeof(Vertex), (const GLvoid *) offsetof(Vertex, Position));
     glEnableVertexAttribArray(GLKVertexAttribColor);
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE,
                           sizeof(Vertex), (const GLvoid *) offsetof(Vertex, Color));
+
+    
+    
+    
+
+    
+    
     
     // Texture
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
@@ -311,7 +294,7 @@ const GLubyte Indices[] = {
     glVertexAttribPointer(GLKVertexAttribTexCoord1, 2, GL_FLOAT, GL_FALSE,
                           sizeof(Vertex), (const GLvoid *) offsetof(Vertex, TexCoord));
     
-    glBindVertexArrayOES(0);
+//    glBindVertexArrayOES(0);
     
     // Old stuff
     _effect = [[GLKBaseEffect alloc] init];
@@ -365,6 +348,30 @@ const GLubyte Indices[] = {
     _effect.fog.mode = GLKFogModeLinear;
     
     
+    
+    
+    // Line stuff
+    
+    // New lines
+    glGenVertexArraysOES(1, &_lineVertexArray);
+    glBindVertexArrayOES(_lineVertexArray);
+
+    
+    glGenBuffers(1, &_lineVertexBuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, _lineVertexBuffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(LineVertices), LineVertices, GL_STATIC_DRAW);
+    glGenBuffers(1, &_lineIndexBuffer);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _lineIndexBuffer);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(LineIndices), LineIndices, GL_STATIC_DRAW);
+
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE,
+                          sizeof(LineVertex), (const GLvoid *) offsetof(LineVertex, Position));
+    glEnableVertexAttribArray(GLKVertexAttribColor);
+    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE,
+                          sizeof(LineVertex), (const GLvoid *) offsetof(LineVertex, Color));
+    
+    glBindVertexArrayOES(0);
 }
 
 
@@ -398,9 +405,15 @@ const GLubyte Indices[] = {
     
     glClearColor(_curRed, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
+    
     [_effect prepareToDraw];
     glBindVertexArrayOES(_vertexArray);
     glDrawElements(GL_TRIANGLES, sizeof(Indices)/sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
+    
+    [_effect prepareToDraw];
+    glBindVertexArrayOES(_lineVertexArray);
+    glDrawElements(GL_TRIANGLES, sizeof(LineIndices)/sizeof(LineIndices[0]), GL_UNSIGNED_BYTE, 0);
+    
 }
 
 
@@ -436,11 +449,6 @@ const GLubyte Indices[] = {
     _effect.transform.modelviewMatrix = lightModelViewMatrix;
     _effect.light1.position = GLKVector4Make(0, 0, 1.5, 1);
     
-    
-//    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -6.0f);
-//    _rotation += 90 * self.timeSinceLastUpdate;
-//    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix,  GLKMathDegreesToRadians(_rotation), 0, 0, 1);
-//    _effect.transform.modelviewMatrix = modelViewMatrix;
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -6.0f);
     _rotation += 90 * self.timeSinceLastUpdate;

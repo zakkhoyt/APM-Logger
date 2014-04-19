@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-@import GLKit;
+#import "VWWSceneProtocol.h"
 
-@interface VWWGraphScene : NSObject
+@interface VWWGraphScene : NSObject <VWWSceneProtocol>
 @property GLKVector4 clearColor;
 @property float left, right, bottom, top;
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
