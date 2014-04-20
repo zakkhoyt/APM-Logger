@@ -62,6 +62,8 @@
 		CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037B18F3797F004F54EA /* FMDatabaseQueue.m */; };
 		CFAD038318F3797F004F54EA /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAD037E18F3797F004F54EA /* FMResultSet.m */; };
 		CFAD038518F387F6004F54EA /* create_schema.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFAD038418F387F6004F54EA /* create_schema.txt */; };
+		CFB4B4BA1903892000591E45 /* VWWWaveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B4B91903892000591E45 /* VWWWaveScene.m */; };
+		CFB4B4C21903897200591E45 /* VWWWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB4B4C11903897200591E45 /* VWWWaveViewController.m */; };
 		CFDAC63F18E1493D00EB609B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC63E18E1493D00EB609B /* Foundation.framework */; };
 		CFDAC64118E1493D00EB609B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64018E1493D00EB609B /* CoreGraphics.framework */; };
 		CFDAC64318E1493D00EB609B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDAC64218E1493D00EB609B /* UIKit.framework */; };
@@ -244,6 +246,10 @@
 		CFAD037D18F3797F004F54EA /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CFAD037E18F3797F004F54EA /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		CFAD038418F387F6004F54EA /* create_schema.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = create_schema.txt; sourceTree = "<group>"; };
+		CFB4B4B81903892000591E45 /* VWWWaveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveScene.h; sourceTree = "<group>"; };
+		CFB4B4B91903892000591E45 /* VWWWaveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveScene.m; sourceTree = "<group>"; };
+		CFB4B4C01903897200591E45 /* VWWWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveViewController.h; sourceTree = "<group>"; };
+		CFB4B4C11903897200591E45 /* VWWWaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveViewController.m; sourceTree = "<group>"; };
 		CFDAC63B18E1493D00EB609B /* RCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDAC63E18E1493D00EB609B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFDAC64018E1493D00EB609B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -329,6 +335,7 @@
 		C66BE891190066C30036E098 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				CFB4B4BF1903895200591E45 /* Wave */,
 				CF7F18A519022C0D003FB14F /* OpenGL */,
 				C66BE89A1900673A0036E098 /* GLK (OpenGL) */,
 				C66BE899190067270036E098 /* Graph (CoreGraphics) */,
@@ -412,6 +419,8 @@
 				CF7F18AF19025AD9003FB14F /* VWWMultiGraphScene.h */,
 				CF7F18B019025AD9003FB14F /* VWWMultiGraphScene.m */,
 				CF7F18B219025AF1003FB14F /* VWWSceneProtocol.h */,
+				CFB4B4B81903892000591E45 /* VWWWaveScene.h */,
+				CFB4B4B91903892000591E45 /* VWWWaveScene.m */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -571,6 +580,15 @@
 				CFAD037E18F3797F004F54EA /* FMResultSet.m */,
 			);
 			path = FMDB;
+			sourceTree = "<group>";
+		};
+		CFB4B4BF1903895200591E45 /* Wave */ = {
+			isa = PBXGroup;
+			children = (
+				CFB4B4C01903897200591E45 /* VWWWaveViewController.h */,
+				CFB4B4C11903897200591E45 /* VWWWaveViewController.m */,
+			);
+			name = Wave;
 			sourceTree = "<group>";
 		};
 		CFDAC63218E1493D00EB609B = {
@@ -986,6 +1004,7 @@
 				CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */,
 				CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */,
 				CFA8A4C618F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m in Sources */,
+				CFB4B4BA1903892000591E45 /* VWWWaveScene.m in Sources */,
 				CFA8A4AF18F9FC3800AF9B80 /* VWWLogPlotViewController.m in Sources */,
 				CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */,
 				CF23B54518FE4A8A007EB262 /* VWWGraphViewController.m in Sources */,
@@ -1024,6 +1043,7 @@
 				CFDAC6BF18E14A2A00EB609B /* VWWDataLogController.m in Sources */,
 				CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */,
 				CF7F18B119025AD9003FB14F /* VWWMultiGraphScene.m in Sources */,
+				CFB4B4C21903897200591E45 /* VWWWaveViewController.m in Sources */,
 				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,
 				CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */,
 				CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */,

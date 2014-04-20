@@ -136,6 +136,26 @@
                                             <segue destination="sMs-D2-JOs" kind="push" id="q7e-Ic-uF8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="NIf-t7-alu" style="IBUITableViewCellStyleDefault" id="aEh-8z-zTo">
+                                        <rect key="frame" x="0.0" y="284" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aEh-8z-zTo" id="AHU-Cy-tGT">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Wave" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NIf-t7-alu">
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SDG-GG-DOa" kind="push" id="jLh-kr-P1q"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -149,6 +169,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDo-0x-VuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1716" y="1511"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="Qp7-D8-0dM">
+            <objects>
+                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="SDG-GG-DOa" customClass="VWWWaveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wa5-Q0-g4Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="TKa-lH-eLJ"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qju-kF-wD0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="SDG-GG-DOa" id="7R0-1N-3y7"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="Yor-rU-qhV"/>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DXX-sC-PZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1164" y="3848"/>
         </scene>
         <!--Scatter View Controller-->
         <scene sceneID="7VL-eV-JvM">
