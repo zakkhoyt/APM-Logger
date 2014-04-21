@@ -12,6 +12,7 @@
 @interface VWWWaveScene : NSObject <VWWSceneProtocol>
 @property GLKVector4 clearColor;
 @property float left, right, bottom, top;
+@property (nonatomic, strong) GLKViewController *owner;
 -(void)update;
 -(void)render;
 @end

@@ -33,6 +33,7 @@
     
     self.waveScene = [[VWWWaveScene alloc]init];
     self.waveScene.clearColor = GLKVector4Make(0.5, 0.0, 0.2, 0.0);
+    self.waveScene.owner = self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
