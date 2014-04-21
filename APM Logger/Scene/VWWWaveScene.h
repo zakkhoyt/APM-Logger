@@ -13,6 +13,9 @@
 @property GLKVector4 clearColor;
 @property float left, right, bottom, top;
 @property (nonatomic, strong) GLKViewController *owner;
+
+@property (nonatomic) NSUInteger size;
+
 -(void)update;
 -(void)render;
 @end

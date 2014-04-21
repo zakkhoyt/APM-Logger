@@ -18,8 +18,10 @@
 
 - (void)viewDidLoad
 {
+ 
     [super viewDidLoad];
 
+    [UIApplication sharedApplication].statusBarHidden = YES;
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     if (!self.context) {
         NSLog(@"Failed to create ES context");
@@ -32,8 +34,9 @@
     self.preferredFramesPerSecond = 60;
     
     self.waveScene = [[VWWWaveScene alloc]init];
-    self.waveScene.clearColor = GLKVector4Make(0.5, 0.0, 0.2, 0.0);
+    self.waveScene.clearColor = GLKVector4Make(0.0, 0.0, 0.0, 0.0);
     self.waveScene.owner = self;
+    self.waveScene.size = 34;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -47,14 +50,16 @@
     // Moving to portrait
     float x = 1.0;
     float y = self.view.bounds.size.height / (float)self.view.bounds.size.width;
-    self.waveScene.left   = -2*x;
-    self.waveScene.right  =  2*x;
-    self.waveScene.bottom = -2*y;
-    self.waveScene.top    =  2*y;
+    self.waveScene.left   = -10*x;
+    self.waveScene.right  =  10*x;
+    self.waveScene.bottom = -10*y;
+    self.waveScene.top    =  10*y;
 
 }
 
-
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
 #pragma mark - GLKViewDelegate
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
