@@ -131,7 +131,7 @@ const GLubyte LineIndices[] = {
 {
     [super viewDidLoad];
     
-    [self.navigationController setNavigationBarHidden:YES];
+//    [self.navigationController setNavigationBarHidden:YES];
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     if (!self.context) {
