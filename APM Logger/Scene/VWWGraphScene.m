@@ -133,7 +133,7 @@ GLfloat zxAxis[4] = {
 
     effect.constantColor = GLKVector4Make(1,0,0,0.1);
     [effect prepareToDraw];
-    glLineWidth(8.0);
+    glLineWidth(1.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, xVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
 
@@ -147,7 +147,7 @@ GLfloat zxAxis[4] = {
 
     effect.constantColor = GLKVector4Make(0,1,0,1);
     [effect prepareToDraw];
-    glLineWidth(4.0);
+    glLineWidth(2.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, yVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
     
@@ -161,7 +161,7 @@ GLfloat zxAxis[4] = {
 
     effect.constantColor = GLKVector4Make(1,1,0,1);
     [effect prepareToDraw];
-    glLineWidth(2.0);
+    glLineWidth(4.0);
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, zVertices);
     glDrawArrays(GL_LINE_STRIP, 0, kSamples);
     

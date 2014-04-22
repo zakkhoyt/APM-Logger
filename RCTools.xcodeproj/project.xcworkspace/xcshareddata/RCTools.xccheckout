@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>97CBC99E-63DD-4A0C-B413-4D863FA426BC</string>
+	<string>95FEEC0D-D1EB-4F81-856C-6047BB229DDC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>RCTools</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C3703294-A5DA-4D5D-9E69-3DDE17F4AD91</key>
-		<string>ssh://github.com/zakkhoyt/APM-Logger</string>
+		<key>7E6AB9F1-7A9A-458F-9804-6CB668B42235</key>
+		<string>ssh://github.com/zakkhoyt/RCTools.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>RCTools.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C3703294-A5DA-4D5D-9E69-3DDE17F4AD91</key>
+		<key>7E6AB9F1-7A9A-458F-9804-6CB668B42235</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/zakkhoyt/APM-Logger</string>
+	<string>ssh://github.com/zakkhoyt/RCTools.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C3703294-A5DA-4D5D-9E69-3DDE17F4AD91</string>
+	<string>7E6AB9F1-7A9A-458F-9804-6CB668B42235</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C3703294-A5DA-4D5D-9E69-3DDE17F4AD91</string>
+			<string>7E6AB9F1-7A9A-458F-9804-6CB668B42235</string>
 			<key>IDESourceControlWCCName</key>
-			<string>APM-Logger</string>
+			<string>RCTools</string>
 		</dict>
 	</array>
 </dict>

@@ -65,7 +65,7 @@ static NSString *VWWSegueTuningToOptions = @"VWWSegueTuningToOptions";
     
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
-    view.drawableMultisample = GLKViewDrawableMultisample4X;
+//    view.drawableMultisample = GLKViewDrawableMultisample4X;
     [EAGLContext setCurrentContext:self.context];
     
     self.preferredFramesPerSecond = 60;
