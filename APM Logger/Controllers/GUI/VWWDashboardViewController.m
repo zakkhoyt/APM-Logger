@@ -42,6 +42,7 @@ typedef enum {
 @property (nonatomic, strong) VWWResourcesViewController *resourcesViewController;
 @property (nonatomic, strong) VWWAboutViewController *aboutViewController;
 @property (nonatomic) NSUInteger selectedCellIndex;
+@property (nonatomic) BOOL hasAppeared;
 @end
 
 @implementation VWWDashboardViewController
@@ -60,14 +61,28 @@ typedef enum {
     self.logsViewController.masterViewControllerDelegate = self;
     [self changeDetailView:self.logsViewController animated:NO];
     self.selectedCellIndex = 0;
+    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+
     
     [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
 
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+  
+
+    if(self.hasAppeared == NO){
+        self.hasAppeared = YES;
+        [self hideMaster:NO];
+//        [self performSelector:@selector(hideMaster:) withObject:@NO afterDelay:0.1];
+    }
 }
 - (void)didReceiveMemoryWarning
 {

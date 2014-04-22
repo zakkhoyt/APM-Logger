@@ -12,4 +12,5 @@
 
 @interface VWWMasterViewController : UIViewController <VWWDetailViewControllerDelegate, VWWDetailTableViewControllerDelegate>
 -(void)changeDetailView:(UIViewController*)detailController animated:(BOOL)animated;
+-(void)hideMaster:(BOOL)shouldShow;
 @end
