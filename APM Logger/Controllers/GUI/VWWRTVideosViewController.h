@@ -1,5 +1,5 @@
 //
-//  VWWVideosViewController.h
+//  VWWRTVideosViewController.h
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
@@ -8,6 +8,6 @@
 
 #import "VWWDetailTableViewController.h"
 
-@interface VWWVideosViewController : VWWDetailTableViewController
+@interface VWWRTVideosViewController : VWWDetailTableViewController
 
 @end

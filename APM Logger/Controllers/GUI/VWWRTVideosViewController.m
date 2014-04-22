@@ -1,22 +1,22 @@
 //
-//  VWWVideosViewController.m
+//  VWWRTVideosViewController.m
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWVideosViewController.h"
-#import "VWWVideoRecordOptionsViewController.h"
+#import "VWWRTVideosViewController.h"
+#import "VWWRTVideoRecordOptionsViewController.h"
 
 static NSString *VWWSegueVideosToRecordOptions = @"VWWSegueVideosToRecordOptions";
 
 
-@interface VWWVideosViewController ()
+@interface VWWRTVideosViewController ()
 
 @end
 
-@implementation VWWVideosViewController
+@implementation VWWRTVideosViewController
 
 
 #pragma mark UIViewController
@@ -25,7 +25,7 @@ static NSString *VWWSegueVideosToRecordOptions = @"VWWSegueVideosToRecordOptions
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"VIDEO";
+    self.navigationItem.title = @"VIDEO (Real Time)";
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonTouchUpInside:)];
     [self.navigationItem setRightBarButtonItem:addButton animated:NO];

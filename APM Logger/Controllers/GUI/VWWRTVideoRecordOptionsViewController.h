@@ -8,6 +8,6 @@
 
 #import "VWWTableViewController.h"
 
-@interface VWWVideoRecordOptionsViewController : VWWTableViewController
+@interface VWWRTVideoRecordOptionsViewController : VWWTableViewController
 
 @end

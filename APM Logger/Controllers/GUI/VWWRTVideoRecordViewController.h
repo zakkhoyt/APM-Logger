@@ -1,5 +1,5 @@
 //
-//  VWWVideoEditViewController.h
+//  VWWVideoRecordViewController.h
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
@@ -8,6 +8,7 @@
 
 #import "VWWViewController.h"
 
-@interface VWWVideoEditViewController : VWWViewController
+
+@interface VWWRTVideoRecordViewController : VWWViewController
 
 @end

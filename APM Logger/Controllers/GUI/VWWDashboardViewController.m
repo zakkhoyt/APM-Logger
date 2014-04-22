@@ -12,7 +12,8 @@
 // View Controllers
 #import "VWWLogsViewController.h"
 #import "VWWTuningsViewController.h"
-#import "VWWVideosViewController.h"
+#import "VWWRTVideosViewController.h"
+#import "VWWPRVideosViewController.h"
 #import "VWWHelpViewController.h"
 #import "VWWResourcesViewController.h"
 #import "VWWAboutViewController.h"
@@ -24,7 +25,8 @@ typedef enum{
 typedef enum {
     VWWDashboardItemLogs = 0,
     VWWDashboardItemTunings,
-    VWWDashboardItemVideos,
+    VWWDashboardItemRTVideos,
+    VWWDashboardItemPRVideos,
     VWWDashboardItemHelp,
     VWWDashboardItemResources,
     VWWDashboardItemAbout,
@@ -34,7 +36,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) VWWLogsViewController *logsViewController;
 @property (nonatomic, strong) VWWTuningsViewController *tuningsViewController;
-@property (nonatomic, strong) VWWVideosViewController *videosViewController;
+@property (nonatomic, strong) VWWRTVideosViewController *rtVideosViewController;
+@property (nonatomic, strong) VWWPRVideosViewController *prVideosViewController;
 @property (nonatomic, strong) VWWHelpViewController *helpViewController;
 @property (nonatomic, strong) VWWResourcesViewController *resourcesViewController;
 @property (nonatomic, strong) VWWAboutViewController *aboutViewController;
@@ -84,7 +87,7 @@ typedef enum {
 
 - (NSInteger)collectionView:(UICollectionView *)cv numberOfItemsInSection:(NSInteger)section {
     if(section == VWWDashboardSectionMain){
-        return 6;
+        return 7;
     }
     return 0;
 }
@@ -100,8 +103,10 @@ typedef enum {
             cell.titleLabel.text = @"APM Logs";
         } else if(indexPath.item == VWWDashboardItemTunings){
             cell.titleLabel.text = @"Motor/Prop Balancing";
-        } else if(indexPath.item == VWWDashboardItemVideos){
-            cell.titleLabel.text = @"Flight Videos";
+        } else if(indexPath.item == VWWDashboardItemRTVideos){
+            cell.titleLabel.text = @"Flight Videos (Real Time)";
+        } else if(indexPath.item == VWWDashboardItemPRVideos){
+            cell.titleLabel.text = @"Flight Videos (Post Render)";
         } else if(indexPath.item == VWWDashboardItemHelp){
             cell.titleLabel.text = @"Help";
         } else if(indexPath.item == VWWDashboardItemResources){
@@ -134,7 +139,7 @@ typedef enum {
 #pragma mark UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)cv didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     if(indexPath.section == 0){
         if(indexPath.item == VWWDashboardItemLogs){
             self.logsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWLogsViewController"];
@@ -144,10 +149,14 @@ typedef enum {
             self.tuningsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWTuningsViewController"];
             self.tuningsViewController.masterViewControllerDelegate = self;
             [self changeDetailView:self.tuningsViewController animated:YES];
-        } else if(indexPath.item == VWWDashboardItemVideos){
-            self.videosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWVideosViewController"];
-            self.videosViewController.masterViewControllerDelegate = self;
-            [self changeDetailView:self.videosViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemRTVideos){
+            self.rtVideosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWRTVideosViewController"];
+            self.rtVideosViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.rtVideosViewController animated:YES];
+        } else if(indexPath.item == VWWDashboardItemPRVideos){
+            self.prVideosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWPRVideosViewController"];
+            self.prVideosViewController.masterViewControllerDelegate = self;
+            [self changeDetailView:self.prVideosViewController animated:YES];
         } else if(indexPath.item == VWWDashboardItemHelp){
             self.helpViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWHelpViewController"];
             self.helpViewController.masterViewControllerDelegate = self;

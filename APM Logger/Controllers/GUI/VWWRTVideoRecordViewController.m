@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWVideoRecordViewController.h"
+#import "VWWRTVideoRecordViewController.h"
 #import "VWWVideoPreviewView.h"
 #import "VWWVideoProcessor.h"
 #import <QuartzCore/QuartzCore.h>
 
 #import "VWWLocationController.h"
 
-@interface VWWVideoRecordViewController () <VWWVideoProcessorDelegate>{
+@interface VWWRTVideoRecordViewController () <VWWVideoProcessorDelegate>{
     VWWVideoProcessor *videoProcessor;
     
     //	UIView *previewView;
@@ -35,7 +35,7 @@
 
 @end
 
-@implementation VWWVideoRecordViewController
+@implementation VWWRTVideoRecordViewController
 
 
 

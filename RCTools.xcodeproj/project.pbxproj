@@ -17,6 +17,7 @@
 		C68780D018E4E1A800016407 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780CF18E4E1A800016407 /* QuartzCore.framework */; };
 		C68780D218E4E29400016407 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68780D118E4E29400016407 /* Accelerate.framework */; };
 		C6B580B21900840800069322 /* VWWAP2DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B580B11900840800069322 /* VWWAP2DataController.m */; };
+		CF0BFC081905E7AA006F5409 /* VWWPRVideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0BFC071905E7AA006F5409 /* VWWPRVideosViewController.m */; };
 		CF23B53B18FE29EE007EB262 /* VWWScatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */; };
 		CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53E18FE2F51007EB262 /* TestXYTheme.m */; };
 		CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54118FE4A6F007EB262 /* VWWGraphView.m */; };
@@ -41,11 +42,11 @@
 		CFA8A4B618F9FC6700AF9B80 /* VWWTuningsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4B518F9FC6700AF9B80 /* VWWTuningsViewController.m */; };
 		CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4B818F9FC7300AF9B80 /* VWWTuningViewController.m */; };
 		CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4BB18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m */; };
-		CFA8A4BF18F9FC9F00AF9B80 /* VWWVideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4BE18F9FC9F00AF9B80 /* VWWVideosViewController.m */; };
-		CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C218F9FCF000AF9B80 /* VWWVideoViewController.m */; };
-		CFA8A4C618F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C518F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m */; };
-		CFA8A4C918F9FD0F00AF9B80 /* VWWVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C818F9FD0F00AF9B80 /* VWWVideoEditViewController.m */; };
-		CFA8A4CC18F9FD2000AF9B80 /* VWWVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4CB18F9FD2000AF9B80 /* VWWVideoRecordViewController.m */; };
+		CFA8A4BF18F9FC9F00AF9B80 /* VWWRTVideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4BE18F9FC9F00AF9B80 /* VWWRTVideosViewController.m */; };
+		CFA8A4C318F9FCF000AF9B80 /* VWWRTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C218F9FCF000AF9B80 /* VWWRTVideoViewController.m */; };
+		CFA8A4C618F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C518F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.m */; };
+		CFA8A4C918F9FD0F00AF9B80 /* VWWRTVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4C818F9FD0F00AF9B80 /* VWWRTVideoEditViewController.m */; };
+		CFA8A4CC18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4CB18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.m */; };
 		CFA8A4D018F9FD3E00AF9B80 /* VWWResourcesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4CF18F9FD3E00AF9B80 /* VWWResourcesViewController.m */; };
 		CFA8A4D318F9FD4B00AF9B80 /* VWWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4D218F9FD4B00AF9B80 /* VWWWebViewController.m */; };
 		CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA8A4D618F9FD7A00AF9B80 /* VWWAboutViewController.m */; };
@@ -161,6 +162,8 @@
 		C6B580B11900840800069322 /* VWWAP2DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAP2DataController.m; sourceTree = "<group>"; };
 		C6D5296E18FCBFBD0010299B /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
 		C6D5296F18FCBFBD0010299B /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
+		CF0BFC061905E7AA006F5409 /* VWWPRVideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWPRVideosViewController.h; sourceTree = "<group>"; };
+		CF0BFC071905E7AA006F5409 /* VWWPRVideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWPRVideosViewController.m; sourceTree = "<group>"; };
 		CF23B53918FE29EE007EB262 /* VWWScatterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScatterViewController.h; sourceTree = "<group>"; };
 		CF23B53A18FE29EE007EB262 /* VWWScatterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScatterViewController.m; sourceTree = "<group>"; };
 		CF23B53D18FE2F51007EB262 /* TestXYTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestXYTheme.h; sourceTree = "<group>"; };
@@ -206,16 +209,16 @@
 		CFA8A4B818F9FC7300AF9B80 /* VWWTuningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTuningViewController.m; sourceTree = "<group>"; };
 		CFA8A4BA18F9FC8600AF9B80 /* VWWTuningOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTuningOptionsViewController.h; sourceTree = "<group>"; };
 		CFA8A4BB18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTuningOptionsViewController.m; sourceTree = "<group>"; };
-		CFA8A4BD18F9FC9F00AF9B80 /* VWWVideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideosViewController.h; sourceTree = "<group>"; };
-		CFA8A4BE18F9FC9F00AF9B80 /* VWWVideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideosViewController.m; sourceTree = "<group>"; };
-		CFA8A4C118F9FCF000AF9B80 /* VWWVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoViewController.h; sourceTree = "<group>"; };
-		CFA8A4C218F9FCF000AF9B80 /* VWWVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoViewController.m; sourceTree = "<group>"; };
-		CFA8A4C418F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoRecordOptionsViewController.h; sourceTree = "<group>"; };
-		CFA8A4C518F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoRecordOptionsViewController.m; sourceTree = "<group>"; };
-		CFA8A4C718F9FD0F00AF9B80 /* VWWVideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoEditViewController.h; sourceTree = "<group>"; };
-		CFA8A4C818F9FD0F00AF9B80 /* VWWVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoEditViewController.m; sourceTree = "<group>"; };
-		CFA8A4CA18F9FD2000AF9B80 /* VWWVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWVideoRecordViewController.h; sourceTree = "<group>"; };
-		CFA8A4CB18F9FD2000AF9B80 /* VWWVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWVideoRecordViewController.m; sourceTree = "<group>"; };
+		CFA8A4BD18F9FC9F00AF9B80 /* VWWRTVideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWRTVideosViewController.h; sourceTree = "<group>"; };
+		CFA8A4BE18F9FC9F00AF9B80 /* VWWRTVideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWRTVideosViewController.m; sourceTree = "<group>"; };
+		CFA8A4C118F9FCF000AF9B80 /* VWWRTVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWRTVideoViewController.h; sourceTree = "<group>"; };
+		CFA8A4C218F9FCF000AF9B80 /* VWWRTVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWRTVideoViewController.m; sourceTree = "<group>"; };
+		CFA8A4C418F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWRTVideoRecordOptionsViewController.h; sourceTree = "<group>"; };
+		CFA8A4C518F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWRTVideoRecordOptionsViewController.m; sourceTree = "<group>"; };
+		CFA8A4C718F9FD0F00AF9B80 /* VWWRTVideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWRTVideoEditViewController.h; sourceTree = "<group>"; };
+		CFA8A4C818F9FD0F00AF9B80 /* VWWRTVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWRTVideoEditViewController.m; sourceTree = "<group>"; };
+		CFA8A4CA18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWRTVideoRecordViewController.h; sourceTree = "<group>"; };
+		CFA8A4CB18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWRTVideoRecordViewController.m; sourceTree = "<group>"; };
 		CFA8A4CE18F9FD3E00AF9B80 /* VWWResourcesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWResourcesViewController.h; sourceTree = "<group>"; };
 		CFA8A4CF18F9FD3E00AF9B80 /* VWWResourcesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWResourcesViewController.m; sourceTree = "<group>"; };
 		CFA8A4D118F9FD4B00AF9B80 /* VWWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWebViewController.h; sourceTree = "<group>"; };
@@ -392,6 +395,15 @@
 			name = Welcome;
 			sourceTree = "<group>";
 		};
+		CF0BFC051905E773006F5409 /* Video (PostRender) */ = {
+			isa = PBXGroup;
+			children = (
+				CF0BFC061905E7AA006F5409 /* VWWPRVideosViewController.h */,
+				CF0BFC071905E7AA006F5409 /* VWWPRVideosViewController.m */,
+			);
+			name = "Video (PostRender)";
+			sourceTree = "<group>";
+		};
 		CF23B53C18FE2F51007EB262 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,21 +512,21 @@
 			name = Tuning;
 			sourceTree = "<group>";
 		};
-		CFA8A4C018F9FCA500AF9B80 /* Video */ = {
+		CFA8A4C018F9FCA500AF9B80 /* Video (RealTime) */ = {
 			isa = PBXGroup;
 			children = (
-				CFA8A4BD18F9FC9F00AF9B80 /* VWWVideosViewController.h */,
-				CFA8A4BE18F9FC9F00AF9B80 /* VWWVideosViewController.m */,
-				CFA8A4C118F9FCF000AF9B80 /* VWWVideoViewController.h */,
-				CFA8A4C218F9FCF000AF9B80 /* VWWVideoViewController.m */,
-				CFA8A4C418F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.h */,
-				CFA8A4C518F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m */,
-				CFA8A4C718F9FD0F00AF9B80 /* VWWVideoEditViewController.h */,
-				CFA8A4C818F9FD0F00AF9B80 /* VWWVideoEditViewController.m */,
-				CFA8A4CA18F9FD2000AF9B80 /* VWWVideoRecordViewController.h */,
-				CFA8A4CB18F9FD2000AF9B80 /* VWWVideoRecordViewController.m */,
+				CFA8A4BD18F9FC9F00AF9B80 /* VWWRTVideosViewController.h */,
+				CFA8A4BE18F9FC9F00AF9B80 /* VWWRTVideosViewController.m */,
+				CFA8A4C118F9FCF000AF9B80 /* VWWRTVideoViewController.h */,
+				CFA8A4C218F9FCF000AF9B80 /* VWWRTVideoViewController.m */,
+				CFA8A4C418F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.h */,
+				CFA8A4C518F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.m */,
+				CFA8A4C718F9FD0F00AF9B80 /* VWWRTVideoEditViewController.h */,
+				CFA8A4C818F9FD0F00AF9B80 /* VWWRTVideoEditViewController.m */,
+				CFA8A4CA18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.h */,
+				CFA8A4CB18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.m */,
 			);
-			name = Video;
+			name = "Video (RealTime)";
 			sourceTree = "<group>";
 		};
 		CFA8A4CD18F9FD2A00AF9B80 /* Resources */ = {
@@ -699,15 +711,16 @@
 		CFDAC67D18E14A2A00EB609B /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				C66BE891190066C30036E098 /* Test */,
 				CFA8A4D418F9FD5200AF9B80 /* About */,
 				CFA8A49B18F9FB5300AF9B80 /* Base */,
 				CFA8A4A218F9FBA200AF9B80 /* Dashboard */,
 				CFA8A4EC18FA10CC00AF9B80 /* Help */,
 				CFA8A4A618F9FBDC00AF9B80 /* Logs */,
 				CFA8A4CD18F9FD2A00AF9B80 /* Resources */,
+				C66BE891190066C30036E098 /* Test */,
 				CFA8A4B318F9FC5700AF9B80 /* Tuning */,
-				CFA8A4C018F9FCA500AF9B80 /* Video */,
+				CF0BFC051905E773006F5409 /* Video (PostRender) */,
+				CFA8A4C018F9FCA500AF9B80 /* Video (RealTime) */,
 				C6D5296D18FCBFAE0010299B /* Welcome */,
 			);
 			path = GUI;
@@ -988,7 +1001,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFA8A4AC18F9FC0300AF9B80 /* VWWLogViewController.m in Sources */,
-				CFA8A4C918F9FD0F00AF9B80 /* VWWVideoEditViewController.m in Sources */,
+				CFA8A4C918F9FD0F00AF9B80 /* VWWRTVideoEditViewController.m in Sources */,
 				C66BE7F518FEFC2D0036E098 /* VWWGLKViewController.m in Sources */,
 				CFDAC6C018E14A2A00EB609B /* VWWFileController.m in Sources */,
 				CFA8A4BC18F9FC8600AF9B80 /* VWWTuningOptionsViewController.m in Sources */,
@@ -1003,7 +1016,7 @@
 				CFA8A49E18F9FB7A00AF9B80 /* VWWTableViewController.m in Sources */,
 				CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */,
 				CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */,
-				CFA8A4C618F9FCFF00AF9B80 /* VWWVideoRecordOptionsViewController.m in Sources */,
+				CFA8A4C618F9FCFF00AF9B80 /* VWWRTVideoRecordOptionsViewController.m in Sources */,
 				CFB4B4BA1903892000591E45 /* VWWWaveScene.m in Sources */,
 				CFA8A4AF18F9FC3800AF9B80 /* VWWLogPlotViewController.m in Sources */,
 				CFAD038218F3797F004F54EA /* FMDatabaseQueue.m in Sources */,
@@ -1019,11 +1032,12 @@
 				CFA8A4A918F9FBF800AF9B80 /* VWWLogsViewController.m in Sources */,
 				CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */,
 				CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */,
-				CFA8A4BF18F9FC9F00AF9B80 /* VWWVideosViewController.m in Sources */,
+				CFA8A4BF18F9FC9F00AF9B80 /* VWWRTVideosViewController.m in Sources */,
 				CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */,
 				CFA8A4A518F9FBD500AF9B80 /* VWWDashboardViewController.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,
-				CFA8A4CC18F9FD2000AF9B80 /* VWWVideoRecordViewController.m in Sources */,
+				CFA8A4CC18F9FD2000AF9B80 /* VWWRTVideoRecordViewController.m in Sources */,
+				CF0BFC081905E7AA006F5409 /* VWWPRVideosViewController.m in Sources */,
 				CF23B53B18FE29EE007EB262 /* VWWScatterViewController.m in Sources */,
 				CFA8A4E618FA050B00AF9B80 /* VWWMasterViewController.m in Sources */,
 				CFA8A4D318F9FD4B00AF9B80 /* VWWWebViewController.m in Sources */,
@@ -1044,7 +1058,7 @@
 				CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */,
 				CF7F18B119025AD9003FB14F /* VWWMultiGraphScene.m in Sources */,
 				CFB4B4C21903897200591E45 /* VWWWaveViewController.m in Sources */,
-				CFA8A4C318F9FCF000AF9B80 /* VWWVideoViewController.m in Sources */,
+				CFA8A4C318F9FCF000AF9B80 /* VWWRTVideoViewController.m in Sources */,
 				CFDAC6C118E14A2A00EB609B /* VWWLocationController.m in Sources */,
 				CFAD038118F3797F004F54EA /* FMDatabasePool.m in Sources */,
 			);

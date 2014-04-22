@@ -1,21 +1,18 @@
 //
-//  VWWVideoRecordOptionsViewController.m
+//  VWWVideoEditViewController.m
 //  APM Logger
 //
 //  Created by Zakk Hoyt on 4/12/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWVideoRecordOptionsViewController.h"
+#import "VWWRTVideoEditViewController.h"
 
-
-static NSString *VWWSegueVideoRecordOptionsToRecord = @"VWWSegueVideoRecordOptionsToRecord";
-
-@interface VWWVideoRecordOptionsViewController ()
+@interface VWWRTVideoEditViewController ()
 
 @end
 
-@implementation VWWVideoRecordOptionsViewController
+@implementation VWWRTVideoEditViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +26,7 @@ static NSString *VWWSegueVideoRecordOptionsToRecord = @"VWWSegueVideoRecordOptio
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"OPTIONS";
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,13 +45,5 @@ static NSString *VWWSegueVideoRecordOptionsToRecord = @"VWWSegueVideoRecordOptio
     // Pass the selected object to the new view controller.
 }
 */
-
-
-#pragma mark IBActions
-- (IBAction)readyButtonTouchUpInside:(id)sender {
-    [self performSegueWithIdentifier:VWWSegueVideoRecordOptionsToRecord sender:self];
-}
-
-
 
 @end
