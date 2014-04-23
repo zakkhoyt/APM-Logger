@@ -227,16 +227,18 @@
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    NSString *key = (fieldEnum == CPTScatterPlotFieldX ? @"x" : @"y");
-    NSNumber *num = [self.dataForPlot[index] valueForKey:key];
-    
-    // Green plot gets shifted above the blue
-    if ( [(NSString *)plot.identifier isEqualToString : @"Green Plot"] ) {
-        if ( fieldEnum == CPTScatterPlotFieldY ) {
-            num = @([num doubleValue] + 1/5.0 + 2.0);
+    @synchronized(self.dataForPlot){
+        NSString *key = (fieldEnum == CPTScatterPlotFieldX ? @"x" : @"y");
+        NSNumber *num = [self.dataForPlot[index] valueForKey:key];
+        
+        // Green plot gets shifted above the blue
+        if ( [(NSString *)plot.identifier isEqualToString : @"Green Plot"] ) {
+            if ( fieldEnum == CPTScatterPlotFieldY ) {
+                num = @([num doubleValue] + 1/5.0 + 2.0);
+            }
         }
+        return num;
     }
-    return num;
 }
 
 #pragma mark CPTAxisDelegate
@@ -288,45 +290,48 @@
 }
 
 
--(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
-    static NSInteger counter = 0;
-    
-    CPTGraph *theGraph = self.graph;
-    CPTPlot *thePlot   = [theGraph plotWithIdentifier:@"Blue Plot"];
-    
-    if ( thePlot ) {
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits *)limits{
+    @synchronized(self.dataForPlot){
+        static NSInteger counter = 0;
         
-        if ( self.dataForPlot.count >= NUM_POINTS ) {
-            [self.dataForPlot removeObjectAtIndex:0];
-            [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
+        CPTGraph *theGraph = self.graph;
+        CPTPlot *thePlot   = [theGraph plotWithIdentifier:@"Blue Plot"];
+        
+        if ( thePlot ) {
+            
+            if ( self.dataForPlot.count >= NUM_POINTS ) {
+                [self.dataForPlot removeObjectAtIndex:0];
+                [thePlot deleteDataInIndexRange:NSMakeRange(0, 1)];
+            }
+            
+            CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)theGraph.defaultPlotSpace;
+            NSUInteger location       = (counter >= NUM_POINTS ? counter - NUM_POINTS + 2 : 0);
+            
+            CPTPlotRange *oldRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger( (location > 0) ? (location - 1) : 0 )
+                                                                  length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
+            CPTPlotRange *newRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(location)
+                                                                  length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
+            
+            [CPTAnimation animate:plotSpace
+                         property:@"xRange"
+                    fromPlotRange:oldRange
+                      toPlotRange:newRange
+                         duration:CPTFloat(1/30.0)];
+            
+            
+            NSNumber *x = @(counter);
+            NSNumber *y = @(accelerometers.acceleration.x);
+            [self.dataForPlot addObject:@{ @"x": x,
+                                           @"y": y }];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [thePlot insertDataAtIndex:self.dataForPlot.count - 1 numberOfRecords:1];
+            });
+            
+            
+            counter++;
+            
         }
-        
-        CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)theGraph.defaultPlotSpace;
-        NSUInteger location       = (counter >= NUM_POINTS ? counter - NUM_POINTS + 2 : 0);
-        
-        CPTPlotRange *oldRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger( (location > 0) ? (location - 1) : 0 )
-                                                              length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
-        CPTPlotRange *newRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromUnsignedInteger(location)
-                                                              length:CPTDecimalFromUnsignedInteger(NUM_POINTS - 2)];
-        
-        [CPTAnimation animate:plotSpace
-                     property:@"xRange"
-                fromPlotRange:oldRange
-                  toPlotRange:newRange
-                     duration:CPTFloat(1/30.0)];
-    
-        
-        NSNumber *x = @(counter);
-        NSNumber *y = @(accelerometers.acceleration.x);
-        [self.dataForPlot addObject:@{ @"x": x,
-                                       @"y": y }];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [thePlot insertDataAtIndex:self.dataForPlot.count - 1 numberOfRecords:1];
-        });
-        
-
-        counter++;
     }
 }
 @end

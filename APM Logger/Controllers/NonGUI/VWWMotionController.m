@@ -117,7 +117,9 @@
         self.accelerometersLimits.z.max = MAX(self.accelerometersLimits.z.max, accelerometerData.acceleration.z);
         self.accelerometersLimits.z.min = MIN(self.accelerometersLimits.z.min, accelerometerData.acceleration.z);
         
-        [self.delegate motionController:self didUpdateAcceleremeters:accelerometerData limits:self.accelerometersLimits];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(motionController:didUpdateAcceleremeters:limits:)]){
+            [self.delegate motionController:self didUpdateAcceleremeters:accelerometerData limits:self.accelerometersLimits];
+        }
     };
     
     [self.motionManager startAccelerometerUpdatesToQueue:accelerometerQueue withHandler:[accelerometerHandler copy]];
@@ -150,8 +152,9 @@
         self.gyroscopesLimits.z.max = MAX(self.gyroscopesLimits.z.max, gyroData.rotationRate.z);
         self.gyroscopesLimits.z.min = MIN(self.gyroscopesLimits.z.min, gyroData.rotationRate.z);
 
-        
-        [self.delegate motionController:self didUpdateGyroscopes:gyroData limits:self.gyroscopesLimits];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(motionController:didUpdateGyroscopes:limits:)]){
+            [self.delegate motionController:self didUpdateGyroscopes:gyroData limits:self.gyroscopesLimits];
+        }
     };
     
     [self.motionManager startGyroUpdatesToQueue:gyroQueue withHandler:[gyroHandler copy]];
@@ -183,8 +186,9 @@
         self.magnetometersLimits.z.max = MAX(self.magnetometersLimits.z.max, magnetometerData.magneticField.z);
         self.magnetometersLimits.z.min = MIN(self.magnetometersLimits.z.min, magnetometerData.magneticField.z);
 
-        
-        [self.delegate motionController:self didUpdateMagnetometers:magnetometerData limits:self.magnetometersLimits];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(motionController:didUpdateMagnetometers:limits:)]){
+            [self.delegate motionController:self didUpdateMagnetometers:magnetometerData limits:self.magnetometersLimits];
+        }
     };
     
     [self.motionManager startMagnetometerUpdatesToQueue:magnetometerQueue withHandler:[magnetometerHandler copy]];
@@ -208,8 +212,9 @@
     NSOperationQueue* deviceQueue = [[NSOperationQueue alloc] init];
     
     CMDeviceMotionHandler deviceHandler = ^(CMDeviceMotion *motion, NSError *error) {
-
-        [self.delegate motionController:self didUpdateAttitude:motion];
+        if(self.delegate && [self.delegate respondsToSelector:@selector(motionController:didUpdateAttitude:)]){
+            [self.delegate motionController:self didUpdateAttitude:motion];
+        }
     };
     
     [self.motionManager startDeviceMotionUpdatesToQueue:deviceQueue withHandler:deviceHandler];

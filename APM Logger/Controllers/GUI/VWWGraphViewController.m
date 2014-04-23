@@ -88,7 +88,7 @@
 */
 
 
--(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers{
+-(void)motionController:(VWWMotionController*)sender didUpdateAcceleremeters:(CMAccelerometerData*)accelerometers limits:(VWWDeviceLimits *)limits{
     @synchronized(self.dataForPlot){
         static NSInteger counter = 0;
         
