@@ -22,6 +22,7 @@
 		CF23B53F18FE2F51007EB262 /* TestXYTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B53E18FE2F51007EB262 /* TestXYTheme.m */; };
 		CF23B54218FE4A6F007EB262 /* VWWGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54118FE4A6F007EB262 /* VWWGraphView.m */; };
 		CF23B54518FE4A8A007EB262 /* VWWGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */; };
+		CF5B05BD191C237A009A803A /* VWWAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5B05BC191C237A009A803A /* VWWAudioController.m */; };
 		CF66EF4018F930A6002F68C6 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF66EF3D18F93094002F68C6 /* libCorePlot-CocoaTouch.a */; };
 		CF7F18921900D4F9003FB14F /* VWWGraphScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */; };
 		CF7F18931900D4F9003FB14F /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7F18911900D4F9003FB14F /* VWWScene.m */; };
@@ -172,6 +173,8 @@
 		CF23B54118FE4A6F007EB262 /* VWWGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWGraphView.m; path = ../../View/VWWGraphView.m; sourceTree = "<group>"; };
 		CF23B54318FE4A8A007EB262 /* VWWGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphViewController.h; sourceTree = "<group>"; };
 		CF23B54418FE4A8A007EB262 /* VWWGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphViewController.m; sourceTree = "<group>"; };
+		CF5B05BB191C237A009A803A /* VWWAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAudioController.h; sourceTree = "<group>"; };
+		CF5B05BC191C237A009A803A /* VWWAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAudioController.m; sourceTree = "<group>"; };
 		CF66EF3618F93094002F68C6 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "APM Logger/ThirdParty/CorePlot/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		CF7F188E1900D4F9003FB14F /* VWWGraphScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGraphScene.h; sourceTree = "<group>"; };
 		CF7F188F1900D4F9003FB14F /* VWWGraphScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGraphScene.m; sourceTree = "<group>"; };
@@ -741,6 +744,8 @@
 				CFDAC69C18E14A2A00EB609B /* VWWLocationController.m */,
 				CFDAC69D18E14A2A00EB609B /* VWWMotionController.h */,
 				CFDAC69E18E14A2A00EB609B /* VWWMotionController.m */,
+				CF5B05BB191C237A009A803A /* VWWAudioController.h */,
+				CF5B05BC191C237A009A803A /* VWWAudioController.m */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";
@@ -1033,6 +1038,7 @@
 				CFAD037F18F3797F004F54EA /* FMDatabase.m in Sources */,
 				CFA8A4B918F9FC7300AF9B80 /* VWWTuningViewController.m in Sources */,
 				CFA8A4BF18F9FC9F00AF9B80 /* VWWRTVideosViewController.m in Sources */,
+				CF5B05BD191C237A009A803A /* VWWAudioController.m in Sources */,
 				CFA8A4D718F9FD7A00AF9B80 /* VWWAboutViewController.m in Sources */,
 				CFA8A4A518F9FBD500AF9B80 /* VWWDashboardViewController.m in Sources */,
 				CFDAC64B18E1493D00EB609B /* main.m in Sources */,

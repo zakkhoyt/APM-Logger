@@ -13,6 +13,7 @@
 #import "VWWScene.h"
 #import "VWWGraphScene.h"
 #import "VWWMotionController.h"
+#import "VWWAudioController.h"
 
 #define NUM_POINTS 320
 
@@ -22,7 +23,7 @@
 @property (nonatomic, strong) VWWGraphScene *graphScene;
 @property (nonatomic, strong) VWWMotionController *motionController;
 @property (nonatomic, strong) NSMutableArray *dataForPlot;
-
+@property (nonatomic, strong) VWWAudioController *audioController;
 @end
 
 @implementation VWWGLKViewController
@@ -70,6 +71,9 @@
     self.motionController.delegate = self;
     self.motionController.updateInterval = 1/200.0;
     [self.motionController startAccelerometer];
+    
+    self.audioController = [[VWWAudioController alloc]init];
+    [self.audioController start];
 
 }
 
@@ -92,6 +96,12 @@
     
     NSLog(@"x: %f y: %f", x, y);
 
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.audioController stop];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
