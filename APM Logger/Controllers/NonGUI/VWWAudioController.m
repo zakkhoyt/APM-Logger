@@ -8,7 +8,15 @@
 
 #import "VWWAudioController.h"
 @import AVFoundation;
-@import OpenAL;
+#import <AudioUnit/AudioUnit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
+@import CoreMedia;
+// CoreAudio Public Utility
+//#include "CAStreamBasicDescription.h"
+//#include "CAComponentDescription.h"
+//#include "CAAudioBufferList.h"
+//#include "AUOutputBL.h"
 
 @interface VWWAudioController ()  <AVAudioRecorderDelegate, AVAudioPlayerDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>{
     AVCaptureSession *captureSession;
@@ -93,22 +101,47 @@
 
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    VWW_LOG_TRACE;
- 
-    // Get samples.
-    CMBlockBufferRef audioBuffer = CMSampleBufferGetDataBuffer(sampleBuffer);
-    size_t lengthAtOffset;
-    size_t totalLength;
-    char *samples;
-    CMBlockBufferGetDataPointer(audioBuffer, 0, &lengthAtOffset, &totalLength, &samples);
+
     
-    // Get format.
-    CMAudioFormatDescriptionRef format = CMSampleBufferGetFormatDescription(sampleBuffer);
-    const AudioStreamBasicDescription *description = CMAudioFormatDescriptionGetStreamBasicDescription(format);
-//    AudioStreamBasicDescription *d = (AudioStreamBasicDescription*)description;
-    [self printASBD:*((AudioStreamBasicDescription*)description)];
+//    VWW_LOG_TRACE;
+// 
+//    // Get samples.
+//    CMBlockBufferRef audioBuffer = CMSampleBufferGetDataBuffer(sampleBuffer);
+//    size_t lengthAtOffset;
+//    size_t totalLength;
+//    char *samples;
+//    CMBlockBufferGetDataPointer(audioBuffer, 0, &lengthAtOffset, &totalLength, &samples);
+//
+//    // Get format.
+//    CMAudioFormatDescriptionRef format = CMSampleBufferGetFormatDescription(sampleBuffer);
+//    const AudioStreamBasicDescription *description = CMAudioFormatDescriptionGetStreamBasicDescription(format);
+////    AudioStreamBasicDescription *d = (AudioStreamBasicDescription*)description;
+//    [self printASBD:*((AudioStreamBasicDescription*)description)];
+
     
-    VWW_LOG_TRACE;
+    AudioBufferList audioBufferList;
+    NSMutableData *data=[[NSMutableData alloc] init];
+    CMBlockBufferRef blockBuffer;
+    CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer, NULL, &audioBufferList, sizeof(audioBufferList), NULL, NULL, 0, &blockBuffer);
+    
+    for( int y=0; y<audioBufferList.mNumberBuffers; y++ )
+    {
+        AudioBuffer audioBuffer = audioBufferList.mBuffers[y];
+        Byte *frame = (Byte*)audioBuffer.mData;
+        [data appendBytes:frame length:audioBuffer.mDataByteSize];
+//        VWW_LOG_DEBUG(@"average: %d", *frame);
+    }
+    
+    
+//    VWW_LOG_DEBUG(@"audio: %@", data);
+    CFRelease(blockBuffer);
+    blockBuffer=NULL;
+    
+//    [outputStream write:[data bytes]maxLength:[data length]];
+//    VWW_LOG_DEBUG(@"average: %f", total);
+    
+    
+    
 }
 
 
