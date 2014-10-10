@@ -24,7 +24,7 @@
 @implementation VWWMotionController
 #pragma mark Public methods
 
-+(VWWMotionController*)sharedInstance{
++(instancetype)sharedInstance{
     static VWWMotionController *instance;
     if(instance == nil){
         instance = [[VWWMotionController alloc]init];

@@ -140,8 +140,6 @@
 //    [outputStream write:[data bytes]maxLength:[data length]];
 //    VWW_LOG_DEBUG(@"average: %f", total);
     
-    
-    
 }
 
 

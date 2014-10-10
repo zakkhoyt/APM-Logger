@@ -26,7 +26,7 @@
 
 
 @interface VWWMotionController : NSObject
-+(VWWMotionController*)sharedInstance;
++(instancetype)sharedInstance;
 @property (nonatomic, weak) id <VWWMotionControllerDelegate> delegate;
 @property (nonatomic) NSTimeInterval updateInterval;
 
